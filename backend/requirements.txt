@@ -1,0 +1,9 @@
+fastapi==0.141.1
+httpx==0.28.1
+pydantic==2.13.5
+pydantic-settings==2.15.0
+uvicorn==0.53.0
+timezonefinder==8.3.0
+timezonefinder-data==1.2026.3
+tzdata==2026.4
+pyswisseph==2.10.3.2

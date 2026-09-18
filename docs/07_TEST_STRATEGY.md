@@ -1,0 +1,61 @@
+---
+tags:
+  - memory/quality
+---
+
+# Test Strategy
+
+## Backend
+
+467 tests cover health, birth-profile validation, location resolution, historical timezone behavior,
+fixture-integrity boundaries and Stages 6–7 astrology. Original tests remain; the old empty-reference
+guard now checks provenance. Astrology includes invariants, error boundaries, threaded repeatability,
+real Swiss smoke tests and offline external-reference regression; see [[astrology-verification]].
+Run `pytest` and `pip check` for backend changes.
+
+## Frontend
+
+8 Node tests cover profile validation and API request conversion. For frontend changes run lint,
+typecheck, tests and production build.
+
+## Regression fixtures
+
+`backend/tests/fixtures/birth_cases.json` holds synthetic historical timezone cases and fixed UTC
+expectations. Regression fixtures must not contain real-person birth data. Omission of names alone
+is insufficient. Dates/times are chosen for coverage; locations use coarse generic test points with
+null districts. Verify hand-selected UTC expectations using `tools/verify_synthetic_timezones.py`,
+which loads pinned IANA data without importing production services.
+
+## External provider mocks
+
+Geocoding tests mock HTTP/provider behavior. Tests must not depend on a live provider.
+
+## Historical timezone regression
+
+Fixtures test dates with distinct historical offsets and DST edge cases. They prevent current
+offset from becoming an accidental expectation.
+
+## Astrology regression
+
+Use independent reliable references for expected ephemeris values. Do not use the engine under test
+to generate its own expected values.
+
+## Astrology Independent References
+
+`backend/tests/fixtures/astrology_references.json` contains nine Stage 7 records sourced from JPL
+DE441 and external Astrodienst swetest. The latter shares Swiss algorithms and must not be labeled
+independent astronomy. Raw artifacts, query URLs, timestamps and hashes are preserved in
+`astrology_sources/`. Its null template is not an expectation; null values must never be asserted.
+`test_astrology_reference_regression.py` checks provenance and numerical comparisons offline.
+
+- The Stage 6 code path must not generate its own expected values.
+- Validate at least Sun, Moon, ASC and MC against an independent reference.
+- Preserve source name, version/settings and retrieval date with each record.
+- Preserve tropical/sidereal, house-system and node-type conventions.
+- Read UTC and coordinates from `birth_cases.json`; do not duplicate them in reference records.
+- Add an expected value only when its provenance is documented.
+
+## Circular testing prevention
+
+An engine output cannot become its own fixture reference. Document each expected source and preserve
+the input, convention and expected result independently.

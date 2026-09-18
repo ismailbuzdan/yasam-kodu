@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "privacy": "Synthetic test cases, not real persons. Dates/times selected for coverage; coordinates are coarse generic test points, not addresses.",
+  "cases": [
+    {
+      "id": "synthetic_tr_dst_01",
+      "description": "Synthetic test case, not a real person; calendar/offset coverage away from DST transitions.",
+      "location": {
+        "country": "Türkiye",
+        "city": "Ankara",
+        "district": null,
+        "latitude": 39.9,
+        "longitude": 32.8
+      },
+      "birth": {
+        "local_date": "1997-07-11",
+        "local_time": "07:15",
+        "time_accuracy": "exact"
+      },
+      "timezone": {
+        "iana": "Europe/Istanbul",
+        "expected_utc": "1997-07-11T04:15:00Z",
+        "expected_offset_minutes": 180,
+        "expected_dst": true
+      }
+    },
+    {
+      "id": "synthetic_tr_dst_02",
+      "description": "Synthetic test case, not a real person; calendar/offset coverage away from DST transitions.",
+      "location": {
+        "country": "Türkiye",
+        "city": "Kayseri",
+        "district": null,
+        "latitude": 38.7,
+        "longitude": 35.5
+      },
+      "birth": {
+        "local_date": "2004-06-17",
+        "local_time": "14:25",
+        "time_accuracy": "exact"
+      },
+      "timezone": {
+        "iana": "Europe/Istanbul",
+        "expected_utc": "2004-06-17T11:25:00Z",
+        "expected_offset_minutes": 180,
+        "expected_dst": true
+      }
+    },
+    {
+      "id": "synthetic_tr_dst_03",
+      "description": "Synthetic test case, not a real person; calendar/offset coverage away from DST transitions.",
+      "location": {
+        "country": "Türkiye",
+        "city": "Konya",
+        "district": null,
+        "latitude": 37.9,
+        "longitude": 32.5
+      },
+      "birth": {
+        "local_date": "2012-08-23",
+        "local_time": "22:35",
+        "time_accuracy": "exact"
+      },
+      "timezone": {
+        "iana": "Europe/Istanbul",
+        "expected_utc": "2012-08-23T19:35:00Z",
+        "expected_offset_minutes": 180,
+        "expected_dst": true
+      }
+    },
+    {
+      "id": "synthetic_tr_standard_01",
+      "description": "Synthetic test case, not a real person; calendar/offset coverage away from DST transitions.",
+      "location": {
+        "country": "Türkiye",
+        "city": "Ankara",
+        "district": null,
+        "latitude": 39.9,
+        "longitude": 32.8
+      },
+      "birth": {
+        "local_date": "1992-01-14",
+        "local_time": "09:45",
+        "time_accuracy": "exact"
+      },
+      "timezone": {
+        "iana": "Europe/Istanbul",
+        "expected_utc": "1992-01-14T07:45:00Z",
+        "expected_offset_minutes": 120,
+        "expected_dst": false
+      }
+    },
+    {
+      "id": "synthetic_tr_standard_02",
+      "description": "Synthetic test case, not a real person; calendar/offset coverage away from DST transitions.",
+      "location": {
+        "country": "Türkiye",
+        "city": "Kayseri",
+        "district": null,
+        "latitude": 38.7,
+        "longitude": 35.5
+      },
+      "birth": {
+        "local_date": "2008-02-12",
+        "local_time": "18:05",
+        "time_accuracy": "exact"
+      },
+      "timezone": {
+        "iana": "Europe/Istanbul",
+        "expected_utc": "2008-02-12T16:05:00Z",
+        "expected_offset_minutes": 120,
+        "expected_dst": false
+      }
+    },
+    {
+      "id": "synthetic_leap_date_01",
+      "description": "Synthetic test case, not a real person; calendar/offset coverage away from DST transitions.",
+      "location": {
+        "country": "Türkiye",
+        "city": "Konya",
+        "district": null,
+        "latitude": 37.9,
+        "longitude": 32.5
+      },
+      "birth": {
+        "local_date": "1988-02-29",
+        "local_time": "03:20",
+        "time_accuracy": "exact"
+      },
+      "timezone": {
+        "iana": "Europe/Istanbul",
+        "expected_utc": "1988-02-29T01:20:00Z",
+        "expected_offset_minutes": 120,
+        "expected_dst": false
+      }
+    },
+    {
+      "id": "synthetic_tr_permanent_utc3_01",
+      "description": "Synthetic test case, not a real person; calendar/offset coverage away from DST transitions.",
+      "location": {
+        "country": "Türkiye",
+        "city": "Ankara",
+        "district": null,
+        "latitude": 39.9,
+        "longitude": 32.8
+      },
+      "birth": {
+        "local_date": "2019-12-11",
+        "local_time": "11:50",
+        "time_accuracy": "exact"
+      },
+      "timezone": {
+        "iana": "Europe/Istanbul",
+        "expected_utc": "2019-12-11T08:50:00Z",
+        "expected_offset_minutes": 180,
+        "expected_dst": false
+      }
+    },
+    {
+      "id": "synthetic_leap_date_02",
+      "description": "Synthetic test case, not a real person; calendar/offset coverage away from DST transitions.",
+      "location": {
+        "country": "Türkiye",
+        "city": "Kayseri",
+        "district": null,
+        "latitude": 38.7,
+        "longitude": 35.5
+      },
+      "birth": {
+        "local_date": "2024-02-29",
+        "local_time": "16:10",
+        "time_accuracy": "exact"
+      },
+      "timezone": {
+        "iana": "Europe/Istanbul",
+        "expected_utc": "2024-02-29T13:10:00Z",
+        "expected_offset_minutes": 180,
+        "expected_dst": false
+      }
+    },
+    {
+      "id": "synthetic_us_winter_01",
+      "description": "Synthetic test case, not a real person; calendar/offset coverage away from DST transitions.",
+      "location": {
+        "country": "United States",
+        "city": "New York",
+        "district": null,
+        "latitude": 40.7,
+        "longitude": -74.0
+      },
+      "birth": {
+        "local_date": "2022-01-19",
+        "local_time": "05:40",
+        "time_accuracy": "exact"
+      },
+      "timezone": {
+        "iana": "America/New_York",
+        "expected_utc": "2022-01-19T10:40:00Z",
+        "expected_offset_minutes": -300,
+        "expected_dst": false
+      }
+    }
+  ]
+}

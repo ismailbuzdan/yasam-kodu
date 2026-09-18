@@ -1,0 +1,7 @@
+{
+  "url": "https://www.astro.com/cgi/swetest.cgi?arg=-b12.2.2008+-utc16%3A05%3A00+-p0123456789tA+-house35.5%2C38.7%2CP+-hsyP+-geopos35.5%2C38.7%2C0+-fPlbsj+-g%2C+-n1+-emos",
+  "retrieved_at": "2026-09-18T09:54:24.021641+00:00",
+  "http_body_sha256": "e39d684375feaafc5cada9f281fef1b76cdb10adfc33e7f979474099996f9481",
+  "extraction": "PRE text only; HTML formatting removed, numbers unchanged",
+  "sha256": "f78f8547d19f5f76d69a595a488625ad31194a2b67734571593735fa31ce9e3f"
+}

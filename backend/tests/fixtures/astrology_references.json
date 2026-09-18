@@ -1,0 +1,1722 @@
+{
+  "schema_version": 1,
+  "reference_records": [
+    {
+      "case_id": "synthetic_tr_dst_01",
+      "reference_source": {
+        "name": "NASA/JPL Horizons + Astrodienst public swetest",
+        "version": "Horizons API 1.2 / DE441; swetest 2.10.03 Moshier",
+        "retrieved_at": "2026-09-18T09:54:18.998603+00:00",
+        "artifacts": [
+          {
+            "artifact": "astrology_sources/horizons_sun.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%2710%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:18.998603+00:00",
+            "http_body_sha256": "f20f45af95d85a3e01a4c7ba1a3146daa37f88bdbde9111e3901102611801e0b",
+            "sha256": "f20f45af95d85a3e01a4c7ba1a3146daa37f88bdbde9111e3901102611801e0b"
+          },
+          {
+            "artifact": "astrology_sources/horizons_moon.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:20.230144+00:00",
+            "http_body_sha256": "94613d0d1bcbb88028ef11c6fd2a2efca9a49e13406442f052ed8daac53256cc",
+            "sha256": "94613d0d1bcbb88028ef11c6fd2a2efca9a49e13406442f052ed8daac53256cc"
+          },
+          {
+            "artifact": "astrology_sources/horizons_mercury.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27199%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:21.086085+00:00",
+            "http_body_sha256": "5940e1ba2b5d879701cb9ae06f1f4e1d425fce3b45ca3344893d7df2a5b46c58",
+            "sha256": "5940e1ba2b5d879701cb9ae06f1f4e1d425fce3b45ca3344893d7df2a5b46c58"
+          },
+          {
+            "artifact": "astrology_sources/horizons_jupiter.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%275%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:21.957924+00:00",
+            "http_body_sha256": "3571faa49a36e6dc357ec33f6c81491c4011e2a0b29d867d1e1d5609d747639d",
+            "sha256": "3571faa49a36e6dc357ec33f6c81491c4011e2a0b29d867d1e1d5609d747639d"
+          },
+          {
+            "artifact": "astrology_sources/swetest_synthetic_tr_dst_01.txt",
+            "url": "https://www.astro.com/cgi/swetest.cgi?arg=-b11.7.1997+-utc04%3A15%3A00+-p0123456789tA+-house32.8%2C39.9%2CP+-hsyP+-geopos32.8%2C39.9%2C0+-fPlbsj+-g%2C+-n1+-emos",
+            "retrieved_at": "2026-09-18T09:54:22.416440+00:00",
+            "http_body_sha256": "a875f7f3ccee117e58d859c2c42cd171ecb3dbffad57141350bf9fcedece72ce",
+            "extraction": "PRE text only; HTML formatting removed, numbers unchanged",
+            "sha256": "804565cfc5721e50a912641397822bc4814b33a4a7b3ac3406f8319b4bf52fb3"
+          }
+        ],
+        "notes": "Planet expectations: external JPL DE441, apparent geocentric IAU76/80 ecliptic-of-date (quantity 31), airless, UTC. Angles/cusps/body placement: externally executed swetest Tropical/Placidus, UTC input, Moshier; shared Swiss library, NOT independent algorithm. Modern-model differences against IAU76/80 included in 0.01-degree budget; no geometric/J2000/topocentric mixing.",
+        "field_sources": {
+          "sun_longitude": "horizons_sun",
+          "moon_longitude": "horizons_moon",
+          "planet_longitudes": "horizons",
+          "ascendant_longitude": "swetest",
+          "mc_longitude": "swetest",
+          "house_cusps": "swetest",
+          "swetest_bodies": "swetest"
+        }
+      },
+      "conventions": {
+        "zodiac": "tropical",
+        "house_system": "placidus",
+        "node_type": "true",
+        "lilith_type": "mean_black_moon",
+        "time_scale": "UTC",
+        "observer": "geocentric"
+      },
+      "expected": {
+        "sun_longitude": 108.9111305,
+        "moon_longitude": 179.9542652,
+        "ascendant_longitude": 129.0049001,
+        "mc_longitude": 27.6462812,
+        "planet_longitudes": {
+          "sun": 108.9111305,
+          "moon": 179.9542652,
+          "mercury": 125.4697036,
+          "jupiter": 320.4447478
+        },
+        "planet_latitudes": {
+          "sun": 9.46e-05,
+          "moon": 0.7365901,
+          "mercury": 1.7493656,
+          "jupiter": -0.885264
+        },
+        "house_cusps": [
+          129.0049001,
+          150.0794683,
+          175.7892784,
+          207.6462812,
+          243.8843759,
+          278.8465668,
+          309.0049001,
+          330.0794683,
+          355.7892784,
+          27.6462812,
+          63.8843759,
+          98.8465668
+        ],
+        "swetest_bodies": {
+          "sun": {
+            "longitude": 108.9111495,
+            "latitude": 0.0001003,
+            "speed_longitude": 0.9536356,
+            "house_position": 12.3160569,
+            "house": 12
+          },
+          "moon": {
+            "longitude": 179.9543561,
+            "latitude": 0.7367271,
+            "speed_longitude": 11.8137687,
+            "house_position": 3.1472405,
+            "house": 3
+          },
+          "mercury": {
+            "longitude": 125.4697207,
+            "latitude": 1.7493722,
+            "speed_longitude": 1.8066682,
+            "house_position": 12.8422511,
+            "house": 12
+          },
+          "venus": {
+            "longitude": 135.0495825,
+            "latitude": 1.6434988,
+            "speed_longitude": 1.2110887,
+            "house_position": 1.2700386,
+            "house": 1
+          },
+          "mars": {
+            "longitude": 190.4844172,
+            "latitude": -0.0551461,
+            "speed_longitude": 0.5217585,
+            "house_position": 3.4850062,
+            "house": 3
+          },
+          "jupiter": {
+            "longitude": 320.4447586,
+            "latitude": -0.8852805,
+            "speed_longitude": -0.0921316,
+            "house_position": 7.5503296,
+            "house": 7
+          },
+          "saturn": {
+            "longitude": 19.9654834,
+            "latitude": -2.4580865,
+            "speed_longitude": 0.036285,
+            "house_position": 9.8001949,
+            "house": 9
+          },
+          "uranus": {
+            "longitude": 307.4235719,
+            "latitude": -0.6441752,
+            "speed_longitude": -0.0371792,
+            "house_position": 6.9315949,
+            "house": 6
+          },
+          "neptune": {
+            "longitude": 298.8404561,
+            "latitude": 0.4197127,
+            "speed_longitude": -0.0265734,
+            "house_position": 6.6522082,
+            "house": 6
+          },
+          "pluto": {
+            "longitude": 243.118466,
+            "latitude": 12.759226,
+            "speed_longitude": -0.016784,
+            "house_position": 5.1717635,
+            "house": 5
+          },
+          "true_north_node": {
+            "longitude": 171.6809054,
+            "latitude": 0.0,
+            "speed_longitude": 0.0098935,
+            "house_position": 2.8544991,
+            "house": 2
+          },
+          "lilith": {
+            "longitude": 162.6488806,
+            "latitude": -0.9208642,
+            "speed_longitude": 0.1107639,
+            "house_position": 2.5168293,
+            "house": 2
+          }
+        }
+      },
+      "tolerance": {
+        "planet_degrees": 0.01,
+        "angles_degrees": 0.05,
+        "swetest_planet_degrees": 1e-05,
+        "speed_degrees_per_day": 1e-05
+      }
+    },
+    {
+      "case_id": "synthetic_tr_dst_02",
+      "reference_source": {
+        "name": "NASA/JPL Horizons + Astrodienst public swetest",
+        "version": "Horizons API 1.2 / DE441; swetest 2.10.03 Moshier",
+        "retrieved_at": "2026-09-18T09:54:18.998603+00:00",
+        "artifacts": [
+          {
+            "artifact": "astrology_sources/horizons_sun.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%2710%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:18.998603+00:00",
+            "http_body_sha256": "f20f45af95d85a3e01a4c7ba1a3146daa37f88bdbde9111e3901102611801e0b",
+            "sha256": "f20f45af95d85a3e01a4c7ba1a3146daa37f88bdbde9111e3901102611801e0b"
+          },
+          {
+            "artifact": "astrology_sources/horizons_moon.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:20.230144+00:00",
+            "http_body_sha256": "94613d0d1bcbb88028ef11c6fd2a2efca9a49e13406442f052ed8daac53256cc",
+            "sha256": "94613d0d1bcbb88028ef11c6fd2a2efca9a49e13406442f052ed8daac53256cc"
+          },
+          {
+            "artifact": "astrology_sources/horizons_mercury.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27199%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:21.086085+00:00",
+            "http_body_sha256": "5940e1ba2b5d879701cb9ae06f1f4e1d425fce3b45ca3344893d7df2a5b46c58",
+            "sha256": "5940e1ba2b5d879701cb9ae06f1f4e1d425fce3b45ca3344893d7df2a5b46c58"
+          },
+          {
+            "artifact": "astrology_sources/horizons_jupiter.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%275%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:21.957924+00:00",
+            "http_body_sha256": "3571faa49a36e6dc357ec33f6c81491c4011e2a0b29d867d1e1d5609d747639d",
+            "sha256": "3571faa49a36e6dc357ec33f6c81491c4011e2a0b29d867d1e1d5609d747639d"
+          },
+          {
+            "artifact": "astrology_sources/swetest_synthetic_tr_dst_02.txt",
+            "url": "https://www.astro.com/cgi/swetest.cgi?arg=-b17.6.2004+-utc11%3A25%3A00+-p0123456789tA+-house35.5%2C38.7%2CP+-hsyP+-geopos35.5%2C38.7%2C0+-fPlbsj+-g%2C+-n1+-emos",
+            "retrieved_at": "2026-09-18T09:54:22.811850+00:00",
+            "http_body_sha256": "bb3cc22889ff8a4a964492122468dc87e92dc6d7f30457b3b25141d46462f7f2",
+            "extraction": "PRE text only; HTML formatting removed, numbers unchanged",
+            "sha256": "59ebda84f5700a9cb4a81310ee6fe35405a799ffee86bdb661bf50575a4d58a0"
+          }
+        ],
+        "notes": "Planet expectations: external JPL DE441, apparent geocentric IAU76/80 ecliptic-of-date (quantity 31), airless, UTC. Angles/cusps/body placement: externally executed swetest Tropical/Placidus, UTC input, Moshier; shared Swiss library, NOT independent algorithm. Modern-model differences against IAU76/80 included in 0.01-degree budget; no geometric/J2000/topocentric mixing.",
+        "field_sources": {
+          "sun_longitude": "horizons_sun",
+          "moon_longitude": "horizons_moon",
+          "planet_longitudes": "horizons",
+          "ascendant_longitude": "swetest",
+          "mc_longitude": "swetest",
+          "house_cusps": "swetest",
+          "swetest_bodies": "swetest"
+        }
+      },
+      "conventions": {
+        "zodiac": "tropical",
+        "house_system": "placidus",
+        "node_type": "true",
+        "lilith_type": "mean_black_moon",
+        "time_scale": "UTC",
+        "observer": "geocentric"
+      },
+      "expected": {
+        "sun_longitude": 86.5973349,
+        "moon_longitude": 82.5083995,
+        "ascendant_longitude": 198.4077293,
+        "mc_longitude": 111.0917004,
+        "planet_longitudes": {
+          "sun": 86.5973349,
+          "moon": 82.5083995,
+          "mercury": 84.8382528,
+          "jupiter": 161.5882197
+        },
+        "planet_latitudes": {
+          "sun": 8.54e-05,
+          "moon": 3.4400715,
+          "mercury": 0.8334727,
+          "jupiter": 1.1977365
+        },
+        "house_cusps": [
+          198.4077293,
+          226.0340579,
+          257.3274524,
+          291.0917004,
+          324.1794261,
+          353.6317388,
+          18.4077293,
+          46.0340579,
+          77.3274524,
+          111.0917004,
+          144.1794261,
+          173.6317388
+        ],
+        "swetest_bodies": {
+          "sun": {
+            "longitude": 86.5973344,
+            "latitude": 9.65e-05,
+            "speed_longitude": 0.9550552,
+            "house_position": 9.2788586,
+            "house": 9
+          },
+          "moon": {
+            "longitude": 82.5085141,
+            "latitude": 3.4402663,
+            "speed_longitude": 11.8193203,
+            "house_position": 9.1775858,
+            "house": 9
+          },
+          "mercury": {
+            "longitude": 84.8382562,
+            "latitude": 0.8334855,
+            "speed_longitude": 2.1962121,
+            "house_position": 9.2313192,
+            "house": 9
+          },
+          "venus": {
+            "longitude": 72.6617774,
+            "latitude": -2.204696,
+            "speed_longitude": -0.4715419,
+            "house_position": 8.843075,
+            "house": 8
+          },
+          "mars": {
+            "longitude": 115.9721527,
+            "latitude": 1.2353855,
+            "speed_longitude": 0.6301819,
+            "house_position": 10.1489161,
+            "house": 10
+          },
+          "jupiter": {
+            "longitude": 161.5882255,
+            "latitude": 1.1977428,
+            "speed_longitude": 0.1167738,
+            "house_position": 11.5716172,
+            "house": 11
+          },
+          "saturn": {
+            "longitude": 104.1037443,
+            "latitude": -0.2982575,
+            "speed_longitude": 0.126024,
+            "house_position": 9.793543,
+            "house": 9
+          },
+          "uranus": {
+            "longitude": 336.777416,
+            "latitude": -0.7747047,
+            "speed_longitude": -0.0054431,
+            "house_position": 5.4095497,
+            "house": 5
+          },
+          "neptune": {
+            "longitude": 315.1447447,
+            "latitude": -0.0587708,
+            "speed_longitude": -0.0154933,
+            "house_position": 4.7189109,
+            "house": 4
+          },
+          "pluto": {
+            "longitude": 260.7472512,
+            "latitude": 8.9043976,
+            "speed_longitude": -0.0263335,
+            "house_position": 3.0493827,
+            "house": 3
+          },
+          "true_north_node": {
+            "longitude": 40.47368,
+            "latitude": 0.0,
+            "speed_longitude": -0.1199464,
+            "house_position": 7.8094286,
+            "house": 7
+          },
+          "lilith": {
+            "longitude": 84.708338,
+            "latitude": 3.7015558,
+            "speed_longitude": 0.1114621,
+            "house_position": 9.2447453,
+            "house": 9
+          }
+        }
+      },
+      "tolerance": {
+        "planet_degrees": 0.01,
+        "angles_degrees": 0.05,
+        "swetest_planet_degrees": 1e-05,
+        "speed_degrees_per_day": 1e-05
+      }
+    },
+    {
+      "case_id": "synthetic_tr_dst_03",
+      "reference_source": {
+        "name": "NASA/JPL Horizons + Astrodienst public swetest",
+        "version": "Horizons API 1.2 / DE441; swetest 2.10.03 Moshier",
+        "retrieved_at": "2026-09-18T09:54:18.998603+00:00",
+        "artifacts": [
+          {
+            "artifact": "astrology_sources/horizons_sun.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%2710%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:18.998603+00:00",
+            "http_body_sha256": "f20f45af95d85a3e01a4c7ba1a3146daa37f88bdbde9111e3901102611801e0b",
+            "sha256": "f20f45af95d85a3e01a4c7ba1a3146daa37f88bdbde9111e3901102611801e0b"
+          },
+          {
+            "artifact": "astrology_sources/horizons_moon.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:20.230144+00:00",
+            "http_body_sha256": "94613d0d1bcbb88028ef11c6fd2a2efca9a49e13406442f052ed8daac53256cc",
+            "sha256": "94613d0d1bcbb88028ef11c6fd2a2efca9a49e13406442f052ed8daac53256cc"
+          },
+          {
+            "artifact": "astrology_sources/horizons_mercury.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27199%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:21.086085+00:00",
+            "http_body_sha256": "5940e1ba2b5d879701cb9ae06f1f4e1d425fce3b45ca3344893d7df2a5b46c58",
+            "sha256": "5940e1ba2b5d879701cb9ae06f1f4e1d425fce3b45ca3344893d7df2a5b46c58"
+          },
+          {
+            "artifact": "astrology_sources/horizons_jupiter.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%275%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:21.957924+00:00",
+            "http_body_sha256": "3571faa49a36e6dc357ec33f6c81491c4011e2a0b29d867d1e1d5609d747639d",
+            "sha256": "3571faa49a36e6dc357ec33f6c81491c4011e2a0b29d867d1e1d5609d747639d"
+          },
+          {
+            "artifact": "astrology_sources/swetest_synthetic_tr_dst_03.txt",
+            "url": "https://www.astro.com/cgi/swetest.cgi?arg=-b23.8.2012+-utc19%3A35%3A00+-p0123456789tA+-house32.5%2C37.9%2CP+-hsyP+-geopos32.5%2C37.9%2C0+-fPlbsj+-g%2C+-n1+-emos",
+            "retrieved_at": "2026-09-18T09:54:23.203967+00:00",
+            "http_body_sha256": "ffeff73449eee310194980290e5ce0252699c2c7415618d7fbb7b1aec0c2ce42",
+            "extraction": "PRE text only; HTML formatting removed, numbers unchanged",
+            "sha256": "cfd3a2ec8e489118392720d979f4384d14b196598c13de57d38d18a7ae884eea"
+          }
+        ],
+        "notes": "Planet expectations: external JPL DE441, apparent geocentric IAU76/80 ecliptic-of-date (quantity 31), airless, UTC. Angles/cusps/body placement: externally executed swetest Tropical/Placidus, UTC input, Moshier; shared Swiss library, NOT independent algorithm. Modern-model differences against IAU76/80 included in 0.01-degree budget; no geometric/J2000/topocentric mixing.",
+        "field_sources": {
+          "sun_longitude": "horizons_sun",
+          "moon_longitude": "horizons_moon",
+          "planet_longitudes": "horizons",
+          "ascendant_longitude": "swetest",
+          "mc_longitude": "swetest",
+          "house_cusps": "swetest",
+          "swetest_bodies": "swetest"
+        }
+      },
+      "conventions": {
+        "zodiac": "tropical",
+        "house_system": "placidus",
+        "node_type": "true",
+        "lilith_type": "mean_black_moon",
+        "time_scale": "UTC",
+        "observer": "geocentric"
+      },
+      "expected": {
+        "sun_longitude": 151.0631768,
+        "moon_longitude": 231.0231781,
+        "ascendant_longitude": 44.1870028,
+        "mc_longitude": 296.7162103,
+        "planet_longitudes": {
+          "sun": 151.0631768,
+          "moon": 231.0231781,
+          "mercury": 134.9180043,
+          "jupiter": 73.6586851
+        },
+        "planet_latitudes": {
+          "sun": -0.0001089,
+          "moon": -0.8297147,
+          "mercury": 0.6906277,
+          "jupiter": -0.7884361
+        },
+        "house_cusps": [
+          44.1870028,
+          72.6213873,
+          94.8578754,
+          116.7162103,
+          142.6809243,
+          178.2384535,
+          224.1870028,
+          252.6213873,
+          274.8578754,
+          296.7162103,
+          322.6809243,
+          358.2384535
+        ],
+        "swetest_bodies": {
+          "sun": {
+            "longitude": 151.0631875,
+            "latitude": -0.0001055,
+            "speed_longitude": 0.9641765,
+            "house_position": 5.2690151,
+            "house": 5
+          },
+          "moon": {
+            "longitude": 231.0233414,
+            "latitude": -0.8297932,
+            "speed_longitude": 14.1330335,
+            "house_position": 7.1703062,
+            "house": 7
+          },
+          "mercury": {
+            "longitude": 134.9180139,
+            "latitude": 0.6906331,
+            "speed_longitude": 1.6183123,
+            "house_position": 4.7418214,
+            "house": 4
+          },
+          "venus": {
+            "longitude": 105.5451684,
+            "latitude": -2.6454763,
+            "speed_longitude": 1.0118486,
+            "house_position": 3.5027008,
+            "house": 3
+          },
+          "mars": {
+            "longitude": 210.1112631,
+            "latitude": -0.4227205,
+            "speed_longitude": 0.6390771,
+            "house_position": 6.6884279,
+            "house": 6
+          },
+          "jupiter": {
+            "longitude": 73.6587551,
+            "latitude": -0.7884075,
+            "speed_longitude": 0.1235786,
+            "house_position": 2.0679633,
+            "house": 2
+          },
+          "saturn": {
+            "longitude": 205.5046178,
+            "latitude": 2.3380305,
+            "speed_longitude": 0.0862306,
+            "house_position": 6.678967,
+            "house": 6
+          },
+          "uranus": {
+            "longitude": 7.8896985,
+            "latitude": -0.7460291,
+            "speed_longitude": -0.029655,
+            "house_position": 12.2456007,
+            "house": 12
+          },
+          "neptune": {
+            "longitude": 331.7632147,
+            "latitude": -0.6202862,
+            "speed_longitude": -0.0273746,
+            "house_position": 11.3063257,
+            "house": 11
+          },
+          "pluto": {
+            "longitude": 277.1135549,
+            "latitude": 3.7140522,
+            "speed_longitude": -0.0122064,
+            "house_position": 9.1396143,
+            "house": 9
+          },
+          "true_north_node": {
+            "longitude": 240.467947,
+            "latitude": 0.0,
+            "speed_longitude": -0.0063601,
+            "house_position": 7.5267512,
+            "house": 7
+          },
+          "lilith": {
+            "longitude": 57.8648583,
+            "latitude": 0.2364573,
+            "speed_longitude": 0.1107492,
+            "house_position": 1.4246099,
+            "house": 1
+          }
+        }
+      },
+      "tolerance": {
+        "planet_degrees": 0.01,
+        "angles_degrees": 0.05,
+        "swetest_planet_degrees": 1e-05,
+        "speed_degrees_per_day": 1e-05
+      }
+    },
+    {
+      "case_id": "synthetic_tr_standard_01",
+      "reference_source": {
+        "name": "NASA/JPL Horizons + Astrodienst public swetest",
+        "version": "Horizons API 1.2 / DE441; swetest 2.10.03 Moshier",
+        "retrieved_at": "2026-09-18T09:54:18.998603+00:00",
+        "artifacts": [
+          {
+            "artifact": "astrology_sources/horizons_sun.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%2710%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:18.998603+00:00",
+            "http_body_sha256": "f20f45af95d85a3e01a4c7ba1a3146daa37f88bdbde9111e3901102611801e0b",
+            "sha256": "f20f45af95d85a3e01a4c7ba1a3146daa37f88bdbde9111e3901102611801e0b"
+          },
+          {
+            "artifact": "astrology_sources/horizons_moon.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:20.230144+00:00",
+            "http_body_sha256": "94613d0d1bcbb88028ef11c6fd2a2efca9a49e13406442f052ed8daac53256cc",
+            "sha256": "94613d0d1bcbb88028ef11c6fd2a2efca9a49e13406442f052ed8daac53256cc"
+          },
+          {
+            "artifact": "astrology_sources/horizons_mercury.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27199%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:21.086085+00:00",
+            "http_body_sha256": "5940e1ba2b5d879701cb9ae06f1f4e1d425fce3b45ca3344893d7df2a5b46c58",
+            "sha256": "5940e1ba2b5d879701cb9ae06f1f4e1d425fce3b45ca3344893d7df2a5b46c58"
+          },
+          {
+            "artifact": "astrology_sources/horizons_jupiter.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%275%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:21.957924+00:00",
+            "http_body_sha256": "3571faa49a36e6dc357ec33f6c81491c4011e2a0b29d867d1e1d5609d747639d",
+            "sha256": "3571faa49a36e6dc357ec33f6c81491c4011e2a0b29d867d1e1d5609d747639d"
+          },
+          {
+            "artifact": "astrology_sources/swetest_synthetic_tr_standard_01.txt",
+            "url": "https://www.astro.com/cgi/swetest.cgi?arg=-b14.1.1992+-utc07%3A45%3A00+-p0123456789tA+-house32.8%2C39.9%2CP+-hsyP+-geopos32.8%2C39.9%2C0+-fPlbsj+-g%2C+-n1+-emos",
+            "retrieved_at": "2026-09-18T09:54:23.607078+00:00",
+            "http_body_sha256": "dcad3865c96faaf5ad9e5cd293a2deb3d87e80032a245e73d196e803689e75a1",
+            "extraction": "PRE text only; HTML formatting removed, numbers unchanged",
+            "sha256": "729281f8dea4b5ca933b9c487df79d9b3895093d6c2d105614a5f279cb275a23"
+          }
+        ],
+        "notes": "Planet expectations: external JPL DE441, apparent geocentric IAU76/80 ecliptic-of-date (quantity 31), airless, UTC. Angles/cusps/body placement: externally executed swetest Tropical/Placidus, UTC input, Moshier; shared Swiss library, NOT independent algorithm. Modern-model differences against IAU76/80 included in 0.01-degree budget; no geometric/J2000/topocentric mixing.",
+        "field_sources": {
+          "sun_longitude": "horizons_sun",
+          "moon_longitude": "horizons_moon",
+          "planet_longitudes": "horizons",
+          "ascendant_longitude": "swetest",
+          "mc_longitude": "swetest",
+          "house_cusps": "swetest",
+          "swetest_bodies": "swetest"
+        }
+      },
+      "conventions": {
+        "zodiac": "tropical",
+        "house_system": "placidus",
+        "node_type": "true",
+        "lilith_type": "mean_black_moon",
+        "time_scale": "UTC",
+        "observer": "geocentric"
+      },
+      "expected": {
+        "sun_longitude": 293.3918038,
+        "moon_longitude": 38.1484846,
+        "ascendant_longitude": 346.5687216,
+        "mc_longitude": 262.7371101,
+        "planet_longitudes": {
+          "sun": 293.3918038,
+          "moon": 38.1484846,
+          "mercury": 276.0838637,
+          "jupiter": 164.2919451
+        },
+        "planet_latitudes": {
+          "sun": 0.0001014,
+          "moon": 4.6547024,
+          "mercury": -0.3576378,
+          "jupiter": 1.2328065
+        },
+        "house_cusps": [
+          346.5687216,
+          30.9266399,
+          60.236223,
+          82.7371101,
+          104.0600963,
+          129.1714939,
+          166.5687216,
+          210.9266399,
+          240.236223,
+          262.7371101,
+          284.0600963,
+          309.1714939
+        ],
+        "swetest_bodies": {
+          "sun": {
+            "longitude": 293.3918017,
+            "latitude": 9.42e-05,
+            "speed_longitude": 1.0186006,
+            "house_position": 11.4035577,
+            "house": 11
+          },
+          "moon": {
+            "longitude": 38.1484739,
+            "latitude": 4.6547066,
+            "speed_longitude": 13.3907454,
+            "house_position": 2.0485474,
+            "house": 2
+          },
+          "mercury": {
+            "longitude": 276.0838703,
+            "latitude": -0.3576415,
+            "speed_longitude": 1.4572351,
+            "house_position": 10.6372295,
+            "house": 10
+          },
+          "venus": {
+            "longitude": 256.5871508,
+            "latitude": 1.6650744,
+            "speed_longitude": 1.2179405,
+            "house_position": 9.7267171,
+            "house": 9
+          },
+          "mars": {
+            "longitude": 273.6532037,
+            "latitude": -0.5974213,
+            "speed_longitude": 0.7448171,
+            "house_position": 10.524096,
+            "house": 10
+          },
+          "jupiter": {
+            "longitude": 164.2918735,
+            "latitude": 1.2328183,
+            "speed_longitude": -0.0463651,
+            "house_position": 7.0026373,
+            "house": 7
+          },
+          "saturn": {
+            "longitude": 307.3840017,
+            "latitude": -0.5944304,
+            "speed_longitude": 0.117303,
+            "house_position": 11.9595907,
+            "house": 11
+          },
+          "uranus": {
+            "longitude": 284.4747196,
+            "latitude": -0.3682359,
+            "speed_longitude": 0.0591895,
+            "house_position": 11.0261403,
+            "house": 11
+          },
+          "neptune": {
+            "longitude": 286.7208134,
+            "latitude": 0.7302768,
+            "speed_longitude": 0.0377337,
+            "house_position": 11.102373,
+            "house": 11
+          },
+          "pluto": {
+            "longitude": 232.4494229,
+            "latitude": 14.6470803,
+            "speed_longitude": 0.0237457,
+            "house_position": 9.0170513,
+            "house": 9
+          },
+          "true_north_node": {
+            "longitude": 279.7740048,
+            "latitude": 0.0,
+            "speed_longitude": 0.0147701,
+            "house_position": 10.8047056,
+            "house": 10
+          },
+          "lilith": {
+            "longitude": 299.1908222,
+            "latitude": 1.7715834,
+            "speed_longitude": 0.1109065,
+            "house_position": 11.5824725,
+            "house": 11
+          }
+        }
+      },
+      "tolerance": {
+        "planet_degrees": 0.01,
+        "angles_degrees": 0.05,
+        "swetest_planet_degrees": 1e-05,
+        "speed_degrees_per_day": 1e-05
+      }
+    },
+    {
+      "case_id": "synthetic_tr_standard_02",
+      "reference_source": {
+        "name": "NASA/JPL Horizons + Astrodienst public swetest",
+        "version": "Horizons API 1.2 / DE441; swetest 2.10.03 Moshier",
+        "retrieved_at": "2026-09-18T09:54:18.998603+00:00",
+        "artifacts": [
+          {
+            "artifact": "astrology_sources/horizons_sun.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%2710%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:18.998603+00:00",
+            "http_body_sha256": "f20f45af95d85a3e01a4c7ba1a3146daa37f88bdbde9111e3901102611801e0b",
+            "sha256": "f20f45af95d85a3e01a4c7ba1a3146daa37f88bdbde9111e3901102611801e0b"
+          },
+          {
+            "artifact": "astrology_sources/horizons_moon.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:20.230144+00:00",
+            "http_body_sha256": "94613d0d1bcbb88028ef11c6fd2a2efca9a49e13406442f052ed8daac53256cc",
+            "sha256": "94613d0d1bcbb88028ef11c6fd2a2efca9a49e13406442f052ed8daac53256cc"
+          },
+          {
+            "artifact": "astrology_sources/horizons_mercury.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27199%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:21.086085+00:00",
+            "http_body_sha256": "5940e1ba2b5d879701cb9ae06f1f4e1d425fce3b45ca3344893d7df2a5b46c58",
+            "sha256": "5940e1ba2b5d879701cb9ae06f1f4e1d425fce3b45ca3344893d7df2a5b46c58"
+          },
+          {
+            "artifact": "astrology_sources/horizons_jupiter.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%275%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:21.957924+00:00",
+            "http_body_sha256": "3571faa49a36e6dc357ec33f6c81491c4011e2a0b29d867d1e1d5609d747639d",
+            "sha256": "3571faa49a36e6dc357ec33f6c81491c4011e2a0b29d867d1e1d5609d747639d"
+          },
+          {
+            "artifact": "astrology_sources/swetest_synthetic_tr_standard_02.txt",
+            "url": "https://www.astro.com/cgi/swetest.cgi?arg=-b12.2.2008+-utc16%3A05%3A00+-p0123456789tA+-house35.5%2C38.7%2CP+-hsyP+-geopos35.5%2C38.7%2C0+-fPlbsj+-g%2C+-n1+-emos",
+            "retrieved_at": "2026-09-18T09:54:24.021641+00:00",
+            "http_body_sha256": "e39d684375feaafc5cada9f281fef1b76cdb10adfc33e7f979474099996f9481",
+            "extraction": "PRE text only; HTML formatting removed, numbers unchanged",
+            "sha256": "f78f8547d19f5f76d69a595a488625ad31194a2b67734571593735fa31ce9e3f"
+          }
+        ],
+        "notes": "Planet expectations: external JPL DE441, apparent geocentric IAU76/80 ecliptic-of-date (quantity 31), airless, UTC. Angles/cusps/body placement: externally executed swetest Tropical/Placidus, UTC input, Moshier; shared Swiss library, NOT independent algorithm. Modern-model differences against IAU76/80 included in 0.01-degree budget; no geometric/J2000/topocentric mixing.",
+        "field_sources": {
+          "sun_longitude": "horizons_sun",
+          "moon_longitude": "horizons_moon",
+          "planet_longitudes": "horizons",
+          "ascendant_longitude": "swetest",
+          "mc_longitude": "swetest",
+          "house_cusps": "swetest",
+          "swetest_bodies": "swetest"
+        }
+      },
+      "conventions": {
+        "zodiac": "tropical",
+        "house_system": "placidus",
+        "node_type": "true",
+        "lilith_type": "mean_black_moon",
+        "time_scale": "UTC",
+        "observer": "geocentric"
+      },
+      "expected": {
+        "sun_longitude": 323.3198079,
+        "moon_longitude": 33.844922,
+        "ascendant_longitude": 154.8828635,
+        "mc_longitude": 60.9783634,
+        "planet_longitudes": {
+          "sun": 323.3198079,
+          "moon": 33.844922,
+          "mercury": 310.9411134,
+          "jupiter": 282.32649
+        },
+        "planet_latitudes": {
+          "sun": 0.0001253,
+          "moon": 4.8322622,
+          "mercury": 3.4293584,
+          "jupiter": 0.107325
+        },
+        "house_cusps": [
+          154.8828635,
+          178.9719538,
+          207.917996,
+          240.9783634,
+          275.1222174,
+          306.8481007,
+          334.8828635,
+          358.9719538,
+          27.917996,
+          60.9783634,
+          95.1222174,
+          126.8481007
+        ],
+        "swetest_bodies": {
+          "sun": {
+            "longitude": 323.3198181,
+            "latitude": 0.0001163,
+            "speed_longitude": 1.011519,
+            "house_position": 6.5709435,
+            "house": 6
+          },
+          "moon": {
+            "longitude": 33.8450483,
+            "latitude": 4.8322065,
+            "speed_longitude": 14.1597583,
+            "house_position": 9.1687865,
+            "house": 9
+          },
+          "mercury": {
+            "longitude": 310.941117,
+            "latitude": 3.4293499,
+            "speed_longitude": -0.8212619,
+            "house_position": 6.1711758,
+            "house": 6
+          },
+          "venus": {
+            "longitude": 293.8125598,
+            "latitude": 0.1539182,
+            "speed_longitude": 1.2341857,
+            "house_position": 5.5769836,
+            "house": 5
+          },
+          "mars": {
+            "longitude": 85.0468726,
+            "latitude": 3.1566467,
+            "speed_longitude": 0.147283,
+            "house_position": 10.6772697,
+            "house": 10
+          },
+          "jupiter": {
+            "longitude": 282.3264633,
+            "latitude": 0.1073036,
+            "speed_longitude": 0.2003367,
+            "house_position": 5.2188994,
+            "house": 5
+          },
+          "saturn": {
+            "longitude": 156.0943456,
+            "latitude": 1.8222385,
+            "speed_longitude": -0.0775178,
+            "house_position": 1.0289182,
+            "house": 1
+          },
+          "uranus": {
+            "longitude": 347.232248,
+            "latitude": -0.7370075,
+            "speed_longitude": 0.0535044,
+            "house_position": 7.5305033,
+            "house": 7
+          },
+          "neptune": {
+            "longitude": 321.7766583,
+            "latitude": -0.2934606,
+            "speed_longitude": 0.038064,
+            "house_position": 6.5124745,
+            "house": 6
+          },
+          "pluto": {
+            "longitude": 270.4992543,
+            "latitude": 6.289143,
+            "speed_longitude": 0.0250984,
+            "house_position": 4.9111225,
+            "house": 4
+          },
+          "true_north_node": {
+            "longitude": 327.7320909,
+            "latitude": 0.0,
+            "speed_longitude": 0.0061067,
+            "house_position": 6.7316147,
+            "house": 6
+          },
+          "lilith": {
+            "longitude": 233.5568636,
+            "latitude": -5.1294335,
+            "speed_longitude": 0.1120532,
+            "house_position": 3.7540096,
+            "house": 3
+          }
+        }
+      },
+      "tolerance": {
+        "planet_degrees": 0.01,
+        "angles_degrees": 0.05,
+        "swetest_planet_degrees": 1e-05,
+        "speed_degrees_per_day": 1e-05
+      }
+    },
+    {
+      "case_id": "synthetic_leap_date_01",
+      "reference_source": {
+        "name": "NASA/JPL Horizons + Astrodienst public swetest",
+        "version": "Horizons API 1.2 / DE441; swetest 2.10.03 Moshier",
+        "retrieved_at": "2026-09-18T09:54:18.998603+00:00",
+        "artifacts": [
+          {
+            "artifact": "astrology_sources/horizons_sun.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%2710%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:18.998603+00:00",
+            "http_body_sha256": "f20f45af95d85a3e01a4c7ba1a3146daa37f88bdbde9111e3901102611801e0b",
+            "sha256": "f20f45af95d85a3e01a4c7ba1a3146daa37f88bdbde9111e3901102611801e0b"
+          },
+          {
+            "artifact": "astrology_sources/horizons_moon.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:20.230144+00:00",
+            "http_body_sha256": "94613d0d1bcbb88028ef11c6fd2a2efca9a49e13406442f052ed8daac53256cc",
+            "sha256": "94613d0d1bcbb88028ef11c6fd2a2efca9a49e13406442f052ed8daac53256cc"
+          },
+          {
+            "artifact": "astrology_sources/horizons_mercury.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27199%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:21.086085+00:00",
+            "http_body_sha256": "5940e1ba2b5d879701cb9ae06f1f4e1d425fce3b45ca3344893d7df2a5b46c58",
+            "sha256": "5940e1ba2b5d879701cb9ae06f1f4e1d425fce3b45ca3344893d7df2a5b46c58"
+          },
+          {
+            "artifact": "astrology_sources/horizons_jupiter.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%275%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:21.957924+00:00",
+            "http_body_sha256": "3571faa49a36e6dc357ec33f6c81491c4011e2a0b29d867d1e1d5609d747639d",
+            "sha256": "3571faa49a36e6dc357ec33f6c81491c4011e2a0b29d867d1e1d5609d747639d"
+          },
+          {
+            "artifact": "astrology_sources/swetest_synthetic_leap_date_01.txt",
+            "url": "https://www.astro.com/cgi/swetest.cgi?arg=-b29.2.1988+-utc01%3A20%3A00+-p0123456789tA+-house32.5%2C37.9%2CP+-hsyP+-geopos32.5%2C37.9%2C0+-fPlbsj+-g%2C+-n1+-emos",
+            "retrieved_at": "2026-09-18T09:54:24.415795+00:00",
+            "http_body_sha256": "c72d5c907cc421ebc131828eab7c6e1009b526f5fa44dfbb5084134873aff1a8",
+            "extraction": "PRE text only; HTML formatting removed, numbers unchanged",
+            "sha256": "7205dc5b115f6acba87bb49b10da66490d4cfdd2325d2c9b5d4762d76ccb5409"
+          }
+        ],
+        "notes": "Planet expectations: external JPL DE441, apparent geocentric IAU76/80 ecliptic-of-date (quantity 31), airless, UTC. Angles/cusps/body placement: externally executed swetest Tropical/Placidus, UTC input, Moshier; shared Swiss library, NOT independent algorithm. Modern-model differences against IAU76/80 included in 0.01-degree budget; no geometric/J2000/topocentric mixing.",
+        "field_sources": {
+          "sun_longitude": "horizons_sun",
+          "moon_longitude": "horizons_moon",
+          "planet_longitudes": "horizons",
+          "ascendant_longitude": "swetest",
+          "mc_longitude": "swetest",
+          "house_cusps": "swetest",
+          "swetest_bodies": "swetest"
+        }
+      },
+      "conventions": {
+        "zodiac": "tropical",
+        "house_system": "placidus",
+        "node_type": "true",
+        "lilith_type": "mean_black_moon",
+        "time_scale": "UTC",
+        "observer": "geocentric"
+      },
+      "expected": {
+        "sun_longitude": 339.6767182,
+        "moon_longitude": 120.5592665,
+        "ascendant_longitude": 280.3424841,
+        "mc_longitude": 212.7909268,
+        "planet_longitudes": {
+          "sun": 339.6767182,
+          "moon": 120.5592665,
+          "mercury": 314.1245837,
+          "jupiter": 28.2569399
+        },
+        "planet_latitudes": {
+          "sun": 0.0002033,
+          "moon": 4.1893948,
+          "mercury": 0.9617255,
+          "jupiter": -1.0423693
+        },
+        "house_cusps": [
+          280.3424841,
+          320.3156103,
+          0.7188718,
+          32.7909268,
+          57.495452,
+          78.7287867,
+          100.3424841,
+          140.3156103,
+          180.7188718,
+          212.7909268,
+          237.495452,
+          258.7287867
+        ],
+        "swetest_bodies": {
+          "sun": {
+            "longitude": 339.6767345,
+            "latitude": 0.0001964,
+            "speed_longitude": 1.0038895,
+            "house_position": 2.4614812,
+            "house": 2
+          },
+          "moon": {
+            "longitude": 120.5595572,
+            "latitude": 4.1893488,
+            "speed_longitude": 11.8550592,
+            "house_position": 7.6404238,
+            "house": 7
+          },
+          "mercury": {
+            "longitude": 314.1246009,
+            "latitude": 0.961716,
+            "speed_longitude": 0.5120716,
+            "house_position": 1.8283516,
+            "house": 1
+          },
+          "venus": {
+            "longitude": 22.7758067,
+            "latitude": 0.7142366,
+            "speed_longitude": 1.1430214,
+            "house_position": 3.6440857,
+            "house": 3
+          },
+          "mars": {
+            "longitude": 274.4670601,
+            "latitude": -0.2666867,
+            "speed_longitude": 0.6742333,
+            "house_position": 12.7521146,
+            "house": 12
+          },
+          "jupiter": {
+            "longitude": 28.2569507,
+            "latitude": -1.0423458,
+            "speed_longitude": 0.1968663,
+            "house_position": 3.8555024,
+            "house": 3
+          },
+          "saturn": {
+            "longitude": 271.1321119,
+            "latitude": 1.1203078,
+            "speed_longitude": 0.0655029,
+            "house_position": 12.5491401,
+            "house": 12
+          },
+          "uranus": {
+            "longitude": 270.4977763,
+            "latitude": -0.1807333,
+            "speed_longitude": 0.030212,
+            "house_position": 12.5661976,
+            "house": 12
+          },
+          "neptune": {
+            "longitude": 279.7025099,
+            "latitude": 0.964251,
+            "speed_longitude": 0.0225336,
+            "house_position": 12.9307633,
+            "house": 12
+          },
+          "pluto": {
+            "longitude": 222.5226128,
+            "latitude": 16.3564041,
+            "speed_longitude": -0.0084652,
+            "house_position": 10.4802,
+            "house": 10
+          },
+          "true_north_node": {
+            "longitude": 353.1377804,
+            "latitude": 0.0,
+            "speed_longitude": -0.0365595,
+            "house_position": 2.7988083,
+            "house": 2
+          },
+          "lilith": {
+            "longitude": 141.7003232,
+            "latitude": 2.7578336,
+            "speed_longitude": 0.1111254,
+            "house_position": 8.1021223,
+            "house": 8
+          }
+        }
+      },
+      "tolerance": {
+        "planet_degrees": 0.01,
+        "angles_degrees": 0.05,
+        "swetest_planet_degrees": 1e-05,
+        "speed_degrees_per_day": 1e-05
+      }
+    },
+    {
+      "case_id": "synthetic_tr_permanent_utc3_01",
+      "reference_source": {
+        "name": "NASA/JPL Horizons + Astrodienst public swetest",
+        "version": "Horizons API 1.2 / DE441; swetest 2.10.03 Moshier",
+        "retrieved_at": "2026-09-18T09:54:18.998603+00:00",
+        "artifacts": [
+          {
+            "artifact": "astrology_sources/horizons_sun.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%2710%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:18.998603+00:00",
+            "http_body_sha256": "f20f45af95d85a3e01a4c7ba1a3146daa37f88bdbde9111e3901102611801e0b",
+            "sha256": "f20f45af95d85a3e01a4c7ba1a3146daa37f88bdbde9111e3901102611801e0b"
+          },
+          {
+            "artifact": "astrology_sources/horizons_moon.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:20.230144+00:00",
+            "http_body_sha256": "94613d0d1bcbb88028ef11c6fd2a2efca9a49e13406442f052ed8daac53256cc",
+            "sha256": "94613d0d1bcbb88028ef11c6fd2a2efca9a49e13406442f052ed8daac53256cc"
+          },
+          {
+            "artifact": "astrology_sources/horizons_mercury.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27199%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:21.086085+00:00",
+            "http_body_sha256": "5940e1ba2b5d879701cb9ae06f1f4e1d425fce3b45ca3344893d7df2a5b46c58",
+            "sha256": "5940e1ba2b5d879701cb9ae06f1f4e1d425fce3b45ca3344893d7df2a5b46c58"
+          },
+          {
+            "artifact": "astrology_sources/horizons_jupiter.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%275%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:21.957924+00:00",
+            "http_body_sha256": "3571faa49a36e6dc357ec33f6c81491c4011e2a0b29d867d1e1d5609d747639d",
+            "sha256": "3571faa49a36e6dc357ec33f6c81491c4011e2a0b29d867d1e1d5609d747639d"
+          },
+          {
+            "artifact": "astrology_sources/swetest_synthetic_tr_permanent_utc3_01.txt",
+            "url": "https://www.astro.com/cgi/swetest.cgi?arg=-b11.12.2019+-utc08%3A50%3A00+-p0123456789tA+-house32.8%2C39.9%2CP+-hsyP+-geopos32.8%2C39.9%2C0+-fPlbsj+-g%2C+-n1+-emos",
+            "retrieved_at": "2026-09-18T09:54:24.802389+00:00",
+            "http_body_sha256": "ecf4b3aa01fe5fe1c73ff7a65d5478e53241a1a28c5d3042330a6c9bb3191396",
+            "extraction": "PRE text only; HTML formatting removed, numbers unchanged",
+            "sha256": "4c08c50a8bea419f317da642f25cd6e9f442851a0c9124be9b2b7e56223335d3"
+          }
+        ],
+        "notes": "Planet expectations: external JPL DE441, apparent geocentric IAU76/80 ecliptic-of-date (quantity 31), airless, UTC. Angles/cusps/body placement: externally executed swetest Tropical/Placidus, UTC input, Moshier; shared Swiss library, NOT independent algorithm. Modern-model differences against IAU76/80 included in 0.01-degree budget; no geometric/J2000/topocentric mixing.",
+        "field_sources": {
+          "sun_longitude": "horizons_sun",
+          "moon_longitude": "horizons_moon",
+          "planet_longitudes": "horizons",
+          "ascendant_longitude": "swetest",
+          "mc_longitude": "swetest",
+          "house_cusps": "swetest",
+          "swetest_bodies": "swetest"
+        }
+      },
+      "conventions": {
+        "zodiac": "tropical",
+        "house_system": "placidus",
+        "node_type": "true",
+        "lilith_type": "mean_black_moon",
+        "time_scale": "UTC",
+        "observer": "geocentric"
+      },
+      "expected": {
+        "sun_longitude": 258.9999063,
+        "moon_longitude": 68.6771559,
+        "ascendant_longitude": 319.8535245,
+        "mc_longitude": 246.9130735,
+        "planet_longitudes": {
+          "sun": 258.9999063,
+          "moon": 68.6771559,
+          "mercury": 242.8544962,
+          "jupiter": 271.9352262
+        },
+        "planet_latitudes": {
+          "sun": -6.64e-05,
+          "moon": -2.6094922,
+          "mercury": 1.0442854,
+          "jupiter": 0.1214289
+        },
+        "house_cusps": [
+          319.8535245,
+          7.2911376,
+          41.9649689,
+          66.9130735,
+          88.1663641,
+          110.328528,
+          139.8535245,
+          187.2911376,
+          221.9649689,
+          246.9130735,
+          268.1663641,
+          290.328528
+        ],
+        "swetest_bodies": {
+          "sun": {
+            "longitude": 258.999933,
+            "latitude": -6.76e-05,
+            "speed_longitude": 1.0160412,
+            "house_position": 10.5614813,
+            "house": 10
+          },
+          "moon": {
+            "longitude": 68.6770754,
+            "latitude": -2.6096049,
+            "speed_longitude": 13.0649559,
+            "house_position": 4.0944846,
+            "house": 4
+          },
+          "mercury": {
+            "longitude": 242.8545212,
+            "latitude": 1.0442844,
+            "speed_longitude": 1.4654898,
+            "house_position": 9.8320447,
+            "house": 9
+          },
+          "venus": {
+            "longitude": 289.0036639,
+            "latitude": -1.7179634,
+            "speed_longitude": 1.2357655,
+            "house_position": 12.0077121,
+            "house": 12
+          },
+          "mars": {
+            "longitude": 224.5831553,
+            "latitude": 0.5486349,
+            "speed_longitude": 0.6651187,
+            "house_position": 9.1052804,
+            "house": 9
+          },
+          "jupiter": {
+            "longitude": 271.93523,
+            "latitude": 0.1214035,
+            "speed_longitude": 0.226916,
+            "house_position": 11.1768802,
+            "house": 11
+          },
+          "saturn": {
+            "longitude": 289.0622245,
+            "latitude": 0.0773304,
+            "speed_longitude": 0.1077716,
+            "house_position": 11.9449241,
+            "house": 11
+          },
+          "uranus": {
+            "longitude": 33.0455109,
+            "latitude": -0.5038169,
+            "speed_longitude": -0.0247608,
+            "house_position": 2.7177119,
+            "house": 2
+          },
+          "neptune": {
+            "longitude": 345.9812483,
+            "latitude": -1.0352663,
+            "speed_longitude": 0.0079877,
+            "house_position": 1.5617256,
+            "house": 1
+          },
+          "pluto": {
+            "longitude": 291.7386874,
+            "latitude": -0.624569,
+            "speed_longitude": 0.0292242,
+            "house_position": 12.0807886,
+            "house": 12
+          },
+          "true_north_node": {
+            "longitude": 98.4279274,
+            "latitude": 0.0,
+            "speed_longitude": -0.0392829,
+            "house_position": 5.4815611,
+            "house": 5
+          },
+          "lilith": {
+            "longitude": 354.7402085,
+            "latitude": -4.9802952,
+            "speed_longitude": 0.1120125,
+            "house_position": 1.8685621,
+            "house": 1
+          }
+        }
+      },
+      "tolerance": {
+        "planet_degrees": 0.01,
+        "angles_degrees": 0.05,
+        "swetest_planet_degrees": 1e-05,
+        "speed_degrees_per_day": 1e-05
+      }
+    },
+    {
+      "case_id": "synthetic_leap_date_02",
+      "reference_source": {
+        "name": "NASA/JPL Horizons + Astrodienst public swetest",
+        "version": "Horizons API 1.2 / DE441; swetest 2.10.03 Moshier",
+        "retrieved_at": "2026-09-18T09:54:18.998603+00:00",
+        "artifacts": [
+          {
+            "artifact": "astrology_sources/horizons_sun.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%2710%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:18.998603+00:00",
+            "http_body_sha256": "f20f45af95d85a3e01a4c7ba1a3146daa37f88bdbde9111e3901102611801e0b",
+            "sha256": "f20f45af95d85a3e01a4c7ba1a3146daa37f88bdbde9111e3901102611801e0b"
+          },
+          {
+            "artifact": "astrology_sources/horizons_moon.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:20.230144+00:00",
+            "http_body_sha256": "94613d0d1bcbb88028ef11c6fd2a2efca9a49e13406442f052ed8daac53256cc",
+            "sha256": "94613d0d1bcbb88028ef11c6fd2a2efca9a49e13406442f052ed8daac53256cc"
+          },
+          {
+            "artifact": "astrology_sources/horizons_mercury.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27199%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:21.086085+00:00",
+            "http_body_sha256": "5940e1ba2b5d879701cb9ae06f1f4e1d425fce3b45ca3344893d7df2a5b46c58",
+            "sha256": "5940e1ba2b5d879701cb9ae06f1f4e1d425fce3b45ca3344893d7df2a5b46c58"
+          },
+          {
+            "artifact": "astrology_sources/horizons_jupiter.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%275%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:21.957924+00:00",
+            "http_body_sha256": "3571faa49a36e6dc357ec33f6c81491c4011e2a0b29d867d1e1d5609d747639d",
+            "sha256": "3571faa49a36e6dc357ec33f6c81491c4011e2a0b29d867d1e1d5609d747639d"
+          },
+          {
+            "artifact": "astrology_sources/swetest_synthetic_leap_date_02.txt",
+            "url": "https://www.astro.com/cgi/swetest.cgi?arg=-b29.2.2024+-utc13%3A10%3A00+-p0123456789tA+-house35.5%2C38.7%2CP+-hsyP+-geopos35.5%2C38.7%2C0+-fPlbsj+-g%2C+-n1+-emos",
+            "retrieved_at": "2026-09-18T09:54:25.215382+00:00",
+            "http_body_sha256": "0342f84cfb1425314e45ea804f6d619b4375c241d53c53887d5a068a15c4bd41",
+            "extraction": "PRE text only; HTML formatting removed, numbers unchanged",
+            "sha256": "74c74bb32a40c78aad557c5e6783d236348bd9769aebdd1f632b98b8890b7260"
+          }
+        ],
+        "notes": "Planet expectations: external JPL DE441, apparent geocentric IAU76/80 ecliptic-of-date (quantity 31), airless, UTC. Angles/cusps/body placement: externally executed swetest Tropical/Placidus, UTC input, Moshier; shared Swiss library, NOT independent algorithm. Modern-model differences against IAU76/80 included in 0.01-degree budget; no geometric/J2000/topocentric mixing.",
+        "field_sources": {
+          "sun_longitude": "horizons_sun",
+          "moon_longitude": "horizons_moon",
+          "planet_longitudes": "horizons",
+          "ascendant_longitude": "swetest",
+          "mc_longitude": "swetest",
+          "house_cusps": "swetest",
+          "swetest_bodies": "swetest"
+        }
+      },
+      "conventions": {
+        "zodiac": "tropical",
+        "house_system": "placidus",
+        "node_type": "true",
+        "lilith_type": "mean_black_moon",
+        "time_scale": "UTC",
+        "observer": "geocentric"
+      },
+      "expected": {
+        "sun_longitude": 340.4364155,
+        "moon_longitude": 215.0182657,
+        "ascendant_longitude": 133.3809544,
+        "mc_longitude": 34.0978242,
+        "planet_longitudes": {
+          "sun": 340.4364155,
+          "moon": 215.0182657,
+          "mercury": 341.4718387,
+          "jupiter": 41.2373466
+        },
+        "planet_latitudes": {
+          "sun": -8.97e-05,
+          "moon": -1.7035696,
+          "mercury": -1.7386321,
+          "jupiter": -0.916182
+        },
+        "house_cusps": [
+          133.3809544,
+          155.2122678,
+          181.8030025,
+          214.0978242,
+          249.7669574,
+          283.7369632,
+          313.3809544,
+          335.2122678,
+          1.8030025,
+          34.0978242,
+          69.7669574,
+          103.7369632
+        ],
+        "swetest_bodies": {
+          "sun": {
+            "longitude": 340.4364238,
+            "latitude": -0.0001014,
+            "speed_longitude": 1.0037986,
+            "house_position": 8.2138635,
+            "house": 8
+          },
+          "moon": {
+            "longitude": 215.0184489,
+            "latitude": -1.7034221,
+            "speed_longitude": 12.0618602,
+            "house_position": 4.0088205,
+            "house": 4
+          },
+          "mercury": {
+            "longitude": 341.4718488,
+            "latitude": -1.7386423,
+            "speed_longitude": 1.8857679,
+            "house_position": 8.2515153,
+            "house": 8
+          },
+          "venus": {
+            "longitude": 315.9342928,
+            "latitude": -0.6864689,
+            "speed_longitude": 1.2377836,
+            "house_position": 7.1119791,
+            "house": 7
+          },
+          "mars": {
+            "longitude": 312.5676489,
+            "latitude": -1.0601801,
+            "speed_longitude": 0.7742129,
+            "house_position": 6.9533171,
+            "house": 6
+          },
+          "jupiter": {
+            "longitude": 41.2374038,
+            "latitude": -0.9161653,
+            "speed_longitude": 0.169764,
+            "house_position": 10.213797,
+            "house": 10
+          },
+          "saturn": {
+            "longitude": 339.8580726,
+            "latitude": -1.6211523,
+            "speed_longitude": 0.1221201,
+            "house_position": 8.1859812,
+            "house": 8
+          },
+          "uranus": {
+            "longitude": 49.566466,
+            "latitude": -0.2830092,
+            "speed_longitude": 0.0280745,
+            "house_position": 10.4407241,
+            "house": 10
+          },
+          "neptune": {
+            "longitude": 356.7239159,
+            "latitude": -1.2162394,
+            "speed_longitude": 0.0366839,
+            "house_position": 8.8291523,
+            "house": 8
+          },
+          "pluto": {
+            "longitude": 301.2040613,
+            "latitude": -2.8632595,
+            "speed_longitude": 0.026501,
+            "house_position": 6.5263946,
+            "house": 6
+          },
+          "true_north_node": {
+            "longitude": 15.9939753,
+            "latitude": 0.0,
+            "speed_longitude": 0.0277443,
+            "house_position": 9.4600149,
+            "house": 9
+          },
+          "lilith": {
+            "longitude": 166.5954455,
+            "latitude": 2.665201,
+            "speed_longitude": 0.1110749,
+            "house_position": 2.4547656,
+            "house": 2
+          }
+        }
+      },
+      "tolerance": {
+        "planet_degrees": 0.01,
+        "angles_degrees": 0.05,
+        "swetest_planet_degrees": 1e-05,
+        "speed_degrees_per_day": 1e-05
+      }
+    },
+    {
+      "case_id": "synthetic_us_winter_01",
+      "reference_source": {
+        "name": "NASA/JPL Horizons + Astrodienst public swetest",
+        "version": "Horizons API 1.2 / DE441; swetest 2.10.03 Moshier",
+        "retrieved_at": "2026-09-18T09:54:18.998603+00:00",
+        "artifacts": [
+          {
+            "artifact": "astrology_sources/horizons_sun.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%2710%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:18.998603+00:00",
+            "http_body_sha256": "f20f45af95d85a3e01a4c7ba1a3146daa37f88bdbde9111e3901102611801e0b",
+            "sha256": "f20f45af95d85a3e01a4c7ba1a3146daa37f88bdbde9111e3901102611801e0b"
+          },
+          {
+            "artifact": "astrology_sources/horizons_moon.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:20.230144+00:00",
+            "http_body_sha256": "94613d0d1bcbb88028ef11c6fd2a2efca9a49e13406442f052ed8daac53256cc",
+            "sha256": "94613d0d1bcbb88028ef11c6fd2a2efca9a49e13406442f052ed8daac53256cc"
+          },
+          {
+            "artifact": "astrology_sources/horizons_mercury.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27199%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:21.086085+00:00",
+            "http_body_sha256": "5940e1ba2b5d879701cb9ae06f1f4e1d425fce3b45ca3344893d7df2a5b46c58",
+            "sha256": "5940e1ba2b5d879701cb9ae06f1f4e1d425fce3b45ca3344893d7df2a5b46c58"
+          },
+          {
+            "artifact": "astrology_sources/horizons_jupiter.json",
+            "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%275%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272450640.6770833335%2C2453173.9756944445%2C2456163.3159722220%2C2448635.8229166665%2C2454509.1701388890%2C2447220.5555555555%2C2458828.8680555555%2C2460370.0486111110%2C2459598.9444444445%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+            "retrieved_at": "2026-09-18T09:54:21.957924+00:00",
+            "http_body_sha256": "3571faa49a36e6dc357ec33f6c81491c4011e2a0b29d867d1e1d5609d747639d",
+            "sha256": "3571faa49a36e6dc357ec33f6c81491c4011e2a0b29d867d1e1d5609d747639d"
+          },
+          {
+            "artifact": "astrology_sources/swetest_synthetic_us_winter_01.txt",
+            "url": "https://www.astro.com/cgi/swetest.cgi?arg=-b19.1.2022+-utc10%3A40%3A00+-p0123456789tA+-house-74.0%2C40.7%2CP+-hsyP+-geopos-74.0%2C40.7%2C0+-fPlbsj+-g%2C+-n1+-emos",
+            "retrieved_at": "2026-09-18T09:54:25.600642+00:00",
+            "http_body_sha256": "e6c155caa0f76ea877f033dbff59aedf8a9edded10e0658552074118fee1d354",
+            "extraction": "PRE text only; HTML formatting removed, numbers unchanged",
+            "sha256": "fc37a1aae8a73be434e0331b8ff7340c05851c044251e0269e211986bdc94e99"
+          }
+        ],
+        "notes": "Planet expectations: external JPL DE441, apparent geocentric IAU76/80 ecliptic-of-date (quantity 31), airless, UTC. Angles/cusps/body placement: externally executed swetest Tropical/Placidus, UTC input, Moshier; shared Swiss library, NOT independent algorithm. Modern-model differences against IAU76/80 included in 0.01-degree budget; no geometric/J2000/topocentric mixing.",
+        "field_sources": {
+          "sun_longitude": "horizons_sun",
+          "moon_longitude": "horizons_moon",
+          "planet_longitudes": "horizons",
+          "ascendant_longitude": "swetest",
+          "mc_longitude": "swetest",
+          "house_cusps": "swetest",
+          "swetest_bodies": "swetest"
+        }
+      },
+      "conventions": {
+        "zodiac": "tropical",
+        "house_system": "placidus",
+        "node_type": "true",
+        "lilith_type": "mean_black_moon",
+        "time_scale": "UTC",
+        "observer": "geocentric"
+      },
+      "expected": {
+        "sun_longitude": 299.3222249,
+        "moon_longitude": 135.7127971,
+        "ascendant_longitude": 272.700229,
+        "mc_longitude": 206.736886,
+        "planet_longitudes": {
+          "sun": 299.3222249,
+          "moon": 135.7127971,
+          "mercury": 307.9753151,
+          "jupiter": 334.3847088
+        },
+        "planet_latitudes": {
+          "sun": 9.76e-05,
+          "moon": 4.910054,
+          "mercury": 2.4149844,
+          "jupiter": -0.9788672
+        },
+        "house_cusps": [
+          272.700229,
+          312.0666553,
+          353.5411042,
+          26.736886,
+          51.7498257,
+          72.504571,
+          92.700229,
+          132.0666553,
+          173.5411042,
+          206.736886,
+          231.7498257,
+          252.504571
+        ],
+        "swetest_bodies": {
+          "sun": {
+            "longitude": 299.3222462,
+            "latitude": 7.89e-05,
+            "speed_longitude": 1.0176295,
+            "house_position": 1.6968301,
+            "house": 1
+          },
+          "moon": {
+            "longitude": 135.7127549,
+            "latitude": 4.9098648,
+            "speed_longitude": 12.4270476,
+            "house_position": 8.2101706,
+            "house": 8
+          },
+          "mercury": {
+            "longitude": 307.9753306,
+            "latitude": 2.4149615,
+            "speed_longitude": -0.9242122,
+            "house_position": 1.8392969,
+            "house": 1
+          },
+          "venus": {
+            "longitude": 283.1047776,
+            "latitude": 6.4833779,
+            "speed_longitude": -0.4018987,
+            "house_position": 1.096841,
+            "house": 1
+          },
+          "mars": {
+            "longitude": 266.3145013,
+            "latitude": -0.3411365,
+            "speed_longitude": 0.7221471,
+            "house_position": 12.7070858,
+            "house": 12
+          },
+          "jupiter": {
+            "longitude": 334.3847132,
+            "latitude": -0.978877,
+            "speed_longitude": 0.2192124,
+            "house_position": 2.5464671,
+            "house": 2
+          },
+          "saturn": {
+            "longitude": 313.9926202,
+            "latitude": -0.8352359,
+            "speed_longitude": 0.1173006,
+            "house_position": 2.0666646,
+            "house": 2
+          },
+          "uranus": {
+            "longitude": 40.8186917,
+            "latitude": -0.396515,
+            "speed_longitude": 0.0006908,
+            "house_position": 4.534708,
+            "house": 4
+          },
+          "neptune": {
+            "longitude": 351.0719608,
+            "latitude": -1.1268471,
+            "speed_longitude": 0.0261044,
+            "house_position": 2.9601679,
+            "house": 2
+          },
+          "pluto": {
+            "longitude": 296.5391385,
+            "latitude": -1.7528519,
+            "speed_longitude": 0.0330185,
+            "house_position": 1.6776206,
+            "house": 1
+          },
+          "true_north_node": {
+            "longitude": 59.8789408,
+            "latitude": 0.0,
+            "speed_longitude": -0.1902767,
+            "house_position": 5.3773844,
+            "house": 5
+          },
+          "lilith": {
+            "longitude": 80.5066176,
+            "latitude": 1.92799,
+            "speed_longitude": 0.1109363,
+            "house_position": 6.4745811,
+            "house": 6
+          }
+        }
+      },
+      "tolerance": {
+        "planet_degrees": 0.01,
+        "angles_degrees": 0.05,
+        "swetest_planet_degrees": 1e-05,
+        "speed_degrees_per_day": 1e-05
+      }
+    }
+  ],
+  "record_template": {
+    "case_id": null,
+    "reference_source": {
+      "name": null,
+      "version": null,
+      "retrieved_at": null,
+      "notes": null
+    },
+    "conventions": {
+      "zodiac": null,
+      "house_system": null,
+      "node_type": null
+    },
+    "expected": {
+      "sun_longitude": null,
+      "moon_longitude": null,
+      "ascendant_longitude": null,
+      "mc_longitude": null
+    },
+    "tolerance": {
+      "planet_degrees": 0.01,
+      "angles_degrees": 0.05
+    }
+  },
+  "policy": "Null template values are not test expectations. Add a record only after an independent reference is documented."
+}
