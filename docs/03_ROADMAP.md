@@ -21,7 +21,7 @@ flowchart LR
 - [x] Stage 5 — Historical timezone
 - [x] Stage 6 — Astrology calculation engine
 - [x] Stage 7 — Astrology verification (scope: [[astrology-verification]])
-- [ ] Stage 8 — Numerology
+- [x] Stage 8 — Numerology ([[numerology]])
 - [ ] Stage 9 — Human Design
 - [ ] Stage 10 — Unified Life Code model
 - [ ] Stage 11 — AI interpretation

@@ -134,3 +134,18 @@ Browser-facing API URL remains `http://localhost:8000`; CORS policy is unchanged
 needed for fictional provider mocks. Refresh external JPL/swetest evidence with provenance rather
 than copying engine outputs. Public baselines must include only the synthetic tracked tree and no
 prior private Git history.
+
+## ADR-014 — Deterministic Pythagorean Numerology Convention
+
+**Status:** Accepted
+**Context:** Symbolic numerology has multiple conventions; Stage 8 needs reproducible explicit rules.
+**Decision:** Use the A–Z Pythagorean table in [[numerology]], Turkish letter normalization and AEIOU
+vowels; Y is consonant. Life Path sums every date digit without component reduction. Birthday starts
+from day-of-month. Expression sums all letters; Soul Urge vowels; Personality consonants (empty
+partitions are null). Maturity sums reduced Life Path and Expression values. Core reduction preserves
+11/22/33 at every step. Personal Year sums month/day/explicit target-year digits and reduces to 1–9
+without masters. Null target year means null personal year; no implicit current year.
+**Reason:** Keep results deterministic and auditable without inference, AI or interpretation.
+**Consequences:** Pure service has no clock/I/O; shared future-birth-date rule is applied at API admission
+with an injectable clock. Unsupported alphabets are rejected. Names never appear in responses/logs
+or persistence. Only synthetic golden vectors; no dependency additions or Stage 9 work.

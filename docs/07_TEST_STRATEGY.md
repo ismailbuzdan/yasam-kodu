@@ -7,11 +7,15 @@ tags:
 
 ## Backend
 
-467 tests cover health, birth-profile validation, location resolution, historical timezone behavior,
+584 tests (467 existing plus 117 numerology) cover health, birth-profile validation, location resolution, historical timezone behavior,
 fixture-integrity boundaries and Stages 6–7 astrology. Original tests remain; the old empty-reference
 guard now checks provenance. Astrology includes invariants, error boundaries, threaded repeatability,
 real Swiss smoke tests and offline external-reference regression; see [[astrology-verification]].
 Run `pytest` and `pip check` for backend changes.
+
+Stage 8 tests in `tests/test_numerology.py` use hand-calculated synthetic golden vectors, normalization
+and reducer boundaries, API validation/privacy, expression partition invariants and exact repeatability.
+The API validation clock is overridden explicitly; no current-year default is permitted. See [[numerology]].
 
 ## Frontend
 

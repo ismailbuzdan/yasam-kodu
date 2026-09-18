@@ -16,7 +16,7 @@ flowchart LR
   B --> C[COMPLETED: Geocoding]
   C --> D[COMPLETED: Historical Timezone]
   D --> E[COMPLETED: Astrology Engine and Stage 7 verification]
-  D --> F[PLANNED: Numerology Engine]
+  A --> F[COMPLETED: Numerology Engine - name and calendar date]
   D --> G[PLANNED: Human Design Engine]
   E --> H[PLANNED: Unified Life Code]
   F --> H
@@ -32,6 +32,7 @@ flowchart LR
 | Geocoding | Nominatim through backend service | completed |
 | Timezone | timezonefinder, zoneinfo, tzdata | completed |
 | Astrology | Swiss Ephemeris 2.10.03 / pyswisseph 2.10.3.2 | Stages 6–7 completed; scope: [[astrology-verification]] |
+| Numerology | Pure Python / Pydantic, Pythagorean convention | Stage 8 completed; [[numerology]] |
 | Database | PostgreSQL | planned |
 | AI | provider abstraction, Gemini/OpenAI candidates | planned |
 | PDF | shared report JSON source | planned |
@@ -39,6 +40,8 @@ flowchart LR
 Frontend never calls a geocoding provider directly. The timezone layer takes resolved coordinates
 and exact local time; the astrology service receives its UTC result and must not repeat
 timezone resolution.
+Numerology consumes name and calendar birth date directly, with an optional explicit target year;
+it has no dependency on coordinates, geocoding or timezone resolution.
 
 ## Stage 6 Swiss Ephemeris licensing
 

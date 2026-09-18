@@ -7,6 +7,16 @@ tags:
 
 Current delivery state: [[04_CURRENT_STATE]]. Milestone sequence: [[03_ROADMAP]].
 
+## 2026-09-18 — Stage 8 deterministic numerology
+
+- Added pure Pythagorean numerology service, request/response models and `/api/v1/numerology/calculate`.
+- Defined Turkish normalization, AEIOU/Y policy, master reductions and explicit nullable target year.
+- Shared the existing future-birth-date validation rule; numerology API uses an injectable admission clock.
+- Added 117 synthetic unit/API tests; all 584 Docker backend tests pass, pip check clean.
+- Documented formulas, privacy and limitations in [[numerology]] and ADR-014.
+- Frontend, astrology/timezone algorithms and reference fixtures unchanged; no new dependencies.
+- Stage 9 — Human Design is next and has not started. Sanitized-baseline fixture policy is preserved.
+
 ## 2026-09-18 — Synthetic fixture privacy migration
 
 - Replaced nine historical birth cases with synthetic calendar/season examples and coarse coordinates.

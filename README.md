@@ -6,6 +6,8 @@ birleştirmeyi amaçlayan web uygulamasıdır. Mevcut sürüm frontend, profil d
 tarihsel timezone ve deterministik astroloji backend'ini içerir. Stage 7 dış referans doğrulamasının
 kapsamı ve sonuçları [Astrology Verification](docs/astrology-verification.md) belgesindedir.
 AI yorum, kullanıcı hesabı, ödeme, veritabanı veya PDF üretimi içermez.
+Stage 8 deterministik numeroloji backend'i: `POST /api/v1/numerology/calculate`.
+Kesin hesap kuralları, gizlilik ve örnekler: [Numerology](docs/numerology.md).
 
 ## Project Memory
 

@@ -2,6 +2,7 @@ from datetime import date, time
 from enum import StrEnum
 
 from pydantic import BaseModel, ConfigDict, Field, field_serializer, field_validator
+from app.core.birth_date_validation import validate_birth_date
 
 
 class TimeAccuracy(StrEnum):
@@ -29,9 +30,7 @@ class BirthProfile(BaseModel):
     @field_validator("birth_date")
     @classmethod
     def birth_date_cannot_be_in_the_future(cls, value: date) -> date:
-        if value > date.today():
-            raise ValueError("Doğum tarihi gelecekte olamaz.")
-        return value
+        return validate_birth_date(value, today=date.today())
 
     @field_validator("district", mode="before")
     @classmethod

@@ -8,6 +8,17 @@ tags:
 This is a summary; code schemas are the contract source. Planned endpoints are not implemented.
 Related boundaries and ownership: [[02_ARCHITECTURE]] and [[05_DECISIONS]].
 
+## `POST /api/v1/numerology/calculate`
+
+**Purpose:** deterministic Pythagorean numerology under [[numerology]] conventions.
+**Input:** `full_name` (strict string, 1–200 characters), `birth_date` (YYYY-MM-DD, not future),
+optional `target_year` (strict integer 1–9999 or null; no implicit current year).
+**Output:** metadata plus `life_path`, `birthday`, `expression`, nullable `soul_urge` and `personality`,
+`maturity`, nullable `personal_year`. Each number has `raw_sum`, `value`, `is_master`.
+Name/normalized name and date are never echoed. Missing target year gives null personal year.
+**Important errors:** HTTP 422 `invalid_name`, `unsupported_name_characters`, `invalid_birth_date`,
+`invalid_target_year`, `invalid_request`; envelope `detail.code/message`, with no submitted input.
+
 ## `GET /health`
 
 **Purpose:** service health check.
