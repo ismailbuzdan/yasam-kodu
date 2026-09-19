@@ -6,15 +6,16 @@ tags:
 
 # Stage 9A Human Design verification record
 
-**Status:** Research evidence only; no accepted golden expectations.  
+**Status:** Stage 9A.2 accepted project conventions and scoped behavioral golden references.
 **Reviewed:** 2026-09-19.  
-**Decision boundary:** ADR-015 remains Proposed; Stage 9A is incomplete and Stage 9B is not ready.
+**Decision boundary:** ADR-015 Accepted; Stage 9A complete, Stage 9B ready but not started.
 
 This record continues the existing Stage 9A work. It does not implement a production calculator.
 The original cases are synthetic UTC timestamps without names or locations. New official form
 captures disclose the generic UTC-transport city, not a person's birthplace.
-Sections before "Stage 9A.1 continuation" preserve the earlier baseline assessment; consult the
-continuation section for current node, official-chart, coverage and acceptance status.
+Sections before "Stage 9A.2 final qualification" preserve historical assessments at their recorded
+stage. Their Proposed/empty/unresolved statements are superseded by the final qualification section;
+raw evidence and recorded empirical limitations are not superseded or rewritten.
 
 ## Evidence inventory and quality
 
@@ -433,3 +434,125 @@ docker compose exec backend python tools/inspect_human_design_official.py
 The last command re-derives the offline comparison; it writes no evidence.
 The explicit network diagnostic `tools/search_human_design_candidates.py --compare-official`
 prints a fresh candidate run; never redirect it over preserved raw artifacts.
+
+## Stage 9A.2 final qualification — 2026-09-19
+
+Repository gate: clean `stage9a-wip`, HEAD = origin =
+`61c1e3c37db523b9ef99b3305a0b7a7de01c7a3c`. This is an acceptance review of existing
+evidence, not a new web search or chart collection. All 68 raw artifacts, their manifest hashes,
+the original 12 candidates, and the 9A.1 comparison outputs remain unchanged.
+
+**Decision: Stage 9A complete; Stage 9B ready, not started. ADR-015 Accepted.**
+The question is whether a developer has deterministic, defensible rules, not whether proprietary
+official implementation details can be reproduced. Unknown official internals remain UNVERIFIED.
+They are not necessary for the explicitly bounded reference class adopted here.
+
+### Frozen rules and evidence status
+
+In this table RESOLVED refers to the PROJECT implementation decision. Empirical claims remain
+limited to their stated precision. No undocumented choice is relabeled an official-system fact.
+
+| Choice | Project status | Basis / residual empirical limitation |
+| --- | --- | --- |
+| Previous 88.0° solar arc | RESOLVED | original-system public rule; shared Swiss residual check, not independent astronomy |
+| Gate 41 anchor = 302° | RESOLVED | official minute bracket/annual ingress plus consistent technical layout; exact official numerical specification PARTIALLY VERIFIED |
+| Gate width = 45/8° | RESOLVED | equal 64-part project wheel, corroborated layout and sampled official behavior |
+| Line width = 15/16° | RESOLVED | six equal subdivisions per gate; sampled official behavior, not all official endpoints observed |
+| 64-gate sequence | RESOLVED | freeze the complete sequence in human-design.md and convention fixture; technical corroboration, not votes |
+| Equality [start,end) | RESOLVED | project deterministic tie-break; exact official equality ownership UNRESOLVED, no observed contradiction |
+| True Node | RESOLVED | all 46 discriminating N/S observations favor Swiss TRUE_NODE; proprietary algorithm/version UNVERIFIED |
+| Gate→Center / 36 channels | RESOLVED | freeze documented complete tables, two-source agreement plus graph/official behavioral checks |
+| Motor→Throat / Type | RESOLVED | continuous defined-channel path; Sacral is a motor; all five Types represented |
+| Authority | RESOLVED | explicit priority and path rules, rare official charts plus structural splenic and priority probes |
+| Definition | RESOLVED | connected components 0–4, never channel count |
+| Profile | RESOLVED | Personality Sun line / Design Sun line; exactly 12 allowed pairs |
+| Astronomy / solver / range | RESOLVED | pinned Swiss/Moshier, UTC→UT1, 80–100 day bracket, midpoint/both tolerances; 1800–2100 birth years |
+| Second chart / rare coverage | RESOLVED | separate official behavioral pipeline plus sufficient focused structural coverage |
+
+Official behavior supports the boundary location; exact equality ownership is a project-defined
+deterministic tie-break rule. True Node is adopted on official calculator behavioral evidence,
+NOT because Jovian publishes a True Node algorithm or because the astrology engine uses it.
+
+Project support years do not assert full-range observational accuracy. Solver tolerances are
+numerical limits, not ephemeris accuracy. The final unrounded midpoint drives Design activations;
+UTC serialization never feeds back into the calculation. All concrete choices are in
+[[human-design]], including clock-free calculation and separate API future-date validation.
+
+### Two reference classes and field promotion
+
+A **golden mechanical behavior reference** is a preserved dated official visible output for
+specified synthetic input and discrete fields. Its exact unknown software version is disclosed.
+An **independent astronomical reference** requires appropriate independent astronomical provenance;
+the official calculator does not qualify for that class. PyHD-fed mappers and Swiss/swetest
+agreement also do not constitute independent end-to-end astronomy.
+
+| Field | Evidence / acceptance | Independence | Risk / exclusion |
+| --- | --- | --- | --- |
+| Personality/Design Gate.Line | accept 364 official observations in 14 snapshots | separate official pipeline, internals unknown | unobserved sub-minute behavior; mapping/astronomy mismatch must fail regression |
+| Type | accept 14 displayed labels with explicit normalization | official pipeline vs research graph probe | no claim of every topology sampled |
+| Authority | accept 14 displayed labels, preserving ego variants | official pipeline vs hierarchy probe | no official splenic chart in this subset |
+| Definition | accept 14 displayed kinds, covering 0–4 | official output; graph corroboration shares structural table | component membership itself was derived, not exported; not promoted as official |
+| Profile | accept 14 displayed pairs | official output and Sun-line corroboration | 11/12 official pairs, not 12 |
+| Node behavior | accept 56 N/S Gate.Line observations as part of activations | official output vs controlled Swiss True/Mean comparison | not an official algorithm declaration; N/S and nearby charts correlated |
+| Longitude | NOT accepted | official output absent | local/PyHD values are not official astronomy |
+| Exact Design timestamp | NOT accepted | official output absent | local solver timestamp is not an official timestamp |
+| Official version/ephemeris/algorithm | NOT accepted | unknown | remain null / UNVERIFIED |
+
+`human_design_references.json` schema 2 contains 14 `accepted_behavioral_reference` rows,
+each linked to original artifact path/SHA256/retrieval instant, with only the allowed discrete
+fields. No promotion is sourced from PyHD or the derived graph comparison.
+Original raw `candidate_not_approved` labels reflect collection-time state and remain untouched;
+promotion is a separate field-scoped decision. The old 12 engine candidates stay unapproved.
+
+This explicitly revises the earlier all-purpose exact-version requirement. It is not a claim
+that new empirical evidence appeared in 9A.2, or that unknown internals became verified.
+Snapshot correctness is independently checked against the stored visible source, and malformed
+promoted values are rejected by the audit. The audit remains read-only; only its acceptance-schema
+validation changed to support the authorized decision.
+
+### Coverage sufficient for implementation
+
+| Dimension | Official behavioral set | Additional coverage / limitation |
+| --- | --- | --- |
+| Type | all 5 | direct/indirect MG, disconnected and separate motor probes |
+| Authority | 7 of 8 | Splenic absent officially; original provisional charts plus structural Projector [18,58] and Manifestor [18,58,16,48] probes |
+| Definition | none, single, split, triple, quadruple | focused graph probes; components distinct from channel count |
+| Profile | 11 of 12; missing 3/5 | all 12 in combined official+candidate pool; all 12 pairs explicitly tested structurally |
+
+The 18 hand-specified graph probes cover all eight authorities, direct/indirect Ego paths,
+emotional-over-sacral/spleen priority, sacral-over-spleen priority, direct/indirect Sacral paths,
+a disconnected motor, a separate Ego-to-Throat motor with defined Sacral, and 0–4 components.
+These are PROJECT contract vectors, not invented external charts. The existing research graph
+probe is used to check their consistency, not as a production oracle.
+All 384 line starts (thus all 64 gate starts), exact equality and adjacent representable binary64
+values are checked with test-only exact rational arithmetic. Normalization and anchor vectors
+are separate fixed expectations. These are project tie-break tests, not official precision proof.
+
+The original 19 differences remain explained by +2.5 arcminutes (17 line-only, two gate+line).
+Sacral-excluding Type and channel-count Definition fields are rejected where they conflict with
+the frozen semantics; additional Projector subtype strings are explicit aliases, not hidden
+mechanical agreement. No unexplained material semantic choice remains.
+
+**True blockers: none for starting 9B.** Non-blocking limitations: proprietary version/settings,
+official equality observation, independent HD-specific astronomy, official splenic and 3/5
+snapshots, untested exhaustive graph combinations and full-date-range accuracy.
+Implementation correctness is NOT established by this decision. Failure of any mandatory 9B
+regression blocks delivery and must be diagnosed; never overwrite goldens or snap longitudes
+to conceal it. Later contrary evidence requires a versioned decision and reviewed migration.
+
+### Mandatory Stage 9B verification matrix
+
+| Area | Required implementation tests |
+| --- | --- |
+| Wheel | 302°, full 64-gate order, six lines each, all 384 exact/nextafter boundaries, 0/360 and negative normalization, nonfinite rejection, no epsilon |
+| Bodies/nodes | exactly 13 per side; True Node discriminating cases; Earth=Sun+180 and South=North+180; circular normalization |
+| Design | previous exact 88° arc; both convergence limits, unrounded midpoint, no 88-day shortcut, bracket failure/stagnation/errors, UTC/UT1 conversion |
+| Structure | all 36 channel pairs and 9 centers; hanging gates, cross-side endpoints, duplicates, components vs channel counts, 0–4 kinds |
+| Classification | all 5 Types, all 8 Authorities and priority/path probes; all 12 Profiles; invalid pairs/classification error |
+| Behavioral regression | every accepted discrete field of all 14 charts; exact labels, no Gate/Line tolerance; failed comparisons diagnosed before release |
+| Runtime | pinned flags, initialization/shared native lock, concurrent HD+astrology isolation, repeat determinism, no untracked ephemeris files |
+| API/privacy | UTC-only exact time, extras/malformed/nonfinite/out-of-range rejection, future-date injectable clock, support endpoints, no person name/location/logging/storage |
+| Regression boundary | unchanged astrology/numerology outputs; no network in tests; provenance/hash mutation rejection |
+
+Passing 9A tests verifies evidence, specification arithmetic and structural consistency, not a
+production implementation. The mandatory matrix is a Stage 9B delivery gate, not completed work.

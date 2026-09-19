@@ -6,8 +6,8 @@ tags:
 # Current State
 
 **Last updated:** 2026-09-19
-**Current stage:** Stage 8 completed; Stage 9A Human Design convention research in progress
-**Next stage:** Complete Stage 9A evidence; Stage 9B is not ready
+**Current stage:** Stage 9A Human Design convention qualification completed (ADR-015 Accepted)
+**Next stage:** Stage 9B ready for a separate implementation task; not started
 **License:** AGPL-3.0
 **Development environment:** Docker Compose available and preferred; host workflows remain a fallback.
 
@@ -23,16 +23,17 @@ After coding:
 
 ## Completed
 
-Stages 1, 2, 3, 3.5, 4, 5, 6, 7 and 8. Backend: 592 tests passed (584 Stage 8 baseline
-+ 8 Stage 9A research-integrity tests), two existing warnings, and `pip check` successful in Docker.
+Stages 1, 2, 3, 3.5, 4, 5, 6, 7, 8 and 9A (specification/reference qualification only).
+Backend: 595 tests passed (584 Stage 8 baseline + 11 Stage 9A integrity/contract tests),
+two existing warnings, and `pip check` successful in Docker.
 See [[astrology]] and [[numerology]] for installation and conventions.
 Frontend: unchanged; last recorded lint, typecheck, 8/8 tests and production build pass.
 
 Git: public sanitized baseline. This repository contains no prior private Git history.
 
-**Current blockers:** Stage 9A lacks exact wheel/equality qualification, published precise node
-algorithm/settings and exhaustive mechanics/golden coverage. Fourteen official Jovian complete
-charts now supply second-pipeline evidence and all previously missing rare category examples.
+**Current blockers:** None for Stage 9B semantic readiness. Unknown proprietary internals are
+non-blocking for scoped behavioral references. Official exact equality remains unobserved;
+the project explicitly owns its deterministic tie-break. Implementation/tests remain future work.
 Tracked fixtures are synthetic and must remain synthetic.
 
 **Astrology:** Moshier retained. Nine synthetic external reference records; JPL astronomy and external swetest
@@ -50,13 +51,14 @@ year and hand-calculated synthetic golden vectors. Future-date validation is out
 using a shared BirthProfile rule and injectable API clock. Names are not echoed, logged or stored.
 
 **Human Design:** Stage 9A research-only fixtures/tools exist; no production engine or endpoint.
-Stored candidates remain `candidate_not_approved`, `accepted_expectations` is empty, ADR-015 is
-Proposed, Stage 9A is incomplete and Stage 9B is not ready. The 19 mapper differences are explained
-by a fixed 2.5-arcminute offset. True Node behavior is PARTIALLY VERIFIED: 56/56 official North/South
-observations match True, 46 discriminate against Mean; no precise official algorithm is published
-in the reviewed sources. The 302° anchor is PARTIALLY VERIFIED by a minute-resolution bracket.
-Original 50 evidence files are unchanged; read-only audit verifies 68 artifacts and baseline checks. See
+Raw candidates remain byte-preserved. Schema-2 `accepted_expectations` separately promotes 14
+official behavioral snapshots (364 Gate/Line values plus Type/Authority/Definition/Profile), not
+longitude or Design timestamps. ADR-015 Accepted; Stage 9A complete, Stage 9B ready but not started.
+True Node and 302° wheel are RESOLVED project choices based on official behavior, not claims of a
+published precise official algorithm. `[start,end)` is a project tie-break. All 68 raw artifacts
+and original audit checks are unchanged. Tests cover 384 boundary neighborhoods and 18 graph probes.
+Official splenic and 3/5 examples remain absent; structural coverage is sufficient for readiness. See
 [[human-design]] and [[human-design-verification]].
 
-**Next task:** Qualify exact equality/boundary and node semantics, official tool provenance and
-remaining branch coverage. No goldens were promoted. AI interpretation, production HD and PDF remain future work.
+**Next task:** Separately authorize Stage 9B implementation against the frozen specification and
+mandatory test matrix. No production HD code exists; AI interpretation and PDF remain future work.

@@ -7,6 +7,20 @@ tags:
 
 Current delivery state: [[04_CURRENT_STATE]]. Milestone sequence: [[03_ROADMAP]].
 
+## 2026-09-19 — Stage 9A.2 convention acceptance and final qualification
+
+- Accepted ADR-015 as a deterministic PROJECT convention, separating public system rules,
+  official behavioral inference (302-degree wheel / True Node) and project equality tie-break.
+- Accepted 14 existing official snapshots only for Gate/Line, Type, Authority, Definition and
+  Profile; node behavior is included in activations. No longitude, Design timestamp or official
+  proprietary algorithm claim promoted. All 68 raw evidence files/hashes preserved.
+- Added boundary/structural contract vectors and integrity checks: 384 exact/neighbor boundaries,
+  18 graph probes, all Profile pairs, source-linked promotion and mutation rejection.
+- Schema-2 manifest and read-only audit now distinguish historical raw candidate status from
+  accepted behavioral fields. No new external collection or third-party dependency.
+- Stage 9A complete; 9B ready but not started. Docker: 11 integrity / 595 backend tests pass,
+  two existing warnings, pip check clean. No production HD, API, frontend or other engine changes.
+
 ## 2026-09-19 — Stage 9A.1 official reference research (incomplete)
 
 - Preserved all local continuation work and 50 original raw artifacts; added 14 public official

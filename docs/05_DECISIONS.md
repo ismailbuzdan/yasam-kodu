@@ -152,20 +152,33 @@ or persistence. Only synthetic golden vectors; no dependency additions or Stage 
 
 ## ADR-015 — Human Design Mechanical Calculation Convention
 
-**Status:** Proposed
+**Status:** Accepted (Stage 9A.2, 2026-09-19; revision `stage9a2-v1`)
 **Context:** Stage 9 requires deterministic conventions for the 88-degree Design moment, Rave wheel,
 lunar node, graph classification, Type, Authority, Profile and Definition before implementation.
-**Proposed decision:** Use the exact previous 88.0-degree solar arc; equal 5.625-degree gates and
-0.9375-degree lines provisionally anchored with Gate 41 at 302 degrees and `[start,end)` ownership;
+**Decision:** Use the exact previous 88.0-degree solar arc; equal 5.625-degree gates and
+0.9375-degree lines anchored with Gate 41 at 302 degrees and `[start,end)` ownership;
 derive channels/centers and connected components from the documented 36-channel graph; use continuous
 defined-channel reachability for motor-to-Throat Type classification. Profile is Personality Sun line
-then Design Sun line. True Node and the complete golden acceptance set remain unresolved.
-**Reason status is not Accepted:** Public original-system evidence reviewed does not disclose the exact
-numerical wheel boundary or precise node algorithm. Stage 9A.1 adds 14 complete official Jovian
-charts and rare category observations: 364/364 activations match pinned PyHD, and 46 discriminating
-North/South Node observations favor True Node. Official calculator behavior is not a published
-precision specification; version/settings and exact equality ownership remain unverified.
-Second-chart availability is resolved, but exhaustive mechanics and golden qualification are not.
-**Consequences:** No production engine or endpoint is authorized. `accepted_expectations` remains empty,
-Stage 9A remains incomplete and Stage 9B is not ready. See [[human-design]] and
-[[human-design-verification]].
+then Design Sun line. Freeze True Node, the eight-branch Authority hierarchy, 13 bodies, opposition
+rules, tables, identifiers, solver limits and 1800–2100 birth-year support as specified in [[human-design]].
+**Evidence classes:** Publicly specified system rules: 88-degree arc, continuous Definition/Type
+mechanics and Sun-line Profile. Official behavioral inference: 302-degree wheel and True Node,
+supported by 364/364 discrete activation matches and 46 discriminating N/S observations.
+Project engineering/tie-break decisions: exact `[start,end)` ownership, rational binary64 mapping,
+no epsilon, pinned Swiss/Moshier/time handling, solver tolerance, support range and serialization.
+None of the latter is claimed to be a published official precision algorithm.
+**Acceptance policy:** The 14 hashed timestamped official chart captures are golden mechanical
+behavior references only for observed Gate/Line, Type, Authority, Definition and Profile. Node
+behavior is included in Gate/Line; official internal algorithm, longitude and Design timestamp are
+not promoted. Unknown official version/settings prevent independent astronomical qualification,
+not discrete behavioral snapshot acceptance. This intentionally supersedes the earlier single-tier
+policy requiring a published exact version for every kind of reference.
+**Reason:** Material discrepancies are explained (fixed wheel offset, omitted Sacral motor,
+channel-count field and label aliases). Eighteen structural probes and all 384 boundary neighborhoods
+make remaining project choices explicit. Missing official splenic/3/5 snapshots are non-blocking:
+structural coverage exists; exhaustive combinations and proprietary internals are not necessary
+to implement deterministic semantics. No rule is selected by implementation majority vote.
+**Consequences:** Stage 9A complete; Stage 9B ready but not started or authorized in this task.
+Raw evidence remains byte-preserved with historical candidate labels. Future implementation must
+pass behavioral and project-contract regressions; discrepancies require investigation and an explicit
+decision, not regenerated goldens. See [[human-design-verification]] and [[07_TEST_STRATEGY]].

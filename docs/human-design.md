@@ -5,14 +5,14 @@ tags:
 
 # Stage 9A — Human Design mechanical calculation specification
 
-**Status: Proposed; reference acceptance blocked. Stage 9A is NOT complete.**
+**Status: Accepted project convention (ADR-015, stage9a2-v1). Stage 9A complete; Stage 9B ready, not started.**
 Research date: 2026-09-19. See [[human-design-verification]], [[05_DECISIONS]],
 [[07_TEST_STRATEGY]] and [[04_CURRENT_STATE]]. No production service or endpoint exists.
 
 ## 1. Scope and system boundary
 
 Only Personality/Design activations, gate/line, active gates, channels, centers,
-Type, Strategy, Authority, Profile and Definition are proposed. Astronomical positions
+Type, Strategy, Authority, Profile and Definition are specified. Astronomical positions
 are measurable; Human Design is a symbolic self-knowledge framework, not a scientifically
 validated personality measurement. No interpretation text is included.
 
@@ -20,7 +20,7 @@ Excluded: Color/Tone/Base, Variable, PHS, Environment, Motivation, Perspective,
 Transference, DreamRave, composite/transit charts, gate/line descriptions and Cross names.
 The Sun/Earth quartet can later be read from existing activations; no naming system here.
 
-## 2. Input proposal — not an implemented contract
+## 2. Frozen input contract — not implemented
 
 Future `POST /api/v1/human-design/calculate`:
 
@@ -41,9 +41,9 @@ not 88 calendar days: `target = normalize(birth_sun_longitude - 88)`.
 This distinction comes from the [original-system introduction](https://jovianarchive.com/blogs/human-design-basics/introduction-to-the-human-design-system).
 Both moments use the same body set and astronomical convention.
 
-## 4. Proposed solver specification
+## 4. Frozen project solver specification
 
-Engineering choices below are project proposals, not quotations from Human Design sources.
+Engineering choices below are project decisions, not quotations from Human Design sources.
 
 - Convert UTC using `utc_to_jd`; use UT1 with `calc_ut` consistently. Convert the root
   back with `jdut1_to_utc`. Do not confuse UTC, UT1 and TT.
@@ -53,16 +53,22 @@ Engineering choices below are project proposals, not quotations from Human Desig
 - Bisection, maximum 64 iterations. Require BOTH bracket width <= 0.01 seconds
   and absolute residual <= 1e-7 degrees. These are numerical convergence limits,
   not a claim of astronomical accuracy. Detect floating-point stagnation.
-- Return only a converged past root. No convergence/bracket failure => proposed
+- Return the final bracket midpoint only after both limits pass; evaluate residual at that midpoint.
+  Use the unrounded UT1 Julian day for Design activations, not the serialized UTC timestamp.
+  Serialize UTC to microseconds, round half-even; serialization must not feed back into astronomy.
+  Return only a converged past root. No convergence/bracket failure =>
   `design_moment_error`; native failure => `ephemeris_error`; no 88-day fallback.
-- Initially propose birth years 1800–2100, with the entire earlier bracket in the
-  supported astronomical range. Confirm this product range before 9B implementation.
+- Freeze supported birth years 1800–2100 inclusive (Gregorian UTC); the earlier Design bracket
+  may precede 1800. Reject out-of-range input. This is a project support boundary, not an accuracy
+  guarantee for the entire range. API future-date validation uses the existing shared injectable
+  BirthProfile policy; the pure calculation layer has no clock. Reject leap-second :60 inputs.
 
 ## 5. Astronomy and reuse boundary
 
-Propose the already pinned pyswisseph 2.10.3.2 / Swiss 2.10.03, explicit Moshier,
+Use the already pinned pyswisseph 2.10.3.2 / Swiss 2.10.03, explicit Moshier,
 tropical, geocentric, apparent ecliptic-of-date longitude. No SIDEREAL, HELCTR,
-BARYCTR, TOPOCTR, TRUEPOS or J2000 flags. Retain speed if needed by diagnostics.
+BARYCTR, TOPOCTR, TRUEPOS or J2000 flags. Request FLG_MOSEPH | FLG_SPEED consistently.
+Use ADR-010 automatic time-model defaults, empty private ephemeris path and no external time files.
 Moshier range/accuracy limits remain; inspect returned flags and fail on unexpected mode.
 The future adapter must share safe native-state locking/initialization across engines;
 do not introduce a second independent lock around Swiss global state. This stage does
@@ -76,16 +82,17 @@ No Chiron or Lilith. Earth = normalized Sun + 180°, not a geocentric Earth-body
 South Node = normalized North Node + 180°. Original-system opposition terminology:
 [Jovian dictionary](https://jovianarchive.com/pages/human-design-dictionary).
 
-**True Node is proposed independently for HD and is PARTIALLY VERIFIED**, not inherited from astrology.
+**True Node is RESOLVED as the adopted HD project convention**, not inherited from astrology.
 [Orunira's own method](https://orunira.com/en/human-design/method), pinned PyHD and
 free-human-design all explicitly use true nodes. The original-system public pages
 reviewed do not specify the precise lunar-node ephemeris algorithm. Stage 9A.1 collected 14 official
 Jovian charts: all 56 North/South Node observations match True Node, with 46 discriminating against
 Mean Node. This is observed calculator behavior, not a published algorithm/precision guarantee;
 the official version, settings and exact Design instant are undisclosed. Raw sources/settings are
-in the evidence register. No node-dependent golden is approved.
+in the evidence register. The 56 observed node Gate/Line values are accepted behavioral expectations;
+the claim that Jovian publishes or internally uses our exact algorithm remains UNVERIFIED.
 A controlled True/Mean comparison changed 19 of 24 north-node Gate/Line activations in the
-12 synthetic cases, so this is a material acceptance blocker; see [[human-design-verification]].
+12 synthetic cases. This motivated the controlled test; it is no longer an unresolved project choice.
 
 ## 7. Gate wheel and line mapping
 
@@ -103,16 +110,18 @@ Source comparison: [published gate-degree table](https://www.barneyandflow.com/g
 and [pinned wheel implementation](https://github.com/domalhambra/hd-chart-engine/blob/ea673ad2614b7968ddf1c93670b6cbf20ab26eed/src/wheel.ts).
 The published table contains a Gate 12 start typo (22°37′30″ Gemini versus the preceding
 Gate 45 end 22°27′30″); use the consistent equal-width structure, document the discrepancy,
-and obtain an original-system boundary export before accepting references.
+without treating that secondary table as an original-system specification.
 The engine and Plateworks site have the same author and do NOT count as independent sources.
 The 19 stored mapper disagreements are fully explained by `free-human-design` using an effective
 Gate 41 start of `302.041666666...°`: 17 line-only and two gate+line differences. This diagnoses a
-fixed 2.5-arcminute offset but does not by itself prove the 302-degree proposal; golden acceptance
-remains **UNVERIFIED**. Full rows are in [[human-design-verification]].
+fixed 2.5-arcminute offset. Acceptance is based on the combined official behavioral and technical
+evidence, not mapper voting. Full rows are in [[human-design-verification]].
 Stage 9A.1 official minute probes bracket the transition between 301.99922119558215° and
 302.0006347126726° under local Swiss/Moshier astronomy. Anchor and transition are PARTIALLY
-VERIFIED; exact `[start,end)` equality ownership is UNRESOLVED. The public form exposes HH:mm,
-not seconds. A minute bracket must not be presented as an exact mathematical boundary.
+VERIFIED as official-system facts. The project adopts exactly 302 degrees and `[start,end)`:
+both are RESOLVED project decisions. Official behavior supports the boundary location; exact
+equality ownership is a project-defined deterministic tie-break rule. The public form exposes
+HH:mm, not seconds. A minute bracket must not be presented as an exact official mathematical boundary.
 
 For a finite longitude, treat its binary64 value as an exact rational number:
 `r = (longitude - 302) mod 360`, `i = floor(r / (45/8))`,
@@ -236,7 +245,7 @@ manifestor → `inform`; projector → `wait_for_invitation`; reflector → `wai
 These are system labels, not advice generated by the application. Do not impose an
 additional MG strategy of informing as a replacement for response.
 
-## 12. Authority proposal with explicit ordering
+## 12. Frozen Authority hierarchy with explicit ordering
 
 ```text
 if type == reflector: lunar
@@ -256,45 +265,52 @@ Ego manifested can run through G, not just 21–45. Sources:
 [ego projected](https://jovianarchive.com/pages/ego-projected-authority-in-human-design-willpower-and-invitations),
 [self projected](https://jovianarchive.com/pages/self-projected-authority-in-human-design-the-projectors-voice).
 Mental/environmental and lunar identifiers do not imply a defined inner authority center.
-Engine disagreement on ego variants remains a reference-acceptance blocker, not an excuse
-to silently reduce both to a generic `ego` field. The hierarchy is mechanically supported by
+Engine labels collapsing ego variants are not accepted; never reduce both to generic `ego`.
+The hierarchy is mechanically supported by
 official public descriptions. Stage 9A.1 adds controlled official examples for all previously
-missing authority labels; 14 graph probes agree. Exhaustive priority/path combinations and an
-official splenic sample remain uncovered. Authority is PARTIALLY VERIFIED, not golden-approved.
+missing authority labels; 14 chart graph probes agree. Stage 9A.2 adds structural tests for splenic
+Projector/Manifestor, emotional/sacral priority and indirect Ego paths. Authority rules are RESOLVED
+as project mechanics. Lack of an official splenic chart is a disclosed non-blocking coverage limit,
+not a hidden choice. Official Authority labels in the 14 captures are accepted behavioral references.
 
 ## 13. Profile
 
-Personality Sun line / Design Sun line. Proposed representation:
+Personality Sun line / Design Sun line. Representation:
 `{"personality_line":1,"design_line":3,"label":"1/3"}`.
 Allowed pairs: 1/3, 1/4, 2/4, 2/5, 3/5, 3/6, 4/6, 4/1, 5/1, 5/2, 6/2, 6/3.
 Source: [original-system profile guide](https://jovianarchive.com/pages/understanding-profile-in-human-design).
 Impossible pair => verification failure, never force-fit. No descriptions.
 
-## 14. Proposed response, privacy and errors
+## 14. Frozen response semantics, privacy and errors
 
-Metadata should declare spec revision, ephemeris/version, tropical/geocentric/apparent,
+Metadata must declare spec revision, ephemeris/version, tropical/geocentric/apparent,
 node type and solver settings. Include birth/design UTC, per-side 13 ordered
 `{body, longitude, gate, line}` records, sorted active gates, channels, defined/undefined
 centers, Type/Strategy/Authority/Profile and `{kind, component_count, components}`.
 No person names, coordinates, logs or storage in the future calculation service.
 Research fixtures contain synthetic timestamps only.
 
-Proposed domain envelope: `detail.code/message`; `invalid_utc_datetime`, `invalid_request`,
+Domain envelope: `detail.code/message`; `invalid_utc_datetime`, `invalid_request`,
 `ephemeris_error`, `design_moment_error`, `classification_error`. Do not expose native exceptions.
-None of these proposed HD contracts is registered in FastAPI in Stage 9A.
+None of these HD contracts is registered in FastAPI in Stage 9A. Mechanical identifiers and ordering
+are fixed here; transport implementation belongs to a separately authorized Stage 9B task.
 
 ## 15. Verification and Stage 9B entry gate
 
 See [[human-design-verification]] for actual evidence, hashes, rejected candidates,
-coverage gaps, copyright audit and reproduction commands. No candidate is an accepted
-expected result. Two independent mapping implementations over the same longitudes do
+coverage gaps, copyright audit and reproduction commands. Raw candidate labels remain historical;
+only field-level rows in `human_design_references.json/accepted_expectations` are accepted.
+Two independent mapping implementations over the same longitudes do
 not equal two independently calculated charts.
 
 Stage 9A.1 now has a second trusted complete chart source: 14 Jovian public UI numeric captures,
 364 matching activations and official examples of the missing rare categories. Independent internal
-astronomy is UNKNOWN; official tool version/settings are undisclosed. Before 9B: resolve exact
-wheel/equality and node qualification, remaining disagreements and mechanics coverage, then promote
-references field-by-field with provenance. Only then accept ADR-015 and finalize date range.
+astronomy is UNKNOWN; official tool version/settings are undisclosed. Stage 9A.2 accepts those
+discrete outputs as golden mechanical behavior, NOT version-pinned independent astronomy.
+All project semantic choices are frozen; ADR-015 is Accepted and Stage 9B is ready, not implemented.
+Every official regression must pass in 9B; a mismatch blocks release and requires diagnosis, never
+automatic fixture replacement or tolerance added to Gate/Line labels. Further original-system
+evidence may require a new versioned decision, not silent drift of this convention.
 
 Only after a separate 9B task: design a shared astronomy adapter without altering existing
 outputs; implement UTC schema, 88° solver, exact gate/line mapping, graph classification

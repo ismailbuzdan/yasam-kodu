@@ -6,6 +6,9 @@ from pathlib import Path
 import re
 import subprocess
 import sys
+from fractions import Fraction
+import importlib.util
+import math
 
 ROOT = Path(__file__).parent / "fixtures"
 
@@ -26,9 +29,10 @@ def test_synthetic_utc_case_contract():
 
 def test_candidates_cannot_be_mistaken_for_approved_expectations():
     refs = load("human_design_references.json")
-    assert refs["accepted_expectations"] == []
-    assert refs["stage_9b_ready"] is False
-    assert refs["stage_9a_complete"] is False
+    assert refs["schema_version"] == 2
+    assert len(refs["accepted_expectations"]) == 14
+    assert refs["stage_9b_ready"] is True
+    assert refs["stage_9a_complete"] is True
     ids = {c["case_id"] for c in load("human_design_cases.json")["cases"]}
     assert {c["case_id"] for c in refs["cases"]} == ids
     assert all(c["status"] == "candidate_not_approved" for c in refs["cases"])
@@ -132,3 +136,74 @@ def test_audit_is_read_only_and_comparison_is_reproducible():
     assert result.returncode == 0, result.stdout + result.stderr
     assert 'read_only' in result.stdout
     assert all(hashlib.sha256(p.read_bytes()).hexdigest() == digest for p, digest in before.items())
+
+
+def test_project_boundary_contract_all_384_edges_and_binary64_neighbors():
+    spec = load('human_design_conventions.json')
+    sequence = spec['sequence']
+    assert len(sequence) == len(set(sequence)) == 64
+    assert set(sequence) == set(range(1, 65))
+    assert spec['interval'] == '[start,end)'
+    assert spec['anchor_degrees'] == 302
+    assert Fraction(spec['gate_width']) == Fraction(45, 8)
+    width = Fraction(spec['line_width'])
+    assert width == Fraction(15, 16)
+
+    # Test-only specification arithmetic; not a production mapper or an official oracle.
+    def contract(longitude):
+        offset = (Fraction(longitude) - 302) % 360
+        cell = int(offset // width)
+        return sequence[cell // 6], 1 + cell % 6
+
+    for index in range(384):
+        edge = float((Fraction(302) + index * width) % 360)
+        previous = (index - 1) % 384
+        assert contract(edge) == (sequence[index // 6], index % 6 + 1)
+        assert contract(math.nextafter(edge, -math.inf)) == (sequence[previous // 6], previous % 6 + 1)
+        assert contract(math.nextafter(edge, math.inf)) == contract(edge)
+    for longitude, gate, line in spec['boundary_vectors']:
+        assert contract(longitude) == (gate, line)
+    assert contract(0) == contract(360) == contract(-360)
+
+
+def test_project_structural_branches_and_all_profile_pairs():
+    path = ROOT.parents[1] / 'tools/inspect_human_design_official.py'
+    module_spec = importlib.util.spec_from_file_location('hd_research_probe', path)
+    module = importlib.util.module_from_spec(module_spec)
+    module_spec.loader.exec_module(module)
+    structural = load('human_design_sources/pyhd.json')['structural']
+    spec = load('human_design_conventions.json')
+    for vector in spec['graph_vectors']:
+        activations = [{'official': f'{g}.1', 'body': 'probe', 'side': 'personality'} for g in vector['gates']]
+        # A lone gate cannot define a center. Reuse an active gate when one exists.
+        lone = vector['gates'][0] if vector['gates'] else 1
+        activations += [{'official': f'{lone}.1', 'body': 'sun', 'side': side} for side in ('personality', 'design')]
+        result = module.graph_probe(activations, structural)
+        for field, expected in vector['expected'].items():
+            assert result[field] == expected, (vector['id'], field, result)
+    allowed = {'1/3', '1/4', '2/4', '2/5', '3/5', '3/6', '4/6', '4/1', '5/1', '5/2', '6/2', '6/3'}
+    assert set(spec['allowed_profiles']) == allowed
+    for pair in allowed:
+        a, b = pair.split('/')
+        result = module.graph_probe([{'official': f'1.{a}', 'body': 'sun', 'side': 'personality'},
+                                     {'official': f'1.{b}', 'body': 'sun', 'side': 'design'}], structural)
+        assert result['Profile'] == pair
+
+
+def test_behavioral_promotion_is_scoped_and_rejects_mutated_values():
+    refs = load('human_design_references.json')
+    assert refs['acceptance_policy']['classification'] == 'golden_mechanical_behavior'
+    for row in refs['accepted_expectations']:
+        assert set(row['expected']) == {'personality', 'design', 'type', 'authority', 'definition', 'profile'}
+        assert datetime.fromisoformat(row['utc_datetime']).utcoffset() == timedelta(0)
+        assert row['source_artifact'].startswith('human_design_sources/jovian_')
+        assert row['source_version'] is None
+    path = ROOT.parents[1] / 'tools/audit_human_design_references.py'
+    module_spec = importlib.util.spec_from_file_location('hd_research_audit', path)
+    module = importlib.util.module_from_spec(module_spec)
+    module_spec.loader.exec_module(module)
+    module.validate_accepted(refs)
+    refs['accepted_expectations'][0]['expected']['personality'][0]['line'] = 0
+    import pytest
+    with pytest.raises(AssertionError, match='Accepted value diverges'):
+        module.validate_accepted(refs)

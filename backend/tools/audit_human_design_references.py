@@ -47,8 +47,8 @@ def main():
     for file in sorted((ROOT / "human_design_sources").iterdir()):
         sources.append({"path":f"human_design_sources/{file.name}", "sha256":hashlib.sha256(file.read_bytes()).hexdigest()})
     differences = [d for c in comparison["cases"] for d in c["activation_disagreements"]]
-    result = {"schema_version":1,"stage_9a_complete":False,"stage_9b_ready":False,
-              "accepted_expectations":[], "cases":records, "artifacts":sources,
+    result = {"schema_version":2,"stage_9a_complete":True,"stage_9b_ready":True,
+              "cases":records, "artifacts":sources,
               "checks":{"gate_centers_match":centers_match,"channels_match":channels_match,
                 "activation_count":len(cases)*26,
                 "free_vs_pyhd_gate_line_disagreements":sum(d["free"]!=d["pyhd"] for d in differences),
@@ -62,14 +62,50 @@ def main():
     assert {a['path']: a['sha256'] for a in recorded['artifacts']} == {
         a['path']: a['sha256'] for a in sources}, 'Evidence hash mismatch'
     for key in ('schema_version', 'stage_9a_complete', 'stage_9b_ready',
-                'accepted_expectations', 'cases', 'checks'):
+                'cases', 'checks'):
         assert recorded[key] == result[key], f'Recorded {key} mismatch'
     from inspect_human_design_official import build_report
     official = build_report()
     assert official == json.loads((ROOT / 'human_design_official_comparison.json').read_text())
+    validate_accepted(recorded)
     print(json.dumps(result["checks"],indent=2))
     print(json.dumps({'official_chart_count': len(official['cases']),
                       'evidence_files_verified': len(sources), 'audit_mode': 'read_only'}))
+
+
+def validate_accepted(recorded):
+    """Validate field-level promotion against immutable official captures, not PyHD."""
+    policy = recorded['acceptance_policy']
+    assert policy['revision'] == 'stage9a2-v1'
+    assert policy['classification'] == 'golden_mechanical_behavior'
+    rows = recorded['accepted_expectations']
+    paths = {f'human_design_sources/{p.name}' for p in (ROOT / 'human_design_sources').glob('jovian_*.json')}
+    assert len(rows) == len(paths) == 14
+    assert {r['source_artifact'] for r in rows} == paths
+    assert len({r['case_id'] for r in rows}) == 14
+    body_order = ('sun', 'earth', 'moon', 'north_node', 'south_node', 'mercury',
+                  'venus', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune', 'pluto')
+    for row in rows:
+        raw = (ROOT / row['source_artifact']).read_bytes()
+        assert hashlib.sha256(raw).hexdigest() == row['source_sha256']
+        source = json.loads(raw)
+        assert row['status'] == 'accepted_behavioral_reference'
+        assert row['reference_class'] == 'golden_mechanical_behavior'
+        assert row['source_version'] is None
+        for field in ('case_id', 'utc_datetime', 'retrieved_at'):
+            assert row[field] == source[field]
+        props = source['raw']['properties']
+        normalized = policy['normalization']
+        expected = {'type': normalized['types'][props['Type']],
+                    'authority': normalized['authorities'][props['Authority']],
+                    'definition': normalized['definition'][props['Definition']],
+                    'profile': props['Profile']}
+        for side in ('personality', 'design'):
+            values = source['raw'][side + '_text'][1:]
+            expected[side] = [{'body': body, 'gate': int(v.split('.')[0]),
+                               'line': int(v.split('.')[1])}
+                              for body, v in zip(body_order, values, strict=True)]
+        assert row['expected'] == expected, f'Accepted value diverges from official source: {row["case_id"]}'
 
 
 if __name__ == "__main__":
