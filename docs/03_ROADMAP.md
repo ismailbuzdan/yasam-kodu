@@ -22,9 +22,9 @@ flowchart LR
 - [x] Stage 6 — Astrology calculation engine
 - [x] Stage 7 — Astrology verification (scope: [[astrology-verification]])
 - [x] Stage 8 — Numerology ([[numerology]])
-- [ ] Stage 9 — Human Design (9A complete; 9B ready, not started)
+- [x] Stage 9 — Human Design (9A specification and 9B backend/API complete; no HD frontend)
   - [x] Stage 9A — Frozen project conventions and scoped official behavioral references (ADR-015).
-  - [ ] Stage 9B — Implement and pass the mandatory regression matrix in a separate task.
+  - [x] Stage 9B — Mechanical core + typed API; mandatory regression matrix passes (789 backend tests).
 - [ ] Stage 10 — Unified Life Code model
 - [ ] Stage 11 — AI interpretation
 - [ ] Stage 12 — Report / PDF

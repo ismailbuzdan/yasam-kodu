@@ -7,7 +7,7 @@ tags:
 
 ## Backend
 
-736 tests (584 Stage 8 baseline, 11 Stage 9A integrity, 46 astronomy and 95 classification tests) cover health, birth-profile validation, location resolution, historical timezone behavior,
+789 tests (584 Stage 8 baseline, 11 Stage 9A integrity, 46 astronomy, 95 classification and 53 HD API tests) cover health, birth-profile validation, location resolution, historical timezone behavior,
 fixture-integrity boundaries and Stages 6–7 astrology. Original tests remain; the old empty-reference
 guard now checks provenance. Astrology includes invariants, error boundaries, threaded repeatability,
 real Swiss smoke tests and offline external-reference regression; see [[astrology-verification]].
@@ -44,7 +44,20 @@ all 36 channels crossing imprints, 64-gate/9-center integrity, lone/duplicate ga
 all five Types/Strategies, eight Authorities with priority/path collisions and error handling,
 all 12 Profiles (Sun located by body), immutable metadata/result, single astronomy call,
 determinism and parallel complete calculations. All 14 official Type/Authority/Definition/Profile
-fields and 364 activation observations match. Stage 9B.2 API tests remain future work.
+fields and 364 activation observations match. Stage 9B.2 is complete: `test_human_design_api.py`
+adds 53 tests for all five Types through seven source-owned official synthetic representatives,
+including rare ego/self/environmental/lunar authorities. Exact field-by-field core/API consistency
+covers all activations (unrounded longitudes included), metadata, graph and classification fields.
+Other tests verify strict UTC/body validation, zero-offset equivalents, 1800/2100 support edges,
+injectable same-day future-microsecond admission, private 422/503 domain errors, no submitted-body
+logging, explicit response field inventory, fixed ordering, byte-identical repeats and unchanged
+disabled docs policy. The full 14-case official matrix stays in the core suite; no golden regeneration.
+
+Stage 9B.2 Docker verification: targeted API 53; astronomy/classification 141 (46 + 95);
+integrity 11; full backend 789 with two pre-existing dependency deprecations; `pip check` clean.
+Read-only audit verifies all 68 raw artifacts and unchanged original comparison metrics.
+No production core or reference files changed. Response examples are transport documentation,
+not independently sourced astronomy expectations. Frontend was unchanged and not retested this stage.
 
 ## Frontend
 

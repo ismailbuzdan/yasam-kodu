@@ -5,9 +5,9 @@ tags:
 
 # Stage 9A — Human Design mechanical calculation specification
 
-**Status: Accepted project convention (ADR-015, stage9a2-v1). Stage 9B.1B complete; Human Design core complete; Stage 9B.2 ready.**
+**Status: Accepted project convention (ADR-015, stage9a2-v1). Stage 9B.2 and Stage 9B complete; Human Design backend/API complete.**
 Research date: 2026-09-19. See [[human-design-verification]], [[05_DECISIONS]],
-[[07_TEST_STRATEGY]] and [[04_CURRENT_STATE]]. Complete mechanical core exists; API not yet implemented.
+[[07_TEST_STRATEGY]] and [[04_CURRENT_STATE]]. Complete mechanical core and typed API exist.
 
 Implementation scope: `human_design_astronomy.py` owns orchestration/native primitives/88° solver,
 `human_design_mapping.py` owns the pure mapper and wheel, `human_design_models.py` immutable internal
@@ -21,7 +21,8 @@ It calls astronomy exactly once. Complete immutable results preserve the origina
 lines/label and metadata. Components are sorted tuples, not channel counts. No interpretation text,
 person identifiers, coordinates or logs. Internal errors include classification_error.
 46 astronomy and 95 classification tests pass: all 18 structural vectors, 364 official activations
-and 14/14 Type/Authority/Definition/Profile matches. API/frontend/AI/PDF remain unimplemented.
+and 14/14 Type/Authority/Definition/Profile matches. Stage 9B.2 adds 53 API tests without core changes.
+Frontend/AI/PDF remain unimplemented.
 
 ## 1. Scope and system boundary
 
@@ -34,9 +35,9 @@ Excluded: Color/Tone/Base, Variable, PHS, Environment, Motivation, Perspective,
 Transference, DreamRave, composite/transit charts, gate/line descriptions and Cross names.
 The Sun/Earth quartet can later be read from existing activations; no naming system here.
 
-## 2. Frozen input contract — not implemented
+## 2. Frozen input contract — implemented in Stage 9B.2
 
-Future `POST /api/v1/human-design/calculate`:
+`POST /api/v1/human-design/calculate`:
 
 ```json
 {"utc_datetime":"2000-01-01T12:00:00Z"}
@@ -298,16 +299,23 @@ Impossible pair => verification failure, never force-fit. No descriptions.
 ## 14. Frozen response semantics, privacy and errors
 
 Metadata must declare spec revision, ephemeris/version, tropical/geocentric/apparent,
-node type and solver settings. Include birth/design UTC, per-side 13 ordered
+node type and fixed solver settings (not actual residual/bracket width/iterations or Julian days).
+Include birth/design UTC, per-side 13 ordered
 `{body, longitude, gate, line}` records, sorted active gates, channels, defined/undefined
-centers, Type/Strategy/Authority/Profile and `{kind, component_count, components}`.
-No person names, coordinates, logs or storage in the future calculation service.
+centers, Type/Strategy/Authority/Profile and Definition kind/count/components. Transport fields are
+`definition`, `component_count` and `definition_components`, preserving these semantics.
+No person names, coordinates, logs or storage in the calculation service or API adapter.
 Research fixtures contain synthetic timestamps only.
 
-Domain envelope: `detail.code/message`; `invalid_utc_datetime`, `invalid_request`,
+Domain envelope: `detail.code/message`; `invalid_utc_datetime`, `invalid_request`, `unsupported_date_range`,
 `ephemeris_error`, `design_moment_error`, `classification_error`. Do not expose native exceptions.
-None of these HD contracts is registered in FastAPI in Stage 9A. Mechanical identifiers and ordering
-are fixed here; transport implementation belongs to a separately authorized Stage 9B task.
+Stage 9B.2 registers strict Pydantic request/response/error models and a thin FastAPI adapter.
+Request/admission errors use 422; ephemeris/design/classification failures use 503 with static safe
+messages. `validation_now()` is UTC and injectable; shared birth-date policy plus exact instant
+comparison rejects future inputs without a core clock. Z/+00:00 are equivalent; response uses Z.
+Calendar date/time supports minute/second precision and up to six fractional-second digits;
+sub-microsecond inputs are rejected rather than silently truncated. See [[06_API_CONTRACTS]]
+for full synthetic examples and error precedence. No float rounding or serialization feedback.
 
 ## 15. Verification and Stage 9B entry gate
 
@@ -322,11 +330,12 @@ Stage 9A.1 now has a second trusted complete chart source: 14 Jovian public UI n
 astronomy is UNKNOWN; official tool version/settings are undisclosed. Stage 9A.2 accepts those
 discrete outputs as golden mechanical behavior, NOT version-pinned independent astronomy.
 All project semantic choices are frozen; ADR-015 is unchanged. Stage 9B.1A astronomy and Stage 9B.1B
-graph/classification are complete. Stage 9B.2 is ready; API is not implemented.
+graph/classification are complete. Stage 9B.2 API is complete; the Stage 9B delivery matrix passes.
 Every official regression must pass in 9B; a mismatch blocks release and requires diagnosis, never
 automatic fixture replacement or tolerance added to Gate/Line labels. Further original-system
 evidence may require a new versioned decision, not silent drift of this convention.
 
-Only after a separate Stage 9B.2 task: implement API request/response validation and endpoint,
-preserving the completed core and its behavioral, boundary, graph and concurrency regressions.
+The Stage 9B.2 adapter preserves the completed core and its behavioral, boundary, graph and
+concurrency regressions. Seven representative official API cases cover all five Types and rare
+Authorities; the complete 14-case golden matrix remains in the core tests. All raw evidence is unchanged.
 No Stage 10 or AI work is authorized by this specification.

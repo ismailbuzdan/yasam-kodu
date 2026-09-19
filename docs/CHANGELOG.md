@@ -7,6 +7,21 @@ tags:
 
 Current delivery state: [[04_CURRENT_STATE]]. Milestone sequence: [[03_ROADMAP]].
 
+## 2026-09-19 — Stage 9B.2 typed Human Design API
+
+- Added `POST /api/v1/human-design/calculate`, strict explicit Pydantic contracts and one-call
+  adapter around the unchanged core. UTC-only input, years 1800–2100, injectable future-instant
+  admission and safe route-local 422/503 domain errors; no input/native-detail echo.
+- Preserved unrounded activations and deterministic graph/classification output. Public metadata
+  includes fixed reproducibility settings; internal Julian days and convergence diagnostics stay private.
+- Added 53 API tests: seven official synthetic representatives covering five Types and rare
+  Authorities, core/API consistency, strict validation, privacy, range/clock edges and repeatability.
+- Docker: 53 API, 141 prior HD core, 11 integrity and full 789 tests pass (two existing warnings);
+  pip check clean; read-only audit verifies all 68 artifacts and unchanged historical metrics.
+- Stage 9B.2, Human Design backend/API and Stage 9B complete. Stage 10 ready for separate
+  authorization, not started. No core/convention/ADR-015/reference, Astrology/Numerology,
+  frontend, AI, PDF, database, dependency, CORS or OpenAPI-policy changes.
+
 ## 2026-09-19 — Stage 9B.1B graph and classification core
 
 - Independently encoded 64 Gate→Center and 36-channel topology. Added pure union/graph/components,

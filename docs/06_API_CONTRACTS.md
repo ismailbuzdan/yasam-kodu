@@ -65,3 +65,129 @@ response, `503` unavailable provider, `504` timeout.
 Envelope: `detail.code` and `detail.message`. Stage 7 placement metadata is
 `swiss_house_pos_longitude_latitude`; body latitude stays internal.
 Full conventions and precision limits: [[astrology]].
+
+## `POST /api/v1/human-design/calculate`
+
+**Status:** Stage 9B.2 implemented. Explicit strict Pydantic models in
+`backend/app/schemas/human_design.py`; no interpretation, persistence or location processing.
+The adapter calls the unchanged `calculate_human_design_core(utc_datetime)` once.
+
+**Request:** only `utc_datetime`, an ISO 8601 calendar datetime with explicit zero offset.
+`Z` and `+00:00` are equivalent (`+0000` also accepted). Extended calendar date/time,
+minute or second precision and up to six fractional-second digits are supported; no epoch
+coercion, date-only, naive/nonzero-offset, leap-second or sub-microsecond truncation.
+Years 1800–2100 inclusive. Extra fields (including name/location/coordinates) are forbidden.
+Missing/invalid `utc_datetime` uses `invalid_utc_datetime`; malformed/non-object/empty bodies
+and extra fields use `invalid_request`. Extra-field errors take precedence over field errors.
+
+```json
+{"utc_datetime":"2000-02-24T12:00:00Z"}
+```
+
+**Admission:** `validation_now()` supplies an aware UTC clock, overridable in tests. Shared
+BirthProfile future-date validation is applied, then exact UTC instant comparison rejects even
+a later instant on the same day. Equality with now is accepted. No clock enters the core;
+testing the 2100 support edge requires overriding admission time beyond that input.
+
+**Response:** birth/design UTC serialize canonically with `Z`. Both activation arrays contain
+13 bodies in the frozen order: sun, earth, moon, north_node, south_node, mercury, venus, mars,
+jupiter, saturn, uranus, neptune, pluto. Longitude floats pass through without added rounding.
+Active gates, channels, centers and components preserve the core's sorted deterministic order.
+Definition is a kind identifier, with separate `component_count` and `definition_components`;
+it is not channel count. Profile contains both Sun lines and the allowed pair label.
+All identifiers use the core's Literal vocabulary. No service dataclass is the public schema.
+
+Metadata includes convention/version and fixed solver settings required by [[human-design]].
+Actual iterations, residual, final bracket width and internal Julian days are NOT exposed.
+The following complete synthetic response is a transport example, NOT a new independent golden
+or a promotion of its longitude/Design timestamp into the official behavioral evidence:
+
+```json
+{
+  "metadata": {
+    "spec_revision": "stage9a2-v1",
+    "pyswisseph_version": "2.10.3.2",
+    "swiss_ephemeris_version": "2.10.03",
+    "ephemeris": "moshier",
+    "zodiac": "tropical",
+    "observer": "geocentric",
+    "longitude_frame": "apparent_ecliptic_of_date",
+    "node_algorithm": "true_node",
+    "design_arc_degrees": 88.0,
+    "solver_bracket_days": [100, 80],
+    "solver_max_iterations": 64,
+    "solver_max_bracket_seconds": 0.01,
+    "solver_max_residual_degrees": 1e-7
+  },
+  "birth_utc": "2000-02-24T12:00:00Z",
+  "design_utc": "1999-11-29T20:47:19.479281Z",
+  "personality": [
+    {"body":"sun","longitude":335.18020366745594,"gate":55,"line":6},
+    {"body":"earth","longitude":155.180203667456,"gate":59,"line":6},
+    {"body":"moon","longitude":215.30304553391198,"gate":28,"line":4},
+    {"body":"north_node","longitude":123.23378730154295,"gate":31,"line":2},
+    {"body":"south_node","longitude":303.233787301543,"gate":41,"line":2},
+    {"body":"mercury","longitude":346.44728509946594,"gate":63,"line":6},
+    {"body":"venus","longitude":307.7804063928942,"gate":19,"line":1},
+    {"body":"mars","longitude":9.454196315851844,"gate":17,"line":6},
+    {"body":"jupiter","longitude":31.651650375061166,"gate":3,"line":6},
+    {"body":"saturn","longitude":41.975522237274326,"gate":24,"line":5},
+    {"body":"uranus","longitude":317.84511186110524,"gate":13,"line":5},
+    {"body":"neptune","longitude":305.1839211487368,"gate":41,"line":4},
+    {"body":"pluto","longitude":252.78773361404362,"gate":5,"line":2}
+  ],
+  "design": [
+    {"body":"sun","longitude":247.18020364973475,"gate":9,"line":2},
+    {"body":"earth","longitude":67.18020364973472,"gate":16,"line":2},
+    {"body":"moon","longitude":155.89654200023665,"gate":40,"line":1},
+    {"body":"north_node","longitude":125.62825671988702,"gate":31,"line":4},
+    {"body":"south_node","longitude":305.628256719887,"gate":41,"line":4},
+    {"body":"mercury","longitude":227.40380166130169,"gate":1,"line":5},
+    {"body":"venus","longitude":202.98058080211334,"gate":32,"line":3},
+    {"body":"mars","longitude":302.738707041327,"gate":41,"line":1},
+    {"body":"jupiter","longitude":25.752512622609157,"gate":42,"line":6},
+    {"body":"saturn","longitude":41.91294623593258,"gate":24,"line":5},
+    {"body":"uranus","longitude":313.45645664545646,"gate":13,"line":1},
+    {"body":"neptune","longitude":302.1875003139082,"gate":41,"line":1},
+    {"body":"pluto","longitude":250.22015295303407,"gate":9,"line":5}
+  ],
+  "active_gates": [1,3,5,9,13,16,17,19,24,28,31,32,40,41,42,55,59,63],
+  "channels": [],
+  "defined_centers": [],
+  "undefined_centers": ["ajna","ego","g","head","root","sacral","solar_plexus","spleen","throat"],
+  "type": "reflector",
+  "strategy": "wait_lunar_cycle",
+  "authority": "lunar",
+  "profile": {"personality_line":6,"design_line":2,"label":"6/2"},
+  "definition": "none",
+  "component_count": 0,
+  "definition_components": []
+}
+```
+
+**Errors:** route-local validation handling; existing routers and global handlers are unchanged.
+
+| HTTP | Code | Meaning |
+| --- | --- | --- |
+| 422 | `invalid_request` | Extra fields or malformed/non-object/empty body |
+| 422 | `invalid_utc_datetime` | Missing/invalid UTC or future instant |
+| 422 | `unsupported_date_range` | Birth year outside 1800–2100 |
+| 503 | `ephemeris_error` | Native/astronomical calculation unavailable |
+| 503 | `design_moment_error` | Safe 88-degree convergence unavailable |
+| 503 | `classification_error` | Mechanical result could not be classified |
+
+Calculation-domain failures use 503, consistent with astrology's unavailable ephemeris outcome;
+they do not imply bad input or promise that retry will succeed. No fallback chart is fabricated.
+Messages are static and never reuse exception text, native details, paths, input or Pydantic ctx.
+
+```json
+{"detail":{"code":"invalid_request","message":"İstek gövdesini ve alanlarını kontrol edin."}}
+```
+
+```json
+{"detail":{"code":"ephemeris_error","message":"Astronomik hesaplama tamamlanamadı."}}
+```
+
+No submitted data is logged or persisted by this adapter. Success intentionally returns birth UTC;
+errors do not echo it. No name, location or coordinates occur in the response. Existing CORS and
+disabled `/docs`, `/redoc`, `/openapi.json` policy remain unchanged.
