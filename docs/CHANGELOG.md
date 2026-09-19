@@ -7,6 +7,22 @@ tags:
 
 Current delivery state: [[04_CURRENT_STATE]]. Milestone sequence: [[03_ROADMAP]].
 
+## 2026-09-19 — Stage 10A Unified Life Code internal model/service
+
+- Added frozen resolved input, minimal aggregation metadata and frozen result envelope retaining
+  original typed engine objects. User selected shallow immutability: Astrology/Numerology children
+  remain mutable and must be treated as read-only; no duplicate result schemas or field loss.
+- Added sequential once-only orchestration of existing engines. Calendar date/name/target year go
+  only to Numerology; the same UTC goes to Astrology/HD and coordinates only to Astrology.
+- Added private input validation boundary reusing existing requests; engine domain errors retain
+  type/code/message with native cause display suppressed. No clock, HTTP, network, AI or persistence.
+- Added ADR-016 and [[life-code]], corrected stale architecture HD status and documented ownership.
+  All existing engine conventions, ADR-001/ADR-015, schemas, goldens and evidence remain unchanged.
+- Docker: 46 new service tests; 416 Astrology / 117 Numerology / 205 HD regressions; full 835 pass
+  with two existing warnings; pip check clean; read-only HD evidence audit 68/68.
+- Stage 10A complete; Stage 10B API ready but not implemented. Stage 11 AI/Stage 12 PDF not started;
+  no frontend/database/dependency changes. Main is not merged by this task.
+
 ## 2026-09-19 — Stage 9B.2 typed Human Design API
 
 - Added `POST /api/v1/human-design/calculate`, strict explicit Pydantic contracts and one-call

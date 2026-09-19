@@ -7,7 +7,7 @@ tags:
 
 ## Backend
 
-789 tests (584 Stage 8 baseline, 11 Stage 9A integrity, 46 astronomy, 95 classification and 53 HD API tests) cover health, birth-profile validation, location resolution, historical timezone behavior,
+835 tests (789 Stage 9 baseline plus 46 Life Code service tests) cover health, birth-profile validation, location resolution, historical timezone behavior,
 fixture-integrity boundaries and Stages 6–7 astrology. Original tests remain; the old empty-reference
 guard now checks provenance. Astrology includes invariants, error boundaries, threaded repeatability,
 real Swiss smoke tests and offline external-reference regression; see [[astrology-verification]].
@@ -58,6 +58,24 @@ integrity 11; full backend 789 with two pre-existing dependency deprecations; `p
 Read-only audit verifies all 68 raw artifacts and unchanged original comparison metrics.
 No production core or reference files changed. Response examples are transport documentation,
 not independently sourced astronomy expectations. Frontend was unchanged and not retested this stage.
+
+## Unified Life Code internal aggregation
+
+Stage 10A `test_life_code_service.py` has 46 synthetic tests for original typed object identity,
+field-lossless direct-output equality, once-only sequential calls, shared UTC routing and the
+different local calendar date for Numerology. Metamorphic tests vary name, target year and
+coordinates independently. Coverage includes immutable outer models with explicitly mutable
+Astrology/Numerology children, no shared result reuse, null target year, future input without
+service clock, private input/domain failures, fail-fast behavior and suppressed native causes.
+Network connections are forbidden during a real calculation; DEBUG-level logs are checked for
+absence. Parallel/repeated three-engine calculations and subsequent direct calls verify existing
+Swiss native-state isolation. No existing engine, schema, golden or evidence changes.
+
+Docker Stage 10A qualification: 46 targeted; 416 Astrology, 117 Numerology, 205 Human Design;
+full 835 passed with two existing warnings. `pip check` clean and read-only HD audit 68/68.
+Frontend unchanged; last qualification on the Stage 9 main merge remains lint/typecheck/8 tests/build.
+These new assertions qualify orchestration, not independent astronomical accuracy. Stage 10B API
+tests remain future work. Details and the user-selected immutability boundary: [[life-code]].
 
 ## Frontend
 

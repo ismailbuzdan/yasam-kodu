@@ -6,8 +6,8 @@ tags:
 # Current State
 
 **Last updated:** 2026-09-19
-**Current stage:** Stage 9B.2 and Stage 9B complete — Human Design backend/API complete
-**Next stage:** Stage 10 ready for separate scoping/authorization; not started
+**Current stage:** Stage 10A complete — Unified deterministic Life Code internal model/service complete
+**Next stage:** Stage 10B API ready for separate scoping/authorization; not implemented
 **License:** AGPL-3.0
 **Development environment:** Docker Compose available and preferred; host workflows remain a fallback.
 
@@ -24,7 +24,8 @@ After coding:
 ## Completed
 
 Stages 1, 2, 3, 3.5, 4, 5, 6, 7, 8, 9A and 9B (Human Design mechanical core + API).
-Backend: 789 tests passed (584 Stage 8 baseline + 11 Stage 9A integrity + 46 astronomy + 95 classification + 53 API tests),
+Stage 10A internal aggregation is also complete (Stage 10B API remains unimplemented).
+Backend: 835 tests passed (789 Stage 9 baseline + 46 Life Code service tests),
 two existing warnings, and `pip check` successful in Docker.
 See [[astrology]] and [[numerology]] for installation and conventions.
 Frontend: unchanged; last recorded lint, typecheck, 8/8 tests and production build pass.
@@ -50,6 +51,16 @@ Project history: [[CHANGELOG]].
 year and hand-calculated synthetic golden vectors. Future-date validation is outside the service,
 using a shared BirthProfile rule and injectable API clock. Names are not echoed, logged or stored.
 
+**Unified Life Code:** Stage 10A adds frozen internal input/metadata/result and sequential one-call
+orchestration of existing Astrology, Numerology and Human Design engines. Original typed outputs
+are retained without field loss or recalculation. User-selected immutability is shallow: the frozen
+envelope retains mutable Astrology/Numerology children; consumers must treat them as read-only.
+Calendar birth date/name/target year belong to Numerology; the same resolved UTC goes to Astrology
+and HD, and coordinates only to Astrology. No name in output/logs/errors; safe input errors reuse
+request validation, while engine domain type/code/message remain intact. No HTTP endpoint, clock,
+network, provider, interpretation or persistence. ADR-016 accepted; [[life-code]] documents boundaries.
+Docker: 46 new tests, 416 Astrology, 117 Numerology, 205 HD and full 835 pass; pip check/audit clean.
+
 **Human Design:** Stage 9B.1A production astronomy core exists: immutable activations, UTC/UT1
 conversion, True Node/oppositions, exact 88° solver and rational Gate/Line mapping. It reuses the
 existing Astrology native lock/initialization without changing Astrology code. Stage 9B.1B adds
@@ -69,6 +80,6 @@ and original audit checks are unchanged. Tests cover 384 boundary neighborhoods 
 Official splenic and 3/5 examples remain absent; structural coverage is sufficient for readiness. See
 [[human-design]] and [[human-design-verification]].
 
-**Next task:** Separately scope and authorize Stage 10 unified Life Code model. Human Design backend
-and API are complete; Human Design frontend/AI interpretation/PDF remain unimplemented. No Stage 10
-work or database was added. Read-only evidence audit passes: 68 artifacts and original metrics intact.
+**Next task:** Separately scope and authorize Stage 10B API/admission contract. Stage 10A internal
+aggregation is complete; Stage 10B API not implemented, Stage 11 AI and Stage 12 PDF not started.
+No frontend/database work. Engine conventions, original goldens and all 68 HD artifacts are unchanged.

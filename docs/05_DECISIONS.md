@@ -182,3 +182,26 @@ to implement deterministic semantics. No rule is selected by implementation majo
 Raw evidence remains byte-preserved with historical candidate labels. Future implementation must
 pass behavioral and project-contract regressions; discrepancies require investigation and an explicit
 decision, not regenerated goldens. See [[human-design-verification]] and [[07_TEST_STRATEGY]].
+
+## ADR-016 — Unified Life Code Aggregation Contract
+
+**Status:** Accepted (Stage 10A, 2026-09-19)
+**Context:** The three verified calculation systems require one typed internal result without
+duplicating calculations, mixing local calendar dates with UTC or retaining names in output.
+**Decision:** Sequentially call the existing AstrologyService, NumerologyService and HD core once
+per successful request. Retain their original typed outputs without field loss, renaming or
+recalculation. Numerology owns supplied calendar birth date, name and explicit nullable target year;
+Astrology/HD consume the same resolved UTC; only Astrology consumes coordinates (Placidus).
+Geocoding/timezone resolution remains upstream. No name in output, logs or error text; no clock,
+network, interpretation or persistence in aggregation. Metadata describes only `life-code-v1`
+aggregation, not duplicate engine conventions. Validation reuses existing typed request models;
+private input-validation errors and original engine domain error types/codes remain distinguishable.
+**Immutability:** The user explicitly selected a frozen outer result retaining original typed engine
+objects. Astrology/Numerology child objects remain mutable and must be treated as read-only.
+No claim of deep immutability; no existing engine/model mutation to enforce it.
+**Reason:** Preserve one source of truth per engine, deterministic field ownership and a narrow
+Stage 10 boundary. A local midnight may map to a different UTC date without changing Numerology's date.
+**Consequences:** Stage 10A is internal orchestration only; API/admission mapping belongs to Stage 10B.
+No partial-success result, generic exception swallowing, fallback or implicit target year.
+Tests cover lossless identity/equality, data routing/privacy and shared native-state repeatability.
+ADR-001 and engine conventions remain unchanged. Details: [[life-code]].

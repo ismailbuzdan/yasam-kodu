@@ -26,6 +26,8 @@ flowchart LR
   - [x] Stage 9A — Frozen project conventions and scoped official behavioral references (ADR-015).
   - [x] Stage 9B — Mechanical core + typed API; mandatory regression matrix passes (789 backend tests).
 - [ ] Stage 10 — Unified Life Code model
+  - [x] Stage 10A — Deterministic internal model and lossless service aggregation; [[life-code]].
+  - [ ] Stage 10B — Typed API and admission contract (ready for a separate task, not implemented).
 - [ ] Stage 11 — AI interpretation
 - [ ] Stage 12 — Report / PDF
 
