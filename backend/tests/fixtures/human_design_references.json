@@ -1,0 +1,286 @@
+{
+  "schema_version": 1,
+  "stage_9a_complete": false,
+  "stage_9b_ready": false,
+  "accepted_expectations": [],
+  "cases": [
+    {
+      "case_id": "hd_synthetic_01",
+      "status": "candidate_not_approved",
+      "design_days_before_birth": 87.42438998491897
+    },
+    {
+      "case_id": "hd_synthetic_02",
+      "status": "candidate_not_approved",
+      "design_days_before_birth": 86.69585200958333
+    },
+    {
+      "case_id": "hd_synthetic_03",
+      "status": "candidate_not_approved",
+      "design_days_before_birth": 87.02199461730325
+    },
+    {
+      "case_id": "hd_synthetic_04",
+      "status": "candidate_not_approved",
+      "design_days_before_birth": 87.04696183278936
+    },
+    {
+      "case_id": "hd_synthetic_05",
+      "status": "candidate_not_approved",
+      "design_days_before_birth": 88.53892578417825
+    },
+    {
+      "case_id": "hd_synthetic_06",
+      "status": "candidate_not_approved",
+      "design_days_before_birth": 89.92809130297454
+    },
+    {
+      "case_id": "hd_synthetic_07",
+      "status": "candidate_not_approved",
+      "design_days_before_birth": 91.11858155951388
+    },
+    {
+      "case_id": "hd_synthetic_08",
+      "status": "candidate_not_approved",
+      "design_days_before_birth": 91.8751493152199
+    },
+    {
+      "case_id": "hd_synthetic_09",
+      "status": "candidate_not_approved",
+      "design_days_before_birth": 91.9397777733449
+    },
+    {
+      "case_id": "hd_synthetic_10",
+      "status": "candidate_not_approved",
+      "design_days_before_birth": 91.30237060273149
+    },
+    {
+      "case_id": "hd_synthetic_11",
+      "status": "candidate_not_approved",
+      "design_days_before_birth": 90.07834723685184
+    },
+    {
+      "case_id": "hd_synthetic_12",
+      "status": "candidate_not_approved",
+      "design_days_before_birth": 88.66795008116898
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "human_design_sources/comparison.json",
+      "sha256": "3e930edccede2230385ca09a8c976b68e039073faae6ca96a4a1f4d45704bebc"
+    },
+    {
+      "path": "human_design_sources/pyhd.json",
+      "sha256": "785e6548bab2f13ec94b7a28ec77fda091e1b83e99366be3818167c4cce40ec5"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_01_design.provenance.json",
+      "sha256": "56c6ba05aab11c844fa7ef12eb180172aaea01cd93cbc433796c0f3eb2ef8437"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_01_design.txt",
+      "sha256": "aa386db13417f33b0c8d1de5dceb6490f0c5b2e8f54a19567ab10f4e6a0b8233"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_01_personality.provenance.json",
+      "sha256": "79015fad13ca5e31df3e0bb8806ed7ed07504fa6a1f2c7a0ab8bb53ddb1ffa55"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_01_personality.txt",
+      "sha256": "5101726e24987809431e7a930572add55b005454274ccf81cdd1be4e80900062"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_02_design.provenance.json",
+      "sha256": "80c18727760d96fc067da7758130af8fd9f4531ee4854b28053b23c6b814654e"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_02_design.txt",
+      "sha256": "ec6cb41b28ef4f1b291051919012c53b0360d2c8460f67b4be9802575964a8d7"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_02_personality.provenance.json",
+      "sha256": "6c190610e9d3c2600033055eb9c0a3397eeaa84d5f3c86d469f0d7c21c1e28dd"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_02_personality.txt",
+      "sha256": "27dab7ca161756bf2a43220b88144fbf7e73641dd6291ced422f3942d8fb7b80"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_03_design.provenance.json",
+      "sha256": "7afe8a11e503f151e06d2444148ea56a1ede97b99d46bf3cee3db5c0bdfb73b8"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_03_design.txt",
+      "sha256": "df20b60f5decefe69f65c16f00cf13558e6d2e2e9d03215d1a9f5b186751c128"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_03_personality.provenance.json",
+      "sha256": "dc4b93b9b94a9f64088e10e4c358b595babbe415af5e59e85b34e83e1a00892e"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_03_personality.txt",
+      "sha256": "7f80501ae4dd94ed1cb77d248d74f55cf05a6f0d5b7aebf8dcf0dc4e21b2f1cc"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_04_design.provenance.json",
+      "sha256": "5086fcda675b5f28db73cface32696ccdfdc6b7eb6ee452f80e651d79e67f5cb"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_04_design.txt",
+      "sha256": "230792cbe2a87c747a198ea9dd32b715a580b50c39cefd79907eeb74a1a44a1c"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_04_personality.provenance.json",
+      "sha256": "c8ec1c23e9518da0aee96c3dfcc7cb09dd128ba3d709fe0f14164bbd5b85eeed"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_04_personality.txt",
+      "sha256": "e02e2d5baef48e527ae8bf40b2b23c114afd34ed2605f93e798aa684981b5490"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_05_design.provenance.json",
+      "sha256": "25cc700d7c1d1dff4f9db552edf20ae3b6f0e5c5144c8a2e43eeb7c5f8f484c4"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_05_design.txt",
+      "sha256": "9d29e5df42f06024ede65df2c5c29c846722c86e0bdb8c7590c7be9a5304f173"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_05_personality.provenance.json",
+      "sha256": "95e2c58bde7c2d45d4cf70d4950b0c61e48735e27552d81f34a2370654862c3b"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_05_personality.txt",
+      "sha256": "3faa155af6ed018d229a0df23e33787b1fd45a9ca05c6218b708e0a9505d73ac"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_06_design.provenance.json",
+      "sha256": "91b242c30cea4159491f8ec2053b51c99315d5a0b6dfbc1000fb0d00c7eb1b8f"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_06_design.txt",
+      "sha256": "c3f49de91e2996f085077997eb6211dcf564bf27fa66a1640014309a7ad88025"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_06_personality.provenance.json",
+      "sha256": "acebf956710f5c55d6138e6731b8ed378c20d9f31ee44a3997ba58ffa3bdd73d"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_06_personality.txt",
+      "sha256": "cf8b3cc33d41b3e3f8bbc6c1829afc1b84156f970f950e5f8d97c1f8cb5b4615"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_07_design.provenance.json",
+      "sha256": "9f3d0c13330c26f8b8c1123301e883afe70c0f2c78a653ae06d37edbf4d646e4"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_07_design.txt",
+      "sha256": "6de228c11e7f4825f041926529cc37c4240b50eb57386e6015167137eb47b62d"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_07_personality.provenance.json",
+      "sha256": "8b6257061d12a4ea30e20f263c65f5558891e3891de7a1bd58428393b16f76ee"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_07_personality.txt",
+      "sha256": "0d4c72e0d3b54bc741f13f49e8a9eaaca0eb361e3bb49b1318cf89e42b020191"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_08_design.provenance.json",
+      "sha256": "04ec38e3296c79e2e56373670e421e2b7e8613b6e63610138e25f5a88d5af06e"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_08_design.txt",
+      "sha256": "3542672880019f61f847fa6d5af815aed392ae00f2312c8be16aa93c82e11ff4"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_08_personality.provenance.json",
+      "sha256": "2190fc680f4712f21e20b4639c47783c6e18c7a42e210d1b53d549f099f030db"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_08_personality.txt",
+      "sha256": "6019cb1f932dde4d2ef8d8138ca8908d33900c86f00fec345affc402946024bf"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_09_design.provenance.json",
+      "sha256": "b2639500436762794114612a036c5f2d2b971794a98b13943ffaddcae95aeaa8"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_09_design.txt",
+      "sha256": "d575f486f287c05b4c085b2528e5bb2ac60d5f10f68cb8e5553e733e1e45940e"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_09_personality.provenance.json",
+      "sha256": "0715ae4f21151a9cdfb1f4db781b26a26a4015cb4766aad47043ec753ab95d99"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_09_personality.txt",
+      "sha256": "5f19ed0521f915efdaae31c288c1da6be54b00dc307347256c97901aa5e00985"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_10_design.provenance.json",
+      "sha256": "b7ccd8f89e86c2cfc70130074787fb769b539f5b2f520ee143b8f2550579b676"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_10_design.txt",
+      "sha256": "f0b4974ef359452cb16efc9af006cc61fcdc02ef6f94499f777fcb843bd48e34"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_10_personality.provenance.json",
+      "sha256": "25323e28c9cc9d9ca0fa193923f1caa9dc573b07c857154cfdec4b8c3537300f"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_10_personality.txt",
+      "sha256": "80c103386a955a2bc97f5affb638c89b390e41bdecd2d35e2cb7e1c11e1361f8"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_11_design.provenance.json",
+      "sha256": "9aaf4f7180abff2f64c897e16dbb3b523acf155db92822127a57254370c382f5"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_11_design.txt",
+      "sha256": "6d4e8d519863a21f7cc9dc90266741f28c0a010c0e1761577e53d5a45265ba3e"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_11_personality.provenance.json",
+      "sha256": "05c772fa5dadc9e34cf8a5e4044e86fdffdaf7753df92766edf81da619387c07"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_11_personality.txt",
+      "sha256": "69b089a10e48dbce65d2f7bacf27becda8070ba6965108430854ab0a2d54fd7c"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_12_design.provenance.json",
+      "sha256": "c6e568632701a403bea5628be6fe6951088746b78aa3074c2813865c1ab17e24"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_12_design.txt",
+      "sha256": "8bc72827baccf3ddc5bb405f885577d3d1072189528d75d02b36135bfc174785"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_12_personality.provenance.json",
+      "sha256": "12545497a18acff2ffdc299536adb8c6bfd73358ca95bdba279bb686ef9c0e09"
+    },
+    {
+      "path": "human_design_sources/swetest_hd_synthetic_12_personality.txt",
+      "sha256": "4e94acf7ac992a8742dcbe6d3336412a842e9bf8e55c48ba3d8b11ccb9fb3985"
+    }
+  ],
+  "checks": {
+    "gate_centers_match": true,
+    "channels_match": true,
+    "activation_count": 312,
+    "free_vs_pyhd_gate_line_disagreements": 19,
+    "wheel_vs_pyhd_gate_line_disagreements": 0,
+    "external_swetest_max_delta_degrees": 4.964334721080377e-08,
+    "external_swetest_max_88_degree_residual": 2.842170943040401e-14
+  },
+  "limitations": [
+    "No second complete independently calculated chart export",
+    "Upstream mapping/type/authority/definition discrepancies documented",
+    "Shared Swiss/Moshier astronomy is not independent JPL validation",
+    "Timestamp coverage lacks verified Manifestor, Reflector and rare authorities",
+    "PyHD runtime compatibility shim is disclosed; not an unmodified runtime reference"
+  ]
+}

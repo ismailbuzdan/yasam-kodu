@@ -1,0 +1,11 @@
+{
+  "url": "https://www.astro.com/cgi/swetest.cgi?arg=-b2.7.2000+-utc04%3A44%3A35.179924+-p0123456789t+-fPl+-g%2C+-n1+-emos",
+  "retrieved_at": "2026-09-18T11:07:26.985264+00:00",
+  "utc_datetime": "2000-07-02T04:44:35.179924+00:00",
+  "node_type": "true",
+  "mode": "Moshier",
+  "independence": "external Swiss execution; shared algorithm, not JPL astronomy; design time supplied by PyHD",
+  "http_body_sha256": "8df332f8ea883c93ad8190752f55f0eb48cee989e016ab061277ba93081c4b7d",
+  "sha256": "f0b4974ef359452cb16efc9af006cc61fcdc02ef6f94499f777fcb843bd48e34",
+  "extraction": "PRE numeric output only"
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "privacy": "Explicitly synthetic UTC test timestamps; no person, name or location.",
+  "selection": "Fixed calendar grid across seasons, with two equinox-region probes. Output coverage must be measured, never assumed.",
+  "cases": [
+    {"case_id":"hd_synthetic_01","utc_datetime":"2000-01-01T12:00:00+00:00"},
+    {"case_id":"hd_synthetic_02","utc_datetime":"2000-02-01T12:00:00+00:00"},
+    {"case_id":"hd_synthetic_03","utc_datetime":"2000-03-20T00:00:00+00:00"},
+    {"case_id":"hd_synthetic_04","utc_datetime":"2000-03-21T00:00:00+00:00"},
+    {"case_id":"hd_synthetic_05","utc_datetime":"2000-05-01T12:00:00+00:00"},
+    {"case_id":"hd_synthetic_06","utc_datetime":"2000-06-01T12:00:00+00:00"},
+    {"case_id":"hd_synthetic_07","utc_datetime":"2000-07-01T12:00:00+00:00"},
+    {"case_id":"hd_synthetic_08","utc_datetime":"2000-08-01T12:00:00+00:00"},
+    {"case_id":"hd_synthetic_09","utc_datetime":"2000-09-01T12:00:00+00:00"},
+    {"case_id":"hd_synthetic_10","utc_datetime":"2000-10-01T12:00:00+00:00"},
+    {"case_id":"hd_synthetic_11","utc_datetime":"2000-11-01T12:00:00+00:00"},
+    {"case_id":"hd_synthetic_12","utc_datetime":"2000-12-01T12:00:00+00:00"}
+  ]
+}
