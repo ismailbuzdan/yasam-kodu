@@ -149,3 +149,20 @@ without masters. Null target year means null personal year; no implicit current 
 **Consequences:** Pure service has no clock/I/O; shared future-birth-date rule is applied at API admission
 with an injectable clock. Unsupported alphabets are rejected. Names never appear in responses/logs
 or persistence. Only synthetic golden vectors; no dependency additions or Stage 9 work.
+
+## ADR-015 — Human Design Mechanical Calculation Convention
+
+**Status:** Proposed
+**Context:** Stage 9 requires deterministic conventions for the 88-degree Design moment, Rave wheel,
+lunar node, graph classification, Type, Authority, Profile and Definition before implementation.
+**Proposed decision:** Use the exact previous 88.0-degree solar arc; equal 5.625-degree gates and
+0.9375-degree lines provisionally anchored with Gate 41 at 302 degrees and `[start,end)` ownership;
+derive channels/centers and connected components from the documented 36-channel graph; use continuous
+defined-channel reachability for motor-to-Throat Type classification. Profile is Personality Sun line
+then Design Sun line. True Node and the complete golden acceptance set remain unresolved.
+**Reason status is not Accepted:** Public original-system evidence reviewed does not disclose the exact
+numerical wheel boundary or True/Mean node algorithm. True/Mean changes 19 of 24 north-node Gate/Line
+records in current cases, and rare Authority/Type/Definition branches lack trusted chart exports.
+**Consequences:** No production engine or endpoint is authorized. `accepted_expectations` remains empty,
+Stage 9A remains incomplete and Stage 9B is not ready. See [[human-design]] and
+[[human-design-verification]].

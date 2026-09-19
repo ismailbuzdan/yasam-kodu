@@ -7,11 +7,16 @@ tags:
 
 ## Backend
 
-584 tests (467 existing plus 117 numerology) cover health, birth-profile validation, location resolution, historical timezone behavior,
+589 tests (584 Stage 8 baseline plus 5 Stage 9A research-integrity tests) cover health, birth-profile validation, location resolution, historical timezone behavior,
 fixture-integrity boundaries and Stages 6–7 astrology. Original tests remain; the old empty-reference
 guard now checks provenance. Astrology includes invariants, error boundaries, threaded repeatability,
 real Swiss smoke tests and offline external-reference regression; see [[astrology-verification]].
 Run `pytest` and `pip check` for backend changes.
+
+Stage 9A has research-only Human Design integrity tests. They verify synthetic UTC identity,
+artifact hashes, candidate/non-golden status, 64-gate/9-center and 36-channel structural agreement,
+and preservation of known mapper disagreements. They do not assert candidate chart output as correct.
+See [[human-design-verification]].
 
 Stage 8 tests in `tests/test_numerology.py` use hand-calculated synthetic golden vectors, normalization
 and reducer boundaries, API validation/privacy, expression partition invariants and exact repeatability.
@@ -63,3 +68,7 @@ independent astronomy. Raw artifacts, query URLs, timestamps and hashes are pres
 
 An engine output cannot become its own fixture reference. Document each expected source and preserve
 the input, convention and expected result independently.
+
+For Human Design, two mappers consuming the same upstream longitude and Design moment are not two
+independent end-to-end references. Promote a field only with raw hashed provenance, exact tool/version,
+classified independence, resolved convention semantics and no disagreement affecting that field.

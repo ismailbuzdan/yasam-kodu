@@ -7,6 +7,18 @@ tags:
 
 Current delivery state: [[04_CURRENT_STATE]]. Milestone sequence: [[03_ROADMAP]].
 
+## 2026-09-19 — Stage 9A Human Design convention research continuation
+
+- Diagnosed all 19 stored Gate/Line disagreements as one fixed 2.5-arcminute mapper offset: 17
+  line-only and two gate+line differences; no candidate was promoted.
+- Confirmed that True versus Mean Node materially changes 19 of 24 north-node activations in the
+  synthetic set; retained the node convention as unresolved.
+- Recorded continuous motor-to-Throat graph semantics, connected-component Definition probes,
+  Authority branch requirements, Profile rule and current coverage gaps.
+- Added the missing [[human-design-verification]] evidence/quality record and Proposed ADR-015.
+- Kept `accepted_expectations` empty, Stage 9A incomplete and Stage 9B not ready. No production
+  Human Design engine, endpoint, frontend change or dependency was added.
+
 ## 2026-09-18 — Stage 8 deterministic numerology
 
 - Added pure Pythagorean numerology service, request/response models and `/api/v1/numerology/calculate`.

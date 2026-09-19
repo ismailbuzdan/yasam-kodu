@@ -6,7 +6,7 @@ tags:
 # Stage 9A — Human Design mechanical calculation specification
 
 **Status: Proposed; reference acceptance blocked. Stage 9A is NOT complete.**
-Research date: 2026-09-18. See [[human-design-verification]], [[05_DECISIONS]],
+Research date: 2026-09-19. See [[human-design-verification]], [[05_DECISIONS]],
 [[07_TEST_STRATEGY]] and [[04_CURRENT_STATE]]. No production service or endpoint exists.
 
 ## 1. Scope and system boundary
@@ -76,12 +76,14 @@ No Chiron or Lilith. Earth = normalized Sun + 180°, not a geocentric Earth-body
 South Node = normalized North Node + 180°. Original-system opposition terminology:
 [Jovian dictionary](https://jovianarchive.com/pages/human-design-dictionary).
 
-**True Node is proposed independently for HD**, not inherited from astrology.
+**True Node is proposed independently for HD and remains UNRESOLVED**, not inherited from astrology.
 [Orunira's own method](https://orunira.com/en/human-design/method), pinned PyHD and
 free-human-design all explicitly use true nodes. The original-system public pages
 reviewed do not specify the precise lunar-node ephemeris algorithm. A controlled
 official-calculator comparison remains an acceptance requirement; do not call this
 an official Jovian precision guarantee. Raw sources/settings are in the evidence register.
+A controlled True/Mean comparison changed 19 of 24 north-node Gate/Line activations in the
+12 synthetic cases, so this is a material acceptance blocker; see [[human-design-verification]].
 
 ## 7. Gate wheel and line mapping
 
@@ -101,6 +103,10 @@ The published table contains a Gate 12 start typo (22°37′30″ Gemini versus 
 Gate 45 end 22°27′30″); use the consistent equal-width structure, document the discrepancy,
 and obtain an original-system boundary export before accepting references.
 The engine and Plateworks site have the same author and do NOT count as independent sources.
+The 19 stored mapper disagreements are fully explained by `free-human-design` using an effective
+Gate 41 start of `302.041666666...°`: 17 line-only and two gate+line differences. This diagnoses a
+fixed 2.5-arcminute offset but does not by itself prove the 302-degree proposal; golden acceptance
+remains **UNVERIFIED**. Full rows are in [[human-design-verification]].
 
 For a finite longitude, treat its binary64 value as an exact rational number:
 `r = (longitude - 302) mod 360`, `i = floor(r / (45/8))`,
@@ -206,7 +212,7 @@ supports the connected-group interpretation. Ignore wide/simple split subtypes f
 
 ## 11. Type and Strategy
 
-Motors: `sacral, ego, solar_plexus, root`. Connection means any path through defined
+Motors: `sacral, ego, solar_plexus, root`. Connection means any continuous path through defined
 channels, not only a direct motor–throat edge. Source: Jovian dictionary's continuous
 definition rule and [Type/Strategy](https://jovianarchive.com/pages/type-and-strategy-in-human-design).
 
@@ -245,7 +251,9 @@ Ego manifested can run through G, not just 21–45. Sources:
 [self projected](https://jovianarchive.com/pages/self-projected-authority-in-human-design-the-projectors-voice).
 Mental/environmental and lunar identifiers do not imply a defined inner authority center.
 Engine disagreement on ego variants remains a reference-acceptance blocker, not an excuse
-to silently reduce both to a generic `ego` field.
+to silently reduce both to a generic `ego` field. The hierarchy is mechanically supported by
+official public descriptions but rare branches still lack controlled trusted chart exports; it is
+therefore unapproved as golden chart evidence.
 
 ## 13. Profile
 
