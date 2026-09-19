@@ -7,6 +7,18 @@ tags:
 
 Current delivery state: [[04_CURRENT_STATE]]. Milestone sequence: [[03_ROADMAP]].
 
+## 2026-09-19 — Stage 9B.1A astronomy core
+
+- Implemented UTC/UT1 Moshier astronomy, 13-body activations with True Node and derived oppositions,
+  exact previous 88° bisection and pure rational Gate/Line mapper; immutable internal models/errors.
+- Reused Astrology's existing native lock and initialization without modifying its code or outputs.
+- Verified 384 exact/adjacent boundaries and 364/364 official activation matches. Added 46 tests
+  including solver failures/range edges, serialization isolation, determinism and mixed concurrency.
+- Docker: 641 backend tests pass, 11 Stage 9A integrity tests pass; pip check and evidence audit clean.
+  All 68 raw artifacts/goldens and ADR-015 unchanged; no new dependency or upstream HD runtime.
+- Stage 9B.1A complete; Stage 9B.1B not started; API not implemented. No graph, Type, Strategy,
+  Authority, Definition, Profile, frontend, AI or PDF implementation.
+
 ## 2026-09-19 — Stage 9A.2 convention acceptance and final qualification
 
 - Accepted ADR-015 as a deterministic PROJECT convention, separating public system rules,

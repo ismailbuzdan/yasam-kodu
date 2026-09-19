@@ -7,7 +7,7 @@ tags:
 
 ## Backend
 
-595 tests (584 Stage 8 baseline plus 11 Stage 9A integrity/contract tests) cover health, birth-profile validation, location resolution, historical timezone behavior,
+641 tests (584 Stage 8 baseline, 11 Stage 9A integrity/contract and 46 HD core tests) cover health, birth-profile validation, location resolution, historical timezone behavior,
 fixture-integrity boundaries and Stages 6–7 astrology. Original tests remain; the old empty-reference
 guard now checks provenance. Astrology includes invariants, error boundaries, threaded repeatability,
 real Swiss smoke tests and offline external-reference regression; see [[astrology-verification]].
@@ -30,6 +30,16 @@ See [[human-design-verification]].
 Stage 8 tests in `tests/test_numerology.py` use hand-calculated synthetic golden vectors, normalization
 and reducer boundaries, API validation/privacy, expression partition invariants and exact repeatability.
 The API validation clock is overridden explicitly; no current-year default is permitted. See [[numerology]].
+
+## Human Design core
+
+Stage 9B.1A is complete. `test_human_design_core.py` tests production mapping at all 384 exact
+and adjacent binary64 boundaries, all 364 official Gate/Line observations, native body/flag/node
+rules, opposition/normalization, 1800/2100 range edges, input/domain errors, solver residual AND
+bracket limits, failure/iteration/stagnation paths, exact half-even ties and no UTC serialization
+feedback. Repeated calculations and mixed HD/Astrology threads verify determinism/state isolation.
+No research tool is imported by production or these core tests. Graph/classification and API tests
+remain for Stage 9B.1B/9B.2; no full classification acceptance is claimed by these 364 matches.
 
 ## Frontend
 

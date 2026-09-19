@@ -5,9 +5,17 @@ tags:
 
 # Stage 9A — Human Design mechanical calculation specification
 
-**Status: Accepted project convention (ADR-015, stage9a2-v1). Stage 9A complete; Stage 9B ready, not started.**
+**Status: Accepted project convention (ADR-015, stage9a2-v1). Stage 9B.1A complete; Stage 9B.1B not started.**
 Research date: 2026-09-19. See [[human-design-verification]], [[05_DECISIONS]],
-[[07_TEST_STRATEGY]] and [[04_CURRENT_STATE]]. No production service or endpoint exists.
+[[07_TEST_STRATEGY]] and [[04_CURRENT_STATE]]. Astronomy core exists; API not implemented.
+
+Implementation scope: `human_design_astronomy.py` owns orchestration/native primitives/88° solver,
+`human_design_mapping.py` owns the pure mapper and wheel, `human_design_models.py` immutable internal
+values and domain errors. The native adapter imports the existing Astrology state owner (same
+`_LOCK` and `initialize_ephemeris`), with no behavior-changing refactor. All native calls, including
+UTC conversions, occur under that lock. No fixture/research tool or external HD engine is imported.
+46 core tests pass, including all 364 official activation values. Subsequent classification sections
+remain specifications only: no graph, Type/Authority/Definition/Profile or API is implemented.
 
 ## 1. Scope and system boundary
 
@@ -307,7 +315,8 @@ Stage 9A.1 now has a second trusted complete chart source: 14 Jovian public UI n
 364 matching activations and official examples of the missing rare categories. Independent internal
 astronomy is UNKNOWN; official tool version/settings are undisclosed. Stage 9A.2 accepts those
 discrete outputs as golden mechanical behavior, NOT version-pinned independent astronomy.
-All project semantic choices are frozen; ADR-015 is Accepted and Stage 9B is ready, not implemented.
+All project semantic choices are frozen; ADR-015 is Accepted. Stage 9B.1A implements only astronomy,
+solver and mapping; Stage 9B.1B is not started and API is not implemented.
 Every official regression must pass in 9B; a mismatch blocks release and requires diagnosis, never
 automatic fixture replacement or tolerance added to Gate/Line labels. Further original-system
 evidence may require a new versioned decision, not silent drift of this convention.
