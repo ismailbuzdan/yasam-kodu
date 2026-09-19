@@ -55,13 +55,21 @@ def main():
                 "wheel_vs_pyhd_gate_line_disagreements":sum(d["wheel"]!=d["pyhd"] for d in differences),
                 "external_swetest_max_delta_degrees":max_delta,
                 "external_swetest_max_88_degree_residual":max_arc_residual},
-              "limitations":["No second complete independently calculated chart export",
-                "Upstream mapping/type/authority/definition discrepancies documented",
-                "Shared Swiss/Moshier astronomy is not independent JPL validation",
-                "Timestamp coverage lacks verified Manifestor, Reflector and rare authorities",
-                "PyHD runtime compatibility shim is disclosed; not an unmodified runtime reference"]}
-    (ROOT / "human_design_references.json").write_text(json.dumps(result,indent=2)+"\n")
+              }
+    # Read-only audit: never replace recorded hashes with hashes of changed evidence.
+    recorded = json.loads((ROOT / "human_design_references.json").read_text())
+    assert len(recorded['artifacts']) == len(sources), 'Evidence inventory mismatch'
+    assert {a['path']: a['sha256'] for a in recorded['artifacts']} == {
+        a['path']: a['sha256'] for a in sources}, 'Evidence hash mismatch'
+    for key in ('schema_version', 'stage_9a_complete', 'stage_9b_ready',
+                'accepted_expectations', 'cases', 'checks'):
+        assert recorded[key] == result[key], f'Recorded {key} mismatch'
+    from inspect_human_design_official import build_report
+    official = build_report()
+    assert official == json.loads((ROOT / 'human_design_official_comparison.json').read_text())
     print(json.dumps(result["checks"],indent=2))
+    print(json.dumps({'official_chart_count': len(official['cases']),
+                      'evidence_files_verified': len(sources), 'audit_mode': 'read_only'}))
 
 
 if __name__ == "__main__":

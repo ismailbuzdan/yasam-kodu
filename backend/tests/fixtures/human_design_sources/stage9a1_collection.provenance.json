@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-09-19",
+  "status": "candidate_not_approved",
+  "official_collection": {
+    "method": "Read-only rendered DOM textContent extraction through public browser UI; not manual numeric transcription, screenshot, raw HTML or API response",
+    "source_url": "https://jovianarchive.com/pages/get-your-human-design-chart",
+    "product": "Jovian Archive public chart calculator / MMI widget",
+    "version": null,
+    "node_algorithm": null,
+    "ephemeris": null,
+    "activation_order": [
+      "sun",
+      "earth",
+      "moon",
+      "north_node",
+      "south_node",
+      "mercury",
+      "venus",
+      "mars",
+      "jupiter",
+      "saturn",
+      "uranus",
+      "neptune",
+      "pluto"
+    ],
+    "order_verification": "Visible glyphs inspected; 13 numeric labels on each side; every displayed UTC checked against synthetic input",
+    "ui_inputs": "Synthetic chart label, UTC date/time, Reykjavik as UTC transport only; email omitted; no real-person data",
+    "time_input_observation": {
+      "placeholder": "HH:mm",
+      "maxLength": 5,
+      "seconds_supported": false,
+      "method": "Read-only DOM attribute inspection, 2026-09-19"
+    },
+    "independence": "Separate official end-to-end pipeline; receives only synthetic time, not upstream longitude/design instant; shared astronomy UNKNOWN",
+    "rights": "Only numeric mechanical facts and short classification labels recorded; no images, descriptions, third-party code or interpretation copied; public UI, no login/paywall/private API bypass",
+    "terms_url": "https://jovianarchive.com/pages/terms-and-conditions"
+  },
+  "search_collection": {
+    "artifact": "pyhd_rare_search.jsonl",
+    "command": "docker compose exec -T backend python tools/search_human_design_candidates.py",
+    "captured_date": "2026-09-19",
+    "exact_retrieval_timestamp": null,
+    "limitation": "Original search stdout has no timestamp or adapter hash; exact retrieval timestamp and historical adapter revision UNVERIFIED. Candidate discovery only, never golden. Later per-case comparison includes timestamp, version and tool hash.",
+    "source_commit": "d80aef667e561fb588dd883f8ce39ceea9593a12",
+    "license": "MIT verified before execution",
+    "source_hash_manifest": "pyhd.json/source_files; all hashes checked before execution",
+    "adapter": "Python 3.11 Enum value-alias compatibility shim",
+    "search": "896 daily synthetic 12:00 UTC inputs from 2000-01-01; stopped after all target labels found",
+    "independence": "Same pinned PyHD as baseline; no independent reference claim"
+  },
+  "comparison_history": {
+    "initial": "pyhd_official_comparison.json (north-node diagnostic)",
+    "extended": "pyhd_official_comparison_nodes.json (north and south); initial retained unchanged",
+    "derived": "../human_design_official_comparison.json; offline graph probe over official gates; not a production calculator"
+  },
+  "hashes": "All raw files including this envelope registered in ../human_design_references.json"
+}

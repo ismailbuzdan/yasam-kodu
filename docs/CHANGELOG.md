@@ -7,6 +7,20 @@ tags:
 
 Current delivery state: [[04_CURRENT_STATE]]. Milestone sequence: [[03_ROADMAP]].
 
+## 2026-09-19 — Stage 9A.1 official reference research (incomplete)
+
+- Preserved all local continuation work and 50 original raw artifacts; added 14 public official
+  Jovian synthetic chart captures, pinned-PyHD diagnostics and collection provenance (68 artifacts).
+- Recorded 364/364 activation matches; True Node matches 56/56 N/S observations, with 46
+  discriminating against Mean. Version/settings remain undisclosed; node status PARTIALLY VERIFIED.
+- Bracketed Gate 41 transition using 00:53/00:55 UTC official observations. Approximately 302°
+  supported; exact equality ownership UNRESOLVED. No invented second-precision evidence.
+- Verified previously missing rare category examples and four missing profile pairs. Added
+  field-level research graph comparison and updated acceptance matrix, without golden promotion.
+- Made audit read-only, retaining original checks. Docker: 8 integrity / 592 total tests pass,
+  two existing warnings; pip check clean. ADR-015 Proposed; Stage 9A incomplete / 9B not ready.
+- No production HD engine, endpoint, schemas, solver, frontend or other production change.
+
 ## 2026-09-19 — Stage 9A Human Design convention research continuation
 
 - Diagnosed all 19 stored Gate/Line disagreements as one fixed 2.5-arcminute mapper offset: 17

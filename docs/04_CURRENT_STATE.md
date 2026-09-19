@@ -23,15 +23,16 @@ After coding:
 
 ## Completed
 
-Stages 1, 2, 3, 3.5, 4, 5, 6, 7 and 8. Backend: 589 tests passed (584 Stage 8 baseline
-+ 5 Stage 9A research-integrity tests) and `pip check` successful in the Docker Compose Python 3.11 backend.
+Stages 1, 2, 3, 3.5, 4, 5, 6, 7 and 8. Backend: 592 tests passed (584 Stage 8 baseline
++ 8 Stage 9A research-integrity tests), two existing warnings, and `pip check` successful in Docker.
 See [[astrology]] and [[numerology]] for installation and conventions.
 Frontend: unchanged; last recorded lint, typecheck, 8/8 tests and production build pass.
 
 Git: public sanitized baseline. This repository contains no prior private Git history.
 
-**Current blockers:** Stage 9A lacks public original-system precision for the exact gate-wheel anchor
-and True/Mean Node convention, a second trusted complete chart export, and rare branch coverage.
+**Current blockers:** Stage 9A lacks exact wheel/equality qualification, published precise node
+algorithm/settings and exhaustive mechanics/golden coverage. Fourteen official Jovian complete
+charts now supply second-pipeline evidence and all previously missing rare category examples.
 Tracked fixtures are synthetic and must remain synthetic.
 
 **Astrology:** Moshier retained. Nine synthetic external reference records; JPL astronomy and external swetest
@@ -51,8 +52,11 @@ using a shared BirthProfile rule and injectable API clock. Names are not echoed,
 **Human Design:** Stage 9A research-only fixtures/tools exist; no production engine or endpoint.
 Stored candidates remain `candidate_not_approved`, `accepted_expectations` is empty, ADR-015 is
 Proposed, Stage 9A is incomplete and Stage 9B is not ready. The 19 mapper differences are explained
-by a fixed 2.5-arcminute offset, while True/Mean Node remains materially unresolved. See
+by a fixed 2.5-arcminute offset. True Node behavior is PARTIALLY VERIFIED: 56/56 official North/South
+observations match True, 46 discriminate against Mean; no precise official algorithm is published
+in the reviewed sources. The 302° anchor is PARTIALLY VERIFIED by a minute-resolution bracket.
+Original 50 evidence files are unchanged; read-only audit verifies 68 artifacts and baseline checks. See
 [[human-design]] and [[human-design-verification]].
 
-**Next task:** Obtain trusted convention evidence and missing synthetic reference coverage without
-promoting engine output by vote. AI interpretation, production Human Design and PDF remain future work.
+**Next task:** Qualify exact equality/boundary and node semantics, official tool provenance and
+remaining branch coverage. No goldens were promoted. AI interpretation, production HD and PDF remain future work.

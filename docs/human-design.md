@@ -76,12 +76,14 @@ No Chiron or Lilith. Earth = normalized Sun + 180°, not a geocentric Earth-body
 South Node = normalized North Node + 180°. Original-system opposition terminology:
 [Jovian dictionary](https://jovianarchive.com/pages/human-design-dictionary).
 
-**True Node is proposed independently for HD and remains UNRESOLVED**, not inherited from astrology.
+**True Node is proposed independently for HD and is PARTIALLY VERIFIED**, not inherited from astrology.
 [Orunira's own method](https://orunira.com/en/human-design/method), pinned PyHD and
 free-human-design all explicitly use true nodes. The original-system public pages
-reviewed do not specify the precise lunar-node ephemeris algorithm. A controlled
-official-calculator comparison remains an acceptance requirement; do not call this
-an official Jovian precision guarantee. Raw sources/settings are in the evidence register.
+reviewed do not specify the precise lunar-node ephemeris algorithm. Stage 9A.1 collected 14 official
+Jovian charts: all 56 North/South Node observations match True Node, with 46 discriminating against
+Mean Node. This is observed calculator behavior, not a published algorithm/precision guarantee;
+the official version, settings and exact Design instant are undisclosed. Raw sources/settings are
+in the evidence register. No node-dependent golden is approved.
 A controlled True/Mean comparison changed 19 of 24 north-node Gate/Line activations in the
 12 synthetic cases, so this is a material acceptance blocker; see [[human-design-verification]].
 
@@ -107,6 +109,10 @@ The 19 stored mapper disagreements are fully explained by `free-human-design` us
 Gate 41 start of `302.041666666...°`: 17 line-only and two gate+line differences. This diagnoses a
 fixed 2.5-arcminute offset but does not by itself prove the 302-degree proposal; golden acceptance
 remains **UNVERIFIED**. Full rows are in [[human-design-verification]].
+Stage 9A.1 official minute probes bracket the transition between 301.99922119558215° and
+302.0006347126726° under local Swiss/Moshier astronomy. Anchor and transition are PARTIALLY
+VERIFIED; exact `[start,end)` equality ownership is UNRESOLVED. The public form exposes HH:mm,
+not seconds. A minute bracket must not be presented as an exact mathematical boundary.
 
 For a finite longitude, treat its binary64 value as an exact rational number:
 `r = (longitude - 302) mod 360`, `i = floor(r / (45/8))`,
@@ -252,8 +258,9 @@ Ego manifested can run through G, not just 21–45. Sources:
 Mental/environmental and lunar identifiers do not imply a defined inner authority center.
 Engine disagreement on ego variants remains a reference-acceptance blocker, not an excuse
 to silently reduce both to a generic `ego` field. The hierarchy is mechanically supported by
-official public descriptions but rare branches still lack controlled trusted chart exports; it is
-therefore unapproved as golden chart evidence.
+official public descriptions. Stage 9A.1 adds controlled official examples for all previously
+missing authority labels; 14 graph probes agree. Exhaustive priority/path combinations and an
+official splenic sample remain uncovered. Authority is PARTIALLY VERIFIED, not golden-approved.
 
 ## 13. Profile
 
@@ -283,9 +290,11 @@ coverage gaps, copyright audit and reproduction commands. No candidate is an acc
 expected result. Two independent mapping implementations over the same longitudes do
 not equal two independently calculated charts.
 
-Before 9B: obtain a second complete trusted chart export for selected synthetic cases,
-resolve documented disagreements, cover the missing types/authorities, and promote
-references field-by-field with provenance. Then accept ADR-015 and finalize date range.
+Stage 9A.1 now has a second trusted complete chart source: 14 Jovian public UI numeric captures,
+364 matching activations and official examples of the missing rare categories. Independent internal
+astronomy is UNKNOWN; official tool version/settings are undisclosed. Before 9B: resolve exact
+wheel/equality and node qualification, remaining disagreements and mechanics coverage, then promote
+references field-by-field with provenance. Only then accept ADR-015 and finalize date range.
 
 Only after a separate 9B task: design a shared astronomy adapter without altering existing
 outputs; implement UTC schema, 88° solver, exact gate/line mapping, graph classification

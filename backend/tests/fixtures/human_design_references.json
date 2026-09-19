@@ -265,6 +265,78 @@
     {
       "path": "human_design_sources/swetest_hd_synthetic_12_personality.txt",
       "sha256": "4e94acf7ac992a8742dcbe6d3336412a842e9bf8e55c48ba3d8b11ccb9fb3985"
+    },
+    {
+      "path": "human_design_sources/jovian_hd_boundary_0053.json",
+      "sha256": "2ee1dd26db01d244f7a49a7f7ed34f6174dc1b87893676da5ad560c400d23a3b"
+    },
+    {
+      "path": "human_design_sources/jovian_hd_boundary_0055.json",
+      "sha256": "602a0cfb10caebdfcef64b26af391b224d6347ad7e56af629767a1846bfddd14"
+    },
+    {
+      "path": "human_design_sources/jovian_hd_rare_ego_manifested.json",
+      "sha256": "b187e011db79db1d4ce5fae0c5676074d266c7065e5ef2c2c9f67f8b718dde1f"
+    },
+    {
+      "path": "human_design_sources/jovian_hd_rare_ego_projected.json",
+      "sha256": "5996b0bc57999eb199c7defa9bcafdabecc70d63d9819f116aad027a9e6c5087"
+    },
+    {
+      "path": "human_design_sources/jovian_hd_rare_environmental.json",
+      "sha256": "e56312d7ed3e2c055a6a60033490704a1a458a3332c4a44d81a38b2783e0a6d3"
+    },
+    {
+      "path": "human_design_sources/jovian_hd_rare_manifestor.json",
+      "sha256": "eba24b35bf7ef2fd4841c4f8e92fd3ea4461224bdc11fc0387a91567eae3a487"
+    },
+    {
+      "path": "human_design_sources/jovian_hd_rare_profile25.json",
+      "sha256": "56967af215751e0911fa22ad6e152e16f0a1d803f3ea3d84477b60b9c3e9b2f9"
+    },
+    {
+      "path": "human_design_sources/jovian_hd_rare_profile36.json",
+      "sha256": "3cfc378b1256f03d427d81aef03665b298f204a035436c069cd531b9f2a6bc74"
+    },
+    {
+      "path": "human_design_sources/jovian_hd_rare_profile41.json",
+      "sha256": "8a7e4c5e9f2ba0825a68b345d63b29a9c6b52e8fe57ae46646effcbbffaa49ac"
+    },
+    {
+      "path": "human_design_sources/jovian_hd_rare_profile52.json",
+      "sha256": "c1e257fdeb29e8119161da1de47ae8269593c16700e54f8fd6a012c1bc98bbef"
+    },
+    {
+      "path": "human_design_sources/jovian_hd_rare_quadruple.json",
+      "sha256": "8f830cf606ff4e67e5fa3ce50c3ccf0e9037e7d05adc0594539dc967228334ec"
+    },
+    {
+      "path": "human_design_sources/jovian_hd_rare_reflector.json",
+      "sha256": "0346bfe4c51be10a1d95f7aa61020ed3c6b3ff50e7b5d9f03afacc13799bfdb0"
+    },
+    {
+      "path": "human_design_sources/jovian_hd_rare_self.json",
+      "sha256": "9f04384d5842c0cc8b5a25e9e5d15b3b09e756f4b8b5e980eb00e25f316231b2"
+    },
+    {
+      "path": "human_design_sources/jovian_hd_synthetic_03.json",
+      "sha256": "2a6c8b881804bbaa4c1389c3eb00764af1e1e8952921ac8283729e77bce907d0"
+    },
+    {
+      "path": "human_design_sources/pyhd_official_comparison_nodes.json",
+      "sha256": "f92004c0184781d5b2e3ea9baf4d8493a808ab2dc5f65e6d97fd26bf8a94e9bf"
+    },
+    {
+      "path": "human_design_sources/pyhd_official_comparison.json",
+      "sha256": "07ce3870c18f868e7a3274bb08602922f9149109a19a1ef3ebe6e043f3678830"
+    },
+    {
+      "path": "human_design_sources/pyhd_rare_search.jsonl",
+      "sha256": "add597024eac139a3111d9911712ed572215e32f066f29751eedcec10d2beb74"
+    },
+    {
+      "path": "human_design_sources/stage9a1_collection.provenance.json",
+      "sha256": "3c1cc9c5dbc9ba43b6537684fe8781443ab01ea097d7cba665e2b24d46eee878"
     }
   ],
   "checks": {
@@ -273,14 +345,16 @@
     "activation_count": 312,
     "free_vs_pyhd_gate_line_disagreements": 19,
     "wheel_vs_pyhd_gate_line_disagreements": 0,
-    "external_swetest_max_delta_degrees": 4.964334721080377e-08,
+    "external_swetest_max_delta_degrees": 4.964334721080377e-8,
     "external_swetest_max_88_degree_residual": 2.842170943040401e-14
   },
   "limitations": [
-    "No second complete independently calculated chart export",
-    "Upstream mapping/type/authority/definition discrepancies documented",
+    "Exact wheel boundary ownership remains unverified; official minute bracket supports approximately 302 degrees",
+    "Official node behavior matches True Node in discriminating probes; precise algorithm/version/settings undisclosed",
+    "Official complete charts collected from separate pipeline; independent astronomy UNKNOWN",
+    "Rare category examples observed, not exhaustive branch/boundary coverage or golden expectations",
+    "Original upstream mapping/type/authority/definition discrepancies remain documented",
     "Shared Swiss/Moshier astronomy is not independent JPL validation",
-    "Timestamp coverage lacks verified Manifestor, Reflector and rare authorities",
-    "PyHD runtime compatibility shim is disclosed; not an unmodified runtime reference"
+    "PyHD Enum compatibility shim disclosed; search historical adapter revision/timestamp unavailable"
   ]
 }

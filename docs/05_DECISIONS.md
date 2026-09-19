@@ -161,8 +161,11 @@ derive channels/centers and connected components from the documented 36-channel 
 defined-channel reachability for motor-to-Throat Type classification. Profile is Personality Sun line
 then Design Sun line. True Node and the complete golden acceptance set remain unresolved.
 **Reason status is not Accepted:** Public original-system evidence reviewed does not disclose the exact
-numerical wheel boundary or True/Mean node algorithm. True/Mean changes 19 of 24 north-node Gate/Line
-records in current cases, and rare Authority/Type/Definition branches lack trusted chart exports.
+numerical wheel boundary or precise node algorithm. Stage 9A.1 adds 14 complete official Jovian
+charts and rare category observations: 364/364 activations match pinned PyHD, and 46 discriminating
+North/South Node observations favor True Node. Official calculator behavior is not a published
+precision specification; version/settings and exact equality ownership remain unverified.
+Second-chart availability is resolved, but exhaustive mechanics and golden qualification are not.
 **Consequences:** No production engine or endpoint is authorized. `accepted_expectations` remains empty,
 Stage 9A remains incomplete and Stage 9B is not ready. See [[human-design]] and
 [[human-design-verification]].

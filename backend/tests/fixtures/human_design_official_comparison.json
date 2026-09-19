@@ -1,0 +1,1809 @@
+{
+  "status": "candidate_not_approved",
+  "input_sha256": "f92004c0184781d5b2e3ea9baf4d8493a808ab2dc5f65e6d97fd26bf8a94e9bf",
+  "method": "Independent research graph encoding from proposed rules over OFFICIAL gates and existing corroborated topology; not independent astronomy",
+  "tool_sha256": "628bc7a3023da275e0938ba3acb17c1ad2d44aaa39347278725f80c9edee8581",
+  "normalization": {
+    "types": {
+      "Pure Generator": "Generator",
+      "Energy Projector": "Projector",
+      "Classic Projector": "Projector",
+      "Mental Projector": "Projector"
+    },
+    "authorities": {
+      "Lunar": "Lunar Cycle",
+      "Outer Authority": "Sounding Board"
+    }
+  },
+  "cases": [
+    {
+      "case_id": "hd_boundary_0053",
+      "utc_datetime": "2026-01-22T00:53:00+00:00",
+      "official": {
+        "Authority": "Solar Plexus",
+        "Date and Time (UTC)": "January 22, 2026, 00:53",
+        "Definition": "Split",
+        "Profile": "6/3",
+        "Type": "Projector"
+      },
+      "pyhd_normalized": {
+        "Type": "Projector",
+        "Authority": "Solar Plexus",
+        "Profile": "6/3",
+        "Definition": "Split"
+      },
+      "proposed_graph_probe": {
+        "Type": "Projector",
+        "Authority": "Solar Plexus",
+        "Definition": "Split",
+        "Profile": "6/3",
+        "channels": [
+          [
+            20,
+            57
+          ],
+          [
+            37,
+            40
+          ]
+        ],
+        "components": [
+          [
+            "ego",
+            "solar_plexus"
+          ],
+          [
+            "spleen",
+            "throat"
+          ]
+        ]
+      },
+      "pyhd_fields": {
+        "Type": "MATCH",
+        "Authority": "MATCH",
+        "Profile": "MATCH",
+        "Definition": "MATCH"
+      },
+      "project_fields": {
+        "Type": "MATCH",
+        "Authority": "MATCH",
+        "Profile": "MATCH",
+        "Definition": "MATCH"
+      },
+      "activations": {
+        "personality": "MATCH",
+        "design": "MATCH"
+      },
+      "project_activation_calculation": "NOT AVAILABLE",
+      "nodes": [
+        {
+          "side": "personality",
+          "body": "north_node",
+          "official": "37.4",
+          "true": {
+            "longitude": 339.34493154218484,
+            "flags": 4,
+            "gate_line": "37.4"
+          },
+          "mean": {
+            "longitude": 341.0571233682386,
+            "flags": 4,
+            "gate_line": "37.6"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "personality",
+          "body": "south_node",
+          "official": "40.4",
+          "true": {
+            "longitude": 159.3449315421849,
+            "flags": 4,
+            "gate_line": "40.4"
+          },
+          "mean": {
+            "longitude": 161.05712336823854,
+            "flags": 4,
+            "gate_line": "40.6"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "design",
+          "body": "north_node",
+          "official": "22.1",
+          "true": {
+            "longitude": 347.1041119378661,
+            "flags": 4,
+            "gate_line": "22.1"
+          },
+          "mean": {
+            "longitude": 345.6558105410491,
+            "flags": 4,
+            "gate_line": "63.5"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "design",
+          "body": "south_node",
+          "official": "47.1",
+          "true": {
+            "longitude": 167.10411193786604,
+            "flags": 4,
+            "gate_line": "47.1"
+          },
+          "mean": {
+            "longitude": 165.65581054104905,
+            "flags": 4,
+            "gate_line": "64.5"
+          },
+          "official_match": "TRUE_ONLY"
+        }
+      ]
+    },
+    {
+      "case_id": "hd_boundary_0055",
+      "utc_datetime": "2026-01-22T00:55:00+00:00",
+      "official": {
+        "Authority": "Solar Plexus",
+        "Date and Time (UTC)": "January 22, 2026, 00:55",
+        "Definition": "Split",
+        "Profile": "1/3",
+        "Type": "Projector"
+      },
+      "pyhd_normalized": {
+        "Type": "Projector",
+        "Authority": "Solar Plexus",
+        "Profile": "1/3",
+        "Definition": "Split"
+      },
+      "proposed_graph_probe": {
+        "Type": "Projector",
+        "Authority": "Solar Plexus",
+        "Definition": "Split",
+        "Profile": "1/3",
+        "channels": [
+          [
+            20,
+            57
+          ],
+          [
+            37,
+            40
+          ]
+        ],
+        "components": [
+          [
+            "ego",
+            "solar_plexus"
+          ],
+          [
+            "spleen",
+            "throat"
+          ]
+        ]
+      },
+      "pyhd_fields": {
+        "Type": "MATCH",
+        "Authority": "MATCH",
+        "Profile": "MATCH",
+        "Definition": "MATCH"
+      },
+      "project_fields": {
+        "Type": "MATCH",
+        "Authority": "MATCH",
+        "Profile": "MATCH",
+        "Definition": "MATCH"
+      },
+      "activations": {
+        "personality": "MATCH",
+        "design": "MATCH"
+      },
+      "project_activation_calculation": "NOT AVAILABLE",
+      "nodes": [
+        {
+          "side": "personality",
+          "body": "north_node",
+          "official": "37.4",
+          "true": {
+            "longitude": 339.3449328502683,
+            "flags": 4,
+            "gate_line": "37.4"
+          },
+          "mean": {
+            "longitude": 341.0570497988307,
+            "flags": 4,
+            "gate_line": "37.6"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "personality",
+          "body": "south_node",
+          "official": "40.4",
+          "true": {
+            "longitude": 159.34493285026838,
+            "flags": 4,
+            "gate_line": "40.4"
+          },
+          "mean": {
+            "longitude": 161.0570497988307,
+            "flags": 4,
+            "gate_line": "40.6"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "design",
+          "body": "north_node",
+          "official": "22.1",
+          "true": {
+            "longitude": 347.1039956429423,
+            "flags": 4,
+            "gate_line": "22.1"
+          },
+          "mean": {
+            "longitude": 345.6557355618529,
+            "flags": 4,
+            "gate_line": "63.5"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "design",
+          "body": "south_node",
+          "official": "47.1",
+          "true": {
+            "longitude": 167.10399564294232,
+            "flags": 4,
+            "gate_line": "47.1"
+          },
+          "mean": {
+            "longitude": 165.6557355618529,
+            "flags": 4,
+            "gate_line": "64.5"
+          },
+          "official_match": "TRUE_ONLY"
+        }
+      ]
+    },
+    {
+      "case_id": "hd_rare_ego_manifested",
+      "utc_datetime": "2002-06-14T12:00:00+00:00",
+      "official": {
+        "Authority": "Ego Manifested",
+        "Date and Time (UTC)": "June 14, 2002, 12:00",
+        "Definition": "Single",
+        "Profile": "1/3",
+        "Type": "Manifestor"
+      },
+      "pyhd_normalized": {
+        "Type": "Manifestor",
+        "Authority": "Ego Manifested",
+        "Profile": "1/3",
+        "Definition": "Single"
+      },
+      "proposed_graph_probe": {
+        "Type": "Manifestor",
+        "Authority": "Ego Manifested",
+        "Definition": "Single",
+        "Profile": "1/3",
+        "channels": [
+          [
+            11,
+            56
+          ],
+          [
+            21,
+            45
+          ]
+        ],
+        "components": [
+          [
+            "ajna",
+            "ego",
+            "throat"
+          ]
+        ]
+      },
+      "pyhd_fields": {
+        "Type": "MATCH",
+        "Authority": "MATCH",
+        "Profile": "MATCH",
+        "Definition": "MATCH"
+      },
+      "project_fields": {
+        "Type": "MATCH",
+        "Authority": "MATCH",
+        "Profile": "MATCH",
+        "Definition": "MATCH"
+      },
+      "activations": {
+        "personality": "MATCH",
+        "design": "MATCH"
+      },
+      "project_activation_calculation": "NOT AVAILABLE",
+      "nodes": [
+        {
+          "side": "personality",
+          "body": "north_node",
+          "official": "45.1",
+          "true": {
+            "longitude": 77.8440664773638,
+            "flags": 4,
+            "gate_line": "45.1"
+          },
+          "mean": {
+            "longitude": 77.64623484256269,
+            "flags": 4,
+            "gate_line": "45.1"
+          },
+          "official_match": "BOTH"
+        },
+        {
+          "side": "personality",
+          "body": "south_node",
+          "official": "26.1",
+          "true": {
+            "longitude": 257.8440664773638,
+            "flags": 4,
+            "gate_line": "26.1"
+          },
+          "mean": {
+            "longitude": 257.6462348425627,
+            "flags": 4,
+            "gate_line": "26.1"
+          },
+          "official_match": "BOTH"
+        },
+        {
+          "side": "design",
+          "body": "north_node",
+          "official": "45.6",
+          "true": {
+            "longitude": 81.92512035821899,
+            "flags": 4,
+            "gate_line": "45.6"
+          },
+          "mean": {
+            "longitude": 82.43646105404001,
+            "flags": 4,
+            "gate_line": "45.6"
+          },
+          "official_match": "BOTH"
+        },
+        {
+          "side": "design",
+          "body": "south_node",
+          "official": "26.6",
+          "true": {
+            "longitude": 261.925120358219,
+            "flags": 4,
+            "gate_line": "26.6"
+          },
+          "mean": {
+            "longitude": 262.43646105404,
+            "flags": 4,
+            "gate_line": "26.6"
+          },
+          "official_match": "BOTH"
+        }
+      ]
+    },
+    {
+      "case_id": "hd_rare_ego_projected",
+      "utc_datetime": "2000-04-08T12:00:00+00:00",
+      "official": {
+        "Authority": "Ego Projected",
+        "Date and Time (UTC)": "April 8, 2000, 12:00",
+        "Definition": "Split",
+        "Profile": "5/1",
+        "Type": "Projector"
+      },
+      "pyhd_normalized": {
+        "Type": "Projector",
+        "Authority": "Ego Projected",
+        "Profile": "5/1",
+        "Definition": "Split"
+      },
+      "proposed_graph_probe": {
+        "Type": "Projector",
+        "Authority": "Ego Projected",
+        "Definition": "Split",
+        "Profile": "5/1",
+        "channels": [
+          [
+            24,
+            61
+          ],
+          [
+            25,
+            51
+          ]
+        ],
+        "components": [
+          [
+            "ajna",
+            "head"
+          ],
+          [
+            "ego",
+            "g"
+          ]
+        ]
+      },
+      "pyhd_fields": {
+        "Type": "MATCH",
+        "Authority": "MATCH",
+        "Profile": "MATCH",
+        "Definition": "MATCH"
+      },
+      "project_fields": {
+        "Type": "MATCH",
+        "Authority": "MATCH",
+        "Profile": "MATCH",
+        "Definition": "MATCH"
+      },
+      "activations": {
+        "personality": "MATCH",
+        "design": "MATCH"
+      },
+      "project_activation_calculation": "NOT AVAILABLE",
+      "nodes": [
+        {
+          "side": "personality",
+          "body": "north_node",
+          "official": "56.4",
+          "true": {
+            "longitude": 120.05278456128603,
+            "flags": 4,
+            "gate_line": "56.4"
+          },
+          "mean": {
+            "longitude": 119.8506134846103,
+            "flags": 4,
+            "gate_line": "56.4"
+          },
+          "official_match": "BOTH"
+        },
+        {
+          "side": "personality",
+          "body": "south_node",
+          "official": "60.4",
+          "true": {
+            "longitude": 300.05278456128605,
+            "flags": 4,
+            "gate_line": "60.4"
+          },
+          "mean": {
+            "longitude": 299.85061348461034,
+            "flags": 4,
+            "gate_line": "60.4"
+          },
+          "official_match": "BOTH"
+        },
+        {
+          "side": "design",
+          "body": "north_node",
+          "official": "31.2",
+          "true": {
+            "longitude": 123.71131510394757,
+            "flags": 4,
+            "gate_line": "31.2"
+          },
+          "mean": {
+            "longitude": 124.49092239098195,
+            "flags": 4,
+            "gate_line": "31.3"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "design",
+          "body": "south_node",
+          "official": "41.2",
+          "true": {
+            "longitude": 303.7113151039476,
+            "flags": 4,
+            "gate_line": "41.2"
+          },
+          "mean": {
+            "longitude": 304.49092239098195,
+            "flags": 4,
+            "gate_line": "41.3"
+          },
+          "official_match": "TRUE_ONLY"
+        }
+      ]
+    },
+    {
+      "case_id": "hd_rare_environmental",
+      "utc_datetime": "2000-04-10T12:00:00+00:00",
+      "official": {
+        "Authority": "Sounding Board",
+        "Date and Time (UTC)": "April 10, 2000, 12:00",
+        "Definition": "Single",
+        "Profile": "1/3",
+        "Type": "Projector"
+      },
+      "pyhd_normalized": {
+        "Type": "Projector",
+        "Authority": "Sounding Board",
+        "Profile": "1/3",
+        "Definition": "Single"
+      },
+      "proposed_graph_probe": {
+        "Type": "Projector",
+        "Authority": "Sounding Board",
+        "Definition": "Single",
+        "Profile": "1/3",
+        "channels": [
+          [
+            17,
+            62
+          ],
+          [
+            24,
+            61
+          ]
+        ],
+        "components": [
+          [
+            "ajna",
+            "head",
+            "throat"
+          ]
+        ]
+      },
+      "pyhd_fields": {
+        "Type": "MATCH",
+        "Authority": "MATCH",
+        "Profile": "MATCH",
+        "Definition": "MATCH"
+      },
+      "project_fields": {
+        "Type": "MATCH",
+        "Authority": "MATCH",
+        "Profile": "MATCH",
+        "Definition": "MATCH"
+      },
+      "activations": {
+        "personality": "MATCH",
+        "design": "MATCH"
+      },
+      "project_activation_calculation": "NOT AVAILABLE",
+      "nodes": [
+        {
+          "side": "personality",
+          "body": "north_node",
+          "official": "56.4",
+          "true": {
+            "longitude": 119.9333054138788,
+            "flags": 4,
+            "gate_line": "56.4"
+          },
+          "mean": {
+            "longitude": 119.74474359089155,
+            "flags": 4,
+            "gate_line": "56.4"
+          },
+          "official_match": "BOTH"
+        },
+        {
+          "side": "personality",
+          "body": "south_node",
+          "official": "60.4",
+          "true": {
+            "longitude": 299.93330541387877,
+            "flags": 4,
+            "gate_line": "60.4"
+          },
+          "mean": {
+            "longitude": 299.7447435908915,
+            "flags": 4,
+            "gate_line": "60.4"
+          },
+          "official_match": "BOTH"
+        },
+        {
+          "side": "design",
+          "body": "north_node",
+          "official": "31.2",
+          "true": {
+            "longitude": 123.73952333094853,
+            "flags": 4,
+            "gate_line": "31.2"
+          },
+          "mean": {
+            "longitude": 124.38879309602973,
+            "flags": 4,
+            "gate_line": "31.3"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "design",
+          "body": "south_node",
+          "official": "41.2",
+          "true": {
+            "longitude": 303.73952333094854,
+            "flags": 4,
+            "gate_line": "41.2"
+          },
+          "mean": {
+            "longitude": 304.38879309602976,
+            "flags": 4,
+            "gate_line": "41.3"
+          },
+          "official_match": "TRUE_ONLY"
+        }
+      ]
+    },
+    {
+      "case_id": "hd_rare_manifestor",
+      "utc_datetime": "2000-03-11T12:00:00+00:00",
+      "official": {
+        "Authority": "Solar Plexus",
+        "Date and Time (UTC)": "March 11, 2000, 12:00",
+        "Definition": "Single",
+        "Profile": "5/1",
+        "Type": "Manifestor"
+      },
+      "pyhd_normalized": {
+        "Type": "Manifestor",
+        "Authority": "Solar Plexus",
+        "Profile": "5/1",
+        "Definition": "Single"
+      },
+      "proposed_graph_probe": {
+        "Type": "Manifestor",
+        "Authority": "Solar Plexus",
+        "Definition": "Single",
+        "Profile": "5/1",
+        "channels": [
+          [
+            12,
+            22
+          ],
+          [
+            30,
+            41
+          ]
+        ],
+        "components": [
+          [
+            "root",
+            "solar_plexus",
+            "throat"
+          ]
+        ]
+      },
+      "pyhd_fields": {
+        "Type": "MATCH",
+        "Authority": "MATCH",
+        "Profile": "MATCH",
+        "Definition": "MATCH"
+      },
+      "project_fields": {
+        "Type": "MATCH",
+        "Authority": "MATCH",
+        "Profile": "MATCH",
+        "Definition": "MATCH"
+      },
+      "activations": {
+        "personality": "MATCH",
+        "design": "MATCH"
+      },
+      "project_activation_calculation": "NOT AVAILABLE",
+      "nodes": [
+        {
+          "side": "personality",
+          "body": "north_node",
+          "official": "31.1",
+          "true": {
+            "longitude": 122.46470774738394,
+            "flags": 4,
+            "gate_line": "31.1"
+          },
+          "mean": {
+            "longitude": 121.33370215788514,
+            "flags": 4,
+            "gate_line": "56.6"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "personality",
+          "body": "south_node",
+          "official": "41.1",
+          "true": {
+            "longitude": 302.46470774738395,
+            "flags": 4,
+            "gate_line": "41.1"
+          },
+          "mean": {
+            "longitude": 301.3337021578851,
+            "flags": 4,
+            "gate_line": "60.6"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "design",
+          "body": "north_node",
+          "official": "31.3",
+          "true": {
+            "longitude": 124.45694598619787,
+            "flags": 4,
+            "gate_line": "31.3"
+          },
+          "mean": {
+            "longitude": 125.93215950195389,
+            "flags": 4,
+            "gate_line": "31.5"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "design",
+          "body": "south_node",
+          "official": "41.3",
+          "true": {
+            "longitude": 304.45694598619787,
+            "flags": 4,
+            "gate_line": "41.3"
+          },
+          "mean": {
+            "longitude": 305.9321595019539,
+            "flags": 4,
+            "gate_line": "41.5"
+          },
+          "official_match": "TRUE_ONLY"
+        }
+      ]
+    },
+    {
+      "case_id": "hd_rare_profile25",
+      "utc_datetime": "2000-01-13T12:00:00+00:00",
+      "official": {
+        "Authority": "Solar Plexus",
+        "Date and Time (UTC)": "January 13, 2000, 12:00",
+        "Definition": "Triple Split",
+        "Profile": "2/5",
+        "Type": "Generator"
+      },
+      "pyhd_normalized": {
+        "Type": "Generator",
+        "Authority": "Solar Plexus",
+        "Profile": "2/5",
+        "Definition": "Triple Split"
+      },
+      "proposed_graph_probe": {
+        "Type": "Generator",
+        "Authority": "Solar Plexus",
+        "Definition": "Triple Split",
+        "Profile": "2/5",
+        "channels": [
+          [
+            3,
+            60
+          ],
+          [
+            13,
+            33
+          ],
+          [
+            17,
+            62
+          ],
+          [
+            24,
+            61
+          ],
+          [
+            37,
+            40
+          ]
+        ],
+        "components": [
+          [
+            "ajna",
+            "g",
+            "head",
+            "throat"
+          ],
+          [
+            "ego",
+            "solar_plexus"
+          ],
+          [
+            "root",
+            "sacral"
+          ]
+        ]
+      },
+      "pyhd_fields": {
+        "Type": "MATCH",
+        "Authority": "MATCH",
+        "Profile": "MATCH",
+        "Definition": "MATCH"
+      },
+      "project_fields": {
+        "Type": "MATCH",
+        "Authority": "MATCH",
+        "Profile": "MATCH",
+        "Definition": "MATCH"
+      },
+      "activations": {
+        "personality": "MATCH",
+        "design": "MATCH"
+      },
+      "project_activation_calculation": "NOT AVAILABLE",
+      "nodes": [
+        {
+          "side": "personality",
+          "body": "north_node",
+          "official": "31.2",
+          "true": {
+            "longitude": 123.73682591284596,
+            "flags": 4,
+            "gate_line": "31.2"
+          },
+          "mean": {
+            "longitude": 124.4053196090076,
+            "flags": 4,
+            "gate_line": "31.3"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "personality",
+          "body": "south_node",
+          "official": "41.2",
+          "true": {
+            "longitude": 303.736825912846,
+            "flags": 4,
+            "gate_line": "41.2"
+          },
+          "mean": {
+            "longitude": 304.4053196090076,
+            "flags": 4,
+            "gate_line": "41.3"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "design",
+          "body": "north_node",
+          "official": "33.3",
+          "true": {
+            "longitude": 129.80920077409877,
+            "flags": 4,
+            "gate_line": "33.3"
+          },
+          "mean": {
+            "longitude": 129.0152110747944,
+            "flags": 4,
+            "gate_line": "33.2"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "design",
+          "body": "south_node",
+          "official": "19.3",
+          "true": {
+            "longitude": 309.80920077409877,
+            "flags": 4,
+            "gate_line": "19.3"
+          },
+          "mean": {
+            "longitude": 309.01521107479437,
+            "flags": 4,
+            "gate_line": "19.2"
+          },
+          "official_match": "TRUE_ONLY"
+        }
+      ]
+    },
+    {
+      "case_id": "hd_rare_profile36",
+      "utc_datetime": "2000-02-05T12:00:00+00:00",
+      "official": {
+        "Authority": "Sacral",
+        "Date and Time (UTC)": "February 5, 2000, 12:00",
+        "Definition": "Single",
+        "Profile": "3/6",
+        "Type": "Manifesting Generator"
+      },
+      "pyhd_normalized": {
+        "Type": "Manifesting Generator",
+        "Authority": "Sacral",
+        "Profile": "3/6",
+        "Definition": "Single"
+      },
+      "proposed_graph_probe": {
+        "Type": "Manifesting Generator",
+        "Authority": "Sacral",
+        "Definition": "Single",
+        "Profile": "3/6",
+        "channels": [
+          [
+            2,
+            14
+          ],
+          [
+            3,
+            60
+          ],
+          [
+            7,
+            31
+          ]
+        ],
+        "components": [
+          [
+            "g",
+            "root",
+            "sacral",
+            "throat"
+          ]
+        ]
+      },
+      "pyhd_fields": {
+        "Type": "MATCH",
+        "Authority": "MATCH",
+        "Profile": "MATCH",
+        "Definition": "MATCH"
+      },
+      "project_fields": {
+        "Type": "MATCH",
+        "Authority": "MATCH",
+        "Profile": "MATCH",
+        "Definition": "MATCH"
+      },
+      "activations": {
+        "personality": "MATCH",
+        "design": "MATCH"
+      },
+      "project_activation_calculation": "NOT AVAILABLE",
+      "nodes": [
+        {
+          "side": "personality",
+          "body": "north_node",
+          "official": "31.2",
+          "true": {
+            "longitude": 123.74371881054687,
+            "flags": 4,
+            "gate_line": "31.2"
+          },
+          "mean": {
+            "longitude": 123.18752466836864,
+            "flags": 4,
+            "gate_line": "31.2"
+          },
+          "official_match": "BOTH"
+        },
+        {
+          "side": "personality",
+          "body": "south_node",
+          "official": "41.2",
+          "true": {
+            "longitude": 303.74371881054685,
+            "flags": 4,
+            "gate_line": "41.2"
+          },
+          "mean": {
+            "longitude": 303.1875246683686,
+            "flags": 4,
+            "gate_line": "41.2"
+          },
+          "official_match": "BOTH"
+        },
+        {
+          "side": "design",
+          "body": "north_node",
+          "official": "31.6",
+          "true": {
+            "longitude": 126.98944738234485,
+            "flags": 4,
+            "gate_line": "31.6"
+          },
+          "mean": {
+            "longitude": 127.7755490648198,
+            "flags": 4,
+            "gate_line": "33.1"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "design",
+          "body": "south_node",
+          "official": "41.6",
+          "true": {
+            "longitude": 306.98944738234485,
+            "flags": 4,
+            "gate_line": "41.6"
+          },
+          "mean": {
+            "longitude": 307.7755490648198,
+            "flags": 4,
+            "gate_line": "19.1"
+          },
+          "official_match": "TRUE_ONLY"
+        }
+      ]
+    },
+    {
+      "case_id": "hd_rare_profile41",
+      "utc_datetime": "2000-02-17T12:00:00+00:00",
+      "official": {
+        "Authority": "Solar Plexus",
+        "Date and Time (UTC)": "February 17, 2000, 12:00",
+        "Definition": "Single",
+        "Profile": "4/1",
+        "Type": "Manifesting Generator"
+      },
+      "pyhd_normalized": {
+        "Type": "Manifesting Generator",
+        "Authority": "Solar Plexus",
+        "Profile": "4/1",
+        "Definition": "Single"
+      },
+      "proposed_graph_probe": {
+        "Type": "Manifesting Generator",
+        "Authority": "Solar Plexus",
+        "Definition": "Single",
+        "Profile": "4/1",
+        "channels": [
+          [
+            3,
+            60
+          ],
+          [
+            20,
+            34
+          ],
+          [
+            30,
+            41
+          ]
+        ],
+        "components": [
+          [
+            "root",
+            "sacral",
+            "solar_plexus",
+            "throat"
+          ]
+        ]
+      },
+      "pyhd_fields": {
+        "Type": "MATCH",
+        "Authority": "MATCH",
+        "Profile": "MATCH",
+        "Definition": "MATCH"
+      },
+      "project_fields": {
+        "Type": "MATCH",
+        "Authority": "MATCH",
+        "Profile": "MATCH",
+        "Definition": "MATCH"
+      },
+      "activations": {
+        "personality": "MATCH",
+        "design": "MATCH"
+      },
+      "project_activation_calculation": "NOT AVAILABLE",
+      "nodes": [
+        {
+          "side": "personality",
+          "body": "north_node",
+          "official": "31.2",
+          "true": {
+            "longitude": 123.61510805405864,
+            "flags": 4,
+            "gate_line": "31.2"
+          },
+          "mean": {
+            "longitude": 122.5520236077845,
+            "flags": 4,
+            "gate_line": "31.1"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "personality",
+          "body": "south_node",
+          "official": "41.2",
+          "true": {
+            "longitude": 303.6151080540586,
+            "flags": 4,
+            "gate_line": "41.2"
+          },
+          "mean": {
+            "longitude": 302.5520236077845,
+            "flags": 4,
+            "gate_line": "41.1"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "design",
+          "body": "north_node",
+          "official": "31.5",
+          "true": {
+            "longitude": 126.04951463354806,
+            "flags": 4,
+            "gate_line": "31.5"
+          },
+          "mean": {
+            "longitude": 127.13754600468211,
+            "flags": 4,
+            "gate_line": "31.6"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "design",
+          "body": "south_node",
+          "official": "41.5",
+          "true": {
+            "longitude": 306.04951463354803,
+            "flags": 4,
+            "gate_line": "41.5"
+          },
+          "mean": {
+            "longitude": 307.1375460046821,
+            "flags": 4,
+            "gate_line": "41.6"
+          },
+          "official_match": "TRUE_ONLY"
+        }
+      ]
+    },
+    {
+      "case_id": "hd_rare_profile52",
+      "utc_datetime": "2000-02-18T12:00:00+00:00",
+      "official": {
+        "Authority": "Solar Plexus",
+        "Date and Time (UTC)": "February 18, 2000, 12:00",
+        "Definition": "Single",
+        "Profile": "5/2",
+        "Type": "Manifesting Generator"
+      },
+      "pyhd_normalized": {
+        "Type": "Manifesting Generator",
+        "Authority": "Solar Plexus",
+        "Profile": "5/2",
+        "Definition": "Single"
+      },
+      "proposed_graph_probe": {
+        "Type": "Manifesting Generator",
+        "Authority": "Solar Plexus",
+        "Definition": "Single",
+        "Profile": "5/2",
+        "channels": [
+          [
+            3,
+            60
+          ],
+          [
+            13,
+            33
+          ],
+          [
+            20,
+            34
+          ],
+          [
+            20,
+            57
+          ],
+          [
+            30,
+            41
+          ],
+          [
+            34,
+            57
+          ]
+        ],
+        "components": [
+          [
+            "g",
+            "root",
+            "sacral",
+            "solar_plexus",
+            "spleen",
+            "throat"
+          ]
+        ]
+      },
+      "pyhd_fields": {
+        "Type": "MATCH",
+        "Authority": "MATCH",
+        "Profile": "MATCH",
+        "Definition": "MATCH"
+      },
+      "project_fields": {
+        "Type": "MATCH",
+        "Authority": "MATCH",
+        "Profile": "MATCH",
+        "Definition": "MATCH"
+      },
+      "activations": {
+        "personality": "MATCH",
+        "design": "MATCH"
+      },
+      "project_activation_calculation": "NOT AVAILABLE",
+      "nodes": [
+        {
+          "side": "personality",
+          "body": "north_node",
+          "official": "31.2",
+          "true": {
+            "longitude": 123.61161138428419,
+            "flags": 4,
+            "gate_line": "31.2"
+          },
+          "mean": {
+            "longitude": 122.49908062726547,
+            "flags": 4,
+            "gate_line": "31.1"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "personality",
+          "body": "south_node",
+          "official": "41.2",
+          "true": {
+            "longitude": 303.6116113842842,
+            "flags": 4,
+            "gate_line": "41.2"
+          },
+          "mean": {
+            "longitude": 302.49908062726547,
+            "flags": 4,
+            "gate_line": "41.1"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "design",
+          "body": "north_node",
+          "official": "31.5",
+          "true": {
+            "longitude": 125.89364167841198,
+            "flags": 4,
+            "gate_line": "31.5"
+          },
+          "mean": {
+            "longitude": 127.08468815100278,
+            "flags": 4,
+            "gate_line": "31.6"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "design",
+          "body": "south_node",
+          "official": "41.5",
+          "true": {
+            "longitude": 305.893641678412,
+            "flags": 4,
+            "gate_line": "41.5"
+          },
+          "mean": {
+            "longitude": 307.08468815100275,
+            "flags": 4,
+            "gate_line": "41.6"
+          },
+          "official_match": "TRUE_ONLY"
+        }
+      ]
+    },
+    {
+      "case_id": "hd_rare_quadruple",
+      "utc_datetime": "2000-01-12T12:00:00+00:00",
+      "official": {
+        "Authority": "Solar Plexus",
+        "Date and Time (UTC)": "January 12, 2000, 12:00",
+        "Definition": "Quadruple Split",
+        "Profile": "1/4",
+        "Type": "Generator"
+      },
+      "pyhd_normalized": {
+        "Type": "Generator",
+        "Authority": "Solar Plexus",
+        "Profile": "1/4",
+        "Definition": "Quadruple Split"
+      },
+      "proposed_graph_probe": {
+        "Type": "Generator",
+        "Authority": "Solar Plexus",
+        "Definition": "Quadruple Split",
+        "Profile": "1/4",
+        "channels": [
+          [
+            3,
+            60
+          ],
+          [
+            13,
+            33
+          ],
+          [
+            24,
+            61
+          ],
+          [
+            32,
+            54
+          ],
+          [
+            37,
+            40
+          ]
+        ],
+        "components": [
+          [
+            "ajna",
+            "head"
+          ],
+          [
+            "ego",
+            "solar_plexus"
+          ],
+          [
+            "g",
+            "throat"
+          ],
+          [
+            "root",
+            "sacral",
+            "spleen"
+          ]
+        ]
+      },
+      "pyhd_fields": {
+        "Type": "MATCH",
+        "Authority": "MATCH",
+        "Profile": "MATCH",
+        "Definition": "MATCH"
+      },
+      "project_fields": {
+        "Type": "MATCH",
+        "Authority": "MATCH",
+        "Profile": "MATCH",
+        "Definition": "MATCH"
+      },
+      "activations": {
+        "personality": "MATCH",
+        "design": "MATCH"
+      },
+      "project_activation_calculation": "NOT AVAILABLE",
+      "nodes": [
+        {
+          "side": "personality",
+          "body": "north_node",
+          "official": "31.2",
+          "true": {
+            "longitude": 123.72307811892226,
+            "flags": 4,
+            "gate_line": "31.2"
+          },
+          "mean": {
+            "longitude": 124.45829245728673,
+            "flags": 4,
+            "gate_line": "31.3"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "personality",
+          "body": "south_node",
+          "official": "41.2",
+          "true": {
+            "longitude": 303.7230781189223,
+            "flags": 4,
+            "gate_line": "41.2"
+          },
+          "mean": {
+            "longitude": 304.45829245728675,
+            "flags": 4,
+            "gate_line": "41.3"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "design",
+          "body": "north_node",
+          "official": "33.3",
+          "true": {
+            "longitude": 129.80776990529102,
+            "flags": 4,
+            "gate_line": "33.3"
+          },
+          "mean": {
+            "longitude": 129.0695767628631,
+            "flags": 4,
+            "gate_line": "33.2"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "design",
+          "body": "south_node",
+          "official": "19.3",
+          "true": {
+            "longitude": 309.807769905291,
+            "flags": 4,
+            "gate_line": "19.3"
+          },
+          "mean": {
+            "longitude": 309.0695767628631,
+            "flags": 4,
+            "gate_line": "19.2"
+          },
+          "official_match": "TRUE_ONLY"
+        }
+      ]
+    },
+    {
+      "case_id": "hd_rare_reflector",
+      "utc_datetime": "2000-02-24T12:00:00+00:00",
+      "official": {
+        "Authority": "Lunar Cycle",
+        "Date and Time (UTC)": "February 24, 2000, 12:00",
+        "Definition": "None",
+        "Profile": "6/2",
+        "Type": "Reflector"
+      },
+      "pyhd_normalized": {
+        "Type": "Reflector",
+        "Authority": "Lunar Cycle",
+        "Profile": "6/2",
+        "Definition": "None"
+      },
+      "proposed_graph_probe": {
+        "Type": "Reflector",
+        "Authority": "Lunar Cycle",
+        "Definition": "None",
+        "Profile": "6/2",
+        "channels": [],
+        "components": []
+      },
+      "pyhd_fields": {
+        "Type": "MATCH",
+        "Authority": "MATCH",
+        "Profile": "MATCH",
+        "Definition": "MATCH"
+      },
+      "project_fields": {
+        "Type": "MATCH",
+        "Authority": "MATCH",
+        "Profile": "MATCH",
+        "Definition": "MATCH"
+      },
+      "activations": {
+        "personality": "MATCH",
+        "design": "MATCH"
+      },
+      "project_activation_calculation": "NOT AVAILABLE",
+      "nodes": [
+        {
+          "side": "personality",
+          "body": "north_node",
+          "official": "31.2",
+          "true": {
+            "longitude": 123.23378755833888,
+            "flags": 4,
+            "gate_line": "31.2"
+          },
+          "mean": {
+            "longitude": 122.18119940041686,
+            "flags": 4,
+            "gate_line": "31.1"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "personality",
+          "body": "south_node",
+          "official": "41.2",
+          "true": {
+            "longitude": 303.23378755833886,
+            "flags": 4,
+            "gate_line": "41.2"
+          },
+          "mean": {
+            "longitude": 302.18119940041686,
+            "flags": 4,
+            "gate_line": "41.1"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "design",
+          "body": "north_node",
+          "official": "31.4",
+          "true": {
+            "longitude": 125.62825669306118,
+            "flags": 4,
+            "gate_line": "31.4"
+          },
+          "mean": {
+            "longitude": 126.76849962326642,
+            "flags": 4,
+            "gate_line": "31.6"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "design",
+          "body": "south_node",
+          "official": "41.4",
+          "true": {
+            "longitude": 305.6282566930612,
+            "flags": 4,
+            "gate_line": "41.4"
+          },
+          "mean": {
+            "longitude": 306.7684996232664,
+            "flags": 4,
+            "gate_line": "41.6"
+          },
+          "official_match": "TRUE_ONLY"
+        }
+      ]
+    },
+    {
+      "case_id": "hd_rare_self",
+      "utc_datetime": "2000-03-16T12:00:00+00:00",
+      "official": {
+        "Authority": "Self Projected",
+        "Date and Time (UTC)": "March 16, 2000, 12:00",
+        "Definition": "Single",
+        "Profile": "4/6",
+        "Type": "Projector"
+      },
+      "pyhd_normalized": {
+        "Type": "Projector",
+        "Authority": "Self Projected",
+        "Profile": "4/6",
+        "Definition": "Single"
+      },
+      "proposed_graph_probe": {
+        "Type": "Projector",
+        "Authority": "Self Projected",
+        "Definition": "Single",
+        "Profile": "4/6",
+        "channels": [
+          [
+            1,
+            8
+          ],
+          [
+            13,
+            33
+          ]
+        ],
+        "components": [
+          [
+            "g",
+            "throat"
+          ]
+        ]
+      },
+      "pyhd_fields": {
+        "Type": "MATCH",
+        "Authority": "MATCH",
+        "Profile": "MATCH",
+        "Definition": "MATCH"
+      },
+      "project_fields": {
+        "Type": "MATCH",
+        "Authority": "MATCH",
+        "Profile": "MATCH",
+        "Definition": "MATCH"
+      },
+      "activations": {
+        "personality": "MATCH",
+        "design": "MATCH"
+      },
+      "project_activation_calculation": "NOT AVAILABLE",
+      "nodes": [
+        {
+          "side": "personality",
+          "body": "north_node",
+          "official": "31.1",
+          "true": {
+            "longitude": 122.4502098531714,
+            "flags": 4,
+            "gate_line": "31.1"
+          },
+          "mean": {
+            "longitude": 121.06899105678609,
+            "flags": 4,
+            "gate_line": "56.6"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "personality",
+          "body": "south_node",
+          "official": "41.1",
+          "true": {
+            "longitude": 302.4502098531714,
+            "flags": 4,
+            "gate_line": "41.1"
+          },
+          "mean": {
+            "longitude": 301.0689910567861,
+            "flags": 4,
+            "gate_line": "60.6"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "design",
+          "body": "north_node",
+          "official": "31.3",
+          "true": {
+            "longitude": 124.19693561979749,
+            "flags": 4,
+            "gate_line": "31.3"
+          },
+          "mean": {
+            "longitude": 125.6727500702781,
+            "flags": 4,
+            "gate_line": "31.4"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "design",
+          "body": "south_node",
+          "official": "41.3",
+          "true": {
+            "longitude": 304.1969356197975,
+            "flags": 4,
+            "gate_line": "41.3"
+          },
+          "mean": {
+            "longitude": 305.6727500702781,
+            "flags": 4,
+            "gate_line": "41.4"
+          },
+          "official_match": "TRUE_ONLY"
+        }
+      ]
+    },
+    {
+      "case_id": "hd_synthetic_03",
+      "utc_datetime": "2000-03-20T00:00:00+00:00",
+      "official": {
+        "Authority": "Sacral",
+        "Date and Time (UTC)": "March 20, 2000, 00:00",
+        "Definition": "Single",
+        "Profile": "2/4",
+        "Type": "Generator"
+      },
+      "pyhd_normalized": {
+        "Type": "Generator",
+        "Authority": "Sacral",
+        "Profile": "2/4",
+        "Definition": "Single"
+      },
+      "proposed_graph_probe": {
+        "Type": "Generator",
+        "Authority": "Sacral",
+        "Definition": "Single",
+        "Profile": "2/4",
+        "channels": [
+          [
+            5,
+            15
+          ],
+          [
+            42,
+            53
+          ]
+        ],
+        "components": [
+          [
+            "g",
+            "root",
+            "sacral"
+          ]
+        ]
+      },
+      "pyhd_fields": {
+        "Type": "MATCH",
+        "Authority": "MATCH",
+        "Profile": "MATCH",
+        "Definition": "MATCH"
+      },
+      "project_fields": {
+        "Type": "MATCH",
+        "Authority": "MATCH",
+        "Profile": "MATCH",
+        "Definition": "MATCH"
+      },
+      "activations": {
+        "personality": "MATCH",
+        "design": "MATCH"
+      },
+      "project_activation_calculation": "NOT AVAILABLE",
+      "nodes": [
+        {
+          "side": "personality",
+          "body": "north_node",
+          "official": "31.1",
+          "true": {
+            "longitude": 122.17123190411968,
+            "flags": 4,
+            "gate_line": "31.1"
+          },
+          "mean": {
+            "longitude": 120.88356805081138,
+            "flags": 4,
+            "gate_line": "56.5"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "personality",
+          "body": "south_node",
+          "official": "41.1",
+          "true": {
+            "longitude": 302.1712319041197,
+            "flags": 4,
+            "gate_line": "41.1"
+          },
+          "mean": {
+            "longitude": 300.8835680508114,
+            "flags": 4,
+            "gate_line": "60.5"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "design",
+          "body": "north_node",
+          "official": "31.3",
+          "true": {
+            "longitude": 123.96987410078985,
+            "flags": 4,
+            "gate_line": "31.3"
+          },
+          "mean": {
+            "longitude": 125.49190050384898,
+            "flags": 4,
+            "gate_line": "31.4"
+          },
+          "official_match": "TRUE_ONLY"
+        },
+        {
+          "side": "design",
+          "body": "south_node",
+          "official": "41.3",
+          "true": {
+            "longitude": 303.96987410078987,
+            "flags": 4,
+            "gate_line": "41.3"
+          },
+          "mean": {
+            "longitude": 305.49190050384897,
+            "flags": 4,
+            "gate_line": "41.4"
+          },
+          "official_match": "TRUE_ONLY"
+        }
+      ]
+    }
+  ]
+}
