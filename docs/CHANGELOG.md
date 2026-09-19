@@ -7,6 +7,18 @@ tags:
 
 Current delivery state: [[04_CURRENT_STATE]]. Milestone sequence: [[03_ROADMAP]].
 
+## 2026-09-19 — Stage 9B.1B graph and classification core
+
+- Independently encoded 64 Gate→Center and 36-channel topology. Added pure union/graph/components,
+  Type/Strategy, ordered Authority, Definition and body-name Sun Profile classification.
+- Added immutable complete internal result/metadata and one-call astronomy orchestrator;
+  extended HumanDesignError with classification_error. No API schemas or external HD runtime.
+- 95 new tests pass: all 18 structural vectors, all channels/centers, priority/path errors,
+  12 Profiles, all 14 official classifications and preserved 364 activation matches.
+- Docker: 46 previous astronomy tests, 11 integrity tests and full 736 tests pass (two existing
+  warnings); pip check/audit clean. All 68 raw artifacts, goldens, ADR-015 and astronomy code unchanged.
+- Stage 9B.1B complete; Human Design core complete; Stage 9B.2 ready. API/frontend/AI/PDF not implemented.
+
 ## 2026-09-19 — Stage 9B.1A astronomy core
 
 - Implemented UTC/UT1 Moshier astronomy, 13-body activations with True Node and derived oppositions,

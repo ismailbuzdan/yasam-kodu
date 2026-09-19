@@ -7,7 +7,7 @@ tags:
 
 ## Backend
 
-641 tests (584 Stage 8 baseline, 11 Stage 9A integrity/contract and 46 HD core tests) cover health, birth-profile validation, location resolution, historical timezone behavior,
+736 tests (584 Stage 8 baseline, 11 Stage 9A integrity, 46 astronomy and 95 classification tests) cover health, birth-profile validation, location resolution, historical timezone behavior,
 fixture-integrity boundaries and Stages 6–7 astrology. Original tests remain; the old empty-reference
 guard now checks provenance. Astrology includes invariants, error boundaries, threaded repeatability,
 real Swiss smoke tests and offline external-reference regression; see [[astrology-verification]].
@@ -38,8 +38,13 @@ and adjacent binary64 boundaries, all 364 official Gate/Line observations, nativ
 rules, opposition/normalization, 1800/2100 range edges, input/domain errors, solver residual AND
 bracket limits, failure/iteration/stagnation paths, exact half-even ties and no UTC serialization
 feedback. Repeated calculations and mixed HD/Astrology threads verify determinism/state isolation.
-No research tool is imported by production or these core tests. Graph/classification and API tests
-remain for Stage 9B.1B/9B.2; no full classification acceptance is claimed by these 364 matches.
+No research tool is imported by production or these core tests. Stage 9B.1B is complete:
+`test_human_design_classification.py` adds 95 production tests covering all 18 structural vectors,
+all 36 channels crossing imprints, 64-gate/9-center integrity, lone/duplicate gates, component counts,
+all five Types/Strategies, eight Authorities with priority/path collisions and error handling,
+all 12 Profiles (Sun located by body), immutable metadata/result, single astronomy call,
+determinism and parallel complete calculations. All 14 official Type/Authority/Definition/Profile
+fields and 364 activation observations match. Stage 9B.2 API tests remain future work.
 
 ## Frontend
 

@@ -5,17 +5,23 @@ tags:
 
 # Stage 9A — Human Design mechanical calculation specification
 
-**Status: Accepted project convention (ADR-015, stage9a2-v1). Stage 9B.1A complete; Stage 9B.1B not started.**
+**Status: Accepted project convention (ADR-015, stage9a2-v1). Stage 9B.1B complete; Human Design core complete; Stage 9B.2 ready.**
 Research date: 2026-09-19. See [[human-design-verification]], [[05_DECISIONS]],
-[[07_TEST_STRATEGY]] and [[04_CURRENT_STATE]]. Astronomy core exists; API not implemented.
+[[07_TEST_STRATEGY]] and [[04_CURRENT_STATE]]. Complete mechanical core exists; API not yet implemented.
 
 Implementation scope: `human_design_astronomy.py` owns orchestration/native primitives/88° solver,
 `human_design_mapping.py` owns the pure mapper and wheel, `human_design_models.py` immutable internal
 values and domain errors. The native adapter imports the existing Astrology state owner (same
 `_LOCK` and `initialize_ephemeris`), with no behavior-changing refactor. All native calls, including
 UTC conversions, occur under that lock. No fixture/research tool or external HD engine is imported.
-46 core tests pass, including all 364 official activation values. Subsequent classification sections
-remain specifications only: no graph, Type/Authority/Definition/Profile or API is implemented.
+The existing astronomy/mapper code is unchanged by Stage 9B.1B. `human_design_core.py` consumes
+AstronomyResult for pure graph/classification and exposes `calculate_human_design_core(birth_utc)`.
+It calls astronomy exactly once. Complete immutable results preserve the original astronomy object
+(including both activation lists and Design moment), plus sorted mechanical fields, Profile
+lines/label and metadata. Components are sorted tuples, not channel counts. No interpretation text,
+person identifiers, coordinates or logs. Internal errors include classification_error.
+46 astronomy and 95 classification tests pass: all 18 structural vectors, 364 official activations
+and 14/14 Type/Authority/Definition/Profile matches. API/frontend/AI/PDF remain unimplemented.
 
 ## 1. Scope and system boundary
 
@@ -315,13 +321,12 @@ Stage 9A.1 now has a second trusted complete chart source: 14 Jovian public UI n
 364 matching activations and official examples of the missing rare categories. Independent internal
 astronomy is UNKNOWN; official tool version/settings are undisclosed. Stage 9A.2 accepts those
 discrete outputs as golden mechanical behavior, NOT version-pinned independent astronomy.
-All project semantic choices are frozen; ADR-015 is Accepted. Stage 9B.1A implements only astronomy,
-solver and mapping; Stage 9B.1B is not started and API is not implemented.
+All project semantic choices are frozen; ADR-015 is unchanged. Stage 9B.1A astronomy and Stage 9B.1B
+graph/classification are complete. Stage 9B.2 is ready; API is not implemented.
 Every official regression must pass in 9B; a mismatch blocks release and requires diagnosis, never
 automatic fixture replacement or tolerance added to Gate/Line labels. Further original-system
 evidence may require a new versioned decision, not silent drift of this convention.
 
-Only after a separate 9B task: design a shared astronomy adapter without altering existing
-outputs; implement UTC schema, 88° solver, exact gate/line mapping, graph classification
-and endpoint; add boundary, graph, concurrency, API and independent-reference regression.
+Only after a separate Stage 9B.2 task: implement API request/response validation and endpoint,
+preserving the completed core and its behavioral, boundary, graph and concurrency regressions.
 No Stage 10 or AI work is authorized by this specification.
