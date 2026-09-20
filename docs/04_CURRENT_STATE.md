@@ -6,8 +6,8 @@ tags:
 # Current State
 
 **Last updated:** 2026-09-20
-**Current stage:** Stage 10A/10B and Stage 10 complete — Unified Life Code API complete
-**Next step:** Separately scope/authorize Stage 11; AI NOT STARTED, PDF NOT STARTED
+**Current stage:** Stage K0 Kamerî Kod methodology complete; Stage 10 remains complete on main
+**Next step:** Separately scope/authorize K1 for qualified mechanical methods; Stage 11 AI NOT STARTED, PDF NOT STARTED
 **License:** AGPL-3.0
 **Development environment:** Docker Compose available and preferred; host workflows remain a fallback.
 
@@ -22,6 +22,20 @@ After coding:
 - Update this file, decisions and changelog when applicable; run relevant tests.
 
 ## Completed
+
+**Stage K0 (docs/research only, 2026-09-20):** [[kameri-code]] and
+[[kameri-source-qualification]] define five scoped methods, 19 source records (A:9/B:8/C:2),
+claim-to-source limits, normalization, boundary ownership and deferred traditions. ADR-017 accepted
+for these project boundaries. K1 methodological readiness is limited to tabular date, Moon,
+numeric equal-sector mansion index, confirmed-Arabic abjad and seasonal planetary hour.
+Arabic mansion labels are proposed/unverified against an Arabic edition; automatic transcription,
+stellar reconstruction and interpretations remain unqualified/deferred. No K1 code, API, frontend,
+dependency, AI or Life Code v1 modification. Stage 10 main start verified at
+`6250d347af39da04291af7412521664532a03363`; work is on `stage-k0-kameri-methodology`.
+K0 validation passed: JSON metadata/unique IDs/tier counts/claim references, local wiki links,
+28 sequential proposed labels and docs-only changed-path checks; `git diff --check` clean.
+These are document checks, not new runtime accuracy measurements.
+The 924 backend / 8 frontend baseline below is prior Stage 10 qualification, not a K0 rerun.
 
 Stages 1, 2, 3, 3.5, 4, 5, 6, 7, 8, 9A and 9B (Human Design mechanical core + API).
 Stage 10A internal aggregation and Stage 10B API are complete.
@@ -94,6 +108,8 @@ and original audit checks are unchanged. Tests cover 384 boundary neighborhoods 
 Official splenic and 3/5 examples remain absent; structural coverage is sufficient for readiness. See
 [[human-design]] and [[human-design-verification]].
 
-**Next step:** Separately scope and authorize Stage 11. Stage 10A, Stage 10B and Stage 10 complete;
+**Next step:** Separately scope and authorize K1's five qualified mechanical methods, if desired.
+Automatic name suggestions, mansion name publication and interpretation require additional qualification.
+Stage 10A, Stage 10B and Stage 10 complete;
 Unified Life Code API complete. Stage 11 AI NOT STARTED; Stage 12 PDF NOT STARTED.
 No frontend/database work. Engine conventions, original goldens and all 68 HD artifacts are unchanged.

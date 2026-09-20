@@ -7,6 +7,21 @@ tags:
 
 Current delivery state: [[04_CURRENT_STATE]]. Milestone sequence: [[03_ROADMAP]].
 
+## 2026-09-20 — Stage K0 Kamerî Kod methodology and source qualification
+
+- Added five scoped mechanical specifications, explicit project conventions and a 19-source
+  bibliography (9 A / 8 B / 2 C), with claim support and non-support recorded separately.
+- Accepted ADR-017 for separate-module/provenance boundaries, tabular Hijri, Swiss Moon,
+  numeric equal tropical sectors, confirmed-script Eastern abjad and seasonal planetary hours.
+- Recorded historical/modern distinctions, Unicode normalization, local/UTC ownership, exact
+  boundary policies, polar unavailability, no religious-authority claims and synthetic-only privacy.
+- Kept proposed Arabic mansion labels, automatic Turkish-to-Arabic suggestions and interpretive
+  features outside production readiness. K1 readiness is scoped and is not implementation authorization.
+- Docs/research only; no runtime, dependency, API, frontend, existing engine or Life Code v1 change.
+  K0 metadata/claim/link/label-order/docs-only checks pass; `git diff --check` clean.
+  Previous Stage 10 runtime baselines are not rerun.
+  Stage K1 and Stage 11 remain not started; no main merge.
+
 ## 2026-09-20 — Stage 10B public Life Code API complete
 
 - Added strict resolved-input request, composed response/error models and a thin Life Code router.

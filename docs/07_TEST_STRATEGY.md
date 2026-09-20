@@ -5,6 +5,17 @@ tags:
 
 # Test Strategy
 
+## Stage K0 documentation qualification
+
+K0 changes only methodology/provenance documents, with bibliography JSON under docs.
+Validate JSON structure, unique source IDs, required fields, tier counts, claim references,
+local document links, `git diff --check` and a docs-only changed-path allowlist.
+No new runtime feature test or backend/frontend rerun is required for this docs-only stage.
+The 924/8 runtime baselines below remain prior verified results, not new K0 runs.
+Before a future K1 delivery, execute the calendar/Moon/sector/Unicode/hour boundary matrix in
+[[kameri-code]], independent-reference checks and shared native-state/privacy regressions.
+Methodology READY must never be reported as runtime accuracy verified.
+
 ## Backend
 
 924 tests (789 Stage 9 baseline plus 46 Life Code service and 89 Life Code API tests) cover health, birth-profile validation, location resolution, historical timezone behavior,

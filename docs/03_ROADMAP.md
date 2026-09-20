@@ -31,6 +31,15 @@ flowchart LR
 - [ ] Stage 11 — AI interpretation
 - [ ] Stage 12 — Report / PDF
 
+## Kamerî Kod research track
+
+- [x] Stage K0 — Methodology, source qualification and scoped project convention freeze (ADR-017;
+  [[kameri-code]], [[kameri-source-qualification]]). Docs only; separate from Life Code v1.
+- [ ] Stage K1 — Separately authorized implementation/verification of five mechanical methods.
+  Readiness is limited to numeric mansion sectors and confirmed-Arabic ebced, alongside tabular
+  Hijri, Moon and seasonal planetary hours. No automatic transcription or interpretation readiness.
+- [ ] Arabic mansion label collation, licensed name suggestions and work-specific interpretation research.
+
 ## Platform / Later
 
 - [x] Infrastructure milestone — Dockerized Development Environment

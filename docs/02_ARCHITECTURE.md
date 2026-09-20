@@ -56,6 +56,15 @@ Stage 10B transport is complete: strict resolved input, one service call,
 composed public schemas and shared standalone-HD safe projection. UTC admission uses an aware clock;
 calendar admission preserves Numerology's server-local day policy. No new timezone resolution.
 
+## Kamerî Kod boundary (Stage K0 specification only)
+
+ADR-017 and [[kameri-code]] define a future separate module, not a fourth member of the Stage 10
+Life Code v1 response. Existing input resolution/native-state ownership is reused; new timezone,
+geocoding and astronomy stacks are not planned. Source provenance and field classification separate
+astronomy, calendar conversion, symbolic mappings and historical interpretation. Only five scoped
+mechanical methods are qualified for a later K1 implementation; automatic spelling, proposed mansion
+labels and interpretation are not production-ready. No runtime component or transport is added here.
+
 ## Stage 6 Swiss Ephemeris licensing
 
 Stage 6 uses the AGPL route; the Professional License is not used. Copyright and license notices

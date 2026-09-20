@@ -205,3 +205,37 @@ Stage 10 boundary. A local midnight may map to a different UTC date without chan
 No partial-success result, generic exception swallowing, fallback or implicit target year.
 Tests cover lossless identity/equality, data routing/privacy and shared native-state repeatability.
 ADR-001 and engine conventions remain unchanged. Details: [[life-code]].
+
+## ADR-017 — Kamerî Kod Methodology and Provenance Boundary
+
+**Status:** Accepted (Stage K0, 2026-09-20; scoped project conventions `kameri-k0-v1`).
+**Context:** A future Kamerî Kod module must distinguish computed astronomy/calendar values,
+symbolic arithmetic and source-specific historical interpretation before production work begins.
+**Decision:** Keep Kamerî Kod separate from the unchanged Stage 10 Life Code v1 contract.
+Freeze only the five mechanical methods specified in [[kameri-code]]: Friday-epoch tabular Hijri
+date with explicit local civil-date semantics; Swiss/Moshier apparent geocentric Moon and illuminated
+fraction with separately identified project phase bins; 28 equal tropical sectors at 0° with rational
+half-open boundaries; Eastern additive abjad with explicit Unicode/letter policy and user-confirmed
+Arabic input; and sunrise-owned seasonal planetary hours with fixed observing assumptions and no
+polar substitution. These are project choices, not universal historical or religious rules.
+**Provenance:** Source IDs, claim locators, method/version, classification and limitations are mandatory.
+Historical traditions and modern popular claims must be separately labeled; every interpretation
+requires its own qualified source. Unsupported traditions/characters are not silently normalized.
+No religious-authority, unseen-knowledge, destiny, scientific-personality or personal divine-name
+claim; no devotional count recommendation. Calculation and interpretation remain separate.
+AI never calculates, selects a mansion/Asma, sums letters or invents missing historical meaning.
+ADR-013 synthetic-only tracked personal fixtures applies; mother's name is not collected.
+**Name boundary:** Choose user-confirmed Arabic-script input for ebced. Later automatic suggestions
+must be transparent and versioned; `tr_ar_v1` is only a proposal until its dictionary and complete
+transcription policy are qualified. Confirmation does not certify historical or religious truth.
+**Scope of acceptance:** Mansion numeric-sector calculation is frozen; proposed Arabic/name labels
+are not edition-collated and are not accepted for production. Stellar reconstruction, lunar-age solver,
+automatic name rendering, huruf/Asma/zodiac–Asma/dhikr/yildizname/mother-name methods remain excluded
+at their explicit research/deferred/unqualified statuses. Unresolved conventions must be qualified
+and frozen before their own implementation; this ADR does not promote them by implication.
+**Reason:** Reproducible modest calculations can be specified without asserting one canonical tradition
+or importing unverifiable formulas. [[kameri-source-qualification]] records 19 bounded source records.
+**Consequences:** K0 methodology complete; K1 methodologically ready only for the five scoped methods
+(numeric mansion index and confirmed-script ebced), and separately requires authorization, reference
+qualification and runtime tests. No production implementation, endpoint, frontend, database, AI,
+PDF, dependency or existing engine/API change is part of K0. Stage 11 remains not started.
