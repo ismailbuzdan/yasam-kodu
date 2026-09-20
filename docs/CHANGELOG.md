@@ -7,6 +7,22 @@ tags:
 
 Current delivery state: [[04_CURRENT_STATE]]. Milestone sequence: [[03_ROADMAP]].
 
+## 2026-09-20 — Stage K1A Kamerî deterministic internal core
+
+- Preserved and resumed the ten-file local WIP; implemented/qualified the five frozen ADR-017
+  methods in an isolated service package, with typed frozen outputs and private error taxonomy.
+- Added integer Hijri conversion, confirmed-script fail-closed abjad, native Moon/pheno,
+  rational numeric mansion mapping and sunrise-owned seasonal planetary hours.
+- A new mixed-native test caught repeated-root search in WIP; fixed by alternating rise/set/rise
+  instead of incrementing the same event's search seed. No convention or existing-engine changes.
+- Added 464 tests and ten scoped external artifacts with SHA256 receipts and byte-preserving
+  Git attributes. Calendar published reference coverage is two correspondences; JPL four instants;
+  solar comparisons three dates. Shared Swiss and approximate USNO evidence are labeled honestly.
+- Docker: 1388 full backend pass, two existing warnings; 756 existing-engine regression pass;
+  pip check clean and HD audit 68/68. Frontend unchanged, not rerun. See [[kameri-verification]].
+- K0/K1A complete. K1B API and Stage 11 NOT STARTED. No endpoint, frontend, dependency, database,
+  interpretation, automatic transcription, production mansion names, lunar-age solver or main merge.
+
 ## 2026-09-20 — Stage K0 Kamerî Kod methodology and source qualification
 
 - Added five scoped mechanical specifications, explicit project conventions and a 19-source

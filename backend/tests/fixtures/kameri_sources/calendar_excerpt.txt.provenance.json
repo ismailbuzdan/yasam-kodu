@@ -1,0 +1,14 @@
+{
+  "source_id": "CAL-02 / K1-CAL",
+  "url": "https://reingold.co/cc-paper.pdf",
+  "additional_url": "https://aa.usno.navy.mil/downloads/c15_usb_online.pdf",
+  "retrieved_at": "2026-09-20T17:34:41+00:00",
+  "producer": "Dershowitz and Reingold (1990), p.901; Richards (2012), p.607",
+  "settings": "Arithmetic Islamic calendar; calendar-day correspondence, not an observed crescent",
+  "scope": "INDEPENDENT PUBLISHED: AH 1/1/1 JDN 1948440 and Gregorian 1945-11-12 = AH 1364/12/6",
+  "expected": [{"jdn": 1948440, "hijri": [1, 1, 1]}, {"gregorian": "1945-11-12", "hijri": [1364, 12, 6]}],
+  "tolerance": 0,
+  "extraction": "Short excerpts manually transcribed from retrieved PDF text, whitespace normalized; not whole HTTP response",
+  "limitation": "Only two published correspondences, one outside public range for private epoch testing. No claim of broad independent date-pair coverage. No personal record or source code copied.",
+  "sha256": "f17052981e361c0f9b17ebf221867fb6f2a9c3df3da09259b89b45e25501fc6f"
+}

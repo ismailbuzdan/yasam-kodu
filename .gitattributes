@@ -1,3 +1,4 @@
 # External evidence is byte-preserved so SHA-256 checks survive Windows checkouts.
 backend/tests/fixtures/astrology_sources/* -text whitespace=-blank-at-eol,-blank-at-eof
 backend/tests/fixtures/human_design_sources/* -text whitespace=-blank-at-eol,-blank-at-eof
+backend/tests/fixtures/kameri_sources/* -text whitespace=-blank-at-eol,-blank-at-eof

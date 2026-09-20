@@ -1,0 +1,13 @@
+{
+  "source_id": "K1-SWETEST",
+  "url": "https://www.astro.com/cgi/swetest.cgi?arg=-b15.12.2020+-ut0+-p0+-rise+-n2+-geopos30%2C40%2C0+-at1013.25%2C15%2C40%2C0+-emos",
+  "retrieved_at": "2026-09-20T17:31:39.380595+00:00",
+  "settings": {
+    "command": "-b15.12.2020 -ut0 -p0 -rise -n2 -geopos30,40,0 -at1013.25,15,40,0 -emos"
+  },
+  "scope": "SHARED: upper-limb refracted Sun rise/set UT1",
+  "limitation": "External execution but shared Swiss/Moshier algorithm; printed 0.1 second precision. Not independent astronomy. Version 2.10.03 reported by separate swetest_version capture, not by this rise output; build identity unverified.",
+  "http_body_sha256": "042d22087dcf760eeb195f63d878d4d883670833ee0c0b1e87cfd63074734353",
+  "extraction": "PRE text only; numeric characters unchanged",
+  "sha256": "ec50c1dc523415cbc58ef7883c8f577f159f9adea148f1458eb876d02e31bf05"
+}

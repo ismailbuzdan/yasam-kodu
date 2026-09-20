@@ -1,0 +1,15 @@
+{
+  "source_id": "K1-USNO",
+  "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2020-12-15&coords=40%2C30&tz=0&dst=false",
+  "retrieved_at": "2026-09-20T17:31:44.237919+00:00",
+  "settings": {
+    "date": "2020-12-15",
+    "coords": "40,30",
+    "tz": "0",
+    "dst": "false"
+  },
+  "scope": "INDEPENDENT APPROXIMATE: sunrise/sunset in UT1",
+  "limitation": "USNO standard limb/refraction convention; no selectable pressure/temperature. Minute precision, not exact field/model matching to Swiss atmospheric model.",
+  "http_body_sha256": "c3e1e304ac8f111f7afad7b312ecbba4a8c7f2e4c2b16b7e4f53a44522aab2a7",
+  "sha256": "c3e1e304ac8f111f7afad7b312ecbba4a8c7f2e4c2b16b7e4f53a44522aab2a7"
+}

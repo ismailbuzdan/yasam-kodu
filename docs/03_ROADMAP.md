@@ -35,7 +35,10 @@ flowchart LR
 
 - [x] Stage K0 — Methodology, source qualification and scoped project convention freeze (ADR-017;
   [[kameri-code]], [[kameri-source-qualification]]). Docs only; separate from Life Code v1.
-- [ ] Stage K1 — Separately authorized implementation/verification of five mechanical methods.
+- [ ] Stage K1 — Implementation/verification and later transport for five mechanical methods.
+  - [x] Stage K1A — Deterministic internal core; 464 new tests, 1388 full backend pass;
+    scoped external evidence in [[kameri-verification]]. ADR-017 unchanged.
+  - [ ] Stage K1B — Public API: NOT STARTED. Requires separate authorization/contract work.
   Readiness is limited to numeric mansion sectors and confirmed-Arabic ebced, alongside tabular
   Hijri, Moon and seasonal planetary hours. No automatic transcription or interpretation readiness.
 - [ ] Arabic mansion label collation, licensed name suggestions and work-specific interpretation research.

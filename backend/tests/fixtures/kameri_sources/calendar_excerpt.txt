@@ -1,0 +1,12 @@
+CAL-02: E. G. Richards, Calendars (2012), printed p.607, section 15.6.3.
+Short excerpt, whitespace normalized; not source code:
+"Friday, 622 July 16 in the Julian calendar or Julian Day Number 1 948 440"
+
+K1-CAL: N. Dershowitz and E. M. Reingold, Calendrical Calculations (1990),
+Software--Practice and Experience 20(9), printed p.901, absolute-day example.
+Two short noncontiguous excerpts, whitespace normalized:
+"absolute day 710347 is called November 12, 1945 C.E. on the Gregorian calendar"
+"Dhu al-Hijjah 6, 1364"
+
+These are calendar correspondences only, not personal birth records.
+No paper, algorithm, interpretive text or image is redistributed.

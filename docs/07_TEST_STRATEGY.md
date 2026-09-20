@@ -5,6 +5,30 @@ tags:
 
 # Test Strategy
 
+## Stage K1A qualification
+
+Six offline `test_traditional_*` suites add **464 tests**: Hijri 41, abjad 116, lunar 77,
+planetary hours 217, concurrency 1, external references 12. Full Docker suite **1388 passed**
+(924 prior baseline + 464), only two existing warnings. Existing Astrology/HD/Life Code
+regression separately passes 756 tests. Pip check and the 68-artifact HD audit remain clean.
+
+Calendar tests traverse all 109,938 supported Gregorian dates for inverse and consecutive-day
+properties, all 30 leap positions/month ends, epoch and century boundaries. Two published date
+correspondences are independent references; round trips alone are not independent accuracy proof.
+Phase tests inspect all eight equality/adjacent boundaries; mansion tests compare all 28 exact
+rational boundaries to adjacent binary64 values. All 24 hour offsets across seven weekdays,
+nonrepresentable subdivision points, R0/S0/R1 ownership, historical/DST/local-date conversion,
+polar absence, bounded search and native error/flag tests are included. Native search alternates
+event types to avoid re-discovering the same root; it does not shift classification boundaries.
+Abjad covers all values/extensions, eight ligatures, NFC equivalence, exact ignore allowlists,
+all other presentation-form codepoints, invalid input/confirmation and no result/error/log echo.
+Mixed sequential/concurrent Moon/hour/Astrology/HD tests check deterministic state isolation.
+
+New artifacts live only in `kameri_sources/`, with byte-preserving Git attributes and hash/inventory
+checks. JPL, shared swetest and approximate USNO scopes/tolerances are separate; see
+[[kameri-verification]]. Collector is explicit network tooling, never imported by production.
+No expectations are derived from the implementation under test or regenerated to match it.
+
 ## Stage K0 documentation qualification
 
 K0 changes only methodology/provenance documents, with bibliography JSON under docs.

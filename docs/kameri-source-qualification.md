@@ -139,3 +139,12 @@ expectation to match production output.
 K0 freezes five narrow mechanical methods and the provenance/product boundary. Arabic mansion
 labels, automatic name suggestions and all interpretive features stay outside that freeze.
 Before broadening implementation, resolve the affected ambiguity with a new documented revision.
+
+## K1A runtime evidence supplement
+
+The original 19-source K0 bibliography and ADR-017 remain unchanged. Separately authorized
+K1A now has field-scoped runtime checks and ten hashed artifact captures/excerpts, documented
+in [[kameri-verification]]. K1-CAL adds a directly inspected primary calendar paper for one
+in-range published correspondence; K1-JPL, K1-SWETEST and K1-USNO identify runtime producers.
+These are not ten independent implementations or a historical interpretation corpus.
+No third-party code, full paper, source graphics or interpretive text was copied into production.

@@ -6,7 +6,7 @@ tags:
 
 # Kamerî Kod — Stage K0 methodology
 
-Revision: `kameri-k0-v1`, 2026-09-20. Research/specification only.
+Convention revision: `kameri-k0-v1`, 2026-09-20 (unchanged by K1A).
 Start: `main` / `6250d347af39da04291af7412521664532a03363`.
 Decision: ADR-017 in [[05_DECISIONS]]. Evidence: [[kameri-source-qualification]] and
 [bibliography](references/kameri_sources.json). Source IDs below resolve there.
@@ -15,6 +15,26 @@ K0 is complete for the five **explicit project methods** below. This is methodol
 readiness, not implemented or tested runtime accuracy. K1 can be separately scoped to those
 methods with confirmed Arabic input. Automatic name rendering, stellar-mansion reconstruction
 and interpretation are not implementation-ready. No K1 work is authorized by this document.
+
+## Stage K1A implementation qualification — 2026-09-20
+
+Separately authorized K1A deterministic core is complete in `backend/app/services/traditional/`.
+K0 and ADR-017 conventions are unchanged. K1B API NOT STARTED; Stage 11 NOT STARTED.
+Evidence, exact internal input boundaries, test results and limitations: [[kameri-verification]].
+This implementation status does not promote the deferred historical/interpretive claims below.
+
+- `calculate_hijri(date)` uses the supplied date, rejects datetime input and supports 1800–2100.
+- `calculate_lunar(aware_utc)` produces Sun/Moon longitudes, directed elongation, native `pheno`
+  fraction, centered phase label and numeric mansion result, computing the Moon once.
+- `calculate_abjad(text, confirmed=True)` requires confirmation for that exact input and policy;
+  calling code must renew confirmation after edits. No original/normalized text in the result.
+- `calculate_planetary_hour(aware_utc, latitude, longitude, timezone_id)` uses the existing pinned
+  zone loader, native lock and initializer. It does not infer a zone or invoke AstrologyService.
+- Pure phase/mansion helpers accept `[0,360]` (360 wraps to 0), rejecting negative/nonfinite or
+  larger input. Hour membership uses exact rational representations of UT1 Julian-day floats.
+- Frozen nested internal values expose mechanical provenance, not public transport schemas.
+  Domain errors distinguish admission, unsupported text, native failure, invalid native results
+  and unavailable solar events. No clock, network, persistence or interpretation in the package.
 
 ## Product and ownership boundary
 

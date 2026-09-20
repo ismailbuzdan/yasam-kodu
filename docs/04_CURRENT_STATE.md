@@ -6,8 +6,8 @@ tags:
 # Current State
 
 **Last updated:** 2026-09-20
-**Current stage:** Stage K0 Kamerî Kod methodology complete; Stage 10 remains complete on main
-**Next step:** Separately scope/authorize K1 for qualified mechanical methods; Stage 11 AI NOT STARTED, PDF NOT STARTED
+**Current stage:** Stage K1A Kamerî deterministic core complete on stage-k1a-kameri-core; K0 complete
+**Next step:** Separately authorize K1B API; Stage 11 AI NOT STARTED, PDF NOT STARTED
 **License:** AGPL-3.0
 **Development environment:** Docker Compose available and preferred; host workflows remain a fallback.
 
@@ -22,6 +22,20 @@ After coding:
 - Update this file, decisions and changelog when applicable; run relevant tests.
 
 ## Completed
+
+**Stage K1A (2026-09-20):** Preserved/resumed dirty WIP at `d4e62c0f4ed0cfeefd1227d81b6b5f14abe32354`
+on `stage-k1a-kameri-core`. Added five mechanical methods in an isolated `traditional` service package,
+frozen results, fixed private domain errors, exact rational phase/sector/hour boundary tests,
+confirmed-script normalization/privacy, existing-lock native callers and pinned-zone reuse.
+No existing engine, schema, API, frontend, dependency or original evidence changes. ADR-017 unchanged.
+Docker targeted: Hijri 41, abjad 116, lunar 77, planetary hours 217, concurrency 1, references 12:
+**464 passed**. Existing Astrology/HD/Life Code regression **756 passed**. Full backend **1388 passed**,
+only the **2 existing dependency warnings**; pip check clean; HD read-only evidence audit **68/68**.
+Ten new evidence artifacts with receipts/hashes: 2 JPL, 3 shared swetest rise/set, 1 separate remote
+version capture, 3 approximate USNO rise/set, 1 short published-calendar excerpt file. Scope is narrow:
+two calendar correspondences, four JPL instants and three solar dates, not full-range external accuracy.
+See [[kameri-verification]]. K1A complete; K1B API ready for separate scoping, NOT STARTED.
+Stage 11 NOT STARTED. No main merge; no automatic script rendering, mansion names or interpretation.
 
 **Stage K0 (docs/research only, 2026-09-20):** [[kameri-code]] and
 [[kameri-source-qualification]] define five scoped methods, 19 source records (A:9/B:8/C:2),
@@ -108,7 +122,7 @@ and original audit checks are unchanged. Tests cover 384 boundary neighborhoods 
 Official splenic and 3/5 examples remain absent; structural coverage is sufficient for readiness. See
 [[human-design]] and [[human-design-verification]].
 
-**Next step:** Separately scope and authorize K1's five qualified mechanical methods, if desired.
+**Next step:** Separately scope and authorize K1B's public contract for the completed five-method core.
 Automatic name suggestions, mansion name publication and interpretation require additional qualification.
 Stage 10A, Stage 10B and Stage 10 complete;
 Unified Life Code API complete. Stage 11 AI NOT STARTED; Stage 12 PDF NOT STARTED.

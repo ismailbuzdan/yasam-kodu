@@ -1,0 +1,13 @@
+{
+  "source_id": "K1-SWETEST",
+  "url": "https://www.astro.com/cgi/swetest.cgi?arg=-b1.1.2000+-ut0+-p0+-emos",
+  "retrieved_at": "2026-09-20T17:32:38.983893+00:00",
+  "settings": {
+    "command": "-b1.1.2000 -ut0 -p0 -emos"
+  },
+  "scope": "Remote reported version",
+  "limitation": "Separate request: rise endpoint does not expose build identity.",
+  "http_body_sha256": "386cda3ab1e4107d1fee1edc1c4844c756b0b410b4df1228c8484d94b23fd47e",
+  "extraction": "PRE text only; numeric characters unchanged",
+  "sha256": "1cc9cea9d079ca2016b13ec8adeb88c6f8882d2338a607adb2b8297b038e188e"
+}

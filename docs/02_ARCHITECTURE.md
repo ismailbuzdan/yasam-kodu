@@ -56,14 +56,22 @@ Stage 10B transport is complete: strict resolved input, one service call,
 composed public schemas and shared standalone-HD safe projection. UTC admission uses an aware clock;
 calendar admission preserves Numerology's server-local day policy. No new timezone resolution.
 
-## Kamerî Kod boundary (Stage K0 specification only)
+## Kamerî Kod boundary (Stage K0 + K1A internal core)
 
 ADR-017 and [[kameri-code]] define a future separate module, not a fourth member of the Stage 10
 Life Code v1 response. Existing input resolution/native-state ownership is reused; new timezone,
 geocoding and astronomy stacks are not planned. Source provenance and field classification separate
 astronomy, calendar conversion, symbolic mappings and historical interpretation. Only five scoped
-mechanical methods are qualified for a later K1 implementation; automatic spelling, proposed mansion
-labels and interpretation are not production-ready. No runtime component or transport is added here.
+mechanical methods now have an isolated internal implementation; automatic spelling, proposed mansion
+labels and interpretation are not production-ready. K1B transport and Stage 11 are NOT STARTED.
+
+`backend/app/services/traditional/` contains frozen `models`, integer `hijri`, allowlisted `abjad`,
+`lunar` astronomy/mappings, `planetary_hours` and small private `_astronomy` adapters. Existing
+Astrology/HD inline their UTC-to-JD calls; K1A wraps the same Swiss operation without changing
+them. The existing Astrology RLock/initializer and timezone `load_zone` remain the shared owners.
+No existing engine is refactored. Moon positions/phenomena use TT; solar events/membership use
+UT1; only planetary-day date ownership projects R0 through pinned IANA data. Native root searches
+alternate rise/set/rise, without epsilon stepping. See [[kameri-verification]] for scoped evidence.
 
 ## Stage 6 Swiss Ephemeris licensing
 

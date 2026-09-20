@@ -1,0 +1,23 @@
+{
+  "source_id": "K1-JPL",
+  "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%2710%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272451545.0%2C2451552.0%2C2451559.0%2C2451566.0%27&TLIST_TYPE=%27JD%27&TIME_TYPE=%27UT%27&QUANTITIES=%2731%27&REF_SYSTEM=%27ICRF%27&APPARENT=%27AIRLESS%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27",
+  "retrieved_at": "2026-09-20T17:31:16.601583+00:00",
+  "settings": {
+    "format": "json",
+    "COMMAND": "'10'",
+    "EPHEM_TYPE": "'OBSERVER'",
+    "CENTER": "'500@399'",
+    "TLIST": "'2451545.0,2451552.0,2451559.0,2451566.0'",
+    "TLIST_TYPE": "'JD'",
+    "TIME_TYPE": "'UT'",
+    "QUANTITIES": "'31'",
+    "REF_SYSTEM": "'ICRF'",
+    "APPARENT": "'AIRLESS'",
+    "CSV_FORMAT": "'YES'",
+    "EXTRA_PREC": "'YES'"
+  },
+  "scope": "INDEPENDENT: apparent longitude; Moon disk fraction",
+  "limitation": "Geocentric IAU76/80 ecliptic of date; model/frame differences versus Swiss. Not bit-identical validation. UTC after 1962. Four synthetic dates only.",
+  "http_body_sha256": "9d64eeb590e6b13b440487a343c71687b1591cf2f97fc3e652bb8a1a9a750c73",
+  "sha256": "9d64eeb590e6b13b440487a343c71687b1591cf2f97fc3e652bb8a1a9a750c73"
+}

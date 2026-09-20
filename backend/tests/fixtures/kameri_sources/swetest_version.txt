@@ -1,0 +1,6 @@
+/ulb/swetest -b -n -s -f -p -b1.1.2000 -ut0 -p0 -emos 
+date (dmy) 1.1.2000 greg.   0:00:00 UT		version 2.10.03
+UT:  2451544.500000000     delta t: 63.828500 sec
+TT:  2451544.500738756
+Epsilon (t/m)     23°26'15.6467   23°26'21.4066
+Nutation          -0° 0'13.9311   -0° 0' 5.7600
