@@ -6,6 +6,7 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from fastapi.routing import APIRoute
 
+from app.api.human_design_projection import project_human_design
 from app.core.birth_date_validation import validate_birth_date
 from app.schemas.human_design import (
     ErrorCode, HumanDesignErrorDetail, HumanDesignErrorResponse,
@@ -71,12 +72,4 @@ def calculate_human_design(request: HumanDesignRequest, now: datetime = Depends(
         result = calculate_human_design_core(request.utc_datetime)
     except HumanDesignError as error:
         return error_response(error.code)
-    return HumanDesignResponse(
-        metadata=result.metadata, birth_utc=result.birth_utc, design_utc=result.astronomy.design_utc,
-        personality=result.astronomy.personality, design=result.astronomy.design_activations,
-        active_gates=result.active_gates, channels=result.channels,
-        defined_centers=result.defined_centers, undefined_centers=result.undefined_centers,
-        type=result.type, strategy=result.strategy, authority=result.authority, profile=result.profile,
-        definition=result.definition, component_count=result.component_count,
-        definition_components=result.definition_components,
-    )
+    return project_human_design(result)

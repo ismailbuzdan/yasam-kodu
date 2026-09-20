@@ -18,7 +18,7 @@ flowchart LR
   D --> E[COMPLETED: Astrology Engine and Stage 7 verification]
   A --> F[COMPLETED: Numerology Engine - name and calendar date]
   D --> G[COMPLETED: Human Design Core and API]
-  E --> H[COMPLETED: Unified Life Code internal service - API pending]
+  E --> H[COMPLETED: Unified Life Code service and API]
   F --> H
   G --> H
   H --> I[PLANNED: AI Interpretation]
@@ -34,7 +34,7 @@ flowchart LR
 | Astrology | Swiss Ephemeris 2.10.03 / pyswisseph 2.10.3.2 | Stages 6–7 completed; scope: [[astrology-verification]] |
 | Numerology | Pure Python / Pydantic, Pythagorean convention | Stage 8 completed; [[numerology]] |
 | Human Design | Swiss/Moshier astronomy + deterministic graph/classification | Stage 9 backend/API completed; [[human-design]] |
-| Unified Life Code | Frozen internal envelope + existing typed engine results | Stage 10A completed; Stage 10B API pending; [[life-code]] |
+| Unified Life Code | Frozen internal envelope + composed public engine schemas | Stages 10A/10B completed; [[life-code]] |
 | Database | PostgreSQL | planned |
 | AI | provider abstraction, Gemini/OpenAI candidates | planned |
 | PDF | shared report JSON source | planned |
@@ -50,8 +50,11 @@ date, name and optional explicit target year. It calls the three existing engine
 without recalculation or field loss. Only Numerology receives name/calendar date/target year; only
 Astrology receives coordinates. Name is not retained in the result. The frozen outer result preserves
 original typed children; Astrology/Numerology children remain mutable (not a deep immutable snapshot).
-No new HTTP surface, clock, provider, interpretation or persistence. ADR-016 and [[life-code]] define
-the boundary; existing engine conventions and native-state ownership are unchanged.
+The internal service has no HTTP surface, clock, provider, interpretation or persistence. ADR-016
+and [[life-code]] define the boundary; engine conventions and native-state ownership are unchanged.
+Stage 10B transport is complete: strict resolved input, one service call,
+composed public schemas and shared standalone-HD safe projection. UTC admission uses an aware clock;
+calendar admission preserves Numerology's server-local day policy. No new timezone resolution.
 
 ## Stage 6 Swiss Ephemeris licensing
 

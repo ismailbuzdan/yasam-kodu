@@ -191,3 +191,106 @@ Messages are static and never reuse exception text, native details, paths, input
 No submitted data is logged or persisted by this adapter. Success intentionally returns birth UTC;
 errors do not echo it. No name, location or coordinates occur in the response. Existing CORS and
 disabled `/docs`, `/redoc`, `/openapi.json` policy remain unchanged.
+
+## `POST /api/v1/life-code/calculate`
+
+**Qualification:** Stage 10B complete; 89 targeted API tests and full 924 backend tests pass in Docker.
+
+**Purpose:** deterministic public aggregation of the three verified calculation systems.
+Input must already be resolved. This endpoint does NOT perform geocoding or historical timezone
+resolution and does not generate interpretation. Schemas: `backend/app/schemas/life_code.py`.
+Internal orchestration/ownership: [[life-code]] and ADR-016.
+
+**Synthetic request:**
+
+```json
+{
+  "full_name": "Synthetic Example",
+  "birth_date": "2000-01-02",
+  "utc_datetime": "2000-01-01T21:30:00Z",
+  "latitude": 41.0,
+  "longitude": 29.0,
+  "target_year": null
+}
+```
+
+- `full_name`: strict string, 1–200 characters; existing Numerology character rules apply.
+- `birth_date`: strict `YYYY-MM-DD` calendar date (the LOCAL date supplied to Numerology).
+- `utc_datetime`: existing HD ISO 8601 zero-offset grammar, supported UTC years 1800–2100.
+  Z/+00:00 are equivalent; naive, nonzero offset, epoch, date-only and leap-second input rejected.
+  The HD microsecond precision limit is preserved, without silent truncation.
+- Coordinates: finite numeric latitude −90..90, longitude −180..180, inclusive; no string/bool coercion.
+- `target_year`: omitted/null or strict integer 1..9999; no implicit current year.
+- Extra fields forbidden, including `house_system`, country/city/district/local-time fields.
+  Placidus remains fixed internally. Calendar date and UTC date need NOT be equal.
+
+**Two admission clocks, no timezone inference:** UTC instant must be `<= validation_now()` (aware
+UTC); equality is accepted, even a future microsecond is rejected. Calendar birth date uses the
+same `validation_today()` dependency and `validate_birth_date` rule as standalone Numerology:
+`birth_date <= date.today()` in the SERVER's local calendar. Both dependencies are independently
+overridable in tests. This preserves existing behavior; it does not interpret the user's birthplace
+timezone or substitute UTC date for the calendar date. Near a day boundary a valid local date may
+still fail the existing server-day admission rule; no unapproved timezone policy is introduced.
+Calendar admission runs before instant admission. No clock enters the Stage 10A service.
+
+**Response shape** (type placeholders, not a literal full payload):
+
+```text
+{
+  "metadata": {
+    "schema_version": "life-code-v1",
+    "calculation_layers": ["astrology", "numerology", "human_design"],
+    "interpretation_present": false
+  },
+  "astrology": <existing AstrologyResponse>,
+  "numerology": <existing NumerologyResponse>,
+  "human_design": <existing HumanDesignResponse>
+}
+```
+
+The three section models are composed, not copied or recalculated. Astrology/Numerology fields
+and metadata are unchanged. The shared `api/human_design_projection.py` helper is used by BOTH
+standalone HD and Life Code; HD core objects are never serialized wholesale. Actual Julian days,
+residual, bracket width, iterations and internal astronomy containers are absent. Fixed solver
+SETTINGS already exposed by standalone HD remain unchanged. No float rounding, ordering changes
+or serialization feedback. The HTTP bytes are a snapshot; internal shallow immutability is unchanged.
+
+**Privacy:** full/normalized name never appears in any response section or metadata. Calendar
+birth date is not newly echoed; existing HD `birth_utc`/`design_utc` remain public. No input coordinates
+are newly echoed (activation longitude remains astronomical longitude). No request logging,
+persistence, cache, network/provider or AI call is introduced. Errors never echo submitted values,
+Pydantic input/ctx/raw repr, native exception text, file paths or traceback.
+
+| HTTP | Code | Condition |
+| --- | --- | --- |
+| 422 | `invalid_request` | Extra fields, malformed/non-object/empty body, unknown internal input field |
+| 422 | `invalid_name` | Missing/invalid name or Numerology name rejection |
+| 422 | `unsupported_name_characters` | Existing Numerology alphabet restriction |
+| 422 | `invalid_birth_date` | Missing/malformed calendar date or future server-calendar date |
+| 422 | `invalid_target_year` | Noninteger/bool or out-of-range target year |
+| 422 | `invalid_utc_datetime` | Missing/malformed/nonzero-offset or future instant |
+| 422 | `invalid_coordinates` | Missing/nonfinite/non-numeric/out-of-range coordinates |
+| 422 | `unsupported_date_range` | UTC birth year outside HD's 1800–2100 support |
+| 422 | `house_calculation_error` | Placidus domain failure; same status as standalone Astrology |
+| 503 | `ephemeris_error` | Astrology/HD astronomical failure |
+| 503 | `design_moment_error` | HD safe Design convergence failure |
+| 503 | `classification_error` | HD classification failure |
+
+Request validation is route-local. Extra/malformed-body errors take precedence; otherwise first
+invalid field in this fixed order wins: full_name, birth_date, utc_datetime, latitude, longitude,
+target_year. An empty object therefore uses `invalid_name`. A recognized HD range failure uses
+`unsupported_date_range`. `LifeCodeInputError.field` maps to these same public field codes;
+unknown fields map to `invalid_request`. Known engine domain errors retain code/status semantics
+but use static safe messages, never exception text. No generic `except Exception`: programming
+errors still fail instead of becoming fabricated successful charts or input errors.
+
+```json
+{"detail":{"code":"invalid_birth_date","message":"Geçerli ve gelecekte olmayan bir doğum tarihi girin."}}
+```
+
+```json
+{"detail":{"code":"ephemeris_error","message":"Astronomik hesaplama tamamlanamadı."}}
+```
+
+CORS and disabled OpenAPI/docs policy are unchanged. Stage 11 AI and Stage 12 PDF remain separate,
+unimplemented stages; no unified frontend result UI is added here.

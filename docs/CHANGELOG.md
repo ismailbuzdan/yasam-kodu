@@ -7,6 +7,23 @@ tags:
 
 Current delivery state: [[04_CURRENT_STATE]]. Milestone sequence: [[03_ROADMAP]].
 
+## 2026-09-20 — Stage 10B public Life Code API complete
+
+- Added strict resolved-input request, composed response/error models and a thin Life Code router.
+  Existing service/engines and internal shallow-immutability contract remain unchanged.
+- Extracted only the existing HD public mapping into a shared helper used by both routers;
+  no HD schema changes or public exposure of internal Julian days/convergence diagnostics.
+- Preserved Numerology server-calendar admission separately from exact UTC instant admission;
+  added static private domain errors and tests for ownership/equivalence/privacy/concurrency.
+- Resumed preserved WIP after the user restored Docker. No adapter/test fixes were needed:
+  89 targeted API, 46 Stage 10A and 246 standalone API-containing regression tests pass.
+  Full backend 924 passed with two existing warnings; pip check clean; evidence audit 68/68.
+- Frontend lint/typecheck/8 tests/production build pass. The normal build regenerated production
+  type imports after startup's generated dev-path change; final frontend diff is empty.
+- Stage 10A/10B and Stage 10 complete; Unified Life Code API complete. Stage 11 AI and Stage 12
+  PDF NOT STARTED; unified result frontend UI not implemented. No reset/deletion, engine/service/
+  model/reference/fixture/frontend/AI/PDF/database/dependency changes; no main merge.
+
 ## 2026-09-19 — Stage 10A Unified Life Code internal model/service
 
 - Added frozen resolved input, minimal aggregation metadata and frozen result envelope retaining

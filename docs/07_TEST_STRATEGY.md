@@ -7,7 +7,7 @@ tags:
 
 ## Backend
 
-835 tests (789 Stage 9 baseline plus 46 Life Code service tests) cover health, birth-profile validation, location resolution, historical timezone behavior,
+924 tests (789 Stage 9 baseline plus 46 Life Code service and 89 Life Code API tests) cover health, birth-profile validation, location resolution, historical timezone behavior,
 fixture-integrity boundaries and Stages 6–7 astrology. Original tests remain; the old empty-reference
 guard now checks provenance. Astrology includes invariants, error boundaries, threaded repeatability,
 real Swiss smoke tests and offline external-reference regression; see [[astrology-verification]].
@@ -74,8 +74,25 @@ Swiss native-state isolation. No existing engine, schema, golden or evidence cha
 Docker Stage 10A qualification: 46 targeted; 416 Astrology, 117 Numerology, 205 Human Design;
 full 835 passed with two existing warnings. `pip check` clean and read-only HD audit 68/68.
 Frontend unchanged; last qualification on the Stage 9 main merge remains lint/typecheck/8 tests/build.
-These new assertions qualify orchestration, not independent astronomical accuracy. Stage 10B API
-tests remain future work. Details and the user-selected immutability boundary: [[life-code]].
+These new assertions qualify orchestration, not independent astronomical accuracy.
+Details and the user-selected immutability boundary: [[life-code]].
+
+## Unified Life Code API — Stage 10B complete
+
+Stage 10B adds 89 tests in `test_life_code_api.py` for typed response/core equality, standalone endpoint equality,
+shared HD safe projection and diagnostics exclusion, cross-date ownership, name/year/coordinate
+metamorphic invariants, strict validation, static domain errors, private 422/503 responses, exact
+UTC admission and separate Numerology calendar-clock behavior. Also covers repeated canonical
+Z/+00:00 output, null default target year, small parallel requests and visible programming errors.
+
+After user-restored Docker availability, the preserved WIP passed without adapter/test fixes:
+89 targeted API tests, 46 Stage 10A service tests and 246 standalone API-containing regressions
+(`test_astrology.py`: 76, `test_numerology.py`: 117, `test_human_design_api.py`: 53).
+Full backend: 924 passed with only two existing dependency warnings. `pip check` clean;
+read-only HD audit verifies 68/68 artifacts and unchanged comparison metrics.
+Frontend lint/typecheck/8 tests/production build also pass in Docker. Startup regenerated
+`next-env.d.ts` dev paths; the normal production build regenerated production paths, leaving no
+frontend diff without restore/reset. No engine/service/model/golden changes.
 
 ## Frontend
 
