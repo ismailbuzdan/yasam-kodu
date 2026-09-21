@@ -8,7 +8,9 @@ tags:
 Reviewed 2026-09-21. Start: clean `main` and fetched `origin/main` at
 `bd7cbda97c39e01e90dc63ec24a15812780c5504`. Work branch: `stage-k2a-traditional-sources`.
 K0/K1A/K1B mechanics and ADR-017/018 are unchanged. This is research, not a production KB,
-prompt, API or interpretation engine. Stage K2B and Stage 11 are NOT STARTED.
+prompt, API or interpretation engine. At K2A delivery, K2B and Stage 11 were NOT STARTED.
+Current follow-up: [[kameri-knowledge-base]] completes K2B's LIMITED PRODUCTION KB without changing
+this research ledger or its qualifications. K2A and mechanical API COMPLETE; Stage 11 NOT STARTED.
 
 ## Decision and evidence scope
 
@@ -18,7 +20,9 @@ and three calendar/cultural notes. No complete mansion, planetary-hour, Hurûf o
 table is qualified. K2B source readiness is **YES, LIMITED** to those four fragments; a separately
 authorized implementation must still enforce applicability, provenance, licensing and abstention.
 Stage 11 knowledge readiness is **YES, LIMITED** to their descriptive narration, not a personalized
-Kamerî reading. There is no production KB yet, and no Stage 11 implementation authorization here.
+Kamerî reading. At K2A delivery no production KB existed; this research grants no Stage 11 authorization.
+K2B now enforces the distinction: three Hijri fragments may be selected by month, while ASMA_NUM_001
+is explicit reference-only and never selected from a personal abjad total of 66. No claims are promoted.
 
 The [research ledger](references/kameri_interpretation_sources.json) is the claim-level authority:
 18 records = 4 qualified + 10 research-only + 3 unqualified + 1 deferred.

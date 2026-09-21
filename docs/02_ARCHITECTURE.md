@@ -89,7 +89,17 @@ citations may reach a future narrator alongside deterministic results and policy
 records and source prose must not be ingested as runtime knowledge. No K1 sector-to-stellar-theme
 bridge is approved; no personal Asma, devotional prescription, mother's-name collection or invented
 missing correspondence. Four arithmetic/cultural fragments are source-ready, not a complete mapping
-system. K2B/Stage 11 are not implemented; the existing API still has interpretation_present=false.
+system. K2B now provides only the bounded internal KB below; Stage 11 is not implemented and the
+existing API still has interpretation_present=false.
+
+## Qualified internal knowledge — K2B complete
+
+`app.knowledge.kameri` is independent of `app.services.traditional`: strict frozen models,
+one bundled `kameri-kb-v1` JSON snapshot, explicit reference repository and typed month selector.
+Four claims/four sources only; the K2A research ledger is used by integrity tests, never runtime.
+Month 9 selects HIJRI_CTX_001/002; month 12 selects HIJRI_CTX_003; all other months abstain.
+ASMA_NUM_001 remains reference-only and cannot be selected from abjad 66. No calculation import,
+network, AI or public transport. ADR-020 and [[kameri-knowledge-base]] document the enforced policy.
 
 ## Stage 6 Swiss Ephemeris licensing
 

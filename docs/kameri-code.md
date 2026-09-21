@@ -473,4 +473,13 @@ Hurûf/Esmâ/zodiac–Esmâ/dhikr/yıldıznâme and interpretation remain unqual
 fragments for future KB work; it does not change the K1B contract or admit historical mapping tables.
 The separate research JSON is not a production KB. ADR-019 prohibits unqualified AI additions,
 personal Asma and devotional prescriptions; mother's name remains uncollected. Numeric mansion
-sectors still have no approved historical interpretation bridge. K2B and Stage 11 NOT STARTED.
+sectors still have no approved historical interpretation bridge. K2A is COMPLETE.
+
+## K2B qualified internal KB — complete
+
+[[kameri-knowledge-base]] implements exactly the four K2A-qualified fragments as immutable
+`kameri-kb-v1` data with sources, locators, restrictions and deterministic applicability (ADR-020).
+Only Hijri months 9/12 select cultural context; other months abstain. ASMA_NUM_001 is explicit
+reference-only, never selected by a user's abjad sum. No calculation, network or API change.
+Kamerî mechanical API remains COMPLETE; K2B LIMITED PRODUCTION KB COMPLETE; Stage 11 NOT STARTED.
+Future narration readiness is YES, LIMITED to three cultural fragments, not personal interpretation.

@@ -285,3 +285,29 @@ edition rights are separate from underlying historical work rights. No blanket r
 fragments, not full-feature mappings; no production KB built. Stage 11 knowledge readiness YES,
 LIMITED to descriptive narration, not personalized Kamerî interpretation. K2B/Stage 11 NOT STARTED.
 ADR-017/018, mechanical conventions, public API and Life Code v1 are unchanged.
+
+## ADR-020 — Kamerî Qualified Knowledge Base v1
+
+**Status:** Accepted (Stage K2B, 2026-09-21).
+**Context:** K2A qualified four bounded facts, not personal correspondences or complete historical
+tables. Production admission and contextual selection must enforce these limits independently of AI.
+**Decision:** `schema_version=kameri-kb-v1`; production contains exactly the qualified K2A set
+ASMA_NUM_001, HIJRI_CTX_001/002/003 with only KI-A03/B05/B07/B08 source records. All research-only,
+unqualified and deferred records are excluded. Runtime loads separate immutable/versioned data,
+never the research ledger or network. Mandatory source locators, original context, limitations,
+religious boundary and `ai_usage=restricted` remain attached to every claim. Short independent facts
+and citation metadata only; no source prose, translations, scans or tables.
+
+Only typed Hijri month cultural context is automatically applicable: month 9 selects HIJRI_CTX_001
+and HIJRI_CTX_002, month 12 selects HIJRI_CTX_003, all other months explicitly abstain with no fallback.
+ASMA_NUM_001 is `reference_only`; explicit non-personal lookup is allowed, but abjad 66 creates no
+associated/personal Asma and the automatic selection model excludes reference-only records.
+No mansion bridge, planetary-hour interpretation, Hurûf, zodiac–Asma, dhikr prescription, yıldıznâme,
+mother-name collection, calculation calls, API change or AI implementation is admitted.
+**Reason:** Fail-closed, source-aware limited context is reproducible without inventing missing
+knowledge or implying that arithmetic establishes personal or religious associations.
+**Consequences:** K2B LIMITED PRODUCTION KB COMPLETE; K2A and mechanical API COMPLETE. Stage 11
+readiness YES, LIMITED to the three cultural fragments, not a deep personalized reading; Stage 11
+NOT STARTED. ADR-017/018/019 remain unchanged. Tests freeze ledger admission, all-month selection,
+the abjad-66 firewall, provenance, immutability, parallel/offline use and calculation independence.
+Details: [[kameri-knowledge-base]].

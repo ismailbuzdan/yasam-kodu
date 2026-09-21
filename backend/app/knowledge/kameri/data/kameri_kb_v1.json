@@ -1,0 +1,155 @@
+{
+  "schema_version": "kameri-kb-v1",
+  "sources": [
+    {
+      "source_id": "KI-A03",
+      "title": "Qur'an 2:185, Arabic verse on Diyanet; modern meal/tafsir separately identified",
+      "url": "https://kuran.diyanet.gov.tr/tefsir/Bakara-suresi/192/185-ayet-tefsiri",
+      "locator": "Arabic verse 2:185; Meal; Kur'an Yolu volume 1 pp.281–283",
+      "tier": "A",
+      "verified_scope": "Primary status concerns the verse, not modern commentary. Supports context, not individual religious advice or calendar equivalence."
+    },
+    {
+      "source_id": "KI-B05",
+      "title": "Mustafa İsmet Uzun, EBCED, TDV (1994), 10:68–70",
+      "url": "https://islamansiklopedisi.org.tr/ebced",
+      "locator": "Paragraph beginning Tarih boyunca ebced harflerinin; Allah/hilal numeric example; letter-value table",
+      "tier": "B",
+      "verified_scope": "Numeric evidence only; article's other normalization conventions do not replace ADR-017."
+    },
+    {
+      "source_id": "KI-B07",
+      "title": "Hacı Mehmet Günay / Mustafa İsmet Uzun, RAMAZAN, TDV (2007; first section updated 2020)",
+      "url": "https://islamansiklopedisi.org.tr/ramazan",
+      "locator": "Section 1 opening; section 2 Kültür ve Edebiyat, first two paragraphs",
+      "tier": "B",
+      "verified_scope": "Religious/calendar and literary context, not birth-personality evidence."
+    },
+    {
+      "source_id": "KI-B08",
+      "title": "M. Kâmil Yaşaroğlu, ZİLHİCCE, TDV (2013), 44:415–416",
+      "url": "https://islamansiklopedisi.org.tr/zilhicce",
+      "locator": "Opening three paragraphs on month, pilgrimage and festival",
+      "tier": "B",
+      "verified_scope": "Cultural context only; not a local observance-date oracle."
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "ASMA_NUM_001",
+      "feature": "asma_numeric",
+      "method_id": "eastern_additive_orthography_allah_v1",
+      "tradition_id": "Eastern additive abjad",
+      "classification": "ABJAD_NUMERIC_VALUE",
+      "claim_type": "abjad_numeric_value",
+      "statement": "The spelling الله has additive value 66 (1+30+30+5).",
+      "normalized_theme": "numeric value only",
+      "original_context": "Historical letter arithmetic",
+      "limitations": [
+        "One specified spelling, not a 99-name dataset; arithmetic is not a devotional count."
+      ],
+      "does_not_support": [
+        "No association to a person or zodiac; no 66 repetitions."
+      ],
+      "religious_claim_boundary": "Describes attributed context or arithmetic only; no religious ruling, personal revelation, future certainty or devotional prescription.",
+      "ai_usage": "restricted",
+      "kb_version": "kameri-kb-v1",
+      "source_refs": [
+        {
+          "source_id": "KI-B05",
+          "locator": "Allah/hilal example; table entries alif, lam, ha"
+        }
+      ],
+      "application_mode": "reference_only",
+      "application_key": null
+    },
+    {
+      "claim_id": "HIJRI_CTX_001",
+      "feature": "hijri_context",
+      "method_id": "quran_2_185_context_v1",
+      "tradition_id": "Quranic month context",
+      "classification": "CULTURAL_CONTEXT",
+      "claim_type": "cultural_context",
+      "statement": "Ramadan is associated with fasting and the revelation of the Qur'an in the cited verse.",
+      "normalized_theme": "Ramadan cultural context",
+      "original_context": "Religious-text description",
+      "limitations": [
+        "Does not validate tabular dates against local religious observance."
+      ],
+      "does_not_support": [
+        "No virtue or personality inferred from birth month; no personal obligation ruling."
+      ],
+      "religious_claim_boundary": "Describes attributed context or arithmetic only; no religious ruling, personal revelation, future certainty or devotional prescription.",
+      "ai_usage": "restricted",
+      "kb_version": "kameri-kb-v1",
+      "source_refs": [
+        {
+          "source_id": "KI-A03",
+          "locator": "Qur'an 2:185, Arabic verse"
+        },
+        {
+          "source_id": "KI-B07",
+          "locator": "Section 1 opening"
+        }
+      ],
+      "application_mode": "hijri_month_context",
+      "application_key": 9
+    },
+    {
+      "claim_id": "HIJRI_CTX_002",
+      "feature": "hijri_context",
+      "method_id": "ottoman_ramadan_literary_context_v1",
+      "tradition_id": "Ottoman/Turkish literary culture",
+      "classification": "CULTURAL_CONTEXT",
+      "claim_type": "cultural_context",
+      "statement": "Ramadaniyye is a Ramadan-related literary category discussed in Ottoman/Turkish cultural history.",
+      "normalized_theme": "literary culture",
+      "original_context": "Literary history",
+      "limitations": [
+        "Not a universal practice or complete account of Ramadan."
+      ],
+      "does_not_support": [
+        "No birth personality, religious merit or prediction."
+      ],
+      "religious_claim_boundary": "Describes attributed context or arithmetic only; no religious ruling, personal revelation, future certainty or devotional prescription.",
+      "ai_usage": "restricted",
+      "kb_version": "kameri-kb-v1",
+      "source_refs": [
+        {
+          "source_id": "KI-B07",
+          "locator": "Section 2 Kültür ve Edebiyat, first two paragraphs"
+        }
+      ],
+      "application_mode": "hijri_month_context",
+      "application_key": 9
+    },
+    {
+      "claim_id": "HIJRI_CTX_003",
+      "feature": "hijri_context",
+      "method_id": "dhulhijja_context_v1",
+      "tradition_id": "Islamic calendar context",
+      "classification": "CULTURAL_CONTEXT",
+      "claim_type": "cultural_context",
+      "statement": "Dhulhijja is associated with pilgrimage and the sacrifice festival.",
+      "normalized_theme": "pilgrimage/festival context",
+      "original_context": "Calendar and religious history",
+      "limitations": [
+        "Not a calendar authority or ritual instruction."
+      ],
+      "does_not_support": [
+        "No leadership trait or personal devotional instruction."
+      ],
+      "religious_claim_boundary": "Describes attributed context or arithmetic only; no religious ruling, personal revelation, future certainty or devotional prescription.",
+      "ai_usage": "restricted",
+      "kb_version": "kameri-kb-v1",
+      "source_refs": [
+        {
+          "source_id": "KI-B08",
+          "locator": "Opening three paragraphs"
+        }
+      ],
+      "application_mode": "hijri_month_context",
+      "application_key": 12
+    }
+  ]
+}

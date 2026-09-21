@@ -5,6 +5,21 @@ tags:
 
 # Test Strategy
 
+## Stage K2B qualified KB
+
+`test_kameri_knowledge_base.py` and `test_kameri_knowledge_selector.py`: **83 tests** enforce exact
+four-claim admission, unchanged qualified-ledger metadata/boundaries, source resolution/locators,
+restricted AI policy, rights structure, invalid-data rejection and typed explicit lookup errors.
+All 12 months have exact contextual coverage or abstention; abjad 66 cannot select the Asma reference.
+Tests cover nested immutability, repeatability, concurrent 9/12/1/reference lookup and a fresh process
+with network/research access and calculation imports blocked. No expected astronomy is generated.
+The ledger comparison fails if its source is absent; Docker's backend-only mount requires a temporary
+ledger copy and test-only `KAMERI_RESEARCH_LEDGER` path as documented in [[kameri-knowledge-base]].
+
+Docker results: K2B 83; K1A 464; K1B 67; full backend **1538 passed, 2 existing warnings**;
+pip check clean; read-only HD audit **68/68**; Kamerî evidence **12/12**. No frontend changes/tests.
+The K2A section below records historical research qualification; its planned K2B gates are now covered.
+
 ## Stage K2A research qualification
 
 This stage changes only docs and a non-runtime provenance ledger. Validate JSON syntax, unique
@@ -19,7 +34,7 @@ stage; the prior 1455/two-warning baseline must not be reported as re-run.
 
 Future K2B tests must enforce fail-closed claim selection, citation/version retention, no implicit
 personal-name/Asma or sector/mansion bridge, no devotional instructions, no private input leakage,
-and abstention where coverage is absent. These tests are a plan, not an implemented runtime suite.
+and abstention where coverage is absent. This was the K2A plan; the K2B suite above now implements it.
 
 ## Stage K1B API qualification
 

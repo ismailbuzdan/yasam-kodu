@@ -6,8 +6,8 @@ tags:
 # Current State
 
 **Last updated:** 2026-09-21
-**Current stage:** Stage K2A traditional-source qualification complete (docs/research only); K0/K1 complete
-**Next step:** Separately authorize limited K2B knowledge-base work; K2B / Stage 11 / PDF NOT STARTED
+**Current stage:** Stage K2B LIMITED PRODUCTION KB COMPLETE; K2A and Kamerî mechanical API COMPLETE
+**Next step:** Separately scope/authorize Stage 11; readiness YES, LIMITED. Stage 11 / PDF NOT STARTED
 **License:** AGPL-3.0
 **Development environment:** Docker Compose available and preferred; host workflows remain a fallback.
 
@@ -22,6 +22,20 @@ After coding:
 - Update this file, decisions and changelog when applicable; run relevant tests.
 
 ## Completed
+
+**Stage K2B (2026-09-21):** [[kameri-knowledge-base]] implements an isolated immutable
+`kameri-kb-v1` snapshot with four qualified claims and four sources. ASMA_NUM_001 is explicit
+reference-only; abjad 66 cannot select it. Months 9/12 select only their qualified cultural contexts;
+the other ten months explicitly abstain. No calculation/network/AI/API/frontend/dependency changes.
+ADR-020 added; ADR-017/018/019 and the research ledger unchanged. Docker: K2B **83**, K1A **464**,
+K1B **67**, full backend **1538 passed / 2 existing warnings**; pip check clean, HD audit **68/68**,
+Kamerî evidence **12/12**. Start/fetched origin/main: `55d2c3fadf3942797c7d1f04f0d34399c7c2a6c5`;
+work branch `stage-k2b-kameri-kb`, no main merge. The startup-only next-env import change was restored
+with explicit user authorization after stopping frontend; final frontend diff is empty. Backend
+remains healthy, frontend stopped. No current K2B blocker. Stage 11 readiness is limited to the three
+Hijri cultural fragments, never automatic personal Asma or a deep reading; Stage 11 NOT STARTED.
+
+The following stage entries record their historical delivery state; K2B above is the current state.
 
 **Stage K2A (2026-09-21):** [[kameri-interpretation-qualification]] and the separate interpretation
 research ledger assess 16 sources (A:4/B:11/C:1; 13 passage reads, one abstract, two catalog records).
@@ -146,7 +160,7 @@ and original audit checks are unchanged. Tests cover 384 boundary neighborhoods 
 Official splenic and 3/5 examples remain absent; structural coverage is sufficient for readiness. See
 [[human-design]] and [[human-design-verification]].
 
-**Next step:** Separately scope and authorize K2B's four qualified arithmetic/cultural fragments.
+**Next step:** Separately scope and authorize Stage 11's limited use of the K2B cultural fragments.
 Automatic name suggestions, mansion name publication and broader interpretation require additional qualification.
 Stage 10A, Stage 10B and Stage 10 complete;
 Unified Life Code API complete. Stage 11 AI NOT STARTED; Stage 12 PDF NOT STARTED.

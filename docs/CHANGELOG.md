@@ -7,6 +7,21 @@ tags:
 
 Current delivery state: [[04_CURRENT_STATE]]. Milestone sequence: [[03_ROADMAP]].
 
+## 2026-09-21 — Stage K2B qualified Kamerî knowledge base
+
+- Added isolated `app.knowledge.kameri`, strict immutable models and curated `kameri-kb-v1` data:
+  exactly four qualified claims/four sources, with locators and restricted-use boundaries retained.
+- Added deterministic Hijri month 9/12 selection and explicit abstention for the other ten months.
+  ASMA_NUM_001 is reference-only; abjad 66 never triggers personal Asma association.
+- Added ADR-020 and [[kameri-knowledge-base]]; preserved ADR-017/018/019, research ledger/statuses,
+  mechanical calculations/API, Life Code v1, frontend, dependencies and original evidence.
+- Docker: 83 new tests, K1A 464, K1B 67, full backend 1538 pass with only two existing warnings;
+  pip check clean, HD audit 68/68 and Kamerî evidence 12/12. Initial frontend startup regenerated
+  only next-env imports; user-authorized single-file restore after stopping frontend cleared the
+  blocker. Frontend stayed stopped and final frontend diff is empty.
+- K2A COMPLETE; K2B LIMITED PRODUCTION KB COMPLETE; mechanical API COMPLETE; Stage 11 NOT STARTED.
+  Future narration readiness YES, LIMITED to three cultural fragments. No AI, network or new endpoint.
+
 ## 2026-09-21 — Stage K2A traditional interpretation source qualification
 
 - Added a bounded qualification matrix, claim-level research ledger and prospective KB schema:

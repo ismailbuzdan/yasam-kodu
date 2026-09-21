@@ -44,11 +44,13 @@ flowchart LR
 - [x] Stage K2A — Traditional interpretation source qualification (ADR-019;
   [[kameri-interpretation-qualification]]). Four bounded arithmetic/cultural claims qualified;
   broader mappings research-only/unqualified/deferred. No production KB or AI runtime.
-- [ ] Stage K2B — Separately authorized knowledge base; source-ready only for those four fragments.
+- [x] Stage K2B — Limited production KB complete (ADR-020; [[kameri-knowledge-base]]):
+  four immutable claims; Asma reference-only, Hijri month contexts selected deterministically,
+  explicit abstention outside months 9/12. No API or AI implementation.
 - [ ] Arabic mansion label collation, licensed name suggestions and remaining work-specific research.
 
-Stage 11 knowledge readiness is YES, LIMITED to qualified descriptive fragments, not personalized
-Kamerî interpretation. Stage 11 remains NOT STARTED; existing mechanics do not imply KB completeness.
+Stage 11 knowledge readiness is YES, LIMITED to three Hijri cultural fragments; Asma is not automatic
+personal context. Stage 11 remains NOT STARTED; there is no full personalized Kamerî interpretation.
 
 ## Platform / Later
 
