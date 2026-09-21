@@ -5,9 +5,9 @@ tags:
 
 # Current State
 
-**Last updated:** 2026-09-20
-**Current stage:** Stage K1A Kamerî deterministic core complete on stage-k1a-kameri-core; K0 complete
-**Next step:** Separately authorize K1B API; Stage 11 AI NOT STARTED, PDF NOT STARTED
+**Last updated:** 2026-09-21
+**Current stage:** Stage K1B Kamerî public mechanical API complete; K0/K1A complete
+**Next step:** Stage 11 remains separately scoped and NOT STARTED; PDF NOT STARTED
 **License:** AGPL-3.0
 **Development environment:** Docker Compose available and preferred; host workflows remain a fallback.
 
@@ -23,6 +23,18 @@ After coding:
 
 ## Completed
 
+**Stage K1B implementation (2026-09-21):** Added strict resolved-input
+`POST /api/v1/kameri/calculate`, explicit response/error schemas and an allowlist-only projection over
+the unchanged K1A entry points. Local date and UTC instant retain independent ownership; Arabic input
+requires literal confirmation and is never projected. Raw solar events/JDs, Fraction boundaries,
+native flags and search diagnostics remain private; errors are static and all-or-nothing. ADR-018
+records the public boundary. Docker daemon access was unavailable, so the AGENTS.md host fallback ran
+in a fresh isolated environment: targeted **67**, K1A **464**, API regressions **372**, full backend
+**1455 passed** with the two existing dependency warnings; pip check is clean, HD audit is **68/68**
+and Kamerî evidence integrity is **12/12**. This is not reported as Docker validation. Frontend,
+ADR-017, Life Code v1 and K1A calculations are unchanged. K1B and the scoped mechanical API are
+complete; Stage 11 NOT STARTED.
+
 **Stage K1A (2026-09-20):** Preserved/resumed dirty WIP at `d4e62c0f4ed0cfeefd1227d81b6b5f14abe32354`
 on `stage-k1a-kameri-core`. Added five mechanical methods in an isolated `traditional` service package,
 frozen results, fixed private domain errors, exact rational phase/sector/hour boundary tests,
@@ -34,7 +46,7 @@ only the **2 existing dependency warnings**; pip check clean; HD read-only evide
 Ten new evidence artifacts with receipts/hashes: 2 JPL, 3 shared swetest rise/set, 1 separate remote
 version capture, 3 approximate USNO rise/set, 1 short published-calendar excerpt file. Scope is narrow:
 two calendar correspondences, four JPL instants and three solar dates, not full-range external accuracy.
-See [[kameri-verification]]. K1A complete; K1B API ready for separate scoping, NOT STARTED.
+See [[kameri-verification]]. K1A complete; K1B is implemented and undergoing final qualification.
 Stage 11 NOT STARTED. No main merge; no automatic script rendering, mansion names or interpretation.
 
 **Stage K0 (docs/research only, 2026-09-20):** [[kameri-code]] and

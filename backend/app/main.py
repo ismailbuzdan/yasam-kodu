@@ -6,6 +6,7 @@ from app.api.astrology import router as astrology_router
 from app.api.health import router as health_router
 from app.api.human_design import router as human_design_router
 from app.api.life_code import router as life_code_router
+from app.api.kameri import router as kameri_router
 from app.api.locations import router as locations_router
 from app.api.timezones import router as timezones_router
 from app.api.numerology import router as numerology_router
@@ -37,6 +38,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     application.include_router(numerology_router)
     application.include_router(human_design_router)
     application.include_router(life_code_router)
+    application.include_router(kameri_router)
     return application
 
 

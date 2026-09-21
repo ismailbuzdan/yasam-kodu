@@ -5,6 +5,16 @@ tags:
 
 # Test Strategy
 
+## Stage K1B API qualification
+
+The public contract suite compares its allowlist response to direct K1A typed results, proves each
+entry point is called once and in order, and covers strict/missing/extra/malformed input, two independent
+clocks, cross-date ownership, literal Arabic confirmation, fail-closed character handling and static
+422/503 envelopes. It also checks submitted-text/log privacy, forbidden JD/Fraction/native fields,
+all-or-nothing failure, `Z`/`+00:00` equivalence, determinism, metamorphic ownership and concurrent
+repeatability. K1A's 464-test evidence/reference suite, existing APIs, full backend, pip check and HD
+68-artifact audit remain mandatory regressions. Frontend checks apply only if frontend changes.
+
 ## Stage K1A qualification
 
 Six offline `test_traditional_*` suites add **464 tests**: Hijri 41, abjad 116, lunar 77,

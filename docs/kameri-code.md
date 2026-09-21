@@ -19,7 +19,7 @@ and interpretation are not implementation-ready. No K1 work is authorized by thi
 ## Stage K1A implementation qualification — 2026-09-20
 
 Separately authorized K1A deterministic core is complete in `backend/app/services/traditional/`.
-K0 and ADR-017 conventions are unchanged. K1B API NOT STARTED; Stage 11 NOT STARTED.
+K0 and ADR-017 conventions are unchanged. K1B API is complete; Stage 11 NOT STARTED.
 Evidence, exact internal input boundaries, test results and limitations: [[kameri-verification]].
 This implementation status does not promote the deferred historical/interpretive claims below.
 
@@ -450,3 +450,19 @@ spellings have not been directly collated; historical star boundaries and epoch 
 Auto transcription needs a licensed dictionary and exact project mapping. Personal Esmâ, zodiac–Esmâ,
 prescribed counts and mother-name formulae remain unqualified. These are recorded exclusions,
 not defaults awaiting silent implementation. New scope requires a new evidence-backed decision.
+
+## K1B public mechanical contract
+
+`POST /api/v1/kameri/calculate` exposes the completed K1A mechanics without changing ADR-017.
+Required resolved inputs are `local_date`, `utc_datetime`, `latitude`, `longitude`, `timezone_id`,
+`arabic_name` and literal-true `arabic_name_confirmed`. The supplied local date owns tabular Hijri;
+the UTC instant owns lunar astronomy and planetary-hour membership; coordinates/timezone own solar
+event and local planetary-date resolution; confirmed Arabic owns only abjad. No equality constraint
+exists between the local date and UTC calendar date.
+
+The response is `kameri-code-v1`, lists `hijri`, `lunar`, `abjad`, `planetary_hour`, and fixes
+`interpretation_present=false`. It is an explicit public projection: submitted/normalized Arabic,
+letter traces, raw solar events and Julian days, Fraction interval bounds, native flags and search
+diagnostics are excluded. Failure is all-or-nothing with static input-independent errors. This makes
+the scoped Kamerî mechanical API complete; automatic transcription, historical mansion names,
+Hurûf/Esmâ/zodiac–Esmâ/dhikr/yıldıznâme and interpretation remain unqualified or deferred.

@@ -56,14 +56,15 @@ Stage 10B transport is complete: strict resolved input, one service call,
 composed public schemas and shared standalone-HD safe projection. UTC admission uses an aware clock;
 calendar admission preserves Numerology's server-local day policy. No new timezone resolution.
 
-## Kamerî Kod boundary (Stage K0 + K1A internal core)
+## Kamerî Kod boundary (Stages K0–K1B mechanical API)
 
 ADR-017 and [[kameri-code]] define a future separate module, not a fourth member of the Stage 10
 Life Code v1 response. Existing input resolution/native-state ownership is reused; new timezone,
 geocoding and astronomy stacks are not planned. Source provenance and field classification separate
 astronomy, calendar conversion, symbolic mappings and historical interpretation. Only five scoped
 mechanical methods now have an isolated internal implementation; automatic spelling, proposed mansion
-labels and interpretation are not production-ready. K1B transport and Stage 11 are NOT STARTED.
+labels and interpretation are not production-ready. K1B exposes this scope through a separate
+strict public transport; Stage 11 is NOT STARTED.
 
 `backend/app/services/traditional/` contains frozen `models`, integer `hijri`, allowlisted `abjad`,
 `lunar` astronomy/mappings, `planetary_hours` and small private `_astronomy` adapters. Existing
@@ -72,6 +73,13 @@ them. The existing Astrology RLock/initializer and timezone `load_zone` remain t
 No existing engine is refactored. Moon positions/phenomena use TT; solar events/membership use
 UT1; only planetary-day date ownership projects R0 through pinned IANA data. Native root searches
 alternate rise/set/rise, without epsilon stepping. See [[kameri-verification]] for scoped evidence.
+
+`POST /api/v1/kameri/calculate` is a thin admission/projection boundary over those four K1A entry
+points (the lunar result owns its mansion). It accepts resolved local date, UTC instant, coordinates,
+IANA timezone and explicitly confirmed Arabic text. Local and UTC calendar dates are intentionally
+independent. Its allowlist projection omits submitted text, raw solar events/JDs, exact Fraction
+boundaries, native flags and search diagnostics; it never returns partial results or interpretation.
+The separate Life Code v1 aggregation remains unchanged. ADR-018 defines this transport boundary.
 
 ## Stage 6 Swiss Ephemeris licensing
 

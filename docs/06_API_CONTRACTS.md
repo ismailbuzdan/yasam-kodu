@@ -8,6 +8,25 @@ tags:
 This is a summary; code schemas are the contract source. Planned endpoints are not implemented.
 Related boundaries and ownership: [[02_ARCHITECTURE]] and [[05_DECISIONS]].
 
+## `POST /api/v1/kameri/calculate`
+
+Required JSON fields are strict `local_date` (`YYYY-MM-DD`, 1800–2100), aware zero-offset
+`utc_datetime` (`Z` or `+00:00`, 1800–2100), finite inclusive-range `latitude`/`longitude`,
+nonempty IANA `timezone_id`, 1–200 character `arabic_name`, and literal `true`
+`arabic_name_confirmed`. Extra fields are rejected. Local-date admission uses its own injectable
+calendar clock; UTC future admission uses an injectable instant clock. The two input dates may differ.
+
+Success returns `kameri-code-v1` metadata and Hijri, lunar (including numeric mansion), abjad and
+planetary-hour layers. `interpretation_present` is always false. The response never echoes Arabic
+input and excludes raw solar events/JDs, exact Fraction bounds, native flags and search diagnostics.
+All four calculations must succeed; no partial response exists.
+
+Validation errors use 422 and static codes/messages. Stable priority is malformed/extra request,
+local date, UTC instant, coordinates, timezone, confirmation/name schema, then K1A character rules.
+`ephemeris_error` and `invalid_astronomical_result` use 503; `solar_event_unavailable` and an
+unresolved/unsupported supplied timezone use 422. Submitted values and native diagnostics are never
+serialized. ADR-018 freezes this boundary; Life Code v1 is unchanged.
+
 ## `POST /api/v1/numerology/calculate`
 
 **Purpose:** deterministic Pythagorean numerology under [[numerology]] conventions.

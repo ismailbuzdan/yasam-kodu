@@ -239,3 +239,23 @@ or importing unverifiable formulas. [[kameri-source-qualification]] records 19 b
 (numeric mansion index and confirmed-script ebced), and separately requires authorization, reference
 qualification and runtime tests. No production implementation, endpoint, frontend, database, AI,
 PDF, dependency or existing engine/API change is part of K0. Stage 11 remains not started.
+
+## ADR-018 — Kamerî Kod Public API Boundary
+
+**Status:** Accepted (Stage K1B, 2026-09-21)
+**Context:** K1A implements the five ADR-017 mechanical methods, but public admission and serialization
+must not expose private Arabic text or internal astronomical diagnostics.
+**Decision:** Expose `POST /api/v1/kameri/calculate` with required resolved local date, UTC instant,
+coordinates, IANA timezone, Arabic text and literal-true confirmation. Field ownership follows K1A;
+local and UTC calendar dates need not match. Invoke Hijri, lunar, abjad and planetary-hour entry points
+once in sequence and return no partial success. The response is an explicit `kameri-code-v1` allowlist,
+has `interpretation_present=false`, never echoes Arabic, and excludes raw solar events/JDs, Fraction
+boundaries, flags and search diagnostics. Validation and TraditionalError codes map to static private
+422/503 envelopes; supplied invalid/unresolved timezone is a 422 admission failure. Programming errors
+are not swallowed.
+**Reason:** Preserve deterministic calculation ownership and privacy while providing a narrow stable
+transport independent of interpretation.
+**Consequences:** K1B and the scoped Kamerî mechanical API are complete without changing ADR-017
+calculations or Life Code v1. Automatic rendering, historical mansion
+labels, Hurûf/Esmâ/zodiac–Esmâ/dhikr/yıldıznâme, frontend, persistence and AI remain outside this API.
+Stage 11 remains not started.

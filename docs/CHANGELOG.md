@@ -7,6 +7,20 @@ tags:
 
 Current delivery state: [[04_CURRENT_STATE]]. Milestone sequence: [[03_ROADMAP]].
 
+## 2026-09-21 — Stage K1B Kamerî public mechanical API
+
+- Added strict `POST /api/v1/kameri/calculate` admission and explicit public response/error schemas
+  over the unchanged K1A entry points; local date and UTC instant retain independent ownership.
+- Added an allowlist projection excluding Arabic input/normalization traces, raw solar events/JDs,
+  Fraction bounds, native flags and search diagnostics. No partial result or interpretation is exposed.
+- Added 67 targeted tests for exact core projection, once-only ordering, validation/error privacy,
+  cross-date/future admission, ownership, determinism and concurrency; ADR-018 records the boundary.
+- Docker was unavailable, so the documented host fallback ran in a fresh isolated environment:
+  K1A 464, API regressions 372 and full backend 1455 pass with two existing warnings; pip check,
+  HD 68/68 audit and Kamerî 12/12 evidence integrity pass. This is not Docker validation.
+  K1B and the scoped mechanical API are complete. Life Code v1, ADR-017, frontend and Stage 11
+  remain unchanged.
+
 ## 2026-09-20 — Stage K1A Kamerî deterministic internal core
 
 - Preserved and resumed the ten-file local WIP; implemented/qualified the five frozen ADR-017
