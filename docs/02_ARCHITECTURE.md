@@ -81,6 +81,16 @@ independent. Its allowlist projection omits submitted text, raw solar events/JDs
 boundaries, native flags and search diagnostics; it never returns partial results or interpretation.
 The separate Life Code v1 aggregation remains unchanged. ADR-018 defines this transport boundary.
 
+## Traditional interpretation knowledge boundary (K2A design only)
+
+[[kameri-interpretation-qualification]] and ADR-019 separate research metadata from a future
+production KB. Only individually qualified, applicable, versioned claim fragments with exact
+citations may reach a future narrator alongside deterministic results and policy. Research-only
+records and source prose must not be ingested as runtime knowledge. No K1 sector-to-stellar-theme
+bridge is approved; no personal Asma, devotional prescription, mother's-name collection or invented
+missing correspondence. Four arithmetic/cultural fragments are source-ready, not a complete mapping
+system. K2B/Stage 11 are not implemented; the existing API still has interpretation_present=false.
+
 ## Stage 6 Swiss Ephemeris licensing
 
 Stage 6 uses the AGPL route; the Professional License is not used. Copyright and license notices

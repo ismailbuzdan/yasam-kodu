@@ -41,7 +41,14 @@ flowchart LR
   - [x] Stage K1B — Strict public mechanical API with private allowlist projection (ADR-018).
   Readiness is limited to numeric mansion sectors and confirmed-Arabic ebced, alongside tabular
   Hijri, Moon and seasonal planetary hours. No automatic transcription or interpretation readiness.
-- [ ] Arabic mansion label collation, licensed name suggestions and work-specific interpretation research.
+- [x] Stage K2A — Traditional interpretation source qualification (ADR-019;
+  [[kameri-interpretation-qualification]]). Four bounded arithmetic/cultural claims qualified;
+  broader mappings research-only/unqualified/deferred. No production KB or AI runtime.
+- [ ] Stage K2B — Separately authorized knowledge base; source-ready only for those four fragments.
+- [ ] Arabic mansion label collation, licensed name suggestions and remaining work-specific research.
+
+Stage 11 knowledge readiness is YES, LIMITED to qualified descriptive fragments, not personalized
+Kamerî interpretation. Stage 11 remains NOT STARTED; existing mechanics do not imply KB completeness.
 
 ## Platform / Later
 

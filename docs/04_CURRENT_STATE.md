@@ -6,8 +6,8 @@ tags:
 # Current State
 
 **Last updated:** 2026-09-21
-**Current stage:** Stage K1B Kamerî public mechanical API complete; K0/K1A complete
-**Next step:** Stage 11 remains separately scoped and NOT STARTED; PDF NOT STARTED
+**Current stage:** Stage K2A traditional-source qualification complete (docs/research only); K0/K1 complete
+**Next step:** Separately authorize limited K2B knowledge-base work; K2B / Stage 11 / PDF NOT STARTED
 **License:** AGPL-3.0
 **Development environment:** Docker Compose available and preferred; host workflows remain a fallback.
 
@@ -22,6 +22,18 @@ After coding:
 - Update this file, decisions and changelog when applicable; run relevant tests.
 
 ## Completed
+
+**Stage K2A (2026-09-21):** [[kameri-interpretation-qualification]] and the separate interpretation
+research ledger assess 16 sources (A:4/B:11/C:1; 13 passage reads, one abstract, two catalog records).
+Eighteen claim assessments: four qualified bounded arithmetic/cultural fragments, ten research-only,
+three unqualified, one deferred. No complete mansion/hour/Hurûf/Asma mapping is qualified. K2B and
+Stage 11 knowledge readiness are YES, LIMITED to those four descriptive fragments, not personalized
+interpretation; no production KB exists and neither stage has started. Mansion bridge unapproved;
+mother_name_required=false. ADR-019 freezes the source/privacy/religious/copyright boundary without
+changing ADR-017/018. JSON/provenance and docs-only checks pass; runtime tests not re-run (prior
+baseline 1455/two warnings). No production/API/frontend/dependency, original evidence or personal
+fixture changes. Start main/origin/main: `bd7cbda97c39e01e90dc63ec24a15812780c5504`;
+research branch `stage-k2a-traditional-sources`, no main merge.
 
 **Stage K1B implementation (2026-09-21):** Added strict resolved-input
 `POST /api/v1/kameri/calculate`, explicit response/error schemas and an allowlist-only projection over
@@ -46,7 +58,7 @@ only the **2 existing dependency warnings**; pip check clean; HD read-only evide
 Ten new evidence artifacts with receipts/hashes: 2 JPL, 3 shared swetest rise/set, 1 separate remote
 version capture, 3 approximate USNO rise/set, 1 short published-calendar excerpt file. Scope is narrow:
 two calendar correspondences, four JPL instants and three solar dates, not full-range external accuracy.
-See [[kameri-verification]]. K1A complete; K1B is implemented and undergoing final qualification.
+See [[kameri-verification]]. K1A complete; K1B qualification is complete as recorded above.
 Stage 11 NOT STARTED. No main merge; no automatic script rendering, mansion names or interpretation.
 
 **Stage K0 (docs/research only, 2026-09-20):** [[kameri-code]] and
@@ -134,8 +146,8 @@ and original audit checks are unchanged. Tests cover 384 boundary neighborhoods 
 Official splenic and 3/5 examples remain absent; structural coverage is sufficient for readiness. See
 [[human-design]] and [[human-design-verification]].
 
-**Next step:** Separately scope and authorize K1B's public contract for the completed five-method core.
-Automatic name suggestions, mansion name publication and interpretation require additional qualification.
+**Next step:** Separately scope and authorize K2B's four qualified arithmetic/cultural fragments.
+Automatic name suggestions, mansion name publication and broader interpretation require additional qualification.
 Stage 10A, Stage 10B and Stage 10 complete;
 Unified Life Code API complete. Stage 11 AI NOT STARTED; Stage 12 PDF NOT STARTED.
 No frontend/database work. Engine conventions, original goldens and all 68 HD artifacts are unchanged.

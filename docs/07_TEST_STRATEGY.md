@@ -5,6 +5,22 @@ tags:
 
 # Test Strategy
 
+## Stage K2A research qualification
+
+This stage changes only docs and a non-runtime provenance ledger. Validate JSON syntax, unique
+source/claim/method IDs, source resolution, required nonempty locators and exact count summaries.
+Check that every qualified claim has a complete bounded proposition, identified tradition/method,
+acceptable inspected source, limitations, religious boundary and factual reuse/AI policy. Catalogs,
+abstracts and Tier D discoveries must never be mistaken for complete verified mapping rules.
+Assert unqualified/research/deferred claims have forbidden AI usage and the mansion bridge and
+mother-name flags remain false. Check local document links, docs-only diff, unchanged ADR-017/018
+and original provenance, and git diff --check. No runtime tests are required for this docs-only
+stage; the prior 1455/two-warning baseline must not be reported as re-run.
+
+Future K2B tests must enforce fail-closed claim selection, citation/version retention, no implicit
+personal-name/Asma or sector/mansion bridge, no devotional instructions, no private input leakage,
+and abstention where coverage is absent. These tests are a plan, not an implemented runtime suite.
+
 ## Stage K1B API qualification
 
 The public contract suite compares its allowlist response to direct K1A typed results, proves each

@@ -7,6 +7,17 @@ tags:
 
 Current delivery state: [[04_CURRENT_STATE]]. Milestone sequence: [[03_ROADMAP]].
 
+## 2026-09-21 — Stage K2A traditional interpretation source qualification
+
+- Added a bounded qualification matrix, claim-level research ledger and prospective KB schema:
+  16 sources, 18 assessments, four qualified arithmetic/cultural fragments; no complete symbolic table.
+- Separated passage reads from abstract/catalog access, Western primary witnesses from Islamic
+  traditions, numerical values from personal Asma/devotion, and cultural months from personality.
+- Added ADR-019 knowledge/privacy/copyright boundary; kept ADR-017/018, K0 provenance and all
+  production/API/evidence files unchanged. No approved mansion bridge or mother's-name input.
+- K2B/Stage 11 source readiness is limited to the four descriptive claims; neither stage started.
+  JSON/provenance/docs-only checks pass; runtime tests not re-run for documentation-only work.
+
 ## 2026-09-21 — Stage K1B Kamerî public mechanical API
 
 - Added strict `POST /api/v1/kameri/calculate` admission and explicit public response/error schemas

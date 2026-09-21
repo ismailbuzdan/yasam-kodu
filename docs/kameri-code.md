@@ -466,3 +466,11 @@ letter traces, raw solar events and Julian days, Fraction interval bounds, nativ
 diagnostics are excluded. Failure is all-or-nothing with static input-independent errors. This makes
 the scoped Kamerî mechanical API complete; automatic transcription, historical mansion names,
 Hurûf/Esmâ/zodiac–Esmâ/dhikr/yıldıznâme and interpretation remain unqualified or deferred.
+
+## K2A interpretation boundary (no mechanical change)
+
+[[kameri-interpretation-qualification]] qualifies only four independently bounded arithmetic/cultural
+fragments for future KB work; it does not change the K1B contract or admit historical mapping tables.
+The separate research JSON is not a production KB. ADR-019 prohibits unqualified AI additions,
+personal Asma and devotional prescriptions; mother's name remains uncollected. Numeric mansion
+sectors still have no approved historical interpretation bridge. K2B and Stage 11 NOT STARTED.

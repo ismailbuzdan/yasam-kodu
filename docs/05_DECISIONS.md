@@ -259,3 +259,29 @@ transport independent of interpretation.
 calculations or Life Code v1. Automatic rendering, historical mansion
 labels, Hurûf/Esmâ/zodiac–Esmâ/dhikr/yıldıznâme, frontend, persistence and AI remain outside this API.
 Stage 11 remains not started.
+
+## ADR-019 — Traditional Interpretation Knowledge Boundary
+
+**Status:** Accepted (Stage K2A, 2026-09-21; knowledge-policy boundary only).
+**Context:** Completed Kamerî mechanical calculations do not authenticate historical symbolic
+interpretations. [[kameri-interpretation-qualification]] distinguishes four bounded qualified
+arithmetic/cultural facts from incomplete, disputed or unsupported mappings.
+**Decision:** Future interpretation requires individually qualified, versioned claim records with
+exact source locators, explicit method/tradition, original context, applicability, limitations,
+religious boundary, rights review and AI usage policy. No source-free additions or unverified
+mappings in production KB; research records and free source prose are not runtime inputs.
+Multiple traditions remain separate; copying or majority agreement does not establish authority.
+Historical attribution is neither religious truth nor scientific validation. AI only narrates
+applicable qualified fragments with citations and abstains on gaps; it never calculates or fills
+tables. Keep attributed tradition separate from modern explanatory wording, which cannot create
+new correspondences. Use associated_asma only for a separately sourced association; personal/true/
+your Asma claims, devotional prescriptions and deterministic future claims are excluded.
+Mother's name remains uncollected absent a complete qualified method, separate approval and privacy
+review. No K1 numeric-sector-to-historical-mansion bridge is approved; a future bridge requires
+explicit PROJECT INTERPRETATION BRIDGE labeling and a separate evidence-backed decision.
+Retain short independent factual normalization and citations, not bulk copyrighted prose/scans;
+edition rights are separate from underlying historical work rights. No blanket reuse license inferred.
+**Consequences:** K2A complete as a bounded source decision. K2B source-ready only for four limited
+fragments, not full-feature mappings; no production KB built. Stage 11 knowledge readiness YES,
+LIMITED to descriptive narration, not personalized Kamerî interpretation. K2B/Stage 11 NOT STARTED.
+ADR-017/018, mechanical conventions, public API and Life Code v1 are unchanged.

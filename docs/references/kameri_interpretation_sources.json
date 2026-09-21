@@ -1,0 +1,919 @@
+{
+  "schema_version": "kameri-interpretation-research-v1",
+  "purpose": "Research qualification ledger, NOT a production KB or runtime input",
+  "reviewed_on": "2026-09-21",
+  "base_commit": "bd7cbda97c39e01e90dc63ec24a15812780c5504",
+  "policy": {
+    "production_dataset": false,
+    "mother_name_required": false,
+    "mansion_bridge_approved": false,
+    "full_mapping_qualified": false,
+    "source_snapshots_stored": false,
+    "source_sha256": null,
+    "hash_note": "Live pages and PDFs were read remotely, not archived. No invented hash or immutable-snapshot claim.",
+    "tdv_facts_only": "Only independently normalized facts and direct citations retained. TDV footer permits limited attributed quotation, not complete articles/images; no verbatim passages copied.",
+    "ai_policy": "Future use restricted to individually qualified records, explicit applicability and citations. Research-only entries are never sent to runtime AI."
+  },
+  "counts": {
+    "sources": 16,
+    "tier_A": 4,
+    "tier_B": 11,
+    "tier_C": 1,
+    "passages_read": 13,
+    "abstract_only": 1,
+    "indexed_catalog_only": 1,
+    "catalog_only": 1,
+    "claims": 18,
+    "qualified": 4,
+    "research_only": 10,
+    "unqualified": 3,
+    "deferred": 1
+  },
+  "sources": [
+    {
+      "source_id": "KI-A01",
+      "tier": "A",
+      "title": "Agrippa, Three Books of Occult Philosophy, English translation J.F. (1651), II.33–34",
+      "url": "https://www.esotericarchives.com/agrippa/agripp2c.htm",
+      "accessed_on": "2026-09-21",
+      "access_level": "passages_read",
+      "locator": "II.33, numbered mansion descriptions; II.34, astrological hours",
+      "verified_scope": "Primary-work transcription with modern editorial notes, not an inspected critical edition or scan. Western Renaissance reception, not an Islamic oracle.",
+      "rights": "Private digital edition asserts copyright; factual notes only; no transcription copied."
+    },
+    {
+      "source_id": "KI-A02",
+      "tier": "A",
+      "title": "Key of Solomon, Mathers edition (1888), Peterson digital witness",
+      "url": "https://www.esotericarchives.com/solomon/ksol.htm",
+      "accessed_on": "2026-09-21",
+      "access_level": "passages_read",
+      "locator": "Book I, chapter II; editor introduction and manuscript-variant notes",
+      "verified_scope": "Western Solomonic textual witness; Mathers combines manuscripts and Peterson modifies the edition. Attribution to Solomon is not established authorship.",
+      "rights": "Old work and modern notes have different rights; no modern prose, tables or images copied."
+    },
+    {
+      "source_id": "KI-A03",
+      "tier": "A",
+      "title": "Qur'an 2:185, Arabic verse on Diyanet; modern meal/tafsir separately identified",
+      "url": "https://kuran.diyanet.gov.tr/tefsir/Bakara-suresi/192/185-ayet-tefsiri",
+      "accessed_on": "2026-09-21",
+      "access_level": "passages_read",
+      "locator": "Arabic verse 2:185; Meal; Kur'an Yolu volume 1 pp.281–283",
+      "verified_scope": "Primary status concerns the verse, not modern commentary. Supports context, not individual religious advice or calendar equivalence.",
+      "rights": "Only normalized contextual fact; modern translation not reproduced."
+    },
+    {
+      "source_id": "KI-A04",
+      "tier": "A",
+      "title": "Qazwini, Wonders of Creation, manuscript dated 1838, Library of Congress WDL record",
+      "url": "https://www.loc.gov/item/2021667318/",
+      "accessed_on": "2026-09-21",
+      "access_level": "indexed_catalog_only",
+      "locator": "Item 2021667318 / WDL 15264, descriptive catalog record",
+      "verified_scope": "Institutional catalog content read through search index; direct open failed. Manuscript folios NOT inspected; no mansion rule extracted.",
+      "rights": "Catalog metadata only; scan/image reuse not assessed."
+    },
+    {
+      "source_id": "KI-B01",
+      "tier": "B",
+      "title": "Mehmet Emin Bozhüyük, HURÛF, TDV (1998)",
+      "url": "https://islamansiklopedisi.org.tr/huruf",
+      "accessed_on": "2026-09-21",
+      "access_level": "passages_read",
+      "locator": "Discussion of four elements/seven letters and Ibn al-Arabi/Buni traditions",
+      "verified_scope": "Secondary overview; referenced primary tables not directly read.",
+      "rights": "tdv_facts_only"
+    },
+    {
+      "source_id": "KI-B02",
+      "tier": "B",
+      "title": "İlyas Çelebi, YILDIZNÂME, TDV (2013), 43:545–547",
+      "url": "https://islamansiklopedisi.org.tr/yildizname",
+      "accessed_on": "2026-09-21",
+      "access_level": "passages_read",
+      "locator": "Opening method discussion: mevalid and ihtiyarat; bibliography",
+      "verified_scope": "Taxonomy only; not a complete algorithm. Do not import its condensed astronomy terminology into engine conventions.",
+      "rights": "tdv_facts_only"
+    },
+    {
+      "source_id": "KI-B03",
+      "tier": "B",
+      "title": "Muharrem Çelebi, ENVÂ', TDV (1995)",
+      "url": "https://islamansiklopedisi.org.tr/enva",
+      "accessed_on": "2026-09-21",
+      "access_level": "passages_read",
+      "locator": "Opening stellar rise/set and seasonal discussion; Qazwini mansion sequence",
+      "verified_scope": "Secondary names/order and weather context; no primary Arabic edition collation.",
+      "rights": "tdv_facts_only"
+    },
+    {
+      "source_id": "KI-B04",
+      "tier": "B",
+      "title": "Bekir Topaloğlu, ESMÂ-i HÜSNÂ, TDV (1995)",
+      "url": "https://islamansiklopedisi.org.tr/esma-i-husna",
+      "accessed_on": "2026-09-21",
+      "access_level": "passages_read",
+      "locator": "Name-list and religious-context discussion",
+      "verified_scope": "Not evidence for any complete zodiac-to-Asma rule.",
+      "rights": "tdv_facts_only"
+    },
+    {
+      "source_id": "KI-B05",
+      "tier": "B",
+      "title": "Mustafa İsmet Uzun, EBCED, TDV (1994), 10:68–70",
+      "url": "https://islamansiklopedisi.org.tr/ebced",
+      "accessed_on": "2026-09-21",
+      "access_level": "passages_read",
+      "locator": "Paragraph beginning Tarih boyunca ebced harflerinin; Allah/hilal numeric example; letter-value table",
+      "verified_scope": "Numeric evidence only; article's other normalization conventions do not replace ADR-017.",
+      "rights": "tdv_facts_only"
+    },
+    {
+      "source_id": "KI-B06",
+      "tier": "B",
+      "title": "Reşat Öngören, ZİKİR, TDV (2013)",
+      "url": "https://islamansiklopedisi.org.tr/zikir",
+      "accessed_on": "2026-09-21",
+      "access_level": "passages_read",
+      "locator": "Opening definitions; devotional forms and practice discussion",
+      "verified_scope": "Context consulted; no complete personal count-selection method verified.",
+      "rights": "tdv_facts_only"
+    },
+    {
+      "source_id": "KI-B07",
+      "tier": "B",
+      "title": "Hacı Mehmet Günay / Mustafa İsmet Uzun, RAMAZAN, TDV (2007; first section updated 2020)",
+      "url": "https://islamansiklopedisi.org.tr/ramazan",
+      "accessed_on": "2026-09-21",
+      "access_level": "passages_read",
+      "locator": "Section 1 opening; section 2 Kültür ve Edebiyat, first two paragraphs",
+      "verified_scope": "Religious/calendar and literary context, not birth-personality evidence.",
+      "rights": "tdv_facts_only"
+    },
+    {
+      "source_id": "KI-B08",
+      "tier": "B",
+      "title": "M. Kâmil Yaşaroğlu, ZİLHİCCE, TDV (2013), 44:415–416",
+      "url": "https://islamansiklopedisi.org.tr/zilhicce",
+      "accessed_on": "2026-09-21",
+      "access_level": "passages_read",
+      "locator": "Opening three paragraphs on month, pilgrimage and festival",
+      "verified_scope": "Cultural context only; not a local observance-date oracle.",
+      "rights": "tdv_facts_only"
+    },
+    {
+      "source_id": "KI-B09",
+      "tier": "B",
+      "title": "Noah Gardiner, Forbidden Knowledge? Notes on the Production, Transmission, and Reception of the Major Works of Ahmad al-Buni, JAIS 12 (2012), 81–143",
+      "url": "https://www.lancaster.ac.uk/jais/volume/docs/vol12/v12_04_Gardiner_081-143.pdf",
+      "accessed_on": "2026-09-21",
+      "access_level": "passages_read",
+      "locator": "Printed pp.123–124, note 119; p.129 (PDF pages 43–44,49; one-based)",
+      "verified_scope": "Discusses late/interpolated Shams al-maarif al-kubra and inconsistent correspondences; work title alone insufficient.",
+      "rights": "No PDF copied; short independent summary and locator only; no open-license assumption."
+    },
+    {
+      "source_id": "KI-B10",
+      "tier": "B",
+      "title": "Halit Ahmet Çiftçi, Çeşitli Kültürlerdeki Okült İnanç ve Uygulamaların Türk-İslam Kültürüne Yansıması Üzerine Bir İnceleme (2017)",
+      "url": "https://dergipark.org.tr/tr/download/article-file/335978",
+      "accessed_on": "2026-09-21",
+      "access_level": "passages_read",
+      "locator": "Printed pp.202–203, notes 25–28 (PDF pages 8–9; one-based)",
+      "verified_scope": "Reports two Huseyni methods citing a 1997 edition p.49; that edition was not directly inspected. Personal worked example deliberately excluded.",
+      "rights": "No article/example copied; independently summarized method requirements only."
+    },
+    {
+      "source_id": "KI-B11",
+      "tier": "B",
+      "title": "Zeynep Er, Amasya Yazma Eser Kütüphanesi 1883 Numaralı Mecma'u'l Felekiyyât Yazmasının Minyatürleri, OMU thesis (2020)",
+      "url": "https://acikerisim.omu.edu.tr/entities/publication/f8f08308-ecbc-4337-a78b-7aaae458fabb",
+      "accessed_on": "2026-09-21",
+      "access_level": "abstract_only",
+      "locator": "Repository abstract; manuscript 05 Ba 1883/1",
+      "verified_scope": "Abstract reports mansion/planet/temperament/letter/zodiac/Asma chapter headings. No exact folio pairing read; thesis is not classified as peer-reviewed article.",
+      "rights": "Repository access is not permission to copy thesis; metadata/brief factual description only."
+    },
+    {
+      "source_id": "KI-C01",
+      "tier": "C",
+      "title": "Open Library catalog, Yıldızname-yi Hüseyni, 1923 edition",
+      "url": "https://openlibrary.org/works/OL17023996W/Y%C4%B1ld%C4%B1zname-yi_H%C3%BCseyni",
+      "accessed_on": "2026-09-21",
+      "access_level": "catalog_only",
+      "locator": "Edition OL25595003M; OCLC 33196122; 141 pages",
+      "verified_scope": "Community catalog metadata inspected, including direct page access at final review; not book-page access, not proof of 1997 p.49 text or edition equivalence.",
+      "rights": "Bibliographic metadata only."
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "ASMA_NUM_001",
+      "feature": "asma_numeric",
+      "method_id": "eastern_additive_orthography_allah_v1",
+      "tradition_id": "Eastern additive abjad",
+      "status": "QUALIFIED_FOR_KB",
+      "classification": "ABJAD_NUMERIC_VALUE",
+      "claim_type": "abjad_numeric_value",
+      "source_ids": [
+        "KI-B05"
+      ],
+      "locators": [
+        {
+          "source_id": "KI-B05",
+          "locator": "Allah/hilal example; table entries alif, lam, ha"
+        }
+      ],
+      "statement": "The spelling الله has additive value 66 (1+30+30+5).",
+      "normalized_theme": "numeric value only",
+      "original_context": "Historical letter arithmetic",
+      "confidence": "high",
+      "limitations": [
+        "One specified spelling, not a 99-name dataset; arithmetic is not a devotional count."
+      ],
+      "does_not_support": [
+        "No association to a person or zodiac; no 66 repetitions."
+      ],
+      "religious_claim_boundary": "Describes attributed context or arithmetic only; no religious ruling, personal revelation, future certainty or devotional prescription.",
+      "ai_usage": "restricted",
+      "application_bridge": "standalone arithmetic note; no personal-name sum matching",
+      "rights_review": "Independent short factual normalization plus citation; no source prose or tables reproduced."
+    },
+    {
+      "claim_id": "HIJRI_CTX_001",
+      "feature": "hijri_context",
+      "method_id": "quran_2_185_context_v1",
+      "tradition_id": "Quranic month context",
+      "status": "QUALIFIED_FOR_KB",
+      "classification": "CULTURAL_CONTEXT",
+      "claim_type": "cultural_context",
+      "source_ids": [
+        "KI-A03",
+        "KI-B07"
+      ],
+      "locators": [
+        {
+          "source_id": "KI-A03",
+          "locator": "Qur'an 2:185, Arabic verse"
+        },
+        {
+          "source_id": "KI-B07",
+          "locator": "Section 1 opening"
+        }
+      ],
+      "statement": "Ramadan is associated with fasting and the revelation of the Qur'an in the cited verse.",
+      "normalized_theme": "Ramadan cultural context",
+      "original_context": "Religious-text description",
+      "confidence": "high",
+      "limitations": [
+        "Does not validate tabular dates against local religious observance."
+      ],
+      "does_not_support": [
+        "No virtue or personality inferred from birth month; no personal obligation ruling."
+      ],
+      "religious_claim_boundary": "Describes attributed context or arithmetic only; no religious ruling, personal revelation, future certainty or devotional prescription.",
+      "ai_usage": "restricted",
+      "application_bridge": "month-name context only; acknowledge tabular-calendar limitation",
+      "rights_review": "Independent short factual normalization plus citation; no source prose or tables reproduced."
+    },
+    {
+      "claim_id": "HIJRI_CTX_002",
+      "feature": "hijri_context",
+      "method_id": "ottoman_ramadan_literary_context_v1",
+      "tradition_id": "Ottoman/Turkish literary culture",
+      "status": "QUALIFIED_FOR_KB",
+      "classification": "CULTURAL_CONTEXT",
+      "claim_type": "cultural_context",
+      "source_ids": [
+        "KI-B07"
+      ],
+      "locators": [
+        {
+          "source_id": "KI-B07",
+          "locator": "Section 2 Kültür ve Edebiyat, first two paragraphs"
+        }
+      ],
+      "statement": "Ramadaniyye is a Ramadan-related literary category discussed in Ottoman/Turkish cultural history.",
+      "normalized_theme": "literary culture",
+      "original_context": "Literary history",
+      "confidence": "high",
+      "limitations": [
+        "Not a universal practice or complete account of Ramadan."
+      ],
+      "does_not_support": [
+        "No birth personality, religious merit or prediction."
+      ],
+      "religious_claim_boundary": "Describes attributed context or arithmetic only; no religious ruling, personal revelation, future certainty or devotional prescription.",
+      "ai_usage": "restricted",
+      "application_bridge": "optional month-name contextual note, not a personal trait",
+      "rights_review": "Independent short factual normalization plus citation; no source prose or tables reproduced."
+    },
+    {
+      "claim_id": "HIJRI_CTX_003",
+      "feature": "hijri_context",
+      "method_id": "dhulhijja_context_v1",
+      "tradition_id": "Islamic calendar context",
+      "status": "QUALIFIED_FOR_KB",
+      "classification": "CULTURAL_CONTEXT",
+      "claim_type": "cultural_context",
+      "source_ids": [
+        "KI-B08"
+      ],
+      "locators": [
+        {
+          "source_id": "KI-B08",
+          "locator": "Opening three paragraphs"
+        }
+      ],
+      "statement": "Dhulhijja is associated with pilgrimage and the sacrifice festival.",
+      "normalized_theme": "pilgrimage/festival context",
+      "original_context": "Calendar and religious history",
+      "confidence": "high",
+      "limitations": [
+        "Not a calendar authority or ritual instruction."
+      ],
+      "does_not_support": [
+        "No leadership trait or personal devotional instruction."
+      ],
+      "religious_claim_boundary": "Describes attributed context or arithmetic only; no religious ruling, personal revelation, future certainty or devotional prescription.",
+      "ai_usage": "restricted",
+      "application_bridge": "month-name context only; no observance-date certification",
+      "rights_review": "Independent short factual normalization plus citation; no source prose or tables reproduced."
+    },
+    {
+      "claim_id": "MAN_INT_001",
+      "feature": "mansion_themes",
+      "method_id": "agrippa_1651_ii33_candidate_v1",
+      "tradition_id": "Western Renaissance reception",
+      "status": "RESEARCH_ONLY",
+      "classification": "HISTORICAL_TRADITION",
+      "claim_type": "historical_tradition",
+      "source_ids": [
+        "KI-A01",
+        "KI-B03"
+      ],
+      "locators": [
+        {
+          "source_id": "KI-A01",
+          "locator": "II.33, seventeenth mansion Alchil"
+        },
+        {
+          "source_id": "KI-B03",
+          "locator": "Opening seasonal discussion and mansion list"
+        }
+      ],
+      "statement": "Agrippa's digital witness associates mansion 17, Alchil, with buildings and seafaring; Enva separately supplies stellar/seasonal context.",
+      "normalized_theme": "selected building/travel associations",
+      "original_context": "Electional/magical associations, not natal psychology",
+      "confidence": "medium",
+      "limitations": [
+        "Digital edition not scan-collated; selected themes not complete; Arabic identity and K1 bridge unapproved."
+      ],
+      "does_not_support": [
+        "No equivalence to K1 sector 17; no personality, luck prediction or Islamic doctrine."
+      ],
+      "religious_claim_boundary": "Describes attributed context or arithmetic only; no religious ruling, personal revelation, future certainty or devotional prescription.",
+      "ai_usage": "forbidden",
+      "application_bridge": "none: project interpretation bridge DEFERRED",
+      "rights_review": "Research metadata only; production reuse not approved."
+    },
+    {
+      "claim_id": "HOUR_INT_001",
+      "feature": "planetary_hours",
+      "method_id": "clavicula_mathers_1888_i2_candidate_v1",
+      "tradition_id": "Western Solomonic edition tradition",
+      "status": "RESEARCH_ONLY",
+      "classification": "HISTORICAL_TRADITION",
+      "claim_type": "historical_tradition",
+      "source_ids": [
+        "KI-A02"
+      ],
+      "locators": [
+        {
+          "source_id": "KI-A02",
+          "locator": "Book I chapter II, Jupiter/Mercury/Moon paragraphs; variant note after Moon paragraph"
+        }
+      ],
+      "statement": "Selected associations in this witness include Jupiter/friendship, Mercury/writing and Moon/navigation.",
+      "normalized_theme": "selected historical activity themes",
+      "original_context": "Ritual/electional instructions in original context",
+      "confidence": "medium",
+      "limitations": [
+        "Modern modified witness; manuscript variation; partial extraction, not a complete seven-ruler KB."
+      ],
+      "does_not_support": [
+        "No do-this-now instruction, personality claim or classical-Islamic attribution."
+      ],
+      "religious_claim_boundary": "Describes attributed context or arithmetic only; no religious ruling, personal revelation, future certainty or devotional prescription.",
+      "ai_usage": "forbidden",
+      "application_bridge": "none: edition/coverage review required",
+      "rights_review": "Research metadata only; production reuse not approved."
+    },
+    {
+      "claim_id": "HUR_ELEMENT_001",
+      "feature": "huruf_elements",
+      "method_id": "buni_and_ibnarabi_separate_candidates_v1",
+      "tradition_id": "Distinct letter-science traditions",
+      "status": "RESEARCH_ONLY",
+      "classification": "HISTORICAL_TRADITION",
+      "claim_type": "historical_tradition",
+      "source_ids": [
+        "KI-B01",
+        "KI-B09"
+      ],
+      "locators": [
+        {
+          "source_id": "KI-B01",
+          "locator": "Four elements/seven letters discussion"
+        },
+        {
+          "source_id": "KI-B09",
+          "locator": "pp.123–124, note 119"
+        }
+      ],
+      "statement": "Secondary sources discuss elemental letter correspondences and warn of inconsistent work-specific schemes.",
+      "normalized_theme": "work-specific elements",
+      "original_context": "Letter science",
+      "confidence": "medium",
+      "limitations": [
+        "Exact complete letter table and edition not qualified."
+      ],
+      "does_not_support": [
+        "No GLOBAL_HURUF_TABLE or missing-letter inference."
+      ],
+      "religious_claim_boundary": "Describes attributed context or arithmetic only; no religious ruling, personal revelation, future certainty or devotional prescription.",
+      "ai_usage": "forbidden",
+      "application_bridge": "none",
+      "rights_review": "Research metadata only; production reuse not approved."
+    },
+    {
+      "claim_id": "HUR_PLANET_001",
+      "feature": "huruf_planets",
+      "method_id": "mecmau_felekiyyat_05ba1883_1_candidate_v1",
+      "tradition_id": "Ottoman manuscript candidate",
+      "status": "RESEARCH_ONLY",
+      "classification": "HISTORICAL_TRADITION",
+      "claim_type": "historical_tradition",
+      "source_ids": [
+        "KI-B11"
+      ],
+      "locators": [
+        {
+          "source_id": "KI-B11",
+          "locator": "Repository abstract, chapter-heading description"
+        }
+      ],
+      "statement": "An academic abstract reports letters and planets among chapter attributes.",
+      "normalized_theme": "planet/letter research lead",
+      "original_context": "Manuscript description",
+      "confidence": "low_for_mapping",
+      "limitations": [
+        "Co-occurring headings do not establish an exact mapping; folios unread."
+      ],
+      "does_not_support": [
+        "No universal planetary-letter mapping."
+      ],
+      "religious_claim_boundary": "Describes attributed context or arithmetic only; no religious ruling, personal revelation, future certainty or devotional prescription.",
+      "ai_usage": "forbidden",
+      "application_bridge": "none",
+      "rights_review": "Research metadata only; production reuse not approved."
+    },
+    {
+      "claim_id": "HUR_ZODIAC_001",
+      "feature": "huruf_zodiac",
+      "method_id": "mecmau_felekiyyat_05ba1883_1_candidate_v1",
+      "tradition_id": "Ottoman manuscript candidate",
+      "status": "RESEARCH_ONLY",
+      "classification": "HISTORICAL_TRADITION",
+      "claim_type": "historical_tradition",
+      "source_ids": [
+        "KI-B11"
+      ],
+      "locators": [
+        {
+          "source_id": "KI-B11",
+          "locator": "Repository abstract, chapter-heading description"
+        }
+      ],
+      "statement": "Zodiac and letters appear in the reported heading structure.",
+      "normalized_theme": "zodiac/letter research lead",
+      "original_context": "Manuscript description",
+      "confidence": "low_for_mapping",
+      "limitations": [
+        "No exact pairing or complete table inspected."
+      ],
+      "does_not_support": [
+        "No zodiac-letter algorithm."
+      ],
+      "religious_claim_boundary": "Describes attributed context or arithmetic only; no religious ruling, personal revelation, future certainty or devotional prescription.",
+      "ai_usage": "forbidden",
+      "application_bridge": "none",
+      "rights_review": "Research metadata only; production reuse not approved."
+    },
+    {
+      "claim_id": "ASMA_ASSOC_001",
+      "feature": "asma_association",
+      "method_id": "mecmau_felekiyyat_05ba1883_1_candidate_v1",
+      "tradition_id": "Ottoman manuscript candidate",
+      "status": "RESEARCH_ONLY",
+      "classification": "HISTORICAL_TRADITION",
+      "claim_type": "historical_tradition",
+      "source_ids": [
+        "KI-B11",
+        "KI-B04"
+      ],
+      "locators": [
+        {
+          "source_id": "KI-B11",
+          "locator": "Repository abstract"
+        },
+        {
+          "source_id": "KI-B04",
+          "locator": "Name-list/context discussion"
+        }
+      ],
+      "statement": "Asma appear in the manuscript description; this is a lead for source-specific associated_asma, not a personal assignment.",
+      "normalized_theme": "association research lead",
+      "original_context": "Manuscript / religious-name context",
+      "confidence": "low_for_mapping",
+      "limitations": [
+        "No exact pairing, spelling policy or selection rule qualified."
+      ],
+      "does_not_support": [
+        "No personal_asma, true_asma or your_asma product fields."
+      ],
+      "religious_claim_boundary": "Describes attributed context or arithmetic only; no religious ruling, personal revelation, future certainty or devotional prescription.",
+      "ai_usage": "forbidden",
+      "application_bridge": "none",
+      "rights_review": "Research metadata only; production reuse not approved."
+    },
+    {
+      "claim_id": "ZOD_ASMA_001",
+      "feature": "zodiac_asma_historical",
+      "method_id": "mecmau_felekiyyat_05ba1883_1_candidate_v1",
+      "tradition_id": "Ottoman manuscript candidate",
+      "status": "RESEARCH_ONLY",
+      "classification": "HISTORICAL_TRADITION",
+      "claim_type": "historical_tradition",
+      "source_ids": [
+        "KI-B11"
+      ],
+      "locators": [
+        {
+          "source_id": "KI-B11",
+          "locator": "Repository abstract"
+        }
+      ],
+      "statement": "Historical co-occurrence of zodiac and Asma headings warrants folio research but does not verify a twelve-sign table.",
+      "normalized_theme": "historical candidate",
+      "original_context": "Manuscript description",
+      "confidence": "low_for_mapping",
+      "limitations": [
+        "Complete twelve-sign/Asma mapping UNVERIFIED; no Quran/hadith rule located."
+      ],
+      "does_not_support": [
+        "No promotion of modern zodiac lists as scripture."
+      ],
+      "religious_claim_boundary": "Describes attributed context or arithmetic only; no religious ruling, personal revelation, future certainty or devotional prescription.",
+      "ai_usage": "forbidden",
+      "application_bridge": "none",
+      "rights_review": "Research metadata only; production reuse not approved."
+    },
+    {
+      "claim_id": "DHIKR_HIST_001",
+      "feature": "dhikr_counts",
+      "method_id": "work_specific_devotional_history_candidate_v1",
+      "tradition_id": "Devotional history; no single method selected",
+      "status": "RESEARCH_ONLY",
+      "classification": "HISTORICAL_PRACTICE",
+      "claim_type": "historical_practice",
+      "source_ids": [
+        "KI-B06",
+        "KI-B05"
+      ],
+      "locators": [
+        {
+          "source_id": "KI-B06",
+          "locator": "Definitions and practice discussion"
+        },
+        {
+          "source_id": "KI-B05",
+          "locator": "Allah/hilal arithmetic example"
+        }
+      ],
+      "statement": "Devotional practice and additive letter value are distinct evidence categories.",
+      "normalized_theme": "history versus arithmetic",
+      "original_context": "Religious-practice overview",
+      "confidence": "medium_for_distinction",
+      "limitations": [
+        "No exact personal count rule qualified; arithmetic never establishes a prescription."
+      ],
+      "does_not_support": [
+        "recommended_devotion is forbidden product output."
+      ],
+      "religious_claim_boundary": "Describes attributed context or arithmetic only; no religious ruling, personal revelation, future certainty or devotional prescription.",
+      "ai_usage": "forbidden",
+      "application_bridge": "none",
+      "rights_review": "Research metadata only; production reuse not approved."
+    },
+    {
+      "claim_id": "YILD_A_001",
+      "feature": "yildizname_birth_date",
+      "method_id": "huseyni_1997_p49_western_candidate_v1",
+      "tradition_id": "Huseyni, reported Western method",
+      "status": "RESEARCH_ONLY",
+      "classification": "HISTORICAL_TRADITION",
+      "claim_type": "historical_tradition",
+      "source_ids": [
+        "KI-B10",
+        "KI-C01"
+      ],
+      "locators": [
+        {
+          "source_id": "KI-B10",
+          "locator": "pp.202–203, notes 25–28, citing 1997 p.49"
+        },
+        {
+          "source_id": "KI-C01",
+          "locator": "1923 edition metadata only"
+        }
+      ],
+      "statement": "Secondary account describes birth month/day, Sun sign and planetary attribution.",
+      "normalized_theme": "birth-date method family",
+      "original_context": "Yildizname",
+      "confidence": "medium",
+      "limitations": [
+        "Primary 1997 page and full tables unread; 1923 catalog is not an equivalent witness."
+      ],
+      "does_not_support": [
+        "No substitution into Astrology engine or prediction."
+      ],
+      "religious_claim_boundary": "Describes attributed context or arithmetic only; no religious ruling, personal revelation, future certainty or devotional prescription.",
+      "ai_usage": "forbidden",
+      "application_bridge": "none",
+      "rights_review": "Research metadata only; production reuse not approved."
+    },
+    {
+      "claim_id": "YILD_B_001",
+      "feature": "yildizname_name_mother",
+      "method_id": "huseyni_1997_p49_eastern_candidate_v1",
+      "tradition_id": "Huseyni, reported Eastern method",
+      "status": "RESEARCH_ONLY",
+      "classification": "HISTORICAL_TRADITION",
+      "claim_type": "historical_tradition",
+      "source_ids": [
+        "KI-B10"
+      ],
+      "locators": [
+        {
+          "source_id": "KI-B10",
+          "locator": "pp.202–203, notes 27–28, citing 1997 p.49"
+        }
+      ],
+      "statement": "Secondary account describes own-name plus mother's-name abjad with a twelve-based remainder associated with a sign.",
+      "normalized_theme": "name-based method family",
+      "original_context": "Yildizname",
+      "confidence": "medium",
+      "limitations": [
+        "Complete sign/ruler table, zero remainder and script policy not qualified."
+      ],
+      "does_not_support": [
+        "No hybrid completion from another book; no collection of names."
+      ],
+      "religious_claim_boundary": "Describes attributed context or arithmetic only; no religious ruling, personal revelation, future certainty or devotional prescription.",
+      "ai_usage": "forbidden",
+      "application_bridge": "none",
+      "rights_review": "Research metadata only; production reuse not approved."
+    },
+    {
+      "claim_id": "PERSONAL_ASMA_001",
+      "feature": "personal_asma",
+      "method_id": "excluded_personal_assignment_v1",
+      "tradition_id": "No qualified tradition-specific rule",
+      "status": "UNQUALIFIED",
+      "classification": "PRODUCT_EXCLUSION",
+      "claim_type": "product_exclusion",
+      "source_ids": [
+        "KI-B04",
+        "KI-B05"
+      ],
+      "locators": [
+        {
+          "source_id": "KI-B04",
+          "locator": "Name-list/context discussion"
+        },
+        {
+          "source_id": "KI-B05",
+          "locator": "Numeric example"
+        }
+      ],
+      "statement": "The inspected context and arithmetic do not establish someone's true or destined divine name.",
+      "normalized_theme": "excluded personal assignment",
+      "original_context": "Project evidence decision",
+      "confidence": "high_for_boundary",
+      "limitations": [
+        "Negative result limited to inspected corpus; product prohibition independent of historical existence."
+      ],
+      "does_not_support": [
+        "No personal/true/your Asma assertion."
+      ],
+      "religious_claim_boundary": "Describes attributed context or arithmetic only; no religious ruling, personal revelation, future certainty or devotional prescription.",
+      "ai_usage": "forbidden",
+      "application_bridge": "none",
+      "rights_review": "Research metadata only; production reuse not approved."
+    },
+    {
+      "claim_id": "ZOD_POP_001",
+      "feature": "zodiac_asma_popular",
+      "method_id": "unqualified_modern_lists_v1",
+      "tradition_id": "Modern popular lists",
+      "status": "UNQUALIFIED",
+      "classification": "MODERN_POPULAR",
+      "claim_type": "modern_popular",
+      "source_ids": [],
+      "locators": [],
+      "statement": "Discovered modern twelve-sign lists lack an inspected exact primary locator.",
+      "normalized_theme": "rejected unsupported mapping",
+      "original_context": "Discovery screening",
+      "confidence": "low_for_historical_rule",
+      "limitations": [
+        "Discovery URLs below; not treated as accepted source records."
+      ],
+      "does_not_support": [
+        "No Islamic zodiac-dhikr category or inferred historical pedigree."
+      ],
+      "religious_claim_boundary": "Describes attributed context or arithmetic only; no religious ruling, personal revelation, future certainty or devotional prescription.",
+      "ai_usage": "forbidden",
+      "application_bridge": "none",
+      "rights_review": "Research metadata only; production reuse not approved."
+    },
+    {
+      "claim_id": "HIJRI_PERSON_001",
+      "feature": "hijri_personality",
+      "method_id": "unsupported_birth_month_traits_v1",
+      "tradition_id": "No qualified method located",
+      "status": "UNQUALIFIED",
+      "classification": "PRODUCT_EXCLUSION",
+      "claim_type": "product_exclusion",
+      "source_ids": [
+        "KI-B07",
+        "KI-B08"
+      ],
+      "locators": [
+        {
+          "source_id": "KI-B07",
+          "locator": "Cultural/religious context sections"
+        },
+        {
+          "source_id": "KI-B08",
+          "locator": "Opening paragraphs"
+        }
+      ],
+      "statement": "Month significance alone does not support a birth-personality rule.",
+      "normalized_theme": "excluded inference",
+      "original_context": "Project evidence decision",
+      "confidence": "high_for_boundary",
+      "limitations": [
+        "Bounded search, not proof that no historical claim exists anywhere."
+      ],
+      "does_not_support": [
+        "No character, leadership, destiny or health inference."
+      ],
+      "religious_claim_boundary": "Describes attributed context or arithmetic only; no religious ruling, personal revelation, future certainty or devotional prescription.",
+      "ai_usage": "forbidden",
+      "application_bridge": "none",
+      "rights_review": "Research metadata only; production reuse not approved."
+    },
+    {
+      "claim_id": "MOTHER_001",
+      "feature": "mother_name_collection",
+      "method_id": "unapproved_private_input_v1",
+      "tradition_id": "Huseyni candidate; no admitted product method",
+      "status": "DEFERRED",
+      "classification": "PRIVACY_BOUNDARY",
+      "claim_type": "privacy_boundary",
+      "source_ids": [
+        "KI-B10"
+      ],
+      "locators": [
+        {
+          "source_id": "KI-B10",
+          "locator": "pp.202–203, notes 27–28"
+        }
+      ],
+      "statement": "Secondary evidence exists for mother-name use; production necessity is not established.",
+      "normalized_theme": "do not collect",
+      "original_context": "Method requirement review",
+      "confidence": "high_for_boundary",
+      "limitations": [
+        "New authority, complete method and privacy review required even if primary evidence is later found."
+      ],
+      "does_not_support": [
+        "No mother's-name input, retention or fixture."
+      ],
+      "religious_claim_boundary": "Describes attributed context or arithmetic only; no religious ruling, personal revelation, future certainty or devotional prescription.",
+      "ai_usage": "forbidden",
+      "application_bridge": "none",
+      "rights_review": "Research metadata only; production reuse not approved."
+    }
+  ],
+  "method_candidates": [
+    {
+      "method_id": "huseyni_1997_p49_western_candidate_v1",
+      "source_ids": [
+        "KI-B10"
+      ],
+      "inputs": [
+        "birth month/day"
+      ],
+      "missing": [
+        "primary page",
+        "complete date/sign/ruler tables",
+        "boundary policy"
+      ],
+      "status": "RESEARCH_ONLY"
+    },
+    {
+      "method_id": "huseyni_1997_p49_eastern_candidate_v1",
+      "source_ids": [
+        "KI-B10"
+      ],
+      "inputs": [
+        "confirmed name script",
+        "mother's name in same script"
+      ],
+      "missing": [
+        "primary page",
+        "complete remainder/sign/ruler table",
+        "zero remainder",
+        "normalization policy"
+      ],
+      "status": "RESEARCH_ONLY",
+      "collect_inputs": false
+    },
+    {
+      "method_id": "mecmau_felekiyyat_05ba1883_1_candidate_v1",
+      "source_ids": [
+        "KI-B11"
+      ],
+      "inputs": [],
+      "missing": [
+        "actual folios",
+        "direction of correspondence",
+        "selection rule",
+        "complete tables",
+        "input requirements"
+      ],
+      "status": "RESEARCH_ONLY"
+    },
+    {
+      "method_id": "yildizname_mevalid_ihtiyarat_taxonomy_v1",
+      "source_ids": [
+        "KI-B02"
+      ],
+      "inputs": [],
+      "missing": [
+        "select a specific work; taxonomy is not executable"
+      ],
+      "status": "RESEARCH_ONLY"
+    }
+  ],
+  "discovery_rejections": [
+    {
+      "url": "https://leventakkaya.com.tr/burclara-gore-esma-ul-husna/",
+      "tier": "D",
+      "access": "search-index content only",
+      "reason": "Modern zodiac-Asma list; no verified exact primary edition/page."
+    },
+    {
+      "url": "https://islamterapisi.net/burclara-gore-esmaul-husna-zikirleri-ve-manevi-iliskileri/",
+      "tier": "D",
+      "access": "search-index content only",
+      "reason": "General historical attribution does not supply an inspected edition/table."
+    }
+  ],
+  "search_limits": {
+    "queries": [
+      "huruf elements Buni Ibn Arabi scholarly",
+      "yildizname Huseyni anne ebced",
+      "Mecmau Felekiyyat Esma",
+      "burclara gore Esma kaynak",
+      "hicri ay kisilik akademik"
+    ],
+    "result": "No qualified complete personal/zodiac-Asma or birth-month personality method. This is not an exhaustive literature review.",
+    "uninspected_primary_leads": [
+      "Ibn al-Arabi Futuhat chapter 2 via KI-B01",
+      "Buni work-specific manuscripts via KI-B09",
+      "Qazwini manuscript via KI-A04",
+      "Huseyni 1997 p.49 via KI-B10",
+      "05 Ba 1883/1 folios via KI-B11"
+    ]
+  },
+  "rights_reference": {
+    "url": "https://www.copyright.gov/circs/circ33.pdf",
+    "locator": "Circular 33, ideas/methods/systems and facts discussion",
+    "scope": "US guidance only, not a worldwide legal clearance; not counted as a traditional source.",
+    "decision": "No third-party scan, prose corpus or edition-derived complete table stored. Recheck edition/jurisdiction/terms before bulk extraction."
+  }
+}
