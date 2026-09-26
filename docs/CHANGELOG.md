@@ -7,6 +7,16 @@ tags:
 
 Current delivery state: [[04_CURRENT_STATE]]. Milestone sequence: [[03_ROADMAP]].
 
+## 2026-09-26 — Project memory reconciliation
+
+- Reconciled project-memory and README wording with current `main` at
+  `21a35585f1c5757efba269edcc15e48b511ffb04`: Stages 1–10 and Kamerî K0–K2B are complete;
+  Stage 11 and Stage 12 remain not started.
+- Marked former K2A/K2B work-branch/no-main-merge wording as historical delivery context and retained
+  the limited Kamerî boundary: only three Hijri cultural fragments may be automatic future context.
+- Updated the public README's deterministic backend, current calculation endpoints and deferred
+  capabilities. No runtime code, API contract, dependency, test or calculation convention changed.
+
 ## 2026-09-21 — Stage K2B qualified Kamerî knowledge base
 
 - Added isolated `app.knowledge.kameri`, strict immutable models and curated `kameri-kb-v1` data:

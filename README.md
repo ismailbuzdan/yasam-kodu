@@ -1,13 +1,29 @@
 # YAŞAM KODU
 
-Yaşam Kodu; ilerleyen aşamalarda ad soyad, doğum tarihi, saati ve yerinden
-Astroloji, Numeroloji ve Human Design verilerini tek bir kişisel analiz raporunda
-birleştirmeyi amaçlayan web uygulamasıdır. Mevcut sürüm frontend, profil doğrulama, geocoding,
-tarihsel timezone ve deterministik astroloji backend'ini içerir. Stage 7 dış referans doğrulamasının
-kapsamı ve sonuçları [Astrology Verification](docs/astrology-verification.md) belgesindedir.
-AI yorum, kullanıcı hesabı, ödeme, veritabanı veya PDF üretimi içermez.
-Stage 8 deterministik numeroloji backend'i: `POST /api/v1/numerology/calculate`.
-Kesin hesap kuralları, gizlilik ve örnekler: [Numerology](docs/numerology.md).
+Yaşam Kodu; doğum verisinden Astroloji, Numeroloji ve Human Design hesaplarını tek bir
+deterministik Unified Life Code sonucunda birleştiren web uygulamasıdır. Sistem sembolik
+öz-farkındalık ve eğlence amaçlıdır; tıbbi, psikolojik, hukuki veya finansal karar aracı değildir.
+
+Mevcut deterministic backend; Birth Profile doğrulama, backend aracılı geocoding, tarihsel timezone,
+Astrology, Numerology, Human Design ve Unified Life Code içerir. Kamerî Kod, Unified Life Code v1'den
+ayrı bounded bir track'tir: mekanik API'si ve dört-claim'li limited knowledge layer'ı vardır.
+Calculation != Interpretation: hesaplar deterministik motorlardan gelir; Stage 11 AI interpretation
+henüz başlamamıştır. Otomatik kişisel Esmâ, doğrulanmamış menzil yorumları ve kaynaklandırılmamış dini
+yorumlar mevcut değildir.
+
+Henüz mevcut olmayanlar: AI interpretation, final web/PDF report generation, PostgreSQL,
+authentication, payments ve production deployment.
+
+## Mevcut hesap endpoint'leri
+
+- `POST /api/v1/astrology/calculate` — resolved UTC ve koordinatlardan deterministik tropikal astroloji.
+- `POST /api/v1/numerology/calculate` — Pythagorean numeroloji.
+- `POST /api/v1/human-design/calculate` — UTC girdisinden mekanik Human Design sonucu.
+- `POST /api/v1/life-code/calculate` — Astrology, Numerology ve Human Design'ın birleşik sonucu.
+- `POST /api/v1/kameri/calculate` — ayrı Kamerî mekanik sonuç; `interpretation_present` her zaman `false`.
+
+Endpoint alanları ve hata sınırları için [API Contracts](docs/06_API_CONTRACTS.md), hesap/provenance
+sınırları için [Current State](docs/04_CURRENT_STATE.md) ve ilgili teknik belgeler kaynak alınmalıdır.
 
 ## Project Memory
 
@@ -33,11 +49,12 @@ yasam-kodu/
 ├── backend/
 │   ├── app/
 │   │   ├── main.py       Uygulama fabrikası ve development CORS
-│   │   ├── api/          Health, profil, konum ve timezone endpoint'leri
+│   │   ├── api/          Health, profile/location/timezone ve hesap endpoint'leri
 │   │   ├── core/         Ortam ayarları
 │   │   ├── models/       Gelecek kullanım için boş paket
 │   │   ├── schemas/      Pydantic doğum profili ve yanıt şemaları
-│   │   └── services/     Geocoding ve tarihsel timezone servisleri
+│   │   ├── services/     Geocoding, timezone ve deterministik hesap motorları
+│   │   └── knowledge/    Kamerî için bounded, kaynaklı knowledge snapshot
 │   ├── tests/
 │   ├── .env.example
 │   ├── requirements.txt
@@ -48,10 +65,10 @@ yasam-kodu/
 ```
 
 İki uygulama bağımsız kurulur ve çalışır. `/analiz` formu yerel doğrulamanın ardından
-backend'deki doğum profili doğrulama endpoint'ine istek gönderir. Başarılı, normalize
-edilmiş profil yalnızca tarayıcı oturumundaki `sessionStorage` alanında tutulur ve
-`/sonuc` ekranında gösterilir; kişisel bilgiler URL'ye eklenmez. Astroloji hesap endpoint'i backend'de
-hazırdır; frontend'e henüz bağlanmamıştır. Kalıcı veri saklama yoktur.
+backend'deki doğum profili doğrulama endpoint'ine istek gönderir. Başarılı, normalize edilmiş profil
+yalnızca tarayıcı oturumundaki `sessionStorage` alanında tutulur ve `/sonuc` ekranında gösterilir;
+kişisel bilgiler URL'ye eklenmez. Kalıcı veri saklama yoktur. Hesap API'leri backend'de mevcuttur;
+AI yorum ve final rapor arayüzü henüz mevcut değildir.
 
 ## Development kurulumu
 

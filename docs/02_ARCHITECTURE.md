@@ -23,6 +23,9 @@ flowchart LR
   G --> H
   H --> I[PLANNED: AI Interpretation]
   I --> J[PLANNED: Web Report / PDF]
+  A -. optional bounded track .-> K[COMPLETED: Kamerî Mechanical API]
+  K --> L[COMPLETED: Limited Kamerî KB]
+  L -. limited source-backed context only .-> I
 ```
 
 | Layer | Technology | Status |
@@ -36,7 +39,8 @@ flowchart LR
 | Human Design | Swiss/Moshier astronomy + deterministic graph/classification | Stage 9 backend/API completed; [[human-design]] |
 | Unified Life Code | Frozen internal envelope + composed public engine schemas | Stages 10A/10B completed; [[life-code]] |
 | Database | PostgreSQL | planned |
-| AI | provider abstraction, Gemini/OpenAI candidates | planned |
+| Kamerî Kod | Separate deterministic mechanical API + four-claim bounded internal KB | K0–K2B complete; not part of Life Code v1 |
+| AI | provider abstraction, Gemini/OpenAI candidates | Stage 11 planned; Kamerî context limited to three Hijri cultural fragments |
 | PDF | shared report JSON source | planned |
 
 Frontend never calls a geocoding provider directly. The timezone layer takes resolved coordinates
