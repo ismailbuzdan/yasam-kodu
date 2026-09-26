@@ -8,7 +8,8 @@ tags:
 This is a summary; code schemas are the contract source. Planned endpoints are not implemented.
 Related boundaries and ownership: [[02_ARCHITECTURE]] and [[05_DECISIONS]].
 
-Stage 11A adds internal interpretation schemas/projection only, documented in [[08_AI_INTERPRETATION]].
+Stage 11A adds internal interpretation schemas/projection; 11B adds an internal Gemini adapter/service,
+documented in [[08_AI_INTERPRETATION]]. HTTP transport remains Stage 11C, not implemented.
 There is no interpretation endpoint; existing Life Code/Kamerî responses and routes are unchanged.
 
 ## `POST /api/v1/kameri/calculate`

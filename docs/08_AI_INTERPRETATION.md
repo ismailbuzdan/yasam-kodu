@@ -6,8 +6,9 @@ tags:
 # AI Interpretation
 
 Stage 11A defines typed input/output contracts, a read-only privacy projection and deterministic
-validation. Stage 11 is IN PROGRESS; Stage 11B and Stage 12 NOT STARTED. No SDK, key, provider call,
-AI HTTP endpoint, prompt runtime, retry implementation, database or report renderer is introduced.
+validation. Stage 11B implements the Gemini adapter, versioned prompt and bounded internal runtime.
+11A/11B COMPLETE; Stage 11 IN PROGRESS; 11C NEXT; Stage 12 NOT STARTED. No public AI HTTP endpoint,
+live API qualification, database or report renderer is introduced.
 This is the detailed architecture source; [[09_REPORT_DESIGN]] owns future presentation.
 
 ## Ownership
@@ -19,7 +20,7 @@ flowchart LR
   H[Human Design] --> L
   L --> P[Allowlist interpretation projection]
   K[Kameri K2B cultural selection] --> P
-  P --> V[Future provider]
+  P --> V[11B Gemini adapter and versioned prompt]
   V --> C[Shape and input-reference validation]
   C --> S[Future semantic and safety evaluation]
   S --> R[Structured interpretation result]
@@ -81,7 +82,7 @@ evaluation before extending the language literal. Do not add localized decision 
 | STANDARD | FREE + character, emotional, relationships, career, numerology, human_design | Summary; supported cross-system themes; optional applicable cultural context | 3,200 |
 | PREMIUM | STANDARD + life_themes, shadow, repeated_patterns, main_potential, life_lesson, timeline | Deeper comparisons; mandatory at_a_glance and summary | 6,000 |
 
-Token caps are design proposals for 11B, not measured usage, price guarantees or SDK settings.
+11B uses these output-token caps; they are not measured usage or price/quality guarantees.
 The implemented schema additionally caps total prose characters at 2,400 / 14,000 / 26,000,
 each paragraph at 1,200, three paragraphs per section and five cross-system themes. Tokens and
 characters are different budgets. A future Free template fallback must produce the same validated
@@ -142,10 +143,10 @@ prevent a model from turning a correctly cited cultural fact into a personal/rel
 ## Provider boundary, failures and retries
 
 `services/interpretation_models.py::InterpretationProvider` is a small async Python Protocol:
-`interpret(input, *, depth, language) -> InterpretationContent`. A future adapter owns SDK-specific
-translation; no SDK object enters the domain. The caller validates shape and input binding, performs
-semantic/safety checks, and only then attaches trusted metadata/disclaimer to `InterpretationResult`.
-No implementation, factory, DI framework, prompt or invocation is provided in 11A.
+`interpret(input, *, depth, language) -> InterpretationContent`. The Gemini adapter owns SDK-specific
+translation; no SDK object enters the domain. The service validates shape and input binding, then
+attaches trusted metadata/disclaimer to `InterpretationResult`. Structural checks are not a general
+prose-safety classifier. 11B adds construction and invocation without changing the Protocol.
 
 | Domain code | Meaning / future behavior |
 | --- | --- |
@@ -155,15 +156,21 @@ No implementation, factory, DI framework, prompt or invocation is provided in 11
 | interpretation_rate_limited | Honor bounded Retry-After/backoff within total deadline |
 | interpretation_invalid_response | Malformed JSON or invalid input linkage/content; at most one correction |
 | interpretation_schema_mismatch | Wrong schema/types/depth/language; at most one correction |
-| interpretation_refused | Safety refusal; no automatic retry to evade refusal |
+| interpretation_refusal | Safety refusal; no automatic retry to evade refusal |
+| interpretation_configuration_error | Missing key/model or unsupported provider; no fallback |
 
-Proposed 11B policy: at most three total attempts (initial + two), including at most one corrective
-attempt, with a total 60-second deadline; exponential backoff starting at one second, capped at five,
-with jitter. A Retry-After beyond the remaining budget returns rate_limited. Cancellation stops work;
-timeouts and corrective retries may cost tokens even when the result is discarded. Review actual
-provider latency before freezing operational settings. No retry code is implemented now.
+Implemented 11B policy: at most three total attempts (initial + AI_MAX_RETRIES 0..2), including at most
+one corrective request. A shared deadline defaults to 60 seconds (configurable 1..120). Exponential
+backoff is 1, 2 seconds, capped at 5; deliberately deterministic, without jitter in this initial runtime.
+Numeric/HTTP-date Retry-After is honored when exposed by the SDK. A server delay above 5 seconds or
+beyond the remaining budget ends with the original static failure instead of retrying too early.
+SDK retries are explicitly disabled (attempts=1), as is automatic function calling. Timeout, HTTP 408,
+429, 500/502/503/504 and transport failures are retryable within the shared budget; other HTTP errors
+are not. Refusal, invalid admission and configuration errors never retry. Cancellation propagates.
+The 11A internal spelling interpretation_refused remains a compatibility alias; new code emits
+interpretation_refusal. Timeouts/retries may still incur provider costs for discarded results.
 
-Errors use static code/message pairs. A future adapter must suppress raw SDK exception chaining and
+Errors use static code/message pairs. The adapter suppresses raw SDK exception chaining and
 never return provider bodies, rejected JSON, request IDs or diagnostic text to users. Programming errors
 remain visible to developers via sanitized operational reporting, not fabricated successful content.
 Operational input_tokens/output_tokens/latency_ms and allowlisted provider/model/version may be measured
@@ -175,18 +182,19 @@ Use attributed, non-certain wording: “bu sistemde”, “sembolik olarak”, �
 No medical/mental-health diagnosis, legal/financial directive, personal religious ruling or definite
 future prediction. Relationship/career sections offer symbolic reflection, not commands or forecasts.
 
-11B must separate trusted SYSTEM INSTRUCTIONS from structured JSON DATA. Even engine/KB strings are
+11B separates trusted SYSTEM INSTRUCTIONS from structured JSON DATA. Even engine/KB strings are
 data, never instructions; no user name/location goes into instruction text. Closed enums and canonical
 KB equality reduce injection surface but do not prove model obedience. Do not interpolate a whole Life
 Code object, a raw user prompt, research prose or an exception into system instructions or corrective
 feedback. Correction feedback should contain safe codes/paths only, not echoed malicious responses.
 
 Shape validation, evidence references and a disclaimer cannot detect all unsafe or fabricated prose.
-11A does not claim a semantic safety filter. Stage 11B needs a reviewed prompt/config, consent and
-retention design, bounded generation, semantic factuality/claim-discipline evaluation, rejection paths,
-and synthetic adversarial tests before any provider response can be delivered. Medical claims with valid
-JSON must still be rejected there. Provider structured-output dialect compatibility is UNVERIFIED until
-an adapter is tested; use this Pydantic contract as the canonical local validator.
+11B implements invariant prompts, provider-refusal handling, bounded generation and structural rejection,
+not arbitrary regex NLP censorship or a proven semantic safety classifier. A correctly referenced text
+can still contain a diagnosis, invented meaning or personal religious claim. Before public delivery,
+11C must resolve consent/retention and a reviewed fail-closed safety/admission policy, with adversarial
+live-model evaluation; these are NOT established by offline mocks. SDK serialization is tested, but
+live model/dialect acceptance, Turkish prose quality and semantic safety remain UNVERIFIED.
 
 ## Verification and next stage
 
@@ -196,5 +204,79 @@ personal-year opt-in, depth/section/length enforcement, input-grounded reference
 canonical Kamerî selection/tampering and static errors. Synthetic data only; these tests validate
 contracts, not AI quality or new astronomical goldens. Full backend and pip check are required.
 
-Stage 11B should implement one explicitly selected provider adapter and the validation/semantic
-pipeline under reviewed operational policy. No provider selection or implementation is implied by 11A.
+## Stage 11B runtime qualification
+
+`services/providers/gemini_interpretation.py` implements the existing async Protocol;
+`interpretation_service.py` supplies an injectable provider-neutral service and explicit factory.
+Only AI_PROVIDER=gemini is supported now, without fallback; future adapters can use the same Protocol.
+Gemini is the first, not permanently exclusive provider (ADR-022). No routes import SDK objects.
+The factory is lazy: calculation APIs start without a Gemini model or key. Each interpretation owns
+its client lifetime, closes sync/async transports and has independent retries; no global mutable client.
+
+### SDK and configuration
+
+Pinned official [google-genai 2.25.0](https://pypi.org/project/google-genai/2.25.0/), Apache-2.0,
+Python >=3.10; tested with project Python 3.11. See THIRD_PARTY_NOTICES.md for dependency review.
+Backend Settings/.env.example: AI_PROVIDER=gemini, GEMINI_API_KEY empty SecretStr,
+GEMINI_MODEL empty (operator chooses and qualifies a supported model),
+AI_REQUEST_TIMEOUT_SECONDS=60, AI_MAX_RETRIES=2. Invalid range fails settings admission; an unsupported
+provider, empty model/key or invalid model identifier gives a static configuration error at the factory.
+Never commit actual keys; no NEXT_PUBLIC fields. Existing Compose reads .env.example, so live operator
+configuration needs a private environment override; do not put a key into the example file.
+The adapter explicitly chooses the Developer API endpoint and v1beta, disables ambient proxy selection,
+and passes its configured key rather than accepting another GOOGLE_* provider/key selection.
+
+### Native JSON and final validation
+
+The pinned SDK's async models.generate_content receives one user Content containing structured JSON
+InterpretationInput and the derived available-fact-reference list, separately from system_instruction.
+No chat history, user prose, calculation request, tools, files, browsing or cache persistence is used.
+Native response_mime_type=application/json + response_json_schema are set. The compact schema derives
+from InterpretationContent (not the application-owned metadata envelope): local references are inlined,
+const becomes enum, nullable alternatives become type arrays, presentation/default/string pattern/length
+keywords are omitted. Final Pydantic validation retains ALL canonical constraints; the canonical model
+was not weakened. [Google's structured-output limits](https://ai.google.dev/gemini-api/docs/generate-content/structured-output?hl=en)
+explain the supported subset and complexity limit. The generate-content surface remains supported by
+the pinned SDK although Google's current docs also promote Interactions; this task adds no conversation
+storage/API migration. No claim that every configurable model supports this schema.
+
+Only one complete STOP text candidate is accepted; prompt/candidate safety blocks are static refusals.
+Truncation, missing candidates or non-text/tool parts fail. Thought parts are ignored, never logged.
+Generated JSON is capped at 200 KB, duplicate keys/nonfinite constants rejected, then validated with
+InterpretationContent.model_validate_json and validate_content_for_input. The service independently
+revalidates content/binding and InterpretationResult after attaching trusted provider/model/prompt/
+config/schema versions. No provider-authored metadata or invented token/latency measurements.
+
+`interpretation_prompts.py` holds life-code-interpretation-v1 and gemini-interpretation-v1 config.
+Shared immutable core/depth policies require no calculation, altered facts, invented systems/timeline,
+professional prescriptions, diagnoses or religious claims. Premium Tek Bakışta and summary remain
+mandatory. Kamerî accepts only actual canonical HIJRI_CTX_001/002/003 input IDs, never Asma or a
+mansion/personality bridge. Output claim IDs cannot license forbidden prose; that residual risk remains.
+
+At most one repair replaces the whole invalid content, using the same structured input plus a generic
+instruction. Neither failed text nor a Pydantic trace is echoed. A second content failure becomes
+schema_mismatch; a transport/refusal on the correction retains its static error without another call.
+The repair shares the total attempt/deadline budget. With retries=0, malformed JSON is invalid_response
+and a valid JSON shape mismatch is schema_mismatch. Malformed SDK envelopes are invalid_response,
+not successful content. No manual field guessing, successful partial report or template fallback.
+
+### Privacy, tests and remaining delivery gate
+
+The application logs no inputs, outputs, prompts, keys or raw exceptions. Hidden validation errors and
+disabled serialization warnings protect tampered-input paths. Pinned-SDK HTTP-fake tests check DEBUG
+logs for synthetic sentinels; no telemetry is fabricated. Do not enable external HTTP body/header
+tracing, exception-local capture, SDK replay recording or report logging in deployment.
+Provider service terms, data retention and consent need explicit operator review before real data use;
+symbolic minimization is not anonymity. No live call was run and no actual key is required by tests.
+
+`test_gemini_interpretation.py` exercises fake-client and real-SDK/HTTP-fake boundaries, all depths,
+configuration/model selection, canonical Kamerî, missing systems/timeline, schema/input binding,
+refusals, malformed JSON, bounded retries/repair/Retry-After, deadlines/cancellation, client cleanup,
+static errors and metadata. `fixtures/interpretation_cases.json` holds eight synthetic symbolic cases,
+not real-person birth data or golden prose. Existing 11A privacy/projection tests remain mandatory.
+Full pytest, pip check, HD read-only audit and Kamerî evidence must pass before commit.
+
+Next scope is 11C only after separate authorization: typed FastAPI transport/admission, private error
+mapping, explicit consent/retention and safety qualification, dependency overrides, rate/cost controls
+and endpoint tests. Do not accept arbitrary caller-supplied symbols as verified calculation evidence.
+11B creates no public interpretation endpoint; Stage 12 and frontend remain untouched.

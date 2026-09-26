@@ -20,7 +20,8 @@ Mevcut teknoloji: Next.js + TypeScript + App Router + Tailwind; FastAPI + Python
 offline IANA timezone çözümlemesi için timezonefinder, zoneinfo ve tzdata. Deterministik backend;
 doğum profili, geocoding, tarihsel timezone, Astrology, Numerology, Human Design, Unified Life Code
 ve ayrı bounded Kamerî mechanical/knowledge katmanlarını içerir. Stage 11 IN PROGRESS: 11A mimari,
-projection ve typed contract tamamlandı; provider uygulaması 11B ve Stage 12 report/PDF başlamadı.
+projection ve typed contract ile 11B Gemini adapter/prompt/service tamamlandı; 11C API NEXT,
+Stage 12 report/PDF başlamadı. Canlı model kalitesi ve genel anlamsal güvenlik henüz doğrulanmadı.
 Kamerî knowledge readiness yalnız üç kaynaklı Hicrî kültürel
 parçada sınırlıdır; hesaplama ve yorum ayrımı korunur.
 

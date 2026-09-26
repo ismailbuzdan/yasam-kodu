@@ -5,6 +5,23 @@ tags:
 
 # Test Strategy
 
+## Stage 11B Gemini adapter/runtime
+
+`test_gemini_interpretation.py`: **77 offline tests** using synthetic symbolic cases, an injected
+SDK client and the real pinned google-genai SDK over httpx.MockTransport. No live credentials/network
+are needed. Request shape/model/native JSON, empty/unsupported configuration, all depth sections,
+canonical Kamerî IDs, missing-system references/timeline, privacy/injection admission, static errors,
+refusal, invalid JSON/schema, one repair, shared retry budget, Retry-After/deadline/cancellation and
+client cleanup are covered. The unchanged 11A suite now exercises 70 cases because its error taxonomy
+parameterization includes two new static codes. Combined targeted result: **147 passed**.
+
+Docker 2026-09-26: **full backend 1685 passed / 1 existing Starlette/httpx warning**;
+pip check clean; HD read-only evidence audit **68/68**; Kamerî references **12/12** separately rerun.
+The prior AnyIO alias warning did not recur in the rebuilt dependency environment. No frontend changes,
+so frontend tests were not rerun. No live API smoke was run; model acceptance/quality/prose safety
+remain UNVERIFIED. These tests prove structural/failure behavior, not semantic safety of arbitrary prose.
+Original evidence/provenance/goldens remain unchanged. See [[08_AI_INTERPRETATION]] for the 11C delivery gate.
+
 ## Stage 11A interpretation contracts
 
 `test_interpretation_contracts.py`: 68 new synthetic tests qualify the detached symbolic allowlist,

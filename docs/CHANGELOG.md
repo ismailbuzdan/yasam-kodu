@@ -7,6 +7,21 @@ tags:
 
 Current delivery state: [[04_CURRENT_STATE]]. Milestone sequence: [[03_ROADMAP]].
 
+## 2026-09-26 — Stage 11B Gemini interpretation provider
+
+- Added official google-genai 2.25.0 (Apache-2.0), explicit backend settings, scoped async adapter and
+  injectable provider-independent service. No raw Life Code request crosses the privacy boundary.
+- Added life-code-interpretation-v1 shared/depth prompt, native compact JSON schema, strict final
+  validation, static errors, shared retry/deadline budget, at most one generic replacement repair,
+  refusal handling and safe metadata. No public interpretation route, tools or provider fallback.
+- Added eight synthetic symbolic cases and 77 offline fake-client/real-SDK HTTP-fake tests;
+  existing contract parameterization adds two error-code cases. Targeted 147 pass; Docker full backend
+  **1685 pass / 1 existing warning**, pip check clean, HD **68/68**, Kamerî evidence **12/12**.
+- ADR-022 records first-but-not-exclusive Gemini selection. Original calculation engines, APIs,
+  evidence, earlier ADRs and frontend unchanged. No live call or real key used; live schema/model
+  quality, general prose safety and public consent/retention qualification remain unverified.
+- Stage 11A/11B COMPLETE; Stage 11 IN PROGRESS; 11C NEXT (not started); Stage 12 NOT STARTED.
+
 ## 2026-09-26 — Stage 11A interpretation architecture and contracts
 
 - Added strict frozen symbolic projection and structured narrative/result contracts, depth sections,

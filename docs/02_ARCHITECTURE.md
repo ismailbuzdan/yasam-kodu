@@ -22,7 +22,7 @@ flowchart LR
   F --> H
   G --> H
   H --> P[COMPLETED 11A: Privacy Projection and Contracts]
-  P --> I[PLANNED 11B: Provider and Semantic Validation]
+  P --> I[COMPLETED 11B: Gemini Adapter and Structural Validation]
   I --> J[PLANNED: Web Report / PDF]
   A -. optional bounded track .-> K[COMPLETED: Kamerî Mechanical API]
   K --> L[COMPLETED: Limited Kamerî KB]
@@ -41,7 +41,7 @@ flowchart LR
 | Unified Life Code | Frozen internal envelope + composed public engine schemas | Stages 10A/10B completed; [[life-code]] |
 | Database | PostgreSQL | planned |
 | Kamerî Kod | Separate deterministic mechanical API + four-claim bounded internal KB | K0–K2B complete; not part of Life Code v1 |
-| AI | Typed symbolic input/output, provider Protocol; no provider implementation | Stage 11 IN PROGRESS, 11A complete; Kamerî context limited to three Hijri cultural fragments |
+| AI | Typed symbolic input/output, provider Protocol, Gemini adapter/prompt/service; no endpoint | Stage 11 IN PROGRESS, 11A/11B complete; structural checks are not prose-safety proof; Kamerî limited to three cultural fragments |
 | PDF | shared report JSON source | planned |
 
 Frontend never calls a geocoding provider directly. The timezone layer takes resolved coordinates
@@ -94,7 +94,7 @@ citations may reach a future narrator alongside deterministic results and policy
 records and source prose must not be ingested as runtime knowledge. No K1 sector-to-stellar-theme
 bridge is approved; no personal Asma, devotional prescription, mother's-name collection or invented
 missing correspondence. Four arithmetic/cultural fragments are source-ready, not a complete mapping
-system. K2B provides the bounded internal KB below; Stage 11A contracts exist but no provider runs, and the
+system. K2B provides the bounded internal KB below; Stage 11A contracts and 11B Gemini adapter exist, and the
 existing API still has interpretation_present=false.
 
 ## Qualified internal knowledge — K2B complete
@@ -106,8 +106,9 @@ Month 9 selects HIJRI_CTX_001/002; month 12 selects HIJRI_CTX_003; all other mon
 ASMA_NUM_001 remains reference-only and cannot be selected from abjad 66. No calculation import,
 network, AI or public transport. ADR-020 and [[kameri-knowledge-base]] document the enforced policy.
 
-Stage 11A architecture, privacy projection, structured result and future provider/quality policies
-are in [[08_AI_INTERPRETATION]] (ADR-021). Existing calculations and API contracts remain independent.
+Stage 11A architecture, privacy projection and structured result, plus 11B adapter/runtime and
+remaining live quality/safety gates are in [[08_AI_INTERPRETATION]] (ADR-021/022).
+Existing calculations and API contracts remain independent. 11C is next, not implemented.
 
 ## Stage 6 Swiss Ephemeris licensing
 

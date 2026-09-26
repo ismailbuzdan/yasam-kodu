@@ -1,5 +1,25 @@
 # Third-party notices
 
+## google-genai 2.25.0 (Stage 11B)
+
+Official Google Gen AI Python SDK, Apache-2.0. Verified 2026-09-26 against
+[pinned upstream license](https://github.com/googleapis/python-genai/blob/v2.25.0/LICENSE)
+and [PyPI metadata](https://pypi.org/project/google-genai/2.25.0/).
+Requires Python >=3.10; project Docker uses Python 3.11. Its httpx >=0.28.1/<1 and
+pydantic >=2.12.5/<3 requirements admit the existing project pins. No legacy google-generativeai.
+Apache-2.0 is compatible with this project's AGPL-3.0 distribution (see
+[GNU compatibility guidance](https://www.gnu.org/licenses/license-compatibility.en.html)); preserve dependency license
+and notice files. SDK copyright licensing does not replace Gemini API service/data-processing terms.
+
+Newly resolved dependency license metadata was inspected in the rebuilt Docker environment:
+google-auth 2.58.1, requests 2.34.2, tenacity 9.1.4 and distro 1.9.0: Apache-2.0;
+websockets 16.1.1: BSD-3-Clause; sniffio 1.3.1: MIT OR Apache-2.0;
+cryptography 50.0.1: Apache-2.0 OR BSD-3-Clause; pyasn1 0.6.4: BSD-2-Clause;
+pyasn1-modules 0.4.2: BSD; urllib3 2.8.0 and charset-normalizer 3.5.1: MIT.
+These permissive license families introduce no AGPL-3.0 conflict. No SDK extras installed.
+This records the tested resolution, not a new full transitive lockfile; existing shared dependencies
+retain their upstream notices. Recheck licenses when dependency versions change.
+
 ## pyswisseph 2.10.3.2
 
 Source: [PyPI source distribution](https://pypi.org/project/pyswisseph/2.10.3.2/#files),

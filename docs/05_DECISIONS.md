@@ -337,3 +337,27 @@ quality/injection/refusal checks are required before delivery. Retry/token/deadl
 **Consequences:** Stage 11A complete, Stage 11 IN PROGRESS; 11B and Stage 12 NOT STARTED. No SDK,
 provider implementation/network/key, endpoint, frontend, database, dependency or calculation change.
 Existing ADR-001/016/017/018/019/020 and Life Code/Kamerî public contracts remain unchanged.
+
+## ADR-022 — First Interpretation Adapter and Bounded Runtime
+
+**Status:** Accepted (Stage 11B, 2026-09-26).
+**Context:** ADR-021 separates verified symbolic input from provider narration. An external adapter
+needs explicit configuration, privacy, structured validation and a bounded failure/cost policy.
+**Decision:** Gemini Developer API is the first, not exclusive, adapter behind the unchanged async
+InterpretationProvider Protocol. Pin official google-genai 2.25.0 (Apache-2.0, Python >=3.10).
+Keep backend-only key/model configuration, no ambient provider fallback and no public endpoint in 11B.
+Only revalidated InterpretationInput plus its available references cross the data boundary; immutable
+life-code-interpretation-v1 instructions and depth policy are separate. No calculation or tool calls.
+Generate native JSON against a compact derivative of InterpretationContent; final canonical Pydantic
+and input-binding validation remain mandatory before application-owned InterpretationResult metadata.
+At most initial+2 attempts, one replacement repair, configurable bounded total deadline; SDK retries
+disabled. Respect bounded Retry-After; refusal/invalid input never retries, cancellation propagates.
+Raw provider text, failures, secrets and validation inputs never enter logs/public errors/repair prompts.
+**Reason:** Provider swapability, explicit operational limits and privacy without weakening ADR-021.
+**Limits:** Structural references and prompts do not establish semantic prose safety. Offline fake SDK
+qualification is not live model quality, schema acceptance, consent or retention qualification. No
+universal NLP filter is claimed. Medical/religious/factual prose risks require reviewed fail-closed
+delivery policy and adversarial evaluation before public exposure; see [[08_AI_INTERPRETATION]].
+**Consequences:** 11B internal adapter/service complete after regression qualification; 11C transport
+requires separate authorization and those delivery controls. No OpenAI adapter, route, frontend,
+calculation-engine, Life Code/Kamerî API or original-evidence changes. Prior ADRs remain unchanged.

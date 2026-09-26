@@ -6,10 +6,10 @@ tags:
 # Current State
 
 **Last updated:** 2026-09-26
-**Stage 11A starting baseline:** clean `main` at `c9bcb3ad4cfacb97c90a655b7caf6c05f39bdfd8`.
-**Delivery status:** Stages 1–10 COMPLETE; Stage 11 IN PROGRESS (11A COMPLETE); Stage 12 NOT STARTED.
+**Stage 11B starting baseline:** clean `main`/`origin/main` at `a72caa8640945b4d9682437a0a5cf4a5caad240a`.
+**Delivery status:** Stages 1–10 COMPLETE; Stage 11 IN PROGRESS (11A/11B COMPLETE); Stage 12 NOT STARTED.
 **Kamerî track:** K0, K1A, K1B, K2A and K2B COMPLETE; bounded mechanical API and limited KB available.
-**Next step:** Separately scope Stage 11B provider adapter and semantic validation. Kamerî readiness is
+**Next step:** Separately scope Stage 11C HTTP/admission and public-delivery controls. Kamerî readiness is
 YES, LIMITED to the three qualified Hijri cultural fragments; it does not admit automatic personal Esmâ,
 unverified mansion interpretations or uncited religious commentary.
 **License:** AGPL-3.0
@@ -26,6 +26,21 @@ After coding:
 - Update this file, decisions and changelog when applicable; run relevant tests.
 
 ## Completed
+
+**Stage 11B (2026-09-26):** Gemini adapter behind the unchanged provider Protocol, injectable service,
+life-code-interpretation-v1 prompt, strict content/result validation and backend-only configuration.
+google-genai 2.25.0 (Apache-2.0) installed in Python 3.11 Docker; dependency licenses reviewed.
+Native JSON schema is derived from existing content; no calculation changes. Shared bounded deadline,
+initial+2 attempts maximum, at most one replacement repair, no refusal retry or silent fallback.
+Key/model default empty; no live API call/key required, no public AI endpoint, no frontend change.
+Eight synthetic symbolic cases and fake SDK/HTTP tests qualify structure, privacy and failure behavior.
+Docker verification: **77 new provider tests**, 70 contract tests (including two new static error codes),
+**full backend 1685 passed / 1 existing Starlette/httpx warning**; pip check clean; HD audit **68/68**;
+Kamerî evidence **12/12**. The prior AnyIO alias warning did not recur in the rebuilt environment.
+Live model/schema acceptance, Turkish prose quality, consent/retention and general semantic safety
+remain UNVERIFIED; structural grounding is not proof of safe/correct prose. Before public exposure,
+11C needs reviewed fail-closed delivery controls and adversarial live-model evaluation. See ADR-022
+and [[08_AI_INTERPRETATION]]. 11C and Stage 12 NOT STARTED. Earlier entries below are historical.
 
 **Stage 11A (2026-09-26):** [[08_AI_INTERPRETATION]] and ADR-021 define provider-neutral frozen
 input/content/result contracts, read-only Life Code projection, a provider Protocol and static errors.
@@ -54,7 +69,7 @@ with explicit user authorization after stopping frontend; final frontend diff is
 remains healthy, frontend stopped. No current K2B blocker. Stage 11 readiness is limited to the three
 Hijri cultural fragments, never automatic personal Asma or a deep reading; Stage 11 NOT STARTED.
 
-The following stage entries record their historical delivery state; the Stage 11A entry is current.
+The following stage entries record their historical delivery state; the Stage 11B entry is current.
 
 **Historical Stage K2A delivery (2026-09-21; subsequently merged into `main`):**
 [[kameri-interpretation-qualification]] and the separate interpretation
@@ -180,8 +195,8 @@ and original audit checks are unchanged. Tests cover 384 boundary neighborhoods 
 Official splenic and 3/5 examples remain absent; structural coverage is sufficient for readiness. See
 [[human-design]] and [[human-design-verification]].
 
-**Current next step:** Stage 11B — reviewed provider adapter and semantic-validation implementation. Its Kamerî
+**Current next step:** Stage 11C — separately reviewed HTTP/admission and safety-delivery controls. Its Kamerî
 input remains limited to K2B's three cultural fragments; automatic name suggestions, mansion name
 publication and broader interpretation require additional qualification. Stages 1–10, including
-Unified Life Code API, are complete. Stage 11 is IN PROGRESS; 11B and Stage 12 PDF are NOT STARTED. No database work;
+Unified Life Code API, are complete. Stage 11 is IN PROGRESS; 11A/11B COMPLETE, 11C NEXT and Stage 12 PDF NOT STARTED. No database work;
 engine conventions, original goldens and all 68 HD artifacts are unchanged.

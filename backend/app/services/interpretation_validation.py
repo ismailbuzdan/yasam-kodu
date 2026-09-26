@@ -1,4 +1,4 @@
-"""Pure structural/input binding checks. Prose safety still needs Stage 11B evaluation."""
+"""Deterministic structural/input binding, not a general natural-language safety classifier."""
 from pydantic import ValidationError
 
 from app.schemas.interpretation import (
@@ -43,8 +43,8 @@ def validate_content_for_input(
     if type(content) is not InterpretationContent or type(input) is not InterpretationInput:
         raise InterpretationError("interpretation_schema_mismatch")
     try:
-        content = InterpretationContent.model_validate(content.model_dump())
-        input = InterpretationInput.model_validate(input.model_dump())
+        content = InterpretationContent.model_validate(content.model_dump(warnings=False))
+        input = InterpretationInput.model_validate(input.model_dump(warnings=False))
     except ValidationError:
         raise InterpretationError("interpretation_schema_mismatch") from None
     if content.depth != depth or content.language != language:

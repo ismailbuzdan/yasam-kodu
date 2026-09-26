@@ -1,0 +1,39 @@
+{
+  "policy": "Synthetic symbolic inputs only; shape/reference evaluation, never golden AI prose or engine accuracy evidence.",
+  "symbols": {
+    "astrology": {
+      "bodies": [
+        {"body": "sun", "sign": "aries", "house": 1, "retrograde": false},
+        {"body": "moon", "sign": "libra", "house": 7, "retrograde": false}
+      ],
+      "ascendant": "aries", "mc": "capricorn",
+      "houses": [{"house": 1, "sign": "aries"}, {"house": 7, "sign": "libra"}],
+      "aspects": [{"body1": "sun", "body2": "moon", "type": "opposition"}]
+    },
+    "numerology": {
+      "life_path": {"value": 1, "is_master": false},
+      "birthday": {"value": 3, "is_master": false},
+      "expression": {"value": 7, "is_master": false},
+      "soul_urge": null, "personality": null,
+      "maturity": {"value": 8, "is_master": false}, "personal_year": null
+    },
+    "human_design": {
+      "type": "generator", "strategy": "wait_to_respond", "authority": "sacral",
+      "profile": "1/3", "definition": "single",
+      "defined_centers": ["sacral", "g"],
+      "undefined_centers": ["head", "ajna", "throat", "ego", "spleen", "solar_plexus", "root"],
+      "channels": [[2, 14]], "active_gates": [2, 14]
+    },
+    "kameri": null, "timeline": null
+  },
+  "cases": [
+    {"id": "complete_premium", "depth": "premium", "systems": ["astrology", "numerology", "human_design"], "exact_time": true, "cultural_month": null, "theme": null},
+    {"id": "exact_time_astrology", "depth": "standard", "systems": ["astrology"], "exact_time": true, "cultural_month": null, "theme": null},
+    {"id": "missing_time", "depth": "standard", "systems": ["astrology", "numerology"], "exact_time": false, "cultural_month": null, "theme": null},
+    {"id": "no_timeline", "depth": "premium", "systems": ["numerology"], "exact_time": false, "cultural_month": null, "theme": null},
+    {"id": "no_kameri", "depth": "free", "systems": ["numerology"], "exact_time": false, "cultural_month": null, "theme": null},
+    {"id": "allowed_kameri", "depth": "premium", "systems": ["astrology", "numerology", "human_design"], "exact_time": true, "cultural_month": 9, "theme": null},
+    {"id": "reinforced", "depth": "standard", "systems": ["astrology", "numerology"], "exact_time": true, "cultural_month": null, "theme": "reinforced_theme"},
+    {"id": "tension", "depth": "premium", "systems": ["astrology", "human_design"], "exact_time": true, "cultural_month": 12, "theme": "tension"}
+  ]
+}

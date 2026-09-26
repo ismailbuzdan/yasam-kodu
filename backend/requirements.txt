@@ -7,3 +7,4 @@ timezonefinder==8.3.0
 timezonefinder-data==1.2026.3
 tzdata==2026.4
 pyswisseph==2.10.3.2
+google-genai==2.25.0
