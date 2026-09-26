@@ -21,11 +21,12 @@ flowchart LR
   E --> H[COMPLETED: Unified Life Code service and API]
   F --> H
   G --> H
-  H --> I[PLANNED: AI Interpretation]
+  H --> P[COMPLETED 11A: Privacy Projection and Contracts]
+  P --> I[PLANNED 11B: Provider and Semantic Validation]
   I --> J[PLANNED: Web Report / PDF]
   A -. optional bounded track .-> K[COMPLETED: Kamerî Mechanical API]
   K --> L[COMPLETED: Limited Kamerî KB]
-  L -. limited source-backed context only .-> I
+  L -. limited source-backed context only .-> P
 ```
 
 | Layer | Technology | Status |
@@ -40,7 +41,7 @@ flowchart LR
 | Unified Life Code | Frozen internal envelope + composed public engine schemas | Stages 10A/10B completed; [[life-code]] |
 | Database | PostgreSQL | planned |
 | Kamerî Kod | Separate deterministic mechanical API + four-claim bounded internal KB | K0–K2B complete; not part of Life Code v1 |
-| AI | provider abstraction, Gemini/OpenAI candidates | Stage 11 planned; Kamerî context limited to three Hijri cultural fragments |
+| AI | Typed symbolic input/output, provider Protocol; no provider implementation | Stage 11 IN PROGRESS, 11A complete; Kamerî context limited to three Hijri cultural fragments |
 | PDF | shared report JSON source | planned |
 
 Frontend never calls a geocoding provider directly. The timezone layer takes resolved coordinates
@@ -62,13 +63,13 @@ calendar admission preserves Numerology's server-local day policy. No new timezo
 
 ## Kamerî Kod boundary (Stages K0–K1B mechanical API)
 
-ADR-017 and [[kameri-code]] define a future separate module, not a fourth member of the Stage 10
+ADR-017 and [[kameri-code]] define a separate module, not a fourth member of the Stage 10
 Life Code v1 response. Existing input resolution/native-state ownership is reused; new timezone,
 geocoding and astronomy stacks are not planned. Source provenance and field classification separate
 astronomy, calendar conversion, symbolic mappings and historical interpretation. Only five scoped
 mechanical methods now have an isolated internal implementation; automatic spelling, proposed mansion
 labels and interpretation are not production-ready. K1B exposes this scope through a separate
-strict public transport; Stage 11 is NOT STARTED.
+strict public transport; Stage 11A consumes only the bounded cultural KB described below.
 
 `backend/app/services/traditional/` contains frozen `models`, integer `hijri`, allowlisted `abjad`,
 `lunar` astronomy/mappings, `planetary_hours` and small private `_astronomy` adapters. Existing
@@ -93,7 +94,7 @@ citations may reach a future narrator alongside deterministic results and policy
 records and source prose must not be ingested as runtime knowledge. No K1 sector-to-stellar-theme
 bridge is approved; no personal Asma, devotional prescription, mother's-name collection or invented
 missing correspondence. Four arithmetic/cultural fragments are source-ready, not a complete mapping
-system. K2B now provides only the bounded internal KB below; Stage 11 is not implemented and the
+system. K2B provides the bounded internal KB below; Stage 11A contracts exist but no provider runs, and the
 existing API still has interpretation_present=false.
 
 ## Qualified internal knowledge — K2B complete
@@ -104,6 +105,9 @@ Four claims/four sources only; the K2A research ledger is used by integrity test
 Month 9 selects HIJRI_CTX_001/002; month 12 selects HIJRI_CTX_003; all other months abstain.
 ASMA_NUM_001 remains reference-only and cannot be selected from abjad 66. No calculation import,
 network, AI or public transport. ADR-020 and [[kameri-knowledge-base]] document the enforced policy.
+
+Stage 11A architecture, privacy projection, structured result and future provider/quality policies
+are in [[08_AI_INTERPRETATION]] (ADR-021). Existing calculations and API contracts remain independent.
 
 ## Stage 6 Swiss Ephemeris licensing
 

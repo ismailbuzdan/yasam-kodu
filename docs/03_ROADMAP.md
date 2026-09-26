@@ -28,7 +28,10 @@ flowchart LR
 - [x] Stage 10 — Unified Life Code model and API (no unified result frontend UI)
   - [x] Stage 10A — Deterministic internal model and lossless service aggregation; [[life-code]].
   - [x] Stage 10B — Typed API/admission contract; runtime qualification passes (924 backend tests).
-- [ ] Stage 11 — AI interpretation
+- [ ] Stage 11 — AI interpretation (IN PROGRESS)
+  - [x] Stage 11A — Architecture, privacy projection, typed output/depth contracts and offline tests
+    (ADR-021; [[08_AI_INTERPRETATION]]). No provider implementation or AI endpoint.
+  - [ ] Stage 11B — Separately scoped provider adapter and semantic/quality validation.
 - [ ] Stage 12 — Report / PDF
 
 ## Kamerî Kod research track
@@ -50,7 +53,7 @@ flowchart LR
 - [ ] Arabic mansion label collation, licensed name suggestions and remaining work-specific research.
 
 Stage 11 knowledge readiness is YES, LIMITED to three Hijri cultural fragments; Asma is not automatic
-personal context. Stage 11 remains NOT STARTED; there is no full personalized Kamerî interpretation.
+personal context. Stage 11A contracts are complete; 11B is NOT STARTED. No full personalized Kamerî interpretation.
 
 ## Platform / Later
 

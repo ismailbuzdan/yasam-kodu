@@ -19,8 +19,9 @@ AI yalnız doğrulanmış sonuçları anlatır.
 Mevcut teknoloji: Next.js + TypeScript + App Router + Tailwind; FastAPI + Python + Pydantic;
 offline IANA timezone çözümlemesi için timezonefinder, zoneinfo ve tzdata. Deterministik backend;
 doğum profili, geocoding, tarihsel timezone, Astrology, Numerology, Human Design, Unified Life Code
-ve ayrı bounded Kamerî mechanical/knowledge katmanlarını içerir. Stage 11 AI interpretation ve
-Stage 12 report/PDF henüz başlamamıştır. Kamerî knowledge readiness yalnız üç kaynaklı Hicrî kültürel
+ve ayrı bounded Kamerî mechanical/knowledge katmanlarını içerir. Stage 11 IN PROGRESS: 11A mimari,
+projection ve typed contract tamamlandı; provider uygulaması 11B ve Stage 12 report/PDF başlamadı.
+Kamerî knowledge readiness yalnız üç kaynaklı Hicrî kültürel
 parçada sınırlıdır; hesaplama ve yorum ayrımı korunur.
 
 Başlangıç noktaları: [[01_PRODUCT_VISION]], [[02_ARCHITECTURE]], [[03_ROADMAP]],

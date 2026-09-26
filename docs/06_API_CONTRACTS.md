@@ -8,6 +8,9 @@ tags:
 This is a summary; code schemas are the contract source. Planned endpoints are not implemented.
 Related boundaries and ownership: [[02_ARCHITECTURE]] and [[05_DECISIONS]].
 
+Stage 11A adds internal interpretation schemas/projection only, documented in [[08_AI_INTERPRETATION]].
+There is no interpretation endpoint; existing Life Code/Kamerî responses and routes are unchanged.
+
 ## `POST /api/v1/kameri/calculate`
 
 Required JSON fields are strict `local_date` (`YYYY-MM-DD`, 1800–2100), aware zero-offset

@@ -5,6 +5,19 @@ tags:
 
 # Test Strategy
 
+## Stage 11A interpretation contracts
+
+`test_interpretation_contracts.py`: 68 new synthetic tests qualify the detached symbolic allowlist,
+private-field exclusion, metadata/instruction rejection, frozen snapshots, exact copied values,
+repeatability/no engine or network calls, explicit personal-year opt-in/nulls, all depth contracts,
+required Premium sections, missing data, unsupported timeline, reference binding, cross-system kinds,
+Kamerî canonical claims/citations/abstention, static errors and closed JSON schemas.
+No real provider or mock provider; no AI quality claims. Future 11B must test semantic factuality,
+unsafe prose, prompt injection, SDK JSON dialects, refusals and bounded retry/deadline behavior.
+Docker 2026-09-26: targeted 68; full backend **1606 passed / 2 existing warnings**; pip check clean;
+read-only HD audit **68/68**. Use the existing K2B temporary research-ledger setup for full pytest.
+Original engine/fixture/API/frontend/dependency files remain unchanged.
+
 ## Stage K2B qualified KB
 
 `test_kameri_knowledge_base.py` and `test_kameri_knowledge_selector.py`: **83 tests** enforce exact

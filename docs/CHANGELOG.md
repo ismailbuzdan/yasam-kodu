@@ -7,6 +7,16 @@ tags:
 
 Current delivery state: [[04_CURRENT_STATE]]. Milestone sequence: [[03_ROADMAP]].
 
+## 2026-09-26 — Stage 11A interpretation architecture and contracts
+
+- Added strict frozen symbolic projection and structured narrative/result contracts, depth sections,
+  Premium summaries, missing-data reasons, cross-system reference validation and canonical Kamerî gating.
+- Added a provider-neutral Protocol and static errors; documented privacy, input security, language,
+  versioning and future retry/cost/safety policies in [[08_AI_INTERPRETATION]]; ADR-021 accepted.
+- Docker: 68 new contract tests; full backend 1606 pass with two existing warnings; pip check clean;
+  HD read-only audit 68/68. No provider/SDK/key/network/AI route, calculation or existing contract changes.
+- Stage 11 IN PROGRESS (11A COMPLETE); 11B and Stage 12 NOT STARTED.
+
 ## 2026-09-26 — Project memory reconciliation
 
 - Reconciled project-memory and README wording with current `main` at

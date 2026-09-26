@@ -311,3 +311,29 @@ readiness YES, LIMITED to the three cultural fragments, not a deep personalized 
 NOT STARTED. ADR-017/018/019 remain unchanged. Tests freeze ledger admission, all-month selection,
 the abjad-66 firewall, provenance, immutability, parallel/offline use and calculation independence.
 Details: [[kameri-knowledge-base]].
+
+## ADR-021 — Interpretation Projection and Structured Output Contract
+
+**Status:** Accepted (Stage 11A, 2026-09-26).
+**Context:** Life Code's lossless internal result contains birth time and diagnostics and cannot
+be sent wholesale to a provider. A future narrator needs bounded symbolic input and typed output.
+**Decision:** Freeze an independent strict immutable interpretation-input-v1 allowlist projection.
+Copy sign/house/aspect identifiers, reduced numerology values and HD mechanical classifications;
+omit direct identity, times/location, raw positions/traces and engine metadata. No engine calls or
+changes to calculation rules. Personal year is opt-in and never implies a timeline. Existing Life
+Code exact-time admission stays unchanged; null partial-input fields never authorize invented data.
+Only canonical K2B Hijri cultural selections with citations/policy enter optional context; automatic
+Asma and research-only claims remain excluded. Use typed free/standard/premium depth, ordered section
+IDs, grounded fact references, typed absence and three cross-system categories. Premium requires
+at_a_glance and summary. Timeline is null/unavailable until a separate deterministic input contract.
+Provider-neutral async Protocol returns untrusted InterpretationContent; mandatory structural/input
+binding and future semantic checks precede application-owned metadata/disclaimer assembly into
+interpretation-result-v1. Unknown fields fail. Versions/provider/model are trusted config, not prose.
+No model-generated URLs, raw prompts or personal metadata. SYSTEM instructions and DATA stay separate;
+no diagnoses, professional directives, religious prescriptions or certain future predictions.
+**Limits:** Structure and references do not prove prose truth, safety or compliance. Detailed 11B
+quality/injection/refusal checks are required before delivery. Retry/token/deadline policies in
+[[08_AI_INTERPRETATION]] are future operational proposals, not implemented guarantees.
+**Consequences:** Stage 11A complete, Stage 11 IN PROGRESS; 11B and Stage 12 NOT STARTED. No SDK,
+provider implementation/network/key, endpoint, frontend, database, dependency or calculation change.
+Existing ADR-001/016/017/018/019/020 and Life Code/Kamerî public contracts remain unchanged.
