@@ -5,6 +5,21 @@ tags:
 
 # Test Strategy
 
+## Local Ollama provider
+
+`test_ollama_interpretation.py`: **30 offline tests** use the shared eight-case synthetic corpus and an
+injected httpx-compatible client. They cover canonical schema/request shape, `think=false`, reasoning
+exclusion, all provider selection paths, no-key config, private-field exclusion, success, connection
+refusal, timeout, 404 model-not-found, 429/5xx, empty/malformed/incomplete output, one safe repair,
+explicit availability/model health states and config bounds. One additional shared contract case covers
+the new static model-not-found code. Targeted Ollama/Gemini/NVIDIA/contracts: **212 passed**.
+
+Windows host Ollama and Docker `host.docker.internal:11434` both listed `qwen3:4b`. A real synthetic
+Free request passed through `InterpretationService -> OllamaInterpretationProvider` in 33.4 seconds;
+metadata/schema/binding passed and no thinking field reached the result. This is one local structural
+smoke, not general prose-safety or performance proof. Docker full backend: **1750 passed / 1 existing
+Starlette/httpx warning**; pip check clean, HD read-only audit **68/68**, Kamerî references **12/12**.
+
 ## Stage 11B / 11B.2 interpretation adapters/runtime
 
 `test_gemini_interpretation.py`: **77 offline tests** using synthetic symbolic cases, an injected

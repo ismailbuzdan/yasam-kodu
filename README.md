@@ -8,7 +8,7 @@ Mevcut deterministic backend; Birth Profile doğrulama, backend aracılı geocod
 Astrology, Numerology, Human Design ve Unified Life Code içerir. Kamerî Kod, Unified Life Code v1'den
 ayrı bounded bir track'tir: mekanik API'si ve dört-claim'li limited knowledge layer'ı vardır.
 Calculation != Interpretation: hesaplar deterministik motorlardan gelir; Stage 11A yorum mimarisi,
-gizlilik projection'ı ve typed kontrat ile Stage 11B Gemini ve Stage 11B.2 NVIDIA adapter/prompt/service tamamlandı.
+gizlilik projection'ı ve typed kontrat ile Gemini, NVIDIA ve lokal Ollama adapter/prompt/service tamamlandı.
 Canlı model kalitesi ve genel anlamsal güvenlik henüz doğrulanmadı; yorum endpoint'i yoktur.
 Otomatik kişisel Esmâ, doğrulanmamış menzil yorumları ve kaynaklandırılmamış dini
 yorumlar mevcut değildir.
@@ -26,6 +26,34 @@ authentication, payments ve production deployment.
 
 Endpoint alanları ve hata sınırları için [API Contracts](docs/06_API_CONTRACTS.md), hesap/provenance
 sınırları için [Current State](docs/04_CURRENT_STATE.md) ve ilgili teknik belgeler kaynak alınmalıdır.
+
+## Yerel Ollama geliştirme
+
+Ollama ek SDK olmadan yerel HTTP API üzerinden üçüncü interpretation provider olarak kullanılabilir:
+
+```powershell
+ollama pull qwen3:4b
+ollama run qwen3:4b
+```
+
+Host backend için `OLLAMA_BASE_URL=http://localhost:11434`; Docker Desktop backend için
+`OLLAMA_BASE_URL=http://host.docker.internal:11434` kullanılır. `backend/.env` içinde
+`AI_PROVIDER=ollama`, `OLLAMA_MODEL=qwen3:4b` ve uygun base URL ayarlanır. Compose varsayılan olarak
+güvenli örnek dosyayı kullanmaya devam eder; özel ignored env dosyasıyla başlatmak için:
+
+```powershell
+$env:BACKEND_ENV_FILE='./backend/.env'
+docker compose up -d backend
+```
+
+| Servis | Adres/port | Durum |
+| --- | --- | --- |
+| Frontend | `http://localhost:3000` | Compose development |
+| Backend API | `http://localhost:8000` | Compose development |
+| Ollama | `http://localhost:11434` | Windows host; port değiştirilmez |
+
+PostgreSQL, Redis veya Celery servisi mevcut değildir. Ollama availability/model kontrolü adapter'ın
+explicit health metoduyla yapılabilir; her interpretation öncesinde ek health isteği gönderilmez.
 
 ## Project Memory
 

@@ -6,9 +6,9 @@ tags:
 # AI Interpretation
 
 Stage 11A defines typed input/output contracts, a read-only privacy projection and deterministic
-validation. Stage 11B/11B.2 implement Gemini and NVIDIA adapters, a versioned prompt and bounded internal runtime.
-11A/11B/11B.2 COMPLETE; Stage 11 IN PROGRESS; 11C NEXT; Stage 12 NOT STARTED. No public AI HTTP endpoint,
-live API qualification, database or report renderer is introduced.
+validation. Stage 11B/11B.2 plus the local extension implement Gemini, NVIDIA and Ollama adapters,
+a versioned prompt and bounded internal runtime. Stage 11 IN PROGRESS; 11C NEXT; Stage 12 NOT STARTED.
+No public AI HTTP endpoint, hosted-production qualification, database or report renderer is introduced.
 This is the detailed architecture source; [[09_REPORT_DESIGN]] owns future presentation.
 
 ## Ownership
@@ -204,14 +204,14 @@ personal-year opt-in, depth/section/length enforcement, input-grounded reference
 canonical Kamerî selection/tampering and static errors. Synthetic data only; these tests validate
 contracts, not AI quality or new astronomical goldens. Full backend and pip check are required.
 
-## Stage 11B / 11B.2 runtime qualification
+## Stage 11B / 11B.2 / local Ollama runtime qualification
 
-`services/providers/gemini_interpretation.py` and `services/providers/nvidia_interpretation.py` implement the existing async Protocol;
+Gemini, NVIDIA and Ollama modules under `services/providers/` implement the existing async Protocol;
 `interpretation_service.py` supplies an injectable provider-neutral service and explicit factory.
-Only `AI_PROVIDER=gemini` or `AI_PROVIDER=nvidia` is supported, with no fallback; any other value is
+Only `AI_PROVIDER=gemini`, `nvidia` or `ollama` is supported, with no fallback; any other value is
 a static configuration error. Gemini remains first, not permanently exclusive (ADR-022); NVIDIA NIM is
-the independently configured second adapter (ADR-023). No routes import provider objects. The factory is
-lazy: calculation APIs start without either model or key. Each interpretation owns its client lifetime,
+the independently configured hosted adapter (ADR-023), and Ollama is local-only (ADR-024). No routes
+import provider objects. The factory is lazy: calculation APIs start without a selected model/key. Each interpretation owns its client lifetime,
 closes its transport and has independent retries; no global mutable client.
 
 ### SDK and configuration
@@ -237,6 +237,18 @@ Structured Output generally, but the hosted chat request reference does not docu
 JSON-mode or strict-schema fields. Therefore native strict schema support for this exact surface is
 **UNVERIFIED**: the adapter sends no undocumented schema/tool field, asks for JSON only, then strictly
 decodes and validates the same canonical local contract. It never reads or returns `reasoning_content`.
+
+Ollama also uses existing `httpx`, with no SDK/API key. Defaults are `OLLAMA_MODEL=qwen3:4b`,
+`OLLAMA_BASE_URL=http://localhost:11434` and `OLLAMA_REQUEST_TIMEOUT_SECONDS=120` (range 1..600).
+Docker Desktop uses `http://host.docker.internal:11434`; Compose keeps `.env.example` by default and
+accepts an explicit ignored file via `BACKEND_ENV_FILE`. The fixed Ollama port 11434 does not collide
+with frontend 3000 or backend 8000; this repository has no PostgreSQL, Redis or Celery service.
+`POST /api/chat` receives the same system/user separation, `stream=false`, `think=false`, temperature 0,
+the canonical `InterpretationContent` JSON Schema in `format`, and provider-adjusted `num_predict`.
+The official API separates `message.thinking` from `message.content`; only content is read. Canonical
+prose/character limits remain unchanged while 1024 extra prediction tokens cover JSON field/reference
+overhead. The explicit `/api/tags` probe returns reachable/model-present states and is never called
+automatically before interpretation. 404 maps to static model-not-found; no fallback is attempted.
 
 ### Native JSON and final validation
 
@@ -294,6 +306,13 @@ SecretStr/config validation, PII projection exclusion, ignored `reasoning_conten
 mapping, bounded retry/Retry-After, refusal, malformed JSON/schema repair and metadata. It makes no
 live request. NVIDIA live model acceptance, Turkish prose quality, provider retention/terms and semantic
 safety remain **UNVERIFIED**.
+
+`test_ollama_interpretation.py` covers the same corpus, structured `format`, `think=false`, no-key
+configuration, host/Docker URL behavior, safe errors, explicit health/model states, bounded repair and
+reasoning exclusion with injected HTTP. Windows and Docker probes found `qwen3:4b`; one real synthetic
+Free service smoke passed in 33.4 seconds. The first 800-token run objectively truncated JSON, motivating
+only the documented JSON-envelope allowance. One successful local output is not semantic-safety,
+hardware-performance or broader quality proof.
 
 Next scope is 11C only after separate authorization: typed FastAPI transport/admission, private error
 mapping, explicit consent/retention and safety qualification, dependency overrides, rate/cost controls

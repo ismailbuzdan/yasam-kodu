@@ -9,7 +9,7 @@ ErrorCode = Literal[
     "interpretation_invalid_input", "interpretation_timeout", "interpretation_unavailable",
     "interpretation_invalid_response", "interpretation_schema_mismatch",
     "interpretation_rate_limited", "interpretation_refused", "interpretation_refusal",
-    "interpretation_configuration_error",
+    "interpretation_configuration_error", "interpretation_model_not_found",
 ]
 MESSAGES: dict[ErrorCode, str] = {
     "interpretation_invalid_input": "Interpretation input is unavailable or invalid.",
@@ -22,6 +22,7 @@ MESSAGES: dict[ErrorCode, str] = {
     # Preserve the 11A internal spelling; new adapters emit the requested canonical code.
     "interpretation_refusal": "Interpretation could not be provided.",
     "interpretation_configuration_error": "Interpretation configuration is unavailable or invalid.",
+    "interpretation_model_not_found": "The configured interpretation model is unavailable.",
 }
 
 

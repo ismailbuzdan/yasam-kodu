@@ -59,6 +59,14 @@ def create_interpretation_service(settings: Settings) -> InterpretationService:
         provider = NvidiaInterpretationProvider(config)
         provider_name = "nvidia"
         config_version = NVIDIA_CONFIG_VERSION
+    elif settings.ai_provider == "ollama":
+        from app.services.providers.ollama_interpretation import (
+            OLLAMA_CONFIG_VERSION, OllamaConfig, OllamaInterpretationProvider,
+        )
+        config = OllamaConfig.from_settings(settings)
+        provider = OllamaInterpretationProvider(config)
+        provider_name = "ollama"
+        config_version = OLLAMA_CONFIG_VERSION
     else:
         raise InterpretationError("interpretation_configuration_error")
     if provider_name == "gemini":

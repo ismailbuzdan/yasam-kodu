@@ -7,6 +7,19 @@ tags:
 
 Current delivery state: [[04_CURRENT_STATE]]. Milestone sequence: [[03_ROADMAP]].
 
+## 2026-09-27 — Local Ollama interpretation provider
+
+- Added `AI_PROVIDER=ollama` with existing-httpx `/api/chat`, configurable `qwen3:4b` model/base URL/
+  local timeout, canonical structured output and strict final validation. Gemini and NVIDIA are unchanged.
+- Disabled model thinking with the official `think=false` control and ignored the separate `thinking`
+  response field. Added static model-not-found handling, bounded failures and an explicit `/api/tags`
+  availability/model probe; no API key or automatic fallback.
+- Added 30 offline adapter tests plus one shared static-error case. Local Docker smoke passed for the
+  synthetic Free fixture in 33.4 seconds with no reasoning exposure. Docker full backend **1750 passed /
+  1 existing warning**, pip check clean, HD **68/68** and Kamerî **12/12**.
+- Added host/Docker Desktop URL guidance, unchanged Ollama port 11434 and opt-in Compose env-file
+  selection. No public route, frontend, deterministic engine or new dependency. ADR-024 accepted.
+
 ## 2026-09-27 — Stage 11B.2 NVIDIA NIM second interpretation provider
 
 - Added direct existing-httpx NVIDIA NIM adapter behind the unchanged InterpretationProvider Protocol;

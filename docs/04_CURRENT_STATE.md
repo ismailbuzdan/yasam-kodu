@@ -7,7 +7,7 @@ tags:
 
 **Last updated:** 2026-09-27
 **Stage 11B starting baseline:** clean `main`/`origin/main` at `a72caa8640945b4d9682437a0a5cf4a5caad240a`.
-**Delivery status:** Stages 1–10 COMPLETE; Stage 11 IN PROGRESS (11A/11B/11B.2 COMPLETE); Stage 12 NOT STARTED.
+**Delivery status:** Stages 1–10 COMPLETE; Stage 11 IN PROGRESS (11A/11B/11B.2 + local Ollama COMPLETE); Stage 12 NOT STARTED.
 **Kamerî track:** K0, K1A, K1B, K2A and K2B COMPLETE; bounded mechanical API and limited KB available.
 **Next step:** Separately scope Stage 11C HTTP/admission and public-delivery controls. Kamerî readiness is
 YES, LIMITED to the three qualified Hijri cultural fragments; it does not admit automatic personal Esmâ,
@@ -26,6 +26,22 @@ After coding:
 - Update this file, decisions and changelog when applicable; run relevant tests.
 
 ## Completed
+
+**Local Ollama interpretation provider (2026-09-27):** Added `AI_PROVIDER=ollama` behind the unchanged
+provider-neutral service, using existing `httpx`, `POST /api/chat`, canonical JSON Schema, `stream=false`
+and `think=false`. Defaults are `qwen3:4b`, host `http://localhost:11434` and a separately configurable
+120-second local timeout; Docker Desktop uses `http://host.docker.internal:11434`. No API key, fallback,
+public route, frontend or deterministic calculation change. An explicit `/api/tags` health method
+distinguishes unreachable service, missing model and available model without probing every request.
+Thinking is a separate ignored field; only final `message.content` is parsed and strictly revalidated.
+The local Docker smoke passed with the synthetic `exact_time_astrology` Free fixture in 33.4 seconds;
+reasoning was not exposed. Initial 800-token generation truncated JSON, so Ollama receives a documented
+1024-token structural-envelope allowance while canonical prose/character limits remain unchanged.
+Ports are frontend 3000, backend 8000 and Ollama 11434, with no collision or PostgreSQL/Redis/Celery.
+Docker verification: Ollama **30**, all adapters/contracts **212**, full backend **1750 passed / 1
+existing Starlette/httpx warning**; pip check clean, HD audit **68/68**, Kamerî evidence **12/12** and
+both default/selected-env Compose configs valid. See ADR-024 and [[08_AI_INTERPRETATION]]. Stage 11C
+and Stage 12 remain NOT STARTED.
 
 **Stage 11B.2 (2026-09-27):** Added NVIDIA NIM as the optional second provider without removing
 Gemini. `AI_PROVIDER` now selects only `gemini` or `nvidia`; unsupported/misconfigured values fail
@@ -212,5 +228,6 @@ Official splenic and 3/5 examples remain absent; structural coverage is sufficie
 **Current next step:** Stage 11C — separately reviewed HTTP/admission and safety-delivery controls. Its Kamerî
 input remains limited to K2B's three cultural fragments; automatic name suggestions, mansion name
 publication and broader interpretation require additional qualification. Stages 1–10, including
-Unified Life Code API, are complete. Stage 11 is IN PROGRESS; 11A/11B/11B.2 COMPLETE, 11C NEXT and Stage 12 PDF NOT STARTED. No database work;
+Unified Life Code API, are complete. Stage 11 is IN PROGRESS; 11A/11B/11B.2 and local Ollama COMPLETE,
+11C NEXT and Stage 12 PDF NOT STARTED. No database work;
 engine conventions, original goldens and all 68 HD artifacts are unchanged.

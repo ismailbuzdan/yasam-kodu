@@ -35,6 +35,8 @@ flowchart LR
     (ADR-022). Live prose quality/safety is not proven; no public endpoint.
   - [x] Stage 11B.2 — NVIDIA NIM second provider with the same contracts, JSON-only request and offline
     qualification (ADR-023). No provider fallback or public endpoint.
+  - [x] Local Ollama extension — qwen3:4b adapter, structured output, explicit health probe and local
+    Docker/host qualification (ADR-024). No public endpoint or automatic fallback.
   - [ ] Stage 11C — NEXT: separately authorized HTTP/admission contract and public-delivery controls.
 - [ ] Stage 12 — Report / PDF
 
@@ -57,7 +59,8 @@ flowchart LR
 - [ ] Arabic mansion label collation, licensed name suggestions and remaining work-specific research.
 
 Stage 11 knowledge readiness is YES, LIMITED to three Hijri cultural fragments; Asma is not automatic
-personal context. Stage 11A/11B/11B.2 are complete; 11C is NEXT. No full personalized Kamerî interpretation.
+personal context. Stage 11A/11B/11B.2 plus the local Ollama extension are complete; 11C is NEXT.
+No full personalized Kamerî interpretation.
 
 ## Platform / Later
 

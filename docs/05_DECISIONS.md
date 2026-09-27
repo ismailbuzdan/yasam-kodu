@@ -384,3 +384,26 @@ contract without adding an SDK, weakening validation or exposing provider intern
 semantic safety, provider retention/terms or native strict-schema behavior. No live call is implied.
 **Consequences:** 11B.2 is internal only. Gemini behavior remains covered; no endpoint, frontend,
 database, calculation engine, evidence corpus or Stage 11C delivery control changes.
+
+## ADR-024 — Local Ollama Interpretation Provider
+
+**Status:** Accepted (local Stage 11 extension, 2026-09-27).
+**Context:** A private local provider should reuse ADR-021 contracts without API keys, calculation,
+frontend exposure or provider fallback. Docker `localhost` addresses its own container, while Windows
+Ollama remains on host port 11434. Qwen3 can emit a separate thinking trace.
+**Decision:** Add `AI_PROVIDER=ollama` behind the unchanged Protocol using existing `httpx` and Ollama
+`POST /api/chat`. Default to `qwen3:4b`, host `http://localhost:11434`, configurable 1..600 second timeout;
+Docker Desktop config uses `http://host.docker.internal:11434`. Keep port 11434. Send the shared trusted
+prompt and symbolic JSON only, `stream=false`, `think=false`, temperature 0 and canonical JSON Schema
+as `format`; parse only `message.content`, never `message.thinking`. Retain strict duplicate-safe JSON,
+Pydantic and input-binding validation. Add 1024 prediction tokens solely for JSON envelope overhead;
+existing prose limits remain authoritative. Map 404 to static model-not-found and retain bounded shared
+retry/repair with no fallback. Provide an explicit `/api/tags` availability/model probe, not a per-request
+preflight. Compose defaults remain unchanged while `BACKEND_ENV_FILE` enables a private ignored env file.
+**Reason:** Direct local HTTP keeps dependency/licensing surface unchanged and preserves calculation/
+interpretation separation, while official structured-output and thinking fields avoid fragile parsing.
+**Limits:** Local availability depends on operator installation, model download, hardware and correct
+host-vs-container URL. One 33.4-second synthetic Free smoke proves only this machine's structural path;
+it does not establish arbitrary Turkish prose safety, Standard/Premium latency or production capacity.
+**Consequences:** Gemini/NVIDIA and all deterministic/public contracts remain unchanged. No public
+interpretation endpoint, frontend, database, new dependency, automatic fallback or Stage 11C work.
