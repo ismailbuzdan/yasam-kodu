@@ -16,6 +16,9 @@ class Settings(BaseSettings):
     ai_provider: str = "gemini"
     gemini_api_key: SecretStr = Field(default=SecretStr(""), repr=False)
     gemini_model: str = ""
+    nvidia_api_key: SecretStr = Field(default=SecretStr(""), repr=False)
+    nvidia_model: str = "openai/gpt-oss-20b"
+    nvidia_base_url: str = "https://integrate.api.nvidia.com/v1"
     ai_request_timeout_seconds: float = Field(default=60.0, ge=1, le=120, allow_inf_nan=False)
     ai_max_retries: int = Field(default=2, ge=0, le=2)
 

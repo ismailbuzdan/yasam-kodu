@@ -361,3 +361,26 @@ delivery policy and adversarial evaluation before public exposure; see [[08_AI_I
 **Consequences:** 11B internal adapter/service complete after regression qualification; 11C transport
 requires separate authorization and those delivery controls. No OpenAI adapter, route, frontend,
 calculation-engine, Life Code/Kamerî API or original-evidence changes. Prior ADRs remain unchanged.
+
+## ADR-023 — NVIDIA NIM Second Interpretation Provider
+
+**Status:** Accepted (Stage 11B.2, 2026-09-27).
+**Context:** ADR-021/022 require provider-independent interpretation, strict project-owned validation and
+no ambient fallback. A second independently configured hosted option is needed without changing the
+trusted Life Code projection or public API boundary.
+**Decision:** Add `AI_PROVIDER=nvidia` alongside `gemini`, selecting NVIDIA NIM hosted chat through the
+existing `httpx` dependency at `https://integrate.api.nvidia.com/v1/chat/completions`, initially model
+`openai/gpt-oss-20b`. Keys remain backend-only `SecretStr` configuration. Send the shared
+`life-code-interpretation-v1` system instruction and one structured input message with `stream=false`;
+do not use tools or undocumented `response_format` fields. The hosted reference documents chat inputs
+but not exact JSON-mode/strict-schema request fields, so native schema enforcement is UNVERIFIED and
+canonical duplicate-safe JSON, Pydantic and input-binding validation remains mandatory locally.
+Map safe HTTP/transport/refusal outcomes to the existing static taxonomy; retry only bounded transient
+failures under the shared deadline. Ignore `reasoning_content` completely. Unsupported provider/key/model
+configuration fails closed with no fallback.
+**Reason:** A separately configured, OpenAI-compatible transport can exercise the existing neutral
+contract without adding an SDK, weakening validation or exposing provider internals.
+**Limits:** Offline structural tests do not qualify live NVIDIA model acceptance, Turkish prose quality,
+semantic safety, provider retention/terms or native strict-schema behavior. No live call is implied.
+**Consequences:** 11B.2 is internal only. Gemini behavior remains covered; no endpoint, frontend,
+database, calculation engine, evidence corpus or Stage 11C delivery control changes.

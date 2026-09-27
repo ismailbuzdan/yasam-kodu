@@ -245,14 +245,14 @@ class InterpretationContent(Contract):
 
 
 VersionId = Annotated[str, StringConstraints(min_length=1, max_length=80,
-                                            pattern=r"^[a-zA-Z0-9][a-zA-Z0-9._-]*$")]
+                                            pattern=r"^[a-zA-Z0-9][a-zA-Z0-9._/-]*$")]
 
 
 class InterpretationMetadata(Contract):
     """Application-owned provenance, not provider-generated content or personal data."""
     prompt_version: VersionId
     config_version: VersionId
-    provider: Literal["gemini", "openai", "template"]
+    provider: Literal["gemini", "nvidia", "openai", "template"]
     model: VersionId
     input_schema_version: Literal["interpretation-input-v1"] = "interpretation-input-v1"
 

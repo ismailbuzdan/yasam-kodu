@@ -5,7 +5,7 @@ tags:
 
 # Test Strategy
 
-## Stage 11B Gemini adapter/runtime
+## Stage 11B / 11B.2 interpretation adapters/runtime
 
 `test_gemini_interpretation.py`: **77 offline tests** using synthetic symbolic cases, an injected
 SDK client and the real pinned google-genai SDK over httpx.MockTransport. No live credentials/network
@@ -15,7 +15,13 @@ refusal, invalid JSON/schema, one repair, shared retry budget, Retry-After/deadl
 client cleanup are covered. The unchanged 11A suite now exercises 70 cases because its error taxonomy
 parameterization includes two new static codes. Combined targeted result: **147 passed**.
 
-Docker 2026-09-26: **full backend 1685 passed / 1 existing Starlette/httpx warning**;
+`test_nvidia_interpretation.py`: offline injected-httpx NVIDIA NIM coverage for the same eight synthetic
+cases, provider selection/no fallback, config/SecretStr, request privacy, ignored reasoning content,
+safe HTTP mapping, refusal, JSON/schema repair and bounded retries. No NVIDIA credential or network is
+needed. Combined adapter/contract targeted result: **181 passed** after Stage 11B.2 (pending final full
+suite qualification).
+
+Docker 2026-09-27: **full backend 1719 passed / 1 existing Starlette/httpx warning**;
 pip check clean; HD read-only evidence audit **68/68**; Kamerî references **12/12** separately rerun.
 The prior AnyIO alias warning did not recur in the rebuilt dependency environment. No frontend changes,
 so frontend tests were not rerun. No live API smoke was run; model acceptance/quality/prose safety

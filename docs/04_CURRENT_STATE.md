@@ -5,9 +5,9 @@ tags:
 
 # Current State
 
-**Last updated:** 2026-09-26
+**Last updated:** 2026-09-27
 **Stage 11B starting baseline:** clean `main`/`origin/main` at `a72caa8640945b4d9682437a0a5cf4a5caad240a`.
-**Delivery status:** Stages 1–10 COMPLETE; Stage 11 IN PROGRESS (11A/11B COMPLETE); Stage 12 NOT STARTED.
+**Delivery status:** Stages 1–10 COMPLETE; Stage 11 IN PROGRESS (11A/11B/11B.2 COMPLETE); Stage 12 NOT STARTED.
 **Kamerî track:** K0, K1A, K1B, K2A and K2B COMPLETE; bounded mechanical API and limited KB available.
 **Next step:** Separately scope Stage 11C HTTP/admission and public-delivery controls. Kamerî readiness is
 YES, LIMITED to the three qualified Hijri cultural fragments; it does not admit automatic personal Esmâ,
@@ -26,6 +26,20 @@ After coding:
 - Update this file, decisions and changelog when applicable; run relevant tests.
 
 ## Completed
+
+**Stage 11B.2 (2026-09-27):** Added NVIDIA NIM as the optional second provider without removing
+Gemini. `AI_PROVIDER` now selects only `gemini` or `nvidia`; unsupported/misconfigured values fail
+closed with a static configuration error and no fallback. NVIDIA uses direct existing `httpx` against
+`https://integrate.api.nvidia.com/v1/chat/completions`, initially `openai/gpt-oss-20b`, with backend-only
+SecretStr config. Its hosted chat reference documents system messages, stream=false, max_tokens,
+reasoning effort and tools; it does not explicitly document `response_format`/strict JSON Schema for
+this surface. Thus adapter uses shared `life-code-interpretation-v1` instructions and JSON-only output,
+then duplicate-key-safe JSON decoding plus unchanged strict Pydantic/input-reference validation.
+`reasoning_content` is ignored, never output/logged. No dependency was added. Docker offline: 34 NVIDIA,
+77 Gemini and 70 contract tests, targeted **181 passed**; full backend **1719 passed / 1 existing
+Starlette/httpx warning**, pip check clean, HD audit **68/68** and Kamerî evidence **12/12**. Live NVIDIA
+smoke was not run; hosted native JSON-mode/strict-schema support and Turkish prose quality remain UNVERIFIED. Stage 11B.2 complete;
+11C/12 NOT STARTED. Existing Gemini live history remains unchanged. See ADR-023 and [[08_AI_INTERPRETATION]].
 
 **Stage 11B (2026-09-26):** Gemini adapter behind the unchanged provider Protocol, injectable service,
 life-code-interpretation-v1 prompt, strict content/result validation and backend-only configuration.
@@ -198,5 +212,5 @@ Official splenic and 3/5 examples remain absent; structural coverage is sufficie
 **Current next step:** Stage 11C — separately reviewed HTTP/admission and safety-delivery controls. Its Kamerî
 input remains limited to K2B's three cultural fragments; automatic name suggestions, mansion name
 publication and broader interpretation require additional qualification. Stages 1–10, including
-Unified Life Code API, are complete. Stage 11 is IN PROGRESS; 11A/11B COMPLETE, 11C NEXT and Stage 12 PDF NOT STARTED. No database work;
+Unified Life Code API, are complete. Stage 11 is IN PROGRESS; 11A/11B/11B.2 COMPLETE, 11C NEXT and Stage 12 PDF NOT STARTED. No database work;
 engine conventions, original goldens and all 68 HD artifacts are unchanged.

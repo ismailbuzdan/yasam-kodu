@@ -282,7 +282,7 @@ def test_tampered_input_and_invalid_depth_cannot_inject(symbolic):
 
 
 @pytest.mark.parametrize("field,value", [("max_retries", 3), ("max_retries", -1),
-    ("timeout_seconds", 0.0), ("timeout_seconds", float("inf")), ("model", "private/name")])
+    ("timeout_seconds", 0.0), ("timeout_seconds", float("inf")), ("model", "private model")])
 def test_config_caps(field, value):
     args = {"model": "synthetic-model", "api_key": SecretStr("test"), field: value}
     with pytest.raises(ValidationError):

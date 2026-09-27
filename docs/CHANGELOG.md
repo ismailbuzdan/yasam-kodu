@@ -7,6 +7,19 @@ tags:
 
 Current delivery state: [[04_CURRENT_STATE]]. Milestone sequence: [[03_ROADMAP]].
 
+## 2026-09-27 — Stage 11B.2 NVIDIA NIM second interpretation provider
+
+- Added direct existing-httpx NVIDIA NIM adapter behind the unchanged InterpretationProvider Protocol;
+  Gemini remains available. `AI_PROVIDER` accepts exactly `gemini` or `nvidia`, without fallback.
+- Added backend-only NVIDIA SecretStr/model/base-URL settings, JSON-only hosted chat requests and strict
+  unchanged local JSON/Pydantic/input-binding validation. `reasoning_content`, raw failures and secrets
+  are never returned or logged. No dependency, route, frontend or deterministic engine changed.
+- Added 34 offline synthetic injected-client tests; combined NVIDIA/Gemini/contract target is **181 passed**;
+  Docker full backend **1719 passed / 1 existing warning**, pip check clean, HD **68/68** and Kamerî **12/12**.
+  Native JSON-mode/strict-schema support on NVIDIA's hosted chat endpoint, live prose quality, retention
+  and semantic safety remain UNVERIFIED; no NVIDIA live smoke was run.
+- ADR-023 records the bounded second-provider decision. Stage 11B.2 COMPLETE; Stage 11C/Stage 12 NOT STARTED.
+
 ## 2026-09-26 — Stage 11B Gemini interpretation provider
 
 - Added official google-genai 2.25.0 (Apache-2.0), explicit backend settings, scoped async adapter and

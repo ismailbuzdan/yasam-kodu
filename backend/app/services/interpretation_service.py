@@ -44,12 +44,25 @@ class InterpretationService:
 
 
 def create_interpretation_service(settings: Settings) -> InterpretationService:
-    from app.services.providers.gemini_interpretation import GeminiInterpretationProvider, GeminiConfig
     from app.services.interpretation_prompts import CONFIG_VERSION, PROMPT_VERSION
 
-    if settings.ai_provider != "gemini":
+    if settings.ai_provider == "gemini":
+        from app.services.providers.gemini_interpretation import GeminiInterpretationProvider, GeminiConfig
+        config = GeminiConfig.from_settings(settings)
+        provider = GeminiInterpretationProvider(config)
+        provider_name = "gemini"
+    elif settings.ai_provider == "nvidia":
+        from app.services.providers.nvidia_interpretation import (
+            NVIDIA_CONFIG_VERSION, NvidiaConfig, NvidiaInterpretationProvider,
+        )
+        config = NvidiaConfig.from_settings(settings)
+        provider = NvidiaInterpretationProvider(config)
+        provider_name = "nvidia"
+        config_version = NVIDIA_CONFIG_VERSION
+    else:
         raise InterpretationError("interpretation_configuration_error")
-    config = GeminiConfig.from_settings(settings)
-    return InterpretationService(GeminiInterpretationProvider(config), InterpretationMetadata(
-        provider="gemini", model=config.model, prompt_version=PROMPT_VERSION,
-        config_version=CONFIG_VERSION))
+    if provider_name == "gemini":
+        config_version = CONFIG_VERSION
+    return InterpretationService(provider, InterpretationMetadata(
+        provider=provider_name, model=config.model, prompt_version=PROMPT_VERSION,
+        config_version=config_version))

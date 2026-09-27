@@ -6,8 +6,8 @@ tags:
 # AI Interpretation
 
 Stage 11A defines typed input/output contracts, a read-only privacy projection and deterministic
-validation. Stage 11B implements the Gemini adapter, versioned prompt and bounded internal runtime.
-11A/11B COMPLETE; Stage 11 IN PROGRESS; 11C NEXT; Stage 12 NOT STARTED. No public AI HTTP endpoint,
+validation. Stage 11B/11B.2 implement Gemini and NVIDIA adapters, a versioned prompt and bounded internal runtime.
+11A/11B/11B.2 COMPLETE; Stage 11 IN PROGRESS; 11C NEXT; Stage 12 NOT STARTED. No public AI HTTP endpoint,
 live API qualification, database or report renderer is introduced.
 This is the detailed architecture source; [[09_REPORT_DESIGN]] owns future presentation.
 
@@ -20,7 +20,7 @@ flowchart LR
   H[Human Design] --> L
   L --> P[Allowlist interpretation projection]
   K[Kameri K2B cultural selection] --> P
-  P --> V[11B Gemini adapter and versioned prompt]
+  P --> V[11B Gemini/NVIDIA adapters and versioned prompt]
   V --> C[Shape and input-reference validation]
   C --> S[Future semantic and safety evaluation]
   S --> R[Structured interpretation result]
@@ -143,8 +143,8 @@ prevent a model from turning a correctly cited cultural fact into a personal/rel
 ## Provider boundary, failures and retries
 
 `services/interpretation_models.py::InterpretationProvider` is a small async Python Protocol:
-`interpret(input, *, depth, language) -> InterpretationContent`. The Gemini adapter owns SDK-specific
-translation; no SDK object enters the domain. The service validates shape and input binding, then
+`interpret(input, *, depth, language) -> InterpretationContent`. Provider adapters own their HTTP/SDK-specific
+translation; no provider object enters the domain. The service validates shape and input binding, then
 attaches trusted metadata/disclaimer to `InterpretationResult`. Structural checks are not a general
 prose-safety classifier. 11B adds construction and invocation without changing the Protocol.
 
@@ -204,14 +204,15 @@ personal-year opt-in, depth/section/length enforcement, input-grounded reference
 canonical Kamerî selection/tampering and static errors. Synthetic data only; these tests validate
 contracts, not AI quality or new astronomical goldens. Full backend and pip check are required.
 
-## Stage 11B runtime qualification
+## Stage 11B / 11B.2 runtime qualification
 
-`services/providers/gemini_interpretation.py` implements the existing async Protocol;
+`services/providers/gemini_interpretation.py` and `services/providers/nvidia_interpretation.py` implement the existing async Protocol;
 `interpretation_service.py` supplies an injectable provider-neutral service and explicit factory.
-Only AI_PROVIDER=gemini is supported now, without fallback; future adapters can use the same Protocol.
-Gemini is the first, not permanently exclusive provider (ADR-022). No routes import SDK objects.
-The factory is lazy: calculation APIs start without a Gemini model or key. Each interpretation owns
-its client lifetime, closes sync/async transports and has independent retries; no global mutable client.
+Only `AI_PROVIDER=gemini` or `AI_PROVIDER=nvidia` is supported, with no fallback; any other value is
+a static configuration error. Gemini remains first, not permanently exclusive (ADR-022); NVIDIA NIM is
+the independently configured second adapter (ADR-023). No routes import provider objects. The factory is
+lazy: calculation APIs start without either model or key. Each interpretation owns its client lifetime,
+closes its transport and has independent retries; no global mutable client.
 
 ### SDK and configuration
 
@@ -225,6 +226,17 @@ Never commit actual keys; no NEXT_PUBLIC fields. Existing Compose reads .env.exa
 configuration needs a private environment override; do not put a key into the example file.
 The adapter explicitly chooses the Developer API endpoint and v1beta, disables ambient proxy selection,
 and passes its configured key rather than accepting another GOOGLE_* provider/key selection.
+
+NVIDIA NIM uses existing `httpx`; no new package or SDK was added. `NVIDIA_API_KEY` is an empty
+`SecretStr`, `NVIDIA_MODEL=openai/gpt-oss-20b`, and
+`NVIDIA_BASE_URL=https://integrate.api.nvidia.com/v1` by default. Its request is
+`POST /chat/completions` with `stream=false`, a trusted system message and one structured user message.
+The official hosted [GPT-OSS 20B chat reference](https://docs.api.nvidia.com/nim/reference/openai-gpt-oss-20b-infer)
+documents that endpoint, model, system/user messages and bounded `max_tokens`. Its model page advertises
+Structured Output generally, but the hosted chat request reference does not document `response_format`,
+JSON-mode or strict-schema fields. Therefore native strict schema support for this exact surface is
+**UNVERIFIED**: the adapter sends no undocumented schema/tool field, asks for JSON only, then strictly
+decodes and validates the same canonical local contract. It never reads or returns `reasoning_content`.
 
 ### Native JSON and final validation
 
@@ -275,6 +287,13 @@ refusals, malformed JSON, bounded retries/repair/Retry-After, deadlines/cancella
 static errors and metadata. `fixtures/interpretation_cases.json` holds eight synthetic symbolic cases,
 not real-person birth data or golden prose. Existing 11A privacy/projection tests remain mandatory.
 Full pytest, pip check, HD read-only audit and Kamerî evidence must pass before commit.
+
+`test_nvidia_interpretation.py` uses the same eight synthetic symbolic cases and an injected
+httpx-compatible client. It verifies endpoint/request shape, both provider selections, no fallback,
+SecretStr/config validation, PII projection exclusion, ignored `reasoning_content`, 401/403/408/429/5xx
+mapping, bounded retry/Retry-After, refusal, malformed JSON/schema repair and metadata. It makes no
+live request. NVIDIA live model acceptance, Turkish prose quality, provider retention/terms and semantic
+safety remain **UNVERIFIED**.
 
 Next scope is 11C only after separate authorization: typed FastAPI transport/admission, private error
 mapping, explicit consent/retention and safety qualification, dependency overrides, rate/cost controls
