@@ -5,6 +5,19 @@ tags:
 
 # Test Strategy
 
+## Groq provider
+
+`test_groq_interpretation.py`: **43 offline tests** use the shared eight-case synthetic corpus and an
+injected httpx-compatible client. They cover env/default config, factory/no fallback, Authorization
+privacy, exact endpoint/model, documented strict JSON Schema, hidden reasoning response, success,
+HTTP/transport/timeout mapping, bounded Retry-After, malformed/duplicate JSON, schema mismatch,
+one safe repair, refusal, input binding and Free depth enforcement. They also freeze Groq Free's 2048
+wire ceiling while proving canonical Free content limits and Premium behavior are unchanged. Combined
+Groq/Ollama/NVIDIA/Gemini/contracts: **257 passed**; Docker full backend **1795 passed / 1 existing
+warning** and `pip check` is clean. The one permitted private-key qualification smoke
+returned HTTP 200, needed no repair and passed JSON, Pydantic, depth and input-binding checks. One
+synthetic structural qualification does not prove prose quality or semantic safety.
+
 ## Local Ollama provider
 
 `test_ollama_interpretation.py`: **30 offline tests** use the shared eight-case synthetic corpus and an

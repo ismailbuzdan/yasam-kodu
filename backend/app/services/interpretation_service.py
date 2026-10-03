@@ -67,6 +67,14 @@ def create_interpretation_service(settings: Settings) -> InterpretationService:
         provider = OllamaInterpretationProvider(config)
         provider_name = "ollama"
         config_version = OLLAMA_CONFIG_VERSION
+    elif settings.ai_provider == "groq":
+        from app.services.providers.groq_interpretation import (
+            GROQ_CONFIG_VERSION, GroqConfig, GroqInterpretationProvider,
+        )
+        config = GroqConfig.from_settings(settings)
+        provider = GroqInterpretationProvider(config)
+        provider_name = "groq"
+        config_version = GROQ_CONFIG_VERSION
     else:
         raise InterpretationError("interpretation_configuration_error")
     if provider_name == "gemini":

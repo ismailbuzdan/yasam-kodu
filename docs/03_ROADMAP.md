@@ -37,6 +37,10 @@ flowchart LR
     qualification (ADR-023). No provider fallback or public endpoint.
   - [x] Local Ollama extension — qwen3:4b adapter, structured output, explicit health probe and local
     Docker/host qualification (ADR-024). No public endpoint or automatic fallback.
+  - [x] Groq extension — openai/gpt-oss-120b adapter complete with strict JSON Schema request,
+    hidden reasoning response and unchanged local validation (ADR-025). Free wire generation ceiling
+    2048 leaves JSON-envelope room without changing canonical prose limits; one synthetic live structural
+    qualification passed. No SDK, fallback or public endpoint.
   - [ ] Stage 11C — NEXT: separately authorized HTTP/admission contract and public-delivery controls.
 - [ ] Stage 12 — Report / PDF
 
@@ -59,7 +63,8 @@ flowchart LR
 - [ ] Arabic mansion label collation, licensed name suggestions and remaining work-specific research.
 
 Stage 11 knowledge readiness is YES, LIMITED to three Hijri cultural fragments; Asma is not automatic
-personal context. Stage 11A/11B/11B.2 plus the local Ollama extension are complete; 11C is NEXT.
+personal context. Stage 11A/11B/11B.2 plus Ollama and Groq are complete;
+11C is NEXT and has not started.
 No full personalized Kamerî interpretation.
 
 ## Platform / Later

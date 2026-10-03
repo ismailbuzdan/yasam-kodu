@@ -19,6 +19,8 @@ class Settings(BaseSettings):
     nvidia_api_key: SecretStr = Field(default=SecretStr(""), repr=False)
     nvidia_model: str = "openai/gpt-oss-20b"
     nvidia_base_url: str = "https://integrate.api.nvidia.com/v1"
+    groq_api_key: SecretStr = Field(default=SecretStr(""), repr=False)
+    groq_model: str = "openai/gpt-oss-120b"
     ollama_model: str = "qwen3:4b"
     ollama_base_url: str = "http://localhost:11434"
     ollama_request_timeout_seconds: float = Field(default=120.0, ge=1, le=600, allow_inf_nan=False)

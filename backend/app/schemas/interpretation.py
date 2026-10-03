@@ -252,7 +252,7 @@ class InterpretationMetadata(Contract):
     """Application-owned provenance, not provider-generated content or personal data."""
     prompt_version: VersionId
     config_version: VersionId
-    provider: Literal["gemini", "nvidia", "ollama", "openai", "template"]
+    provider: Literal["gemini", "nvidia", "ollama", "groq", "openai", "template"]
     model: VersionId
     input_schema_version: Literal["interpretation-input-v1"] = "interpretation-input-v1"
 

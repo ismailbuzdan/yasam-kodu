@@ -22,7 +22,7 @@ flowchart LR
   F --> H
   G --> H
   H --> P[COMPLETED 11A: Privacy Projection and Contracts]
-  P --> I[COMPLETED 11B: Gemini Adapter and Structural Validation]
+  P --> I[COMPLETED: Gemini NVIDIA Ollama Groq Adapters and Structural Validation]
   I --> J[PLANNED: Web Report / PDF]
   A -. optional bounded track .-> K[COMPLETED: Kamerî Mechanical API]
   K --> L[COMPLETED: Limited Kamerî KB]
@@ -41,7 +41,7 @@ flowchart LR
 | Unified Life Code | Frozen internal envelope + composed public engine schemas | Stages 10A/10B completed; [[life-code]] |
 | Database | PostgreSQL | planned |
 | Kamerî Kod | Separate deterministic mechanical API + four-claim bounded internal KB | K0–K2B complete; not part of Life Code v1 |
-| AI | Typed symbolic input/output, provider Protocol, Gemini adapter/prompt/service; no endpoint | Stage 11 IN PROGRESS, 11A/11B complete; structural checks are not prose-safety proof; Kamerî limited to three cultural fragments |
+| AI | Typed symbolic input/output, provider Protocol, Gemini/NVIDIA/Ollama/Groq adapters; no endpoint | Stage 11 IN PROGRESS; structural checks are not prose-safety proof; Kamerî limited to three cultural fragments |
 | PDF | shared report JSON source | planned |
 
 Frontend never calls a geocoding provider directly. The timezone layer takes resolved coordinates

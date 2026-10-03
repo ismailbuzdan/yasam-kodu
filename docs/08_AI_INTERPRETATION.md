@@ -6,7 +6,7 @@ tags:
 # AI Interpretation
 
 Stage 11A defines typed input/output contracts, a read-only privacy projection and deterministic
-validation. Stage 11B/11B.2 plus the local extension implement Gemini, NVIDIA and Ollama adapters,
+validation. Stage 11B/11B.2 plus provider extensions implement Gemini, NVIDIA, Ollama and Groq adapters,
 a versioned prompt and bounded internal runtime. Stage 11 IN PROGRESS; 11C NEXT; Stage 12 NOT STARTED.
 No public AI HTTP endpoint, hosted-production qualification, database or report renderer is introduced.
 This is the detailed architecture source; [[09_REPORT_DESIGN]] owns future presentation.
@@ -20,12 +20,13 @@ flowchart LR
   H[Human Design] --> L
   L --> P[Allowlist interpretation projection]
   K[Kameri K2B cultural selection] --> P
-  P --> V[11B Gemini/NVIDIA adapters and versioned prompt]
+  P --> V[Gemini NVIDIA Ollama Groq adapters and versioned prompt]
   V --> C[Shape and input-reference validation]
   C --> S[Future semantic and safety evaluation]
   S --> R[Structured interpretation result]
   R --> W[Future web and PDF consumers]
 ```
+
 
 Calculation remains exclusively owned by existing deterministic engines. Interpretation never
 computes positions, signs, houses, aspects, numbers, gates, channels, Type, geocoding, timezone,
@@ -204,13 +205,14 @@ personal-year opt-in, depth/section/length enforcement, input-grounded reference
 canonical Kamerî selection/tampering and static errors. Synthetic data only; these tests validate
 contracts, not AI quality or new astronomical goldens. Full backend and pip check are required.
 
-## Stage 11B / 11B.2 / local Ollama runtime qualification
+## Stage 11B / 11B.2 / Ollama / Groq runtime qualification
 
-Gemini, NVIDIA and Ollama modules under `services/providers/` implement the existing async Protocol;
+Gemini, NVIDIA, Ollama and Groq modules under `services/providers/` implement the existing async Protocol;
 `interpretation_service.py` supplies an injectable provider-neutral service and explicit factory.
-Only `AI_PROVIDER=gemini`, `nvidia` or `ollama` is supported, with no fallback; any other value is
+Only `AI_PROVIDER=gemini`, `nvidia`, `ollama` or `groq` is supported, with no fallback; any other value is
 a static configuration error. Gemini remains first, not permanently exclusive (ADR-022); NVIDIA NIM is
-the independently configured hosted adapter (ADR-023), and Ollama is local-only (ADR-024). No routes
+the independently configured hosted adapter (ADR-023), Ollama is local-only (ADR-024), and Groq is an
+independently configured hosted strict-schema adapter (ADR-025). No routes
 import provider objects. The factory is lazy: calculation APIs start without a selected model/key. Each interpretation owns its client lifetime,
 closes its transport and has independent retries; no global mutable client.
 
@@ -249,6 +251,19 @@ The official API separates `message.thinking` from `message.content`; only conte
 prose/character limits remain unchanged while 1024 extra prediction tokens cover JSON field/reference
 overhead. The explicit `/api/tags` probe returns reachable/model-present states and is never called
 automatically before interpretation. 404 maps to static model-not-found; no fallback is attempted.
+
+Groq uses existing `httpx`; no SDK or dependency was added. `GROQ_API_KEY` is an empty backend-only
+`SecretStr` and `GROQ_MODEL=openai/gpt-oss-120b` by default. Requests go only to
+`https://api.groq.com/openai/v1/chat/completions`, with `stream=false`, temperature 0,
+`max_completion_tokens` from a Groq-specific immutable wire map, `reasoning_effort=low` and
+`include_reasoning=false`. Groq's official structured-output documentation lists this model for
+`strict=true`; the adapter sends a closed/required JSON Schema derivative that uses the documented
+subset. The project still rejects duplicate keys and re-runs canonical Pydantic, depth and input-binding
+validation locally because constrained JSON shape does not enforce project model validators. Free's
+wire ceiling is 2048 so the strict JSON envelope has room to complete; canonical Free content/prose
+limits remain 800 and Standard/Premium wire behavior is unchanged. Credentials,
+provider bodies and reasoning are never logged or returned. HTTP/transport failures use the existing
+static taxonomy and bounded budget; no provider fallback exists.
 
 ### Native JSON and final validation
 
@@ -313,6 +328,17 @@ reasoning exclusion with injected HTTP. Windows and Docker probes found `qwen3:4
 Free service smoke passed in 33.4 seconds. The first 800-token run objectively truncated JSON, motivating
 only the documented JSON-envelope allowance. One successful local output is not semantic-safety,
 hardware-performance or broader quality proof.
+
+`test_groq_interpretation.py` covers the same corpus with injected HTTP, strict-schema request shape,
+reasoning exclusion, backend-only config/secret handling, all existing provider selections, safe errors,
+bounded retries/repair, duplicate JSON, canonical schema, depth and input-binding rejection. It adds no
+network to offline tests. Any live call is limited to one synthetic Free smoke when a private key exists;
+that observation cannot qualify semantic safety, retention policy or public delivery. The initial
+2026-09-30 Free smoke's HTTP 400 was subsequently verified as strict-document truncation at the former
+800-token wire ceiling (`json_validate_failed`: maximum completion tokens reached before a valid
+document). After the Groq-only Free ceiling became 2048, exactly one qualification smoke returned HTTP
+200 in 2.663 seconds total, used no repair and passed JSON, Pydantic, Free depth and input-binding checks.
+It consumed 1374 prompt / 1018 completion / 2392 total tokens; reasoning was absent and not exposed.
 
 Next scope is 11C only after separate authorization: typed FastAPI transport/admission, private error
 mapping, explicit consent/retention and safety qualification, dependency overrides, rate/cost controls

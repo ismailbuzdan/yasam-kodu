@@ -407,3 +407,29 @@ host-vs-container URL. One 33.4-second synthetic Free smoke proves only this mac
 it does not establish arbitrary Turkish prose safety, Standard/Premium latency or production capacity.
 **Consequences:** Gemini/NVIDIA and all deterministic/public contracts remain unchanged. No public
 interpretation endpoint, frontend, database, new dependency, automatic fallback or Stage 11C work.
+
+## ADR-025 — Groq Strict Structured Interpretation Provider
+
+**Status:** Accepted; synthetic live structural qualification passed (2026-09-30).
+**Context:** The existing provider-neutral interpretation runtime needs an optional hosted Groq path
+without changing the trusted symbolic projection, canonical output contract or public API boundary.
+Groq's official documentation lists `openai/gpt-oss-120b` for Chat Completions, strict JSON Schema
+and GPT-OSS reasoning controls.
+**Decision:** Add `AI_PROVIDER=groq` using existing `httpx` against
+`https://api.groq.com/openai/v1/chat/completions`, backend-only `GROQ_API_KEY` and default
+`GROQ_MODEL=openai/gpt-oss-120b`. Send the shared v3 system instruction and symbolic data separately,
+`stream=false`, temperature 0, low reasoning effort, `include_reasoning=false`, and a closed/required
+JSON Schema derivative with `strict=true`. Free uses a Groq-only 2048-token wire generation ceiling so
+the JSON envelope can complete; canonical prose/content limits and Standard/Premium budgets are unchanged.
+Always apply duplicate-key-safe decoding, canonical
+`InterpretationContent` validation, depth rules and input binding locally. Retain the existing bounded
+deadline/retry budget and at most one generic replacement repair; never fall back to another provider.
+**Reason:** Native constrained output gives the strongest documented transport guarantee while local
+validation continues to own project-specific semantic invariants. Direct HTTP adds no SDK or license.
+**Limits:** Offline tests and native schema guarantees do not prove Turkish prose quality, semantic
+safety, retention suitability or public-delivery readiness. The verified initial HTTP 400 was token
+truncation at the former Free wire ceiling. After raising only that Groq ceiling to 2048, one synthetic
+Free live smoke returned HTTP 200 and passed JSON, canonical Pydantic, depth and input-binding checks
+without repair. This remains one structural observation only, not general quality or safety evidence.
+**Consequences:** Gemini, NVIDIA, Ollama, calculations and public contracts remain unchanged. No route,
+frontend, database, dependency, automatic fallback, Stage 11C or Stage 12 work is included.

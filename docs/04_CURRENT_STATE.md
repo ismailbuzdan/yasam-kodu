@@ -5,9 +5,10 @@ tags:
 
 # Current State
 
-**Last updated:** 2026-09-27
+**Last updated:** 2026-09-30
 **Stage 11B starting baseline:** clean `main`/`origin/main` at `a72caa8640945b4d9682437a0a5cf4a5caad240a`.
-**Delivery status:** Stages 1–10 COMPLETE; Stage 11 IN PROGRESS (11A/11B/11B.2 + local Ollama COMPLETE); Stage 12 NOT STARTED.
+**Delivery status:** Stages 1–10 COMPLETE; Stage 11 IN PROGRESS (11A/11B/11B.2 + Ollama + Groq
+provider extensions COMPLETE); Stage 12 NOT STARTED.
 **Kamerî track:** K0, K1A, K1B, K2A and K2B COMPLETE; bounded mechanical API and limited KB available.
 **Next step:** Separately scope Stage 11C HTTP/admission and public-delivery controls. Kamerî readiness is
 YES, LIMITED to the three qualified Hijri cultural fragments; it does not admit automatic personal Esmâ,
@@ -26,6 +27,24 @@ After coding:
 - Update this file, decisions and changelog when applicable; run relevant tests.
 
 ## Completed
+
+**Groq interpretation provider (2026-09-30):** Added `AI_PROVIDER=groq` behind the unchanged
+provider-neutral service, using existing `httpx` at
+`https://api.groq.com/openai/v1/chat/completions` with default `openai/gpt-oss-120b`.
+Official Groq documentation identifies this model as supporting strict JSON Schema and GPT-OSS
+`reasoning_effort`; the adapter sends `strict=true`, low effort and `include_reasoning=false`.
+Only the symbolic privacy projection crosses the boundary. Duplicate-key-safe JSON, canonical
+Pydantic/depth and input-binding validation remain mandatory, including the shared single safe repair.
+No SDK/dependency, fallback, public route, frontend or deterministic calculation changed. The verified
+HTTP 400 cause was the former Free wire ceiling (800): Groq reached `max_completion_tokens` before a
+valid strict JSON document. Canonical Free prose/content limits remain unchanged; only Groq's Free
+wire generation ceiling is 2048. Groq **43**, all adapters/contracts **257** and full backend
+**1795 passed / 1 existing warning**; `pip check` is clean. The single
+qualification smoke then returned HTTP 200 (2.663 s total; 2.623 s HTTP), `finish_reason=stop`, required
+no repair, and passed JSON, Pydantic, Free depth and input-binding validation. Safe usage was
+1374 prompt / 1018 completion / 2392 total tokens; reasoning was absent and not exposed. This is one
+synthetic structural observation, not semantic-safety or public-delivery qualification. See ADR-025 and
+[[08_AI_INTERPRETATION]]. Stage 11C and Stage 12 remain NOT STARTED.
 
 **Local Ollama interpretation provider (2026-09-27):** Added `AI_PROVIDER=ollama` behind the unchanged
 provider-neutral service, using existing `httpx`, `POST /api/chat`, canonical JSON Schema, `stream=false`

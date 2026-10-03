@@ -7,6 +7,24 @@ tags:
 
 Current delivery state: [[04_CURRENT_STATE]]. Milestone sequence: [[03_ROADMAP]].
 
+## 2026-09-30 — Groq strict structured interpretation provider
+
+- Added opt-in `AI_PROVIDER=groq` using existing `httpx`, backend-only key config and default
+  `openai/gpt-oss-120b`; no SDK, dependency, fallback or public endpoint.
+- Uses Groq's documented Chat Completions strict JSON Schema mode, low GPT-OSS reasoning effort and
+  `include_reasoning=false`, followed by unchanged duplicate-safe JSON, Pydantic/depth and input-binding
+  validation plus the existing single safe repair boundary.
+- Added 43 offline Groq tests; combined providers/contracts **257 passed**, Docker full backend
+  **1795 passed / 1 existing warning**, and `pip check` is clean. Groq Free now uses a
+  2048-token wire generation ceiling for strict JSON-envelope completion while canonical Free prose/
+  content limits and all other provider budgets remain unchanged.
+- The previous HTTP 400 was verified as strict-document truncation at the former 800-token ceiling.
+  Exactly one subsequent synthetic Free qualification smoke returned HTTP 200, required no repair and
+  passed JSON, Pydantic, depth and input-binding checks. It used 1374 prompt / 1018 completion / 2392
+  total tokens; no reasoning was returned or exposed. This does not establish semantic safety.
+- Added ADR-025 and operator config documentation. No calculation, schema weakening, frontend,
+  Stage 11C or Stage 12 change.
+
 ## 2026-09-27 — Local Ollama interpretation provider
 
 - Added `AI_PROVIDER=ollama` with existing-httpx `/api/chat`, configurable `qwen3:4b` model/base URL/

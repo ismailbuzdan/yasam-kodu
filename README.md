@@ -8,7 +8,8 @@ Mevcut deterministic backend; Birth Profile doğrulama, backend aracılı geocod
 Astrology, Numerology, Human Design ve Unified Life Code içerir. Kamerî Kod, Unified Life Code v1'den
 ayrı bounded bir track'tir: mekanik API'si ve dört-claim'li limited knowledge layer'ı vardır.
 Calculation != Interpretation: hesaplar deterministik motorlardan gelir; Stage 11A yorum mimarisi,
-gizlilik projection'ı ve typed kontrat ile Gemini, NVIDIA ve lokal Ollama adapter/prompt/service tamamlandı.
+gizlilik projection'ı ve typed kontrat ile Gemini, NVIDIA, lokal Ollama ve Groq adapterları tamamlandı.
+Groq'un sentetik Free structural qualification smoke'u strict-schema zincirini uçtan uca geçti.
 Canlı model kalitesi ve genel anlamsal güvenlik henüz doğrulanmadı; yorum endpoint'i yoktur.
 Otomatik kişisel Esmâ, doğrulanmamış menzil yorumları ve kaynaklandırılmamış dini
 yorumlar mevcut değildir.
@@ -54,6 +55,23 @@ docker compose up -d backend
 
 PostgreSQL, Redis veya Celery servisi mevcut değildir. Ollama availability/model kontrolü adapter'ın
 explicit health metoduyla yapılabilir; her interpretation öncesinde ek health isteği gönderilmez.
+
+## Groq interpretation provider
+
+Groq, mevcut `httpx` transport'u ve aynı canonical interpretation contract'ı ile opt-in kullanılabilir.
+Gerçek anahtarı yalnız ignored `backend/.env` içinde tutun:
+
+```ini
+AI_PROVIDER=groq
+GROQ_API_KEY=<secret>
+GROQ_MODEL=openai/gpt-oss-120b
+```
+
+Adapter `https://api.groq.com/openai/v1/chat/completions` adresinde strict JSON Schema ister;
+reasoning response'a dahil edilmez. Free isteklerde canonical 800-token içerik bütçesi değişmeden,
+JSON zarfının tamamlanabilmesi için wire-level `max_completion_tokens=2048` kullanılır. Tek sentetik
+Free canlı structural smoke HTTP 200 ile tüm yerel doğrulama katmanlarını geçti. Bu gözlem genel model
+kalitesi veya anlamsal güvenlik kanıtı değildir; internal provider'ın public interpretation endpoint'i yoktur.
 
 ## Project Memory
 
