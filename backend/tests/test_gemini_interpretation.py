@@ -341,6 +341,42 @@ def test_prompt_rules_and_schema_projection():
     assert schema["additionalProperties"] is False
 
 
+def test_cross_system_prompt_invariant_is_shared_with_repair():
+    normal = system_instruction(InterpretationDepth.STANDARD)
+    repair = system_instruction(InterpretationDepth.STANDARD, repair=True)
+    for prompt in (normal, repair):
+        assert "At Free depth, cross_system MUST be null" in prompt
+        assert "from only one system" in prompt
+        assert "Every section has exactly one state" in prompt
+        assert "never leave both null" in prompt
+    assert "cross_system and kameri=null" in system_instruction(InterpretationDepth.FREE)
+    assert REPAIR not in normal and REPAIR in repair
+
+
+def test_semantic_grounding_rules_are_explicit_and_shared_with_repair():
+    normal = system_instruction(InterpretationDepth.FREE)
+    repair = system_instruction(InterpretationDepth.FREE, repair=True)
+    required = (
+        "Structural reference is not automatically semantic support",
+        "direct, meaningful link to the interpretation",
+        "unsupported causal bridge",
+        "A deterministic fact may be stated directly",
+        "Separate interpretation from fact",
+        "natural epistemic restraint",
+        "never state a symbolic interpretation as an objective personality fact",
+        "Avoid certainty language",
+        "retrograde=false states only that the supplied body is not retrograde",
+        "does not support fast energy, impatience, acting without thinking",
+        "unsupported inference remains forbidden",
+        "Avoid redundancy",
+        "distinct section-specific purpose",
+    )
+    for prompt in (normal, repair):
+        normalized = " ".join(prompt.split())
+        assert all(rule in normalized for rule in required)
+    assert PROMPT_VERSION == "life-code-interpretation-v4"
+
+
 def test_real_sdk_request_over_mock_transport(symbolic, monkeypatch, caplog):
     caplog.set_level(logging.DEBUG)
     requests = []

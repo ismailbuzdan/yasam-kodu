@@ -13,10 +13,15 @@ privacy, exact endpoint/model, documented strict JSON Schema, hidden reasoning r
 HTTP/transport/timeout mapping, bounded Retry-After, malformed/duplicate JSON, schema mismatch,
 one safe repair, refusal, input binding and Free depth enforcement. They also freeze Groq Free's 2048
 wire ceiling while proving canonical Free content limits and Premium behavior are unchanged. Combined
-Groq/Ollama/NVIDIA/Gemini/contracts: **257 passed**; Docker full backend **1795 passed / 1 existing
+Groq/Ollama/NVIDIA/Gemini/contracts: **258 passed**; Docker full backend **1796 passed / 1 existing
 warning** and `pip check` is clean. The one permitted private-key qualification smoke
 returned HTTP 200, needed no repair and passed JSON, Pydantic, depth and input-binding checks. One
 synthetic structural qualification does not prove prose quality or semantic safety.
+Prompt-v4 contract coverage additionally asserts structural-reference/semantic-support separation,
+unsupported-inference and certainty-language restraints, the `retrograde=false` counterexample and
+section-specific anti-redundancy rules in both primary and repair instructions. A later one-request v4
+semantic qualification returned application-level `interpretation_unavailable`; no repair/second
+network request was sent and no content was available to score, so semantic quality remains unverified.
 
 ## Local Ollama provider
 

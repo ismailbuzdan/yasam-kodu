@@ -286,11 +286,17 @@ InterpretationContent.model_validate_json and validate_content_for_input. The se
 revalidates content/binding and InterpretationResult after attaching trusted provider/model/prompt/
 config/schema versions. No provider-authored metadata or invented token/latency measurements.
 
-`interpretation_prompts.py` holds life-code-interpretation-v1 and gemini-interpretation-v1 config.
+`interpretation_prompts.py` currently holds the shared life-code-interpretation-v4 prompt provenance;
+provider config versions remain adapter-owned.
 Shared immutable core/depth policies require no calculation, altered facts, invented systems/timeline,
 professional prescriptions, diagnoses or religious claims. Premium Tek Bakışta and summary remain
 mandatory. Kamerî accepts only actual canonical HIJRI_CTX_001/002/003 input IDs, never Asma or a
 mansion/personality bridge. Output claim IDs cannot license forbidden prose; that residual risk remains.
+Prompt v4 further states that a structurally valid basis path is not automatically semantic evidence:
+the exact fact must directly and meaningfully support the prose. Facts may be stated directly, while
+symbolic interpretation uses natural epistemic restraint rather than objective personality certainty.
+`retrograde=false` alone cannot support fast/weak/strong energy, impatience, impulsivity, psychology or
+behavior. Summary, basic triad, strengths and challenges have distinct purposes to limit repetition.
 
 At most one repair replaces the whole invalid content, using the same structured input plus a generic
 instruction. Neither failed text nor a Pydantic trace is echoed. A second content failure becomes
@@ -339,6 +345,10 @@ that observation cannot qualify semantic safety, retention policy or public deli
 document). After the Groq-only Free ceiling became 2048, exactly one qualification smoke returned HTTP
 200 in 2.663 seconds total, used no repair and passed JSON, Pydantic, Free depth and input-binding checks.
 It consumed 1374 prompt / 1018 completion / 2392 total tokens; reasoning was absent and not exposed.
+The subsequent single-request prompt-v4 semantic qualification returned application-level
+`interpretation_unavailable`. Its one-call guard sent no repair or second network request, and the
+first response was not available as validated content; therefore it supplies no semantic PASS/FAIL
+sample. Prompt-v4 semantic qualification remains **UNVERIFIED**.
 
 Next scope is 11C only after separate authorization: typed FastAPI transport/admission, private error
 mapping, explicit consent/retention and safety qualification, dependency overrides, rate/cost controls

@@ -46,6 +46,17 @@ no repair, and passed JSON, Pydantic, Free depth and input-binding validation. S
 synthetic structural observation, not semantic-safety or public-delivery qualification. See ADR-025 and
 [[08_AI_INTERPRETATION]]. Stage 11C and Stage 12 remain NOT STARTED.
 
+**Interpretation semantic prompt hardening (2026-09-30):** Shared prompt provenance advanced to
+`life-code-interpretation-v4`. It now distinguishes structural reference presence from semantic
+support, forbids unsupported causal bridges (including `retrograde=false` personality/energy
+inferences), requires restrained fact-versus-interpretation language and assigns distinct purposes to
+summary/basic-triad/strengths/challenges to reduce repetition. No schema, validator, input binding,
+depth contract, provider or token budget changed. Groq **43**, all providers/contracts **258** and full
+backend **1796 passed / 1 existing warning**; `pip check` is clean. The one permitted v4 semantic live
+request ended as `interpretation_unavailable`; the one-call guard prevented any repair/second network
+request, and no validated content was available for semantic audit. Semantic qualification therefore
+remains **UNVERIFIED / NOT READY**, not failed prose evidence.
+
 **Local Ollama interpretation provider (2026-09-27):** Added `AI_PROVIDER=ollama` behind the unchanged
 provider-neutral service, using existing `httpx`, `POST /api/chat`, canonical JSON Schema, `stream=false`
 and `think=false`. Defaults are `qwen3:4b`, host `http://localhost:11434` and a separately configurable
@@ -68,7 +79,8 @@ closed with a static configuration error and no fallback. NVIDIA uses direct exi
 `https://integrate.api.nvidia.com/v1/chat/completions`, initially `openai/gpt-oss-20b`, with backend-only
 SecretStr config. Its hosted chat reference documents system messages, stream=false, max_tokens,
 reasoning effort and tools; it does not explicitly document `response_format`/strict JSON Schema for
-this surface. Thus adapter uses shared `life-code-interpretation-v1` instructions and JSON-only output,
+this surface. Thus adapter uses the current shared `life-code-interpretation-v4` instructions and
+JSON-only output,
 then duplicate-key-safe JSON decoding plus unchanged strict Pydantic/input-reference validation.
 `reasoning_content` is ignored, never output/logged. No dependency was added. Docker offline: 34 NVIDIA,
 77 Gemini and 70 contract tests, targeted **181 passed**; full backend **1719 passed / 1 existing
@@ -77,7 +89,8 @@ smoke was not run; hosted native JSON-mode/strict-schema support and Turkish pro
 11C/12 NOT STARTED. Existing Gemini live history remains unchanged. See ADR-023 and [[08_AI_INTERPRETATION]].
 
 **Stage 11B (2026-09-26):** Gemini adapter behind the unchanged provider Protocol, injectable service,
-life-code-interpretation-v1 prompt, strict content/result validation and backend-only configuration.
+initially introduced with the `life-code-interpretation-v1` prompt, strict content/result validation and
+backend-only configuration. That historical prompt provenance is superseded by the current shared v4.
 google-genai 2.25.0 (Apache-2.0) installed in Python 3.11 Docker; dependency licenses reviewed.
 Native JSON schema is derived from existing content; no calculation changes. Shared bounded deadline,
 initial+2 attempts maximum, at most one replacement repair, no refusal retry or silent fallback.

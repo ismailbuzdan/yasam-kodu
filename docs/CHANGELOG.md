@@ -9,6 +9,16 @@ Current delivery state: [[04_CURRENT_STATE]]. Milestone sequence: [[03_ROADMAP]]
 
 ## 2026-09-30 — Groq strict structured interpretation provider
 
+- Advanced shared prompt provenance to `life-code-interpretation-v4` with explicit semantic grounding:
+  structural references are not automatically semantic support, unsupported causal bridges and
+  certainty language are forbidden, `retrograde=false` is an explicit counterexample, and repeated
+  placements must serve different summary/triad/strength/challenge purposes.
+- No schema, validator, input binding, depth policy, adapter or token-budget change. Groq **43**,
+  combined providers/contracts **258**, Docker full backend **1796 passed / 1 existing warning**;
+  `pip check` clean.
+- The one permitted v4 semantic live request returned application-level `interpretation_unavailable`;
+  the guard prevented repair/second network traffic and no validated content was available to audit.
+  Semantic qualification remains **UNVERIFIED / NOT READY**.
 - Added opt-in `AI_PROVIDER=groq` using existing `httpx`, backend-only key config and default
   `openai/gpt-oss-120b`; no SDK, dependency, fallback or public endpoint.
 - Uses Groq's documented Chat Completions strict JSON Schema mode, low GPT-OSS reasoning effort and
@@ -22,8 +32,9 @@ Current delivery state: [[04_CURRENT_STATE]]. Milestone sequence: [[03_ROADMAP]]
   Exactly one subsequent synthetic Free qualification smoke returned HTTP 200, required no repair and
   passed JSON, Pydantic, depth and input-binding checks. It used 1374 prompt / 1018 completion / 2392
   total tokens; no reasoning was returned or exposed. This does not establish semantic safety.
-- Added ADR-025 and operator config documentation. No calculation, schema weakening, frontend,
-  Stage 11C or Stage 12 change.
+- Added ADR-025 and operator config documentation. Groq was initially developed against the shared v3
+  prompt; the subsequent semantic-hardening work in this entry advances current runtime provenance to
+  v4. No calculation, schema weakening, frontend, Stage 11C or Stage 12 change.
 
 ## 2026-09-27 — Local Ollama interpretation provider
 

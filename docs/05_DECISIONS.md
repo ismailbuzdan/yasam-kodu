@@ -433,3 +433,8 @@ Free live smoke returned HTTP 200 and passed JSON, canonical Pydantic, depth and
 without repair. This remains one structural observation only, not general quality or safety evidence.
 **Consequences:** Gemini, NVIDIA, Ollama, calculations and public contracts remain unchanged. No route,
 frontend, database, dependency, automatic fallback, Stage 11C or Stage 12 work is included.
+
+**Prompt provenance clarification (2026-09-30):** ADR-022 and ADR-023 preserve the shared v1 prompt
+used when those decisions were accepted; ADR-025 preserves Groq's initial development against v3.
+Subsequent semantic hardening superseded the shared runtime prompt provenance with
+`life-code-interpretation-v4`. The historical provider transport decisions remain unchanged.

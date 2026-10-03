@@ -236,6 +236,30 @@ def test_invalid_output_shape(change):
         InterpretationContent(**data)
 
 
+def test_free_cross_system_and_section_exclusive_states():
+    data = content_data(InterpretationDepth.FREE)
+    assert InterpretationContent(**data).cross_system is None
+
+    empty_cross_system = deepcopy(data)
+    empty_cross_system["cross_system"] = ()
+    with pytest.raises(ValidationError):
+        InterpretationContent(**empty_cross_system)
+
+    unavailable = deepcopy(data)
+    unavailable["sections"][0].update(content=None, unavailable_reason="missing_input")
+    InterpretationContent(**unavailable)
+
+    mixed = deepcopy(data)
+    mixed["sections"][0]["unavailable_reason"] = "missing_input"
+    with pytest.raises(ValidationError):
+        InterpretationContent(**mixed)
+
+    empty = deepcopy(data)
+    empty["sections"][0].update(content=None, unavailable_reason=None)
+    with pytest.raises(ValidationError):
+        InterpretationContent(**empty)
+
+
 @pytest.mark.parametrize("ref", ["numerology.personal_year.value", "astrology.bodies.chiron.sign",
                                  "astrology.houses.13.sign", "human_design.birth_utc"])
 def test_references_to_missing_or_private_data_fail(projected, ref):
