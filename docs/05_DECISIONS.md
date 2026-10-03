@@ -438,3 +438,28 @@ frontend, database, dependency, automatic fallback, Stage 11C or Stage 12 work i
 used when those decisions were accepted; ADR-025 preserves Groq's initial development against v3.
 Subsequent semantic hardening superseded the shared runtime prompt provenance with
 `life-code-interpretation-v4`. The historical provider transport decisions remain unchanged.
+
+## ADR-026 — Deterministic Interpretation Foundation Boundary
+
+**Status:** Accepted for additive Phase 1 / Phase 2A prototype only (2026-09-30); production cutover deferred.
+**Context:** Live evidence shows that valid reference paths and a structurally valid final
+`InterpretationContent` do not prove that generated prose is semantically supported. Requiring a model
+to own tier fields, section states, nullability and basis also creates avoidable small-model failures.
+**Decision:** Introduce unused internal contracts for minimal slot/text AI realization, versioned
+semantic evidence, a backend-owned narrative plan and deterministic assembly into the unchanged public
+content contract. Phase 1 covers only the synthetic Free astrology fixture with a five-unit,
+project-authored, explicitly non-production-qualified catalog. Models do not own depth, sections,
+nullability, unavailable reasons, canonical basis, references or provenance. The legacy provider
+protocol/factory/service flow remains active and unchanged.
+Phase 2A adds a provider-independent bounded-realization validator to the unused assembler path. It
+applies typed, evidence-specific forbidden extensions and narrow global diagnosis, deterministic-future
+and absolute-certainty policies after Unicode-preserving normalization. It never rewrites prose and
+fails closed with static slot/category metadata that excludes generated text.
+**Limits:** Bounded realization reduces semantic expansion risk but does not prove full semantic
+entailment. It intentionally recognizes only reviewed high-risk Turkish forms; subtle unsupported claims,
+negation, idiom and novel paraphrase remain outside this deterministic prototype. Allowed themes are not
+enforced by mandatory keyword matching. Source/license qualification remains a later gate. No second LLM,
+heavy NLP dependency, classifier or production knowledge base is implied.
+**Consequences:** Public `InterpretationContent`, providers, prompts, APIs and deterministic engines are
+unchanged. Future phases may qualify a semantic catalog and integrate providers only after separate
+review; Phase 1 / Phase 2A must not be treated as production semantic safety.

@@ -27,6 +27,33 @@ flowchart LR
   R --> W[Future web and PDF consumers]
 ```
 
+### Phase 1 deterministic foundation (not production-wired)
+
+ADR-026 adds a parallel internal prototype without changing the diagram's active provider path. Its
+future-directed flow is:
+
+```text
+InterpretationInput
+→ deterministic SemanticEvidenceBuilder
+→ backend-owned NarrativePlan
+→ minimal AIInterpretationPayload (slot_id + text only)
+→ deterministic BoundedRealizationValidator
+→ deterministic InterpretationAssembler
+→ existing InterpretationContent validation/input binding
+```
+
+The five current evidence units exist only to exercise the synthetic `exact_time_astrology` Free case;
+they are project-authored prototype conventions, not a production-qualified interpretation corpus.
+The assembler owns depth, section ordering, Free nullability and canonical basis. AI payloads cannot
+carry basis, references, provenance, unavailable reasons or metadata. This removes model-selected basis
+laundering. Phase 2A additionally applies evidence-specific forbidden-extension patterns and bounded
+global diagnosis, deterministic-future and absolute-certainty policies before assembly. Its Turkish
+normalization preserves letters and uses narrow reviewed phrase/root patterns; it neither rewrites text
+nor requires an allowed-theme keyword, so natural restrained paraphrases remain possible. Bounded
+realization reduces semantic expansion risk but does not prove full semantic entailment: subtle novel
+claims can still escape a finite deterministic policy. Qualified source/license policy remains a later
+gate. The production service, provider protocol, prompts and adapters do not import or invoke this
+foundation yet.
 
 Calculation remains exclusively owned by existing deterministic engines. Interpretation never
 computes positions, signs, houses, aspects, numbers, gates, channels, Type, geocoding, timezone,

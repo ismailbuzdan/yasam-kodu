@@ -41,6 +41,12 @@ flowchart LR
     hidden reasoning response and unchanged local validation (ADR-025). Free wire generation ceiling
     2048 leaves JSON-envelope room without changing canonical prose limits; one synthetic live structural
     qualification passed. No SDK, fallback or public endpoint.
+  - [x] Deterministic interpretation foundation Phase 1 — additive internal payload/evidence/plan/
+    assembler prototype (ADR-026), limited to synthetic Free astrology coverage. No production cutover,
+    provider migration, public contract change or claim of complete semantic grounding.
+  - [x] Bounded realization Phase 2A — deterministic evidence-specific extension, global prohibited-
+    claim and epistemic-certainty checks on the unused foundation path (ADR-026). Known high-risk prose
+    can fail closed; arbitrary natural-language entailment remains unsolved. No provider migration.
   - [ ] Stage 11C — NEXT: separately authorized HTTP/admission contract and public-delivery controls.
 - [ ] Stage 12 — Report / PDF
 

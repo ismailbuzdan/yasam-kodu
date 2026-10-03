@@ -57,6 +57,28 @@ request ended as `interpretation_unavailable`; the one-call guard prevented any 
 request, and no validated content was available for semantic audit. Semantic qualification therefore
 remains **UNVERIFIED / NOT READY**, not failed prose evidence.
 
+**Deterministic interpretation foundation Phase 1 (2026-09-30):** Added an unused, additive internal
+`AIInterpretationPayload` containing only versioned slot IDs/text, a five-unit project-authored prototype
+catalog for the synthetic `exact_time_astrology` fixture, deterministic evidence matching and Free
+narrative planning, plus an assembler that owns section order/nullability and derives canonical basis
+from evidence. `retrograde=false -> impatience` and `Aries ASC -> regret` have no allowed evidence unit.
+This is **not** a production cutover: provider protocol/factory/adapters, service flow, prompts and public
+`InterpretationContent` are unchanged. Arbitrary generated prose entailment is explicitly unsolved;
+the prototype catalog is not production-qualified knowledge. Tests: foundation **14**, combined
+foundation/providers/contracts **272**, full backend **1810 passed / 1 existing warning**; `pip check`
+clean. See ADR-026 and [[08_AI_INTERPRETATION]].
+
+**Bounded realization foundation Phase 2A (2026-09-30):** Added provider-independent, deterministic
+validation between AI slot realization and foundation assembly. Evidence-specific regret, impatience,
+impulsiveness and other typed extensions, plus bounded diagnosis, deterministic-future and absolute-
+certainty claim patterns, now fail closed without rewriting text or exposing it in errors. Turkish NFKC/
+casefold normalization and deliberately narrow morphology patterns preserve safe symbolic paraphrases;
+categories not forbidden by an assigned unit do not become global accidentally. The five-unit catalog
+remains project-authored and not production-qualified. This reduces known semantic expansion risk but
+does not prove full semantic entailment. Foundation **39**, combined foundation/providers/contracts
+**297**, full backend **1835 passed / 1 existing warning**; `pip check` clean. No production service,
+provider, prompt, public schema, live API or cutover change. See ADR-026 and [[08_AI_INTERPRETATION]].
+
 **Local Ollama interpretation provider (2026-09-27):** Added `AI_PROVIDER=ollama` behind the unchanged
 provider-neutral service, using existing `httpx`, `POST /api/chat`, canonical JSON Schema, `stream=false`
 and `think=false`. Defaults are `qwen3:4b`, host `http://localhost:11434` and a separately configurable

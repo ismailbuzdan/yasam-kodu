@@ -5,6 +5,29 @@ tags:
 
 # Test Strategy
 
+## Deterministic interpretation foundation Phase 1
+
+`test_interpretation_foundation.py` adds **14 focused tests** over the internal minimal AI payload,
+five-unit synthetic astrology catalog, deterministic builder/planner and Free assembler. Parametrized
+predicate cases prove missing/unknown facts fail closed; typed theme assertions prove
+`retrograde=false` licenses no impatience unit and Aries ASC licenses no regret unit. Slot tests reject
+missing/extra/duplicate IDs and tampered plan basis, demonstrate backend-derived references and stable
+assembly, freeze Free null fields/order and retain existing input-binding. One explicit limitation test
+documents that Phase 1 does not validate arbitrary prose entailment. Foundation plus legacy providers/
+contracts: **272 passed**; Docker full backend **1810 passed / 1 existing warning**; `pip check` clean.
+No network or live provider test was run.
+
+## Bounded realization foundation Phase 2A
+
+`test_interpretation_bounded_realization.py` adds **25 deterministic tests** for evidence-specific
+regret/impatience/impulsiveness rejection, bounded Turkish morphology, absolute certainty, diagnosis and
+future-prediction claim classes, safe symbolic paraphrases, category locality, stable sanitized failures,
+assembler fail-closed behavior and backend-derived basis/public-contract preservation. Phase 1 + 2A:
+**39 passed**; foundation plus legacy providers/contracts: **297 passed**; Docker full backend
+**1835 passed / 1 existing warning**; `pip check` clean. Tests use only the synthetic fixture and no
+provider/network dependency. They demonstrate bounded known-risk rejection, not general Turkish semantic
+entailment or production safety qualification.
+
 ## Groq provider
 
 `test_groq_interpretation.py`: **43 offline tests** use the shared eight-case synthetic corpus and an

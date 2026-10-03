@@ -9,6 +9,25 @@ Current delivery state: [[04_CURRENT_STATE]]. Milestone sequence: [[03_ROADMAP]]
 
 ## 2026-09-30 — Groq strict structured interpretation provider
 
+- Added bounded realization foundation Phase 2A (ADR-026): typed evidence-specific semantic-extension
+  policies and narrow global certainty, diagnosis and deterministic-future checks now run before unused
+  foundation assembly. Rejected text fails closed and is absent from static error metadata.
+- Added Turkish-preserving deterministic normalization and bounded morphology coverage for regret,
+  impatience and impulsiveness, while safe symbolic paraphrases and evidence-local policy remain allowed.
+  This reduces known semantic expansion risk but does not prove full semantic entailment; the five-unit
+  catalog remains project-authored and not production-qualified.
+- Phase 1 + 2A **39**, combined foundation/providers/contracts **297**, Docker full backend **1835 passed /
+  1 existing warning**, `pip check` clean. No provider/service/factory/prompt/public schema migration,
+  dependency, production cutover or live request.
+- Added deterministic interpretation foundation Phase 1 (ADR-026): internal slot/text payload models,
+  five prototype astrology evidence units, deterministic evidence builder/Free narrative planner and
+  assembler into the unchanged public `InterpretationContent` contract.
+- Backend now demonstrably owns foundation depth/sections/nullability/canonical basis; prototype evidence
+  provides no impatience unit for `retrograde=false` and no regret unit for Aries ASC. Arbitrary prose
+  entailment remains explicitly unsolved, and the catalog is not production-qualified.
+- Foundation **14**, combined foundation/providers/contracts **272**, Docker full backend **1810 passed /
+  1 existing warning**, `pip check` clean. No provider/factory/service/prompt/API migration, live request,
+  dependency, public schema or production cutover.
 - Advanced shared prompt provenance to `life-code-interpretation-v4` with explicit semantic grounding:
   structural references are not automatically semantic support, unsupported causal bridges and
   certainty language are forbidden, `retrograde=false` is an explicit counterexample, and repeated
